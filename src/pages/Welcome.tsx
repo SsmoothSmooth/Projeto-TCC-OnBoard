@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    View, 
-    Text, 
-    SafeAreaView, 
+    View,
+    Text,
+    SafeAreaView,
     Image,
     StyleSheet,
     TouchableOpacity,
@@ -16,32 +16,33 @@ import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 
-export function Welcome(){
+export function Welcome() {
     const navigation = useNavigation();
 
-    function touchInit(){
+    function touchInit() {
         navigation.navigate('ConfirmAccess')
+
     }
 
-    return(
+    return (
         <SafeAreaView style={styles.container}>
 
             <View style={styles.wrapper}>
 
                 <Text style={styles.title}>
-                    Realize o descarte {'\n'} 
+                    Realize o descarte {'\n'}
                     e reciclavel da {'\n'}
                     maneira correta! {'\n'}
                 </Text>
 
-                <Image 
-                    source={ handsLoves }
+                <Image
+                    source={handsLoves}
                     style={styles.image}
                     resizeMode="contain"
                 />
 
                 <Text style={styles.subtitle}>
-                Venham conosco {'\n'} 
+                    Venham conosco {'\n'}
                 mudar o meio ambiente {'\n'}
                 entre na Coletores Onboard.
                 </Text>
@@ -54,7 +55,7 @@ export function Welcome(){
                     <FontAwesome5
                         name="arrow-alt-circle-right"
                         style={styles.buttonIcon}
-                        
+
                     />
 
                 </TouchableOpacity>

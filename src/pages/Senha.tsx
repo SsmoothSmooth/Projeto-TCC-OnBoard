@@ -3,83 +3,57 @@ import {
     View,
     Text,
     SafeAreaView,
-    Image,
     StyleSheet,
     TouchableOpacity,
+    TextInput,
     Dimensions
 } from 'react-native';
 
 import { Button } from '../components/Button';
-
-import handsPlanet from '../assets/handsPlanet.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
-import { useNavigation } from '@react-navigation/core';
 
-export function ConfirmAccess() {
-    const navigation = useNavigation();
-
-    function touchInit() {
-        navigation.navigate('TipoCadastro')
-
-    }
-
-    function touchInit2() {
-        navigation.navigate('Login')
-
-    }
-
+export function Senha() {
     return (
         <SafeAreaView style={styles.container}>
 
             <View style={styles.wrapper}>
 
+
+
                 <Text style={styles.title}>
-                    Coletores OnBoard
+                    Senha
                 </Text>
 
-                <Image
-                    source={handsPlanet}
-                    style={styles.image}
-                    resizeMode="contain"
+                <TextInput
+                    style={styles.input}
+                    placeholder="digite uma senha"
                 />
 
                 <Text
                     style={styles.button}
                 >
                     <Button
-                        title="Cadastrar"
-                        onPress={touchInit}
+                        title="Confirmar"
+
                     />
                 </Text>
-
-
-                <TouchableOpacity
-                    style={styles.button}
-                    activeOpacity={0.5}
-                    onPress={touchInit}
-                ></TouchableOpacity>
 
                 <Text
                     style={styles.button}
                 >
                     <Button
-                        title="Entrar"
-                        onPress={touchInit2}
+                        title="<"
+
                     />
                 </Text>
-
-                <TouchableOpacity
-                    style={styles.button}
-                    activeOpacity={0.5}
-                    onPress={touchInit}
-                ></TouchableOpacity>
-
 
             </View>
         </SafeAreaView>
     )
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -104,6 +78,25 @@ const styles = StyleSheet.create({
 
     },
 
+    subtitle: {
+        textAlign: 'center',
+        fontSize: 18,
+        color: colors.heading,
+        paddingHorizontal: 20,
+        fontFamily: fonts.text
+    },
+
+    input: {
+        borderBottomWidth: 1,
+        borderColor: '#52665A',
+        color: colors.heading,
+        width: '100%',
+        fontSize: 24,
+        marginTop: 50,
+        padding: 10,
+        textAlign: 'center'
+    },
+
     image: {
         height: Dimensions.get('window').width * 0.7
     },
@@ -114,3 +107,4 @@ const styles = StyleSheet.create({
     }
 
 })
+

@@ -11,75 +11,73 @@ import {
 
 import { Button } from '../components/Button';
 
-import handsPlanet from '../assets/handsPlanet.png';
+import happyPlanet from '../assets/happyPlanet.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 
-export function ConfirmAccess() {
+export function TipoCadastro() {
     const navigation = useNavigation();
 
     function touchInit() {
         navigation.navigate('TipoCadastro')
-
-    }
-
-    function touchInit2() {
         navigation.navigate('Login')
 
     }
-
     return (
         <SafeAreaView style={styles.container}>
 
             <View style={styles.wrapper}>
 
-                <Text style={styles.title}>
-                    Coletores OnBoard
-                </Text>
-
                 <Image
-                    source={handsPlanet}
+                    source={happyPlanet}
                     style={styles.image}
                     resizeMode="contain"
                 />
 
+                <Text style={styles.subtitle}>
+                    Em qual categoria {'\n'}
+                    voce se encontra?
+
+                </Text>
+
                 <Text
                     style={styles.button}
                 >
                     <Button
-                        title="Cadastrar"
+                        title="Coletores"
                         onPress={touchInit}
+
+
                     />
                 </Text>
-
-
-                <TouchableOpacity
-                    style={styles.button}
-                    activeOpacity={0.5}
-                    onPress={touchInit}
-                ></TouchableOpacity>
 
                 <Text
                     style={styles.button}
                 >
                     <Button
-                        title="Entrar"
-                        onPress={touchInit2}
+                        title="Domesticos"
+                        onPress={touchInit}
+
                     />
                 </Text>
 
-                <TouchableOpacity
+                <Text
                     style={styles.button}
-                    activeOpacity={0.5}
-                    onPress={touchInit}
-                ></TouchableOpacity>
+                >
+                    <Button
+                        title="Cooperativas"
+                        onPress={touchInit}
 
+                    />
+                </Text>
 
             </View>
         </SafeAreaView>
     )
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -104,6 +102,14 @@ const styles = StyleSheet.create({
 
     },
 
+    subtitle: {
+        textAlign: 'center',
+        fontSize: 18,
+        color: colors.heading,
+        paddingHorizontal: 20,
+        fontFamily: fonts.text
+    },
+
     image: {
         height: Dimensions.get('window').width * 0.7
     },
@@ -114,3 +120,6 @@ const styles = StyleSheet.create({
     }
 
 })
+
+
+
