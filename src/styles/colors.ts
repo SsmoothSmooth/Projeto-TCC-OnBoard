@@ -1,5 +1,5 @@
 export default {
-    green_cyan: '#A8FFCB',
+    green_cyan: '#A8FFCG',
     green_light: '#BDE660',
     green: '#32B768',
 
