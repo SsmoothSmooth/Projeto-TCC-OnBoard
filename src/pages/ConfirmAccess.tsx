@@ -19,6 +19,10 @@ import { useNavigation } from '@react-navigation/core';
 export function ConfirmAccess(){
     const navigation = useNavigation();
 
+    function touchModality(){
+        navigation.navigate('ModalityOptions')
+    }
+
     function touchLogin(){
         navigation.navigate('Login')
     }
@@ -42,6 +46,7 @@ export function ConfirmAccess(){
                 >
                         <Button 
                             title="Cadastrar"
+                            onPress={touchModality}
                         />
                 </Text>
 
