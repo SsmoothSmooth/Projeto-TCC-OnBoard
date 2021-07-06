@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { Welcome } from '../pages/Welcome';
 import { ConfirmAccess } from '../pages/ConfirmAccess';
+import { Login } from '../pages/Login';
 
 import colors from '../styles/colors';
 
@@ -16,7 +17,7 @@ const AppRoutes: React.FC = () => (
                 backgroundColor: 'white'
             }
         }}
-    >
+    > 
 
         <stackRoutes.Screen 
             name="Welcome"
@@ -29,6 +30,15 @@ const AppRoutes: React.FC = () => (
             component={ConfirmAccess}
 
         />
+
+        <stackRoutes.Screen
+            name="Login"
+            component={Login}
+
+        />
+
+
+
 
     </stackRoutes.Navigator>
 )
