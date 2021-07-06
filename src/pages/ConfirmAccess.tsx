@@ -14,8 +14,14 @@ import { Button } from '../components/Button';
 import handsPlanet from '../assets/handsPlanet.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
+import { useNavigation } from '@react-navigation/core';
 
 export function ConfirmAccess(){
+    const navigation = useNavigation();
+
+    function touchLogin(){
+        navigation.navigate('Login')
+    }
     return(
         <SafeAreaView style={styles.container}>
 
@@ -44,6 +50,7 @@ export function ConfirmAccess(){
                 >
                     <Button 
                         title="Entrar"
+                        onPress={touchLogin}
                     />    
                 </Text>
 
