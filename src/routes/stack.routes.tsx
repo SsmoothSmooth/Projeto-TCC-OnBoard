@@ -6,6 +6,7 @@ import { ConfirmAccess } from '../pages/ConfirmAccess';
 import { Login } from '../pages/Login';
 
 import colors from '../styles/colors';
+import { Password } from '../pages/Password';
 
 const stackRoutes = createStackNavigator();
 
@@ -35,6 +36,11 @@ const AppRoutes: React.FC = () => (
             name="Login"
             component={Login}
 
+        />
+
+        <stackRoutes.Screen
+            name="Password"
+            component={Password}
         />
 
 
