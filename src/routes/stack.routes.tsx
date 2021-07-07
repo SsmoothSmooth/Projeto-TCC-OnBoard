@@ -3,6 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { Welcome } from '../pages/Welcome';
 import { ConfirmAccess } from '../pages/ConfirmAccess';
+import { ModalityOptions } from '../pages/ModalityOptions';
+import { Login } from '../pages/Login';
+import { Password } from '../pages/Password';
 
 import colors from '../styles/colors';
 
@@ -16,7 +19,7 @@ const AppRoutes: React.FC = () => (
                 backgroundColor: 'white'
             }
         }}
-    >
+    > 
 
         <stackRoutes.Screen 
             name="Welcome"
@@ -29,6 +32,26 @@ const AppRoutes: React.FC = () => (
             component={ConfirmAccess}
 
         />
+
+        <stackRoutes.Screen
+            name="ModalityOptions"
+            component={ModalityOptions}
+
+        />
+
+        <stackRoutes.Screen
+            name="Login"
+            component={Login}
+
+        />
+
+        <stackRoutes.Screen
+            name="Password"
+            component={Password}
+        />
+
+
+
 
     </stackRoutes.Navigator>
 )
