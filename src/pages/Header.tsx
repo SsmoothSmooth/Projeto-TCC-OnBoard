@@ -10,7 +10,8 @@ import colors from '../styles/colors';
 
 export function Header(){
     return(
-        <View style={{}}>
+            
+        <View style={style.container}>
 
           <Text>    
               Teste1
@@ -19,6 +20,7 @@ export function Header(){
           <Text>    
               Teste
           </Text>
+
         </View>
     )
 }
