@@ -43,6 +43,7 @@ export function ConfirmAccess(){
                 >
                         <Button 
                             title="Cadastrar"
+                            onPress={touchHeader}
                         />
                 </Text>
 

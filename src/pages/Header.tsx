@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import {
  View,
  Text,
@@ -6,11 +6,13 @@ import {
  Image
 
 } from 'react-native';
+
 import colors from '../styles/colors';
+import fonts from '../styles/fonts';
 
 export function Header(){
     return(
-        <View style={{}}>
+        <View style={styles.container}>
 
           <Text>    
               Teste1
@@ -23,11 +25,10 @@ export function Header(){
     )
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1, 
         justifyContent: 'center', 
-        alingItems: 'center',
-        backgroundColor: colors.red
+        alignItems: 'center',
     }
 })
