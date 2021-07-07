@@ -3,9 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { Welcome } from '../pages/Welcome';
 import { ConfirmAccess } from '../pages/ConfirmAccess';
-import { TipoCadastro } from '../pages/TipoCadastro';
+import { ModalityOptions } from '../pages/ModalityOptions';
 import { Login } from '../pages/Login';
-import { Senha } from '../pages/Senha';
+import { Password } from '../pages/Password';
 
 import colors from '../styles/colors';
 
@@ -19,7 +19,7 @@ const AppRoutes: React.FC = () => (
                 backgroundColor: 'white'
             },
         }}
-    >
+    > 
 
         <stackRoutes.Screen
             name="Welcome"
@@ -33,10 +33,9 @@ const AppRoutes: React.FC = () => (
 
         />
 
-
         <stackRoutes.Screen
-            name="TipoCadastro"
-            component={TipoCadastro}
+            name="ModalityOptions"
+            component={ModalityOptions}
 
         />
 
@@ -47,10 +46,12 @@ const AppRoutes: React.FC = () => (
         />
 
         <stackRoutes.Screen
-            name="Senha"
-            component={Senha}
-
+            name="Password"
+            component={Password}
         />
+
+
+
 
     </stackRoutes.Navigator>
 )
