@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { Welcome } from '../pages/Welcome';
 import { ConfirmAccess } from '../pages/ConfirmAccess';
+import { Header } from '../pages/Header';
 
 import colors from '../styles/colors';
 
@@ -27,6 +28,12 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen 
             name="ConfirmAccess"
             component={ConfirmAccess}
+
+        />
+
+        <stackRoutes.Screen 
+            name="Header"
+            component={Header}
 
         />
 
