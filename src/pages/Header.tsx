@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import {
  View,
  Text,
@@ -6,12 +6,18 @@ import {
  Image
 
 } from 'react-native';
+
 import colors from '../styles/colors';
+import fonts from '../styles/fonts';
 
 export function Header(){
     return(
+<<<<<<< HEAD
             
         <View style={style.container}>
+=======
+        <View style={styles.container}>
+>>>>>>> ea70c276e4576cc24bd8e173eefde40d9f93459e
 
           <Text>    
               Teste1
@@ -25,11 +31,10 @@ export function Header(){
     )
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1, 
         justifyContent: 'center', 
-        alingItems: 'center',
-        backgroundColor: colors.red
+        alignItems: 'center',
     }
 })
