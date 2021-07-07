@@ -23,6 +23,14 @@ export function ConfirmAccess(){
         navigation.navigate('Header')
     }
 
+
+    function touchModality(){
+        navigation.navigate('ModalityOptions')
+    }
+
+    function touchLogin(){
+        navigation.navigate('Login')
+    }
     return(
         <SafeAreaView style={styles.container}>
 
@@ -52,6 +60,7 @@ export function ConfirmAccess(){
                 >
                     <Button 
                         title="Entrar"
+                        onPress={touchLogin}
                     />    
                 </Text>
 
