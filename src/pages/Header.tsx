@@ -8,72 +8,42 @@ import {
     TouchableOpacity,
     Dimensions
 } from 'react-native';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
 export function Header(){
 
     return(
-
+ 
         <View style={styles.container}>
+         <View>
 
-          <Text>    
-              News
-          </Text>
-
+          <Text style={styles.title}> News </Text>
+          
+         </View>
         </View>
+        
     )
 }
 
 const styles = StyleSheet.create({
+
     container: {
-        flex: 1
-    },
-
-    wrapper: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
-    },
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 38,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 34
-
-    },
-
-    image: {
-        height: Dimensions.get('window').width * 0.7
+        fontSize: 50,
+        width: '100%',
+        flexDirection:'row',
+        justifyContent: 'center',
+        paddingVertical: 20,
+        marginTop: getStatusBarHeight(),
+        padding: 30
         
     },
 
-    subtitle: {
-        textAlign: 'center',
-        fontSize: 18,
-        color: colors.heading,
-        paddingHorizontal: 20,
-        fontFamily: fonts.text
-    },
+    title: {
+        fontSize: 50,
+        fontFamily: fonts.heading
 
-    button: {
-        backgroundColor: colors.green,
-        height: 60,
-        width: 60,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 20,
-        marginBottom: 10
     },
-
-    buttonIcon: {
-        color: colors.green_cyan,
-        fontSize: 35,
-    }
 
 })
