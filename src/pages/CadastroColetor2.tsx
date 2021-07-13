@@ -5,8 +5,8 @@ import {
     SafeAreaView,
     StyleSheet,
     TouchableOpacity,
-    TextInput,
-    Dimensions
+    TextInput
+
 } from 'react-native';
 
 import { Button } from '../components/Button';
@@ -15,15 +15,17 @@ import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 
 
-export function Senha() {
+
+
+export function CadastroColetor2() {
     const navigation = useNavigation();
 
     function touchInit() {
-        navigation.navigate('PaginaInicial')
+        navigation.navigate('CadastroColetor3')
     }
 
     function touchInit2() {
-        navigation.navigate('Login')
+        navigation.navigate('CadastroColetor')
     }
 
     return (
@@ -34,12 +36,29 @@ export function Senha() {
 
 
                 <Text style={styles.title}>
-                    Senha
+                    Preencha os dados
+                </Text>
+
+
+
+                <Text style={styles.subtitle}>
+                    Cidade/ UF
+
                 </Text>
 
                 <TextInput
                     style={styles.input}
-                    placeholder="digite uma senha"
+                    placeholder="Digite a sua cidade/ UF"
+                />
+
+                <Text style={styles.subtitle}>
+                    Endereço
+
+                </Text>
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="Digite o seu endereço"
                 />
 
                 <Text
@@ -94,9 +113,10 @@ const styles = StyleSheet.create({
 
     subtitle: {
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: 12,
         color: colors.heading,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
         fontFamily: fonts.text
     },
 
@@ -105,20 +125,21 @@ const styles = StyleSheet.create({
         borderColor: '#52665A',
         color: colors.heading,
         width: '100%',
-        fontSize: 24,
-        marginTop: 50,
-        padding: 10,
+        fontSize: 20,
+        marginTop: 20,
+        padding: 15,
         textAlign: 'center'
+
     },
 
     image: {
-        height: Dimensions.get('window').width * 0.7
+        height: 50,
     },
 
-    //Arrumar depois - colocar outra tag 
+
     button: {
+
 
     }
 
 })
-

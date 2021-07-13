@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -6,24 +6,50 @@ import {
     StyleSheet,
     TouchableOpacity,
     TextInput,
-    Dimensions
+    Image,
+    Alert
 } from 'react-native';
 
 import { Button } from '../components/Button';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import sacola from '../assets/sacola.png';
 
 
-export function Senha() {
+
+export function CadastroColetor() {
     const navigation = useNavigation();
 
+    const [isFilled, setIsFilled] = useState(false);
+    const [name, setName] = useState<string>();
+    const [name2, setName2] = useState<string>();
+
+    function handleInputChange(value: string) {
+        setIsFilled(!!value);
+        setName(value);
+    }
+
+    function handleInputChange2(value2: string) {
+        setIsFilled(!!value2);
+        setName2(value2);
+
+    }
+
+
     function touchInit() {
-        navigation.navigate('PaginaInicial')
+
+        if (!name)
+            return Alert.alert('Preenchimento obrigatório do Nome');
+
+        if (!name2)
+            return Alert.alert('Preenchimento obrigatório do Email');
+
+        navigation.navigate('CadastroColetor2')
     }
 
     function touchInit2() {
-        navigation.navigate('Login')
+        navigation.navigate('TipoCadastro')
     }
 
     return (
@@ -34,12 +60,35 @@ export function Senha() {
 
 
                 <Text style={styles.title}>
-                    Senha
+                    ColetoresOnBoard
+                </Text>
+
+                <Image
+                    source={sacola}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
+
+                <Text style={styles.subtitle}>
+                    Nome Completo
+
                 </Text>
 
                 <TextInput
                     style={styles.input}
-                    placeholder="digite uma senha"
+                    placeholder="Digite seu nome"
+                    onChangeText={handleInputChange}
+                />
+
+                <Text style={styles.subtitle}>
+                    Email
+
+                </Text>
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="Digite seu email"
+                    onChangeText={handleInputChange2}
                 />
 
                 <Text
@@ -94,9 +143,10 @@ const styles = StyleSheet.create({
 
     subtitle: {
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: 12,
         color: colors.heading,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
         fontFamily: fonts.text
     },
 
@@ -105,20 +155,21 @@ const styles = StyleSheet.create({
         borderColor: '#52665A',
         color: colors.heading,
         width: '100%',
-        fontSize: 24,
-        marginTop: 50,
-        padding: 10,
+        fontSize: 20,
+        marginTop: 20,
+        padding: 15,
         textAlign: 'center'
+
     },
 
     image: {
-        height: Dimensions.get('window').width * 0.7
+        height: 50,
     },
 
-    //Arrumar depois - colocar outra tag 
+
     button: {
+
 
     }
 
 })
-

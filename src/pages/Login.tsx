@@ -6,7 +6,8 @@ import {
     StyleSheet,
     TouchableOpacity,
     TextInput,
-    Dimensions
+    Dimensions,
+    Alert
 } from 'react-native';
 
 import { Button } from '../components/Button';
@@ -20,6 +21,10 @@ export function Login() {
 
     function touchInit() {
         navigation.navigate('Senha')
+    }
+
+    function touchInit2() {
+        navigation.navigate('TipoCadastro')
     }
 
     return (
@@ -53,6 +58,7 @@ export function Login() {
                 >
                     <Button
                         title="<"
+                        onPress={touchInit2}
 
                     />
                 </Text>

@@ -19,10 +19,18 @@ import { useNavigation } from '@react-navigation/core';
 export function TipoCadastro() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('TipoCadastro')
-        navigation.navigate('Login')
+    function touchColetor() {
+        navigation.navigate('CadastroColetor')
+    }
 
+
+    function touchDomestico() {
+        navigation.navigate('CadastroDomestico')
+    }
+
+
+    function touchCooperativa() {
+        navigation.navigate('CadastroCooperativa')
     }
     return (
         <SafeAreaView style={styles.container}>
@@ -46,7 +54,7 @@ export function TipoCadastro() {
                 >
                     <Button
                         title="Coletores"
-                        onPress={touchInit}
+                        onPress={touchColetor}
 
 
                     />
@@ -57,7 +65,7 @@ export function TipoCadastro() {
                 >
                     <Button
                         title="Domesticos"
-                        onPress={touchInit}
+                        onPress={touchDomestico}
 
                     />
                 </Text>
@@ -67,7 +75,7 @@ export function TipoCadastro() {
                 >
                     <Button
                         title="Cooperativas"
-                        onPress={touchInit}
+                        onPress={touchCooperativa}
 
                     />
                 </Text>

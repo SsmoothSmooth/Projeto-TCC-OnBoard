@@ -1,29 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
     SafeAreaView,
     StyleSheet,
-    TouchableOpacity,
-    TextInput,
+    Image,
     Dimensions
+
 } from 'react-native';
 
 import { Button } from '../components/Button';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import celebrationPlanet from '../assets/celebrationPlanet.png';
 
 
-export function Senha() {
+
+export function CadastroColetor6() {
     const navigation = useNavigation();
 
     function touchInit() {
-        navigation.navigate('PaginaInicial')
+
+        navigation.navigate('')
     }
 
     function touchInit2() {
-        navigation.navigate('Login')
+        navigation.navigate('CadastroColetor5')
     }
 
     return (
@@ -32,15 +35,23 @@ export function Senha() {
             <View style={styles.wrapper}>
 
 
+                <Image
+                    source={celebrationPlanet}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
 
                 <Text style={styles.title}>
-                    Senha
+                    Prontinho
+
                 </Text>
 
-                <TextInput
-                    style={styles.input}
-                    placeholder="digite uma senha"
-                />
+
+                <Text style={styles.subtitle}>
+                    Agora vamos começar a cuidar {'\n'}
+                    do meio ambiente.
+
+                </Text>
 
                 <Text
                     style={styles.button}
@@ -82,21 +93,22 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 28,
+        fontSize: 30,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
+        marginTop: 30,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
+        lineHeight: 40
 
     },
 
     subtitle: {
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: 20,
         color: colors.heading,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
         fontFamily: fonts.text
     },
 
@@ -105,20 +117,21 @@ const styles = StyleSheet.create({
         borderColor: '#52665A',
         color: colors.heading,
         width: '100%',
-        fontSize: 24,
-        marginTop: 50,
-        padding: 10,
+        fontSize: 20,
+        marginTop: 20,
+        padding: 15,
         textAlign: 'center'
+
     },
 
     image: {
-        height: Dimensions.get('window').width * 0.7
+        height: Dimensions.get('window').width * 0.6
     },
 
-    //Arrumar depois - colocar outra tag 
+
     button: {
+
 
     }
 
 })
-
