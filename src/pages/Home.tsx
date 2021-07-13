@@ -10,6 +10,7 @@ export function ColetoresOnBoard(){
  return(
      <View style={Styles.container}>
          <Text>Selecionar inicio</Text>
+         <Text>Teste 2</Text>
          </View>
        )
 }
