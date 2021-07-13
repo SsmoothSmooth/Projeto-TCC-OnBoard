@@ -19,8 +19,8 @@ import { useNavigation } from '@react-navigation/core';
 export function ConfirmAccess(){
     const navigation = useNavigation();
     
-    function touchHeader() {
-        navigation.navigate('Header')
+    function touchFeed() {
+        navigation.navigate('Feed')
     }
 
 
@@ -51,7 +51,7 @@ export function ConfirmAccess(){
                 >
                         <Button 
                             title="Cadastrar"
-                            onPress={touchHeader}
+                            onPress={touchFeed}
                         />
                 </Text>
 
