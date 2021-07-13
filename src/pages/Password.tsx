@@ -30,6 +30,7 @@ export function Password() {
             <TextInput
                 style={styles.input}
                 placeholder="digite uma senha"
+                secureTextEntry
             />
 
             <Text
