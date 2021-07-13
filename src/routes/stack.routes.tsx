@@ -27,6 +27,9 @@ import { CadastroColetor3 } from '../pages/CadastroColetor3';
 import { CadastroColetor4 } from '../pages/CadastroColetor4';
 import { CadastroColetor5 } from '../pages/CadastroColetor5';
 import { CadastroColetor6 } from '../pages/CadastroColetor6';
+import { ModalityOptions } from '../pages/ModalityOptions';
+import { Login } from '../pages/Login';
+import { Password } from '../pages/Password';
 
 import colors from '../styles/colors';
 
@@ -74,8 +77,8 @@ const AppRoutes: React.FC = () => (
 
 
         <stackRoutes.Screen
-            name="TipoCadastro"
-            component={TipoCadastro}
+            name="ModalityOptions"
+            component={ModalityOptions}
 
         />
 
@@ -175,6 +178,11 @@ const AppRoutes: React.FC = () => (
             component={CadastroCooperativa5}
 
         />
+        name="Password"
+        component={Password}
+        />
+
+
 
 
     </stackRoutes.Navigator>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
     View,
     Text,
@@ -6,62 +6,56 @@ import {
     StyleSheet,
     TouchableOpacity,
     TextInput,
-    Dimensions,
-    Alert
+    Dimensions
 } from 'react-native';
 
-import { Button } from '../components/Button'
+import { Button } from '../components/Button';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
-import { useNavigation } from '@react-navigation/core';
 
-export function Login() {
-    const navigation = useNavigation();
 
-    function touchPassword() {
-        navigation.navigate('Password')
-    }
+export function Password() {
 
-    return (
+    return(
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.wrapper}>
+        <View style={styles.wrapper}>
 
 
 
-                <Text style={styles.title}>
-                    Login
-                </Text>
+            <Text style={styles.title}>
+                Senha
+            </Text>
 
-                <TextInput
-                    style={styles.input}
-                    placeholder="digite um usuário"
+            <TextInput
+                style={styles.input}
+                placeholder="digite uma senha"
+            />
+
+            <Text
+                style={styles.button}
+            >
+                <Button
+                    title="Confirmar"
+
                 />
+            </Text>
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="Confirmar"
-                        onPress={touchPassword}
+            <Text
+                style={styles.button}
+            >
+                <Button
+                    title="<"
 
-                    />
-                </Text>
+                />
+            </Text>
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="<"
-
-                    />
-                </Text>
-
-            </View>
-        </SafeAreaView>
-
+        </View>
+    </SafeAreaView>
     )
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -115,3 +109,4 @@ const styles = StyleSheet.create({
     }
 
 })
+

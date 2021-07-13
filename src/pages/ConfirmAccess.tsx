@@ -16,20 +16,17 @@ import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 
-export function ConfirmAccess() {
+export function ConfirmAccess(){
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('TipoCadastro')
-
+    function touchModality(){
+        navigation.navigate('ModalityOptions')
     }
 
-    function touchInit2() {
+    function touchLogin(){
         navigation.navigate('Login')
-
     }
-
-    return (
+    return(
         <SafeAreaView style={styles.container}>
 
             <View style={styles.wrapper}>
@@ -47,17 +44,17 @@ export function ConfirmAccess() {
                 <Text
                     style={styles.button}
                 >
-                    <Button
-                        title="Cadastrar"
-                        onPress={touchInit}
-                    />
+                        <Button 
+                            title="Cadastrar"
+                            onPress={touchModality}
+                        />
                 </Text>
 
 
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
-                    onPress={touchInit}
+                    onPress={touchModality}
                 ></TouchableOpacity>
 
                 <Text
@@ -65,14 +62,14 @@ export function ConfirmAccess() {
                 >
                     <Button
                         title="Entrar"
-                        onPress={touchInit2}
-                    />
+                        onPress={touchLogin}
+                    />    
                 </Text>
 
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
-                    onPress={touchInit}
+                    onPress={touchLogin}
                 ></TouchableOpacity>
 
 
