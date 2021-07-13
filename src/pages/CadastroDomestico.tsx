@@ -51,7 +51,7 @@ export function CadastroDomestico() {
     }
 
     function touchInit2() {
-        navigation.navigate('TipoCadastro')
+        navigation.navigate('ModalityOptions')
     }
 
     return (

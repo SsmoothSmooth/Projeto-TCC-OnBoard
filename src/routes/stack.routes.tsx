@@ -3,11 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { Welcome } from '../pages/Welcome';
 import { ConfirmAccess } from '../pages/ConfirmAccess';
-import { Login } from '../pages/Login';
-import { Senha } from '../pages/Senha';
-import { PaginaInicial } from '../pages/PaginaInicial';
 
-import { TipoCadastro } from '../pages/TipoCadastro';
 
 import { CadastroCooperativa } from '../pages/CadastroCooperativa';
 import { CadastroCooperativa2 } from '../pages/CadastroCooperativa2';
@@ -30,8 +26,6 @@ import { CadastroColetor6 } from '../pages/CadastroColetor6';
 import { ModalityOptions } from '../pages/ModalityOptions';
 import { Login } from '../pages/Login';
 import { Password } from '../pages/Password';
-
-import colors from '../styles/colors';
 
 const stackRoutes = createStackNavigator();
 
@@ -60,18 +54,6 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="Login"
             component={Login}
-
-        />
-
-        <stackRoutes.Screen
-            name="Senha"
-            component={Senha}
-
-        />
-
-        <stackRoutes.Screen
-            name="PaginaInicial"
-            component={PaginaInicial}
 
         />
 
@@ -178,8 +160,10 @@ const AppRoutes: React.FC = () => (
             component={CadastroCooperativa5}
 
         />
-        name="Password"
-        component={Password}
+
+        <stackRoutes.Screen
+            name="Password"
+            component={Password}
         />
 
 
