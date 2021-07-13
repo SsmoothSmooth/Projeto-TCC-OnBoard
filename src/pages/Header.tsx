@@ -12,12 +12,7 @@ import fonts from '../styles/fonts';
 
 export function Header(){
     return(
-<<<<<<< HEAD
-            
-        <View style={style.container}>
-=======
         <View style={styles.container}>
->>>>>>> ea70c276e4576cc24bd8e173eefde40d9f93459e
 
           <Text>    
               Teste1
