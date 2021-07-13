@@ -12,7 +12,7 @@ import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
-export function Header(){
+export function Feed (){
 
     return(
  
