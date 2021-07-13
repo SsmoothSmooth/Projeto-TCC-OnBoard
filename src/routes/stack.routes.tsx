@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { Welcome } from '../pages/Welcome';
 import { ConfirmAccess } from '../pages/ConfirmAccess';
-import { Header } from '../pages/Header';
+import { Feed } from '../pages/Feed';
 import { ModalityOptions } from '../pages/ModalityOptions';
 import { Login } from '../pages/Login';
 import { Password } from '../pages/Password';
@@ -35,8 +35,8 @@ const AppRoutes: React.FC = () => (
         />
 
         <stackRoutes.Screen 
-            name="Header"
-            component={Header}
+            name="Feed"
+            component={Feed}
 
         />
 
