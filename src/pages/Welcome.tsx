@@ -36,30 +36,35 @@ export function Welcome(){
                     </Text>
                 </View>
 
-                <Image 
-                    source={ handsLoves }
-                    style={styles.image}
-                    resizeMode="contain"
-                />
-
-                <Text style={styles.subtitle}>
-                Venham conosco  {'\n'}
-                mudar o meio ambiente {'\n'}
-                entre na Coletores Onboard. 
-                </Text>
-
-                <TouchableOpacity
-                    style={styles.button}
-                    activeOpacity={0.5}
-                    onPress={touchInit}
-                >
-                    <FontAwesome5
-                        name="arrow-alt-circle-right"
-                        style={styles.buttonIcon}
-                        
+                <View style={styles.imageContainer}>
+                    <Image 
+                        source={ handsLoves }
+                        style={styles.image}
+                        resizeMode="contain"
                     />
 
-                </TouchableOpacity>
+                    <Text style={styles.subtitle}>
+                        Venham conosco  {'\n'}
+                        mudar o meio ambiente {'\n'}
+                        entre na Coletores Onboard. 
+                    </Text>
+                </View>
+
+
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        activeOpacity={0.5}
+                        onPress={touchInit}
+                    >
+                        <FontAwesome5
+                            name="arrow-alt-circle-right"
+                            style={styles.buttonIcon}
+                            
+                        />
+
+                    </TouchableOpacity>
+                </View>
 
 
             </View>
@@ -81,36 +86,50 @@ const styles = StyleSheet.create({
     },
 
     header:{
-        flex: 1,
         width: '100%',
         justifyContent: 'center',
         backgroundColor: colors.green_cyan,
+        paddingTop: '20%',
         paddingBottom: '2%',
-        marginBottom: '2%'
+        margin: - 30,
     },
 
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: "15%",
         color: colors.heading,
         fontFamily: fonts.heading,
         lineHeight: 32
     },
 
+    imageContainer:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 5,
+        width: '100%',
+    },
+
+
     image: {
-        height: Dimensions.get('window').width * 0.7,
-        marginBottom: 2,
+        height: Dimensions.get('window').width * 0.5,
         borderRadius: 15,
+        margin: 10
     },
 
     subtitle: {
         textAlign: 'center',
         fontSize: 18,
         color: colors.heading,
-        paddingHorizontal: '10%',
-        fontFamily: fonts.text
+        fontFamily: fonts.text,
+        margin: 10
+    },
+
+    buttonContainer: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     button: {
@@ -120,12 +139,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
-        marginTop: 10
+        margin: '2%'
     },
 
     buttonIcon: {
         color: colors.green_cyan,
         fontSize: 35,
     }
+
 
 })
