@@ -2,11 +2,9 @@ import React from 'react';
 import {
     View, 
     Text, 
-    SafeAreaView, 
-    Image,
-    StyleSheet,
-    TouchableOpacity,
-    Dimensions
+    StyleSheet
+    
+    
 } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import colors from '../styles/colors';
@@ -20,6 +18,8 @@ export function Feed (){
          <View>
 
           <Text style={styles.title}> News </Text>
+
+          <Text style={styles.news}> bla bla bla </Text>
           
          </View>
         </View>
@@ -30,18 +30,24 @@ export function Feed (){
 const styles = StyleSheet.create({
 
     container: {
-        fontSize: 50,
         width: '100%',
-        flexDirection:'row',
+        flexDirection: 'row',
         justifyContent: 'center',
-        paddingVertical: 20,
+        paddingVertical: 60,
         marginTop: getStatusBarHeight(),
-        padding: 30
+        backgroundColor: colors.gray
         
     },
 
     title: {
-        fontSize: 50,
+        fontSize: 60,
+        fontFamily: fonts.heading
+
+    },
+
+    news: {   
+        fontSize: 25,
+        justifyContent: 'center',
         fontFamily: fonts.heading
 
     },
