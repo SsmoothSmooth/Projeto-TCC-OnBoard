@@ -31,9 +31,11 @@ export function ConfirmAccess(){
 
             <View style={styles.wrapper}>
 
-                <Text style={styles.title}>
-                Coletores OnBoard
-                </Text>
+                <View style={styles.header}>
+                    <Text style={styles.title}>
+                        Coletores OnBoard
+                    </Text>
+                </View>
 
                 <Image 
                     source={ handsPlanet }
@@ -41,23 +43,19 @@ export function ConfirmAccess(){
                     resizeMode="contain"
                 />
 
-                <Text
-                    style={styles.button}
-                >
-                        <Button 
-                            title="Cadastrar"
-                            onPress={touchModality}
-                        />
-                </Text>
-
-                <Text
-                    style={styles.button}
-                >
+                <View style={styles.button}>
                     <Button 
+                        title="Cadastrar"
+                        onPress={touchModality}
+                    />
+
+
+                    <Button  
                         title="Entrar"
                         onPress={touchLogin}
                     />    
-                </Text>
+                </View>
+
 
 
             </View>
@@ -74,27 +72,39 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-around',
-        paddingHorizontal: 20
+        backgroundColor: 'white',
+        paddingBottom: '2%'
+    },
+
+    header: {
+            flex: 1,
+            width: '100%',
+            justifyContent: 'center',
+            backgroundColor: colors.green_cyan,
+            padding: '2%',
+            marginBottom: '4%'
     },
 
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
 
     },
 
     image: {
-        height: Dimensions.get('window').width * 0.7
+        height: Dimensions.get('window').width * 0.7,
+        marginBottom: 10,
+        borderRadius: 15
     },
 
-    //Arrumar depois - colocar outra tag 
     button: {
-        
+        width: '100%',
+        paddingHorizontal: '20%',
+        paddingVertical: 5,
     }
+
 
 })
