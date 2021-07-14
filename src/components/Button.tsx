@@ -30,10 +30,12 @@ export function Button({ title, ...rest }: ButtonProps){
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.green_cyan,
-        height: 56,
+        height: 50,
+        width: '100%',
         borderRadius: 16,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '5%'
     },
 
     text: {
