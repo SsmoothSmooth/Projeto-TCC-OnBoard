@@ -28,11 +28,13 @@ export function Welcome(){
 
             <View style={styles.wrapper}>
 
-                <Text style={styles.title}>
-                    Realize o descarte {'\n'} 
-                    e reciclavel da {'\n'}
-                    maneira correta! {'\n'}
-                </Text>
+                <View style={styles.header}>
+                    <Text style={styles.title}>
+                        Realize o descarte {'\n'} 
+                        e reciclavel da {'\n'}
+                        maneira correta! {'\n'}
+                    </Text>
+                </View>
 
                 <Image 
                     source={ handsLoves }
@@ -41,9 +43,9 @@ export function Welcome(){
                 />
 
                 <Text style={styles.subtitle}>
-                Venham conosco {'\n'} 
+                Venham conosco  {'\n'}
                 mudar o meio ambiente {'\n'}
-                entre na Coletores Onboard.
+                entre na Coletores Onboard. 
                 </Text>
 
                 <TouchableOpacity
@@ -74,29 +76,39 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-around',
-        paddingHorizontal: 20
+        backgroundColor: 'white',
+        paddingBottom: '6%'
+    },
+
+    header:{
+        flex: 1,
+        width: '100%',
+        backgroundColor: colors.green_cyan,
+        paddingBottom: '50%',
+        marginBottom: '2%'
     },
 
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
+        marginTop: "15%",
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
-
+        lineHeight: 32
     },
 
     image: {
-        height: Dimensions.get('window').width * 0.7
+        height: Dimensions.get('window').width * 0.7,
+        marginBottom: 2,
+        borderRadius: 15,
     },
 
     subtitle: {
         textAlign: 'center',
         fontSize: 18,
         color: colors.heading,
-        paddingHorizontal: 20,
+        paddingHorizontal: '10%',
         fontFamily: fonts.text
     },
 
@@ -107,7 +119,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
-        marginBottom: 10
+        marginTop: 10
     },
 
     buttonIcon: {
