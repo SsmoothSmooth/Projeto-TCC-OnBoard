@@ -10,9 +10,10 @@ export function Feed(){
 
             <Text style={styles.title}> News </Text>
 
-            <Text style={styles.feed}>  </Text>
-            <Text style={styles.feed}>  </Text>
-            <Text style={styles.feed}>  </Text>
+            <Text style={styles.feed}> </Text>
+            <Text style={styles.feed}> </Text>
+            <Text style={styles.feed}> </Text>        
+            <Text style={styles.feed2}> </Text>
 
             <TouchableOpacity>
 
@@ -47,7 +48,16 @@ const styles = StyleSheet.create({
 
     feed: {
         textAlign: 'center',
-        width: '75%',
+        fontSize: 50,
+        width: '80%',
+        backgroundColor: colors.grey    
+        
+    },
+
+    feed2: {
+        textAlign: 'center',
+        fontSize: 150,
+        width: '80%',
         backgroundColor: colors.grey    
         
     },
