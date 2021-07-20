@@ -1,40 +1,62 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
 export function Feed(){
     return(
-        <View style={style.title}>
-        <View style={style.news}><Text>News</Text></View>
-        <View style={style.buttons}><Text>Inicio Menu Perfil </Text></View>
-        </View>
+        <SafeAreaView style={styles.container}> 
+
+            <Text style={styles.title}> News </Text>
+
+            <Text style={styles.feed}>  </Text>
+            <Text style={styles.feed}>  </Text>
+            <Text style={styles.feed}>  </Text>
+
+            <TouchableOpacity>
+
+             <Text style={styles.button}>Inicio Menu Perfil</Text>   
+
+            </TouchableOpacity>
+
+        </SafeAreaView> 
     )
 }
 
-const style = StyleSheet.create({
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-between'
+        
+    },
+
     title: {
-        fontSize: 75,
+        fontSize: 50,
+        backgroundColor: colors.gray,
         width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingVertical: 40,
-        fontFamily: fonts.heading,
-        backgroundColor: colors.gray
-    },
-
-    news: {
-        justifyContent: 'center',
         paddingVertical: 75,
-        backgroundColor: colors.gray
+        fontWeight: 'bold',
+        textAlign: 'center',
+        fontFamily: fonts.heading
+   
+       
     },
 
-    buttons: {
+    feed: {
+        textAlign: 'center',
+        width: '75%',
+        backgroundColor: colors.grey    
+        
+    },
+
+    button: {
+        textAlign: 'center',
         width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingVertical: 75,
-        backgroundColor: colors.gray
-    },
-
-})
+        backgroundColor: colors.green_cyan,
+       
+    }
+  
+});
