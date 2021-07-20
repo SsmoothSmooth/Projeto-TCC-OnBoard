@@ -12,14 +12,13 @@ export function Feed(){
 
             <Text style={styles.feed}> </Text>
             <Text style={styles.feed}> </Text>
-            <Text style={styles.feed}> </Text>        
+            <Text style={styles.feed}> </Text>
+
             <Text style={styles.feed2}> </Text>
 
-            <TouchableOpacity>
+             <Text style={styles.base}> </Text>   
 
-             <Text style={styles.button}>Inicio Menu Perfil</Text>   
-
-            </TouchableOpacity>
+            
 
         </SafeAreaView> 
     )
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 50,
+        fontSize: 60,
         backgroundColor: colors.gray,
         width: '100%',
         paddingVertical: 75,
@@ -62,10 +61,11 @@ const styles = StyleSheet.create({
         
     },
 
-    button: {
-        textAlign: 'center',
+    base: {
         width: '100%',
-        backgroundColor: colors.green_cyan,
+        textAlign: 'center',
+        fontSize: 100,
+        backgroundColor: colors.gray,
        
     }
   
