@@ -126,7 +126,6 @@ const styles = StyleSheet.create({
     boxImage: {
         width: '100%',
         alignItems: 'center',
-        backgroundColor: colors.green_cyan
     },
 
     image: {
