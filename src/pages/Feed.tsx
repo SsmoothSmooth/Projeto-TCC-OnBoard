@@ -16,9 +16,11 @@ export function Feed(){
 
             <Text style={styles.feed2}> </Text>
 
-             <Text style={styles.base}> </Text>   
-
-            
+            <TouchableOpacity style={styles.base}>
+            <Text style={styles.buttonInicio}>Inicio</Text>
+            <Text style={styles.buttonMenu}>Menu</Text>  
+            <Text style={styles.buttonPerfil}>Perfil</Text> 
+            </TouchableOpacity>   
 
         </SafeAreaView> 
     )
@@ -48,25 +50,39 @@ const styles = StyleSheet.create({
     feed: {
         textAlign: 'center',
         fontSize: 50,
-        width: '80%',
-        backgroundColor: colors.grey    
+        width: '90%',
+        backgroundColor: colors.grey
         
     },
 
     feed2: {
         textAlign: 'center',
-        fontSize: 150,
-        width: '80%',
+        fontSize: 125,
+        width: '90%',
         backgroundColor: colors.grey    
         
     },
 
     base: {
-        width: '100%',
-        textAlign: 'center',
-        fontSize: 100,
         backgroundColor: colors.gray,
+        
        
-    }
+    },
+
+    buttonInicio: {
+        backgroundColor: colors.green_cyan,
+       
+               
+    },
+
+    buttonMenu: {  
+        backgroundColor: colors.green_cyan,   
+     
+    },
+
+    buttonPerfil: {
+        backgroundColor: colors.green_cyan,
+
+    },
   
 });
