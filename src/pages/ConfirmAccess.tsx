@@ -15,6 +15,7 @@ import handsPlanet from '../assets/handsPlanet.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export function ConfirmAccess(){
     const navigation = useNavigation();
@@ -26,35 +27,59 @@ export function ConfirmAccess(){
     function touchLogin(){
         navigation.navigate('Login')
     }
+
+    function touchWelcome(){
+        navigation.navigate('Welcome')
+    }
     return(
         <SafeAreaView style={styles.container}>
 
             <View style={styles.wrapper}>
 
-                <View style={styles.header}>
+                <View style={styles.boxHeader}>
                     <Text style={styles.title}>
-                        Coletores OnBoard
+                        Coletores OnBoard {'\n'}
                     </Text>
                 </View>
 
-                <Image 
-                    source={ handsPlanet }
-                    style={styles.image}
-                    resizeMode="contain"
-                />
+                <View style={styles.boxImage}>
+                    <Image 
+                        source={ handsPlanet }
+                        style={styles.image}
+                        resizeMode="contain"
+                    />
+                </View>
 
-                <View style={styles.button}>
+                <View style={styles.boxButton}>
                     <Button 
                         title="Cadastrar"
                         onPress={touchModality}
                     />
+                </View>
 
-
+                <View>
                     <Button  
                         title="Entrar"
                         onPress={touchLogin}
                     />    
                 </View>
+
+                <View style={styles.boxBackButton}>
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchWelcome}
+ 
+                    >
+                        <FontAwesome5
+                            name="arrow-alt-circle-left"
+                            style={styles.backButtonIcon}
+                            
+                        />
+
+                    </TouchableOpacity>
+                </View>
+
 
 
 
@@ -71,18 +96,17 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         backgroundColor: 'white',
         paddingBottom: '2%'
     },
 
-    header: {
-            flex: 1,
-            width: '100%',
-            justifyContent: 'center',
-            backgroundColor: colors.green_cyan,
-            padding: '2%',
-            marginBottom: '4%'
+    boxHeader: {
+        width: '100%',
+        justifyContent: 'center',
+        paddingTop: '16%',
+        backgroundColor: colors.green_cyan
+
     },
 
     title: {
@@ -91,19 +115,49 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: colors.heading,
         fontFamily: fonts.heading,
+        lineHeight: 32,
 
+    },
+
+    boxImage: {
+        width: '100%',
+        alignItems: 'center',
+        backgroundColor: colors.green_cyan
     },
 
     image: {
         height: Dimensions.get('window').width * 0.7,
-        marginBottom: 10,
         borderRadius: 15
     },
 
-    button: {
+    boxButton: {
         width: '100%',
-        paddingHorizontal: '20%',
-        paddingVertical: 5,
+        marginTop: 40,
+        paddingHorizontal: 20
+
+    },
+
+    boxBackButton: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingBottom: '10%',
+        backgroundColor: colors.green_cyan
+    },
+
+    backButton: {
+        backgroundColor: colors.green,
+        height: 60,
+        width: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+
+    },
+
+    backButtonIcon: {
+        color: colors.green_cyan,
+        fontSize: 35,
     }
 
 

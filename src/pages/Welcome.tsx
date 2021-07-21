@@ -28,7 +28,7 @@ export function Welcome(){
 
             <View style={styles.wrapper}>
 
-                <View style={styles.header}>
+                <View style={styles.boxHeader}>
                     <Text style={styles.title}>
                         Realize o descarte {'\n'} 
                         e reciclavel da {'\n'}
@@ -36,13 +36,15 @@ export function Welcome(){
                     </Text>
                 </View>
 
-                <View style={styles.imageContainer}>
+                <View style={styles.boxImage}>
                     <Image 
                         source={ handsLoves }
                         style={styles.image}
                         resizeMode="contain"
                     />
+                </View>
 
+                <View style={styles.boxSubtitle}>
                     <Text style={styles.subtitle}>
                         Venham conosco  {'\n'}
                         mudar o meio ambiente {'\n'}
@@ -51,7 +53,7 @@ export function Welcome(){
                 </View>
 
 
-                <View style={styles.buttonContainer}>
+                <View style={styles.boxButton}>
                     <TouchableOpacity
                         style={styles.button}
                         activeOpacity={0.5}
@@ -80,18 +82,16 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         backgroundColor: 'white',
-        paddingBottom: '6%'
+        paddingBottom: '2%'
     },
 
-    header:{
+    boxHeader:{
         width: '100%',
         justifyContent: 'center',
         backgroundColor: colors.green_cyan,
-        paddingTop: '20%',
-        paddingBottom: '2%',
-        margin: - 30,
+        paddingTop: '16%'
     },
 
     title: {
@@ -100,22 +100,23 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 32
+        lineHeight: 32,
     },
 
-    imageContainer:{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 5,
+    boxImage:{
+
         width: '100%',
+        alignItems: 'center'
     },
 
 
     image: {
-        height: Dimensions.get('window').width * 0.5,
+        height: Dimensions.get('window').width * 0.7,
         borderRadius: 15,
-        margin: 10
+    },
+
+    boxSubtitle: {
+        width: '100%',
     },
 
     subtitle: {
@@ -126,10 +127,11 @@ const styles = StyleSheet.create({
         margin: 10
     },
 
-    buttonContainer: {
+    boxButton: {
         width: '100%',
-        justifyContent: 'center',
+        padding: '16%',
         alignItems: 'center',
+        justifyContent: 'center',
     },
 
     button: {
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
-        margin: '2%'
+
     },
 
     buttonIcon: {
