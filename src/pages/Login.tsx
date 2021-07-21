@@ -13,12 +13,13 @@ import { Button } from '../components/Button'
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export function Login() {
     const navigation = useNavigation();
 
-    function touchPassword() {
-        navigation.navigate('Password')
+    function touchConfirmAccess() {
+        navigation.navigate('ConfirmAccess')
     }
 
     return(
@@ -26,35 +27,55 @@ export function Login() {
 
         <View style={styles.wrapper}>
 
+            <View style={styles.boxHeader}>
+                <Text style={styles.title}>
+                    Login {'\n'}
+                </Text>
 
+            </View>
 
-            <Text style={styles.title}>
-                Login
-            </Text>
-
-            <TextInput
-                style={styles.input}
-                placeholder="digite um usuário"
-            />
-
-            <Text
-                style={styles.button}
-            >
-                <Button
-                    title="Confirmar"
-                    onPress={touchPassword}
-
+            <View style={styles.boxInput}>
+                <TextInput
+                    style={styles.input}
+                    placeholder="digite um usuário"
                 />
-            </Text>
 
-            <Text
-                style={styles.button}
-            >
-                <Button
-                    title="<"
-
+                <TextInput
+                    style={styles.input}
+                    placeholder="digite uma senha"
+                    secureTextEntry
                 />
-            </Text>
+            </View>
+
+            <View style={styles.wrapperButton}>
+
+                    <View style={styles.boxButton}>
+                        <Button 
+                            title="Confirmar"
+
+                        />
+    
+                    </View>
+
+
+
+                    <View style={styles.boxBackButton}>
+                        <TouchableOpacity
+                            style={styles.backButton}
+                            activeOpacity={0.5}
+                            onPress={touchConfirmAccess}
+    
+                        >
+                            <FontAwesome5
+                                name="arrow-alt-circle-left"
+                                style={styles.backButtonIcon}
+                                
+                            />
+
+                        </TouchableOpacity>
+                    </View>
+
+                </View>
 
         </View>
     </SafeAreaView>
@@ -70,8 +91,16 @@ export function Login() {
         wrapper: {
             flex: 1,
             alignItems: 'center',
-            justifyContent: 'space-around',
-            paddingHorizontal: 20
+            justifyContent: 'space-between',
+            backgroundColor: 'white',
+            paddingBottom: '2%'
+        },
+
+        boxHeader: {
+            backgroundColor: colors.green_cyan,
+            width: '100%',
+            justifyContent: 'center',
+            paddingTop: '16%',
         },
     
         title: {
@@ -84,13 +113,13 @@ export function Login() {
             lineHeight: 34
     
         },
-    
-        subtitle: {
-            textAlign: 'center',
-            fontSize: 18,
-            color: colors.heading,
-            paddingHorizontal: 20,
-            fontFamily: fonts.text
+
+        boxInput:{
+            width: '100%',
+            alignItems: 'center',
+            paddingHorizontal: '15%',
+            paddingVertical: 30
+
         },
     
         input: {
@@ -99,18 +128,42 @@ export function Login() {
             color: colors.heading,
             width: '100%',
             fontSize: 24,
-            marginTop: 50,
-            padding: 10,
-            textAlign: 'center'
+            textAlign: 'center',
+            marginVertical: '10%'
+        },
+
+        wrapperButton:{
+            width: '100%',
         },
     
-        image: {
-            height: Dimensions.get('window').width * 0.7
+        boxButton: {
+            width: '100%',
+            paddingHorizontal: '20%'
+    
         },
     
-        //Arrumar depois - colocar outra tag 
-        button: {
+        boxBackButton: {
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingTop: 5,
+            paddingBottom: '10%',
+        },
     
+        backButton: {
+            backgroundColor: colors.green,
+            height: 60,
+            width: 60,
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: 20,
+    
+        },
+    
+        backButtonIcon: {
+            color: colors.green_cyan,
+            fontSize: 35,
         }
-    
+
+
     })
