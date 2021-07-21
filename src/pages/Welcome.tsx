@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
     },
 
     boxHeader:{
+        backgroundColor: colors.green_cyan,
         width: '100%',
         justifyContent: 'center',
-        backgroundColor: colors.green_cyan,
         paddingTop: '16%'
     },
 
@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
     },
 
     boxImage:{
-
         width: '100%',
         alignItems: 'center'
     },

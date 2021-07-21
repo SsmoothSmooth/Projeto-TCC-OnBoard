@@ -50,34 +50,38 @@ export function ConfirmAccess(){
                     />
                 </View>
 
-                <View style={styles.boxButton}>
-                    <Button 
-                        title="Cadastrar"
-                        onPress={touchModality}
-                    />
-                </View>
+                <View style={styles.wrapperButton}>
 
-                <View>
-                    <Button  
-                        title="Entrar"
-                        onPress={touchLogin}
-                    />    
-                </View>
-
-                <View style={styles.boxBackButton}>
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchWelcome}
- 
-                    >
-                        <FontAwesome5
-                            name="arrow-alt-circle-left"
-                            style={styles.backButtonIcon}
-                            
+                    <View style={styles.boxButton}>
+                        <Button 
+                            title="Cadastrar"
+                            onPress={touchModality}
                         />
 
-                    </TouchableOpacity>
+                        <Button  
+                            title="Entrar"
+                            onPress={touchLogin}
+                        />    
+                    </View>
+
+
+
+                    <View style={styles.boxBackButton}>
+                        <TouchableOpacity
+                            style={styles.backButton}
+                            activeOpacity={0.5}
+                            onPress={touchWelcome}
+    
+                        >
+                            <FontAwesome5
+                                name="arrow-alt-circle-left"
+                                style={styles.backButtonIcon}
+                                
+                            />
+
+                        </TouchableOpacity>
+                    </View>
+
                 </View>
 
 
@@ -130,10 +134,13 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
 
+    wrapperButton:{
+        width: '100%',
+    },
+
     boxButton: {
         width: '100%',
-        marginTop: 40,
-        paddingHorizontal: 20
+        paddingHorizontal: '20%'
 
     },
 
@@ -141,8 +148,8 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingTop: 5,
         paddingBottom: '10%',
-        backgroundColor: colors.green_cyan
     },
 
     backButton: {
