@@ -7,21 +7,35 @@ import fonts from '../styles/fonts';
 export function Feed(){
     return(
         <SafeAreaView style={styles.container}> 
+            <View style={styles.wrapper}>
 
-            <Text style={styles.title}> News </Text>
+            <View style={styles.boxHeader}>
+                 <Text style={styles.title}> News{'\n'} </Text>
+            </View>
 
-            <Text style={styles.feed}> </Text>
-            <Text style={styles.feed}> </Text>
-            <Text style={styles.feed}> </Text>
+            <View style={styles.boxFeed}>
+                <Text style={styles.feed}> </Text>
+                <Text style={styles.feed}> </Text>
+                <Text style={styles.feed}> </Text>
 
-            <Text style={styles.feed2}> </Text>
+                <Text style={styles.feed2}> </Text>
+            </View>
 
-            <TouchableOpacity style={styles.base}>
-            <Text style={styles.buttonInicio}>Inicio</Text>
-            <Text style={styles.buttonMenu}>Menu</Text>  
-            <Text style={styles.buttonPerfil}>Perfil</Text> 
-            </TouchableOpacity>   
+            <View style={styles.boxButton}>
+                <TouchableOpacity style={styles.buttonInicio}>
+                    <Text style={styles.buttonText}>Inicio</Text>
+                </TouchableOpacity>
 
+                <TouchableOpacity style={styles.buttonMenu}>
+                    <Text style={styles.buttonText}>Menu</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.buttonPerfil}>
+                    <Text style={styles.buttonText}>Perfil</Text> 
+                </TouchableOpacity>  
+            </View>
+
+            </View> 
         </SafeAreaView> 
     )
 }
@@ -30,59 +44,104 @@ export function Feed(){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        
+    },
+
+    wrapper: {
+        flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+       
+        
+    },
+
+    boxHeader: {
+        width: '100%',
+        backgroundColor: colors.gray,
+        justifyContent: 'center',
+        paddingTop: '16%',
+        alignItems: 'center'
         
     },
 
     title: {
         fontSize: 60,
-        backgroundColor: colors.gray,
-        width: '100%',
-        paddingVertical: 75,
         fontWeight: 'bold',
         textAlign: 'center',
         fontFamily: fonts.heading
    
-       
+    },
+
+    boxFeed: {
+     width:'100%',
+     paddingHorizontal:'10%'
+
     },
 
     feed: {
-        textAlign: 'center',
         fontSize: 50,
-        width: '90%',
+        marginTop: '2%',
+        alignItems:'center',
         backgroundColor: colors.grey
         
     },
 
     feed2: {
-        textAlign: 'center',
-        fontSize: 125,
-        width: '90%',
+        fontSize: 100,
+        marginVertical: '2%',
         backgroundColor: colors.grey    
         
     },
 
-    base: {
+    boxButton: {
+        flex: 1,
+        justifyContent:'space-between',
+        paddingHorizontal: '10%',
+        width:'100%',
         backgroundColor: colors.gray,
+        alignItems:'center',
+        flexDirection:'row'
         
-       
     },
 
     buttonInicio: {
         backgroundColor: colors.green_cyan,
+        textAlign: 'center',
+        width: 60,
+        height: 60,
+        borderRadius: 16,
+        justifyContent: 'center',
+        margin: 10
+
        
-               
     },
 
     buttonMenu: {  
-        backgroundColor: colors.green_cyan,   
-     
+        backgroundColor: colors.green_cyan, 
+        width: 60,
+        height: 60,
+        borderRadius: 16,
+        textAlign: 'center',
+        justifyContent: 'center',
+        margin: 10
+              
     },
 
     buttonPerfil: {
         backgroundColor: colors.green_cyan,
+        width: 60,
+        height: 60,
+        borderRadius: 16,
+        textAlign: 'center',
+        justifyContent: 'center',
+        margin: 10
 
+    },
+
+    buttonText: {
+        
+        
     },
   
 });
