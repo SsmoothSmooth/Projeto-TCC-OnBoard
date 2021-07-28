@@ -5,23 +5,17 @@ import {
     SafeAreaView,
     Image,
     StyleSheet,
-
     Dimensions
 } from 'react-native';
 
-<<<<<<< HEAD:src/pages/ModalityOptions.tsx
-import { Button } from '../components/Button';
-import { useNavigation } from '@react-navigation/core';
-import happyPlanet from '../assets/happyPlanet.png';
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
-=======
 import { Button } from '../../components/Button';
 
+import { useNavigation } from '@react-navigation/core';
 import happyPlanet from '../../assets/happyPlanet.png';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
->>>>>>> prototype:src/pages/Begin/ModalityOptions.tsx
+
+
 
 export function ModalityOptions() {
 
