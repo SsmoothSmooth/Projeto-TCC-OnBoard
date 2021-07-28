@@ -1,10 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Welcome } from '../pages/Welcome';
-import { ConfirmAccess } from '../pages/ConfirmAccess';
-
-
 import { CadastroCooperativa } from '../pages/CadastroCooperativa';
 import { CadastroCooperativa2 } from '../pages/CadastroCooperativa2';
 import { CadastroCooperativa3 } from '../pages/CadastroCooperativa3';
@@ -23,9 +19,12 @@ import { CadastroColetor3 } from '../pages/CadastroColetor3';
 import { CadastroColetor4 } from '../pages/CadastroColetor4';
 import { CadastroColetor5 } from '../pages/CadastroColetor5';
 import { CadastroColetor6 } from '../pages/CadastroColetor6';
-import { ModalityOptions } from '../pages/ModalityOptions';
-import { Login } from '../pages/Login';
-import { Password } from '../pages/Password';
+
+
+import { Welcome } from '../pages/Begin/Welcome';
+import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
+import { ModalityOptions } from '../pages/Begin/ModalityOptions';
+import { Login } from '../pages/Begin/Login';
 
 const stackRoutes = createStackNavigator();
 
@@ -160,15 +159,7 @@ const AppRoutes: React.FC = () => (
             component={CadastroCooperativa5}
 
         />
-
-        <stackRoutes.Screen
-            name="Password"
-            component={Password}
-        />
-
-
-
-
+        
     </stackRoutes.Navigator>
 )
 
