@@ -1,13 +1,10 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Welcome } from '../pages/Welcome';
-import { ConfirmAccess } from '../pages/ConfirmAccess';
-import { ModalityOptions } from '../pages/ModalityOptions';
-import { Login } from '../pages/Login';
-import { Password } from '../pages/Password';
-
-import colors from '../styles/colors';
+import { Welcome } from '../pages/Begin/Welcome';
+import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
+import { ModalityOptions } from '../pages/Begin/ModalityOptions';
+import { Login } from '../pages/Begin/Login';
 
 const stackRoutes = createStackNavigator();
 
@@ -44,15 +41,7 @@ const AppRoutes: React.FC = () => (
             component={Login}
 
         />
-
-        <stackRoutes.Screen
-            name="Password"
-            component={Password}
-        />
-
-
-
-
+        
     </stackRoutes.Navigator>
 )
 

@@ -5,15 +5,15 @@ import {
     SafeAreaView,
     Image,
     StyleSheet,
-    TouchableOpacity,
+
     Dimensions
 } from 'react-native';
 
-import { Button } from '../components/Button';
+import { Button } from '../../components/Button';
 
-import happyPlanet from '../assets/happyPlanet.png';
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
+import happyPlanet from '../../assets/happyPlanet.png';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
 export function ModalityOptions() {
     return(

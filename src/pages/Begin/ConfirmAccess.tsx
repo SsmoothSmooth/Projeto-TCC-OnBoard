@@ -9,11 +9,11 @@ import {
     Dimensions
 } from 'react-native';
 
-import { Button } from '../components/Button';
+import { Button } from '../../components/Button';
 
-import handsPlanet from '../assets/handsPlanet.png';
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
+import handsPlanet from '../../assets/handsPlanet.png';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 
