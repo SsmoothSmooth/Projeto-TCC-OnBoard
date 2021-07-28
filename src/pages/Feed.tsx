@@ -10,7 +10,7 @@ export function Feed(){
             <View style={styles.wrapper}>
 
             <View style={styles.boxHeader}>
-                 <Text style={styles.title}> News{'\n'} </Text>
+                 <Text style={styles.title}>News{'\n'}</Text>
             </View>
 
             <View style={styles.boxFeed}>
@@ -44,8 +44,7 @@ export function Feed(){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        
-        
+    
     },
 
     wrapper: {
@@ -60,15 +59,13 @@ const styles = StyleSheet.create({
         width: '100%',
         marginTop: -48,
         backgroundColor: colors.gray,
-        justifyContent: 'center',
         paddingTop: '25%',
-        alignItems: 'center'
+        
         
     },
 
     title: {
         fontSize: 60,
-        fontWeight: 'bold',
         textAlign: 'center',
         fontFamily: fonts.heading
    
@@ -143,8 +140,6 @@ const styles = StyleSheet.create({
 
     buttonText: {
         textAlign: 'center',
-        
-        
         
     },
   
