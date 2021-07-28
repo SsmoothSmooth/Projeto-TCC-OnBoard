@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         
+        
     },
 
     wrapper: {
@@ -52,15 +53,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-       
-        
+         
     },
 
     boxHeader: {
         width: '100%',
+        marginTop: -48,
         backgroundColor: colors.gray,
         justifyContent: 'center',
-        paddingTop: '16%',
+        paddingTop: '25%',
         alignItems: 'center'
         
     },
@@ -74,14 +75,14 @@ const styles = StyleSheet.create({
     },
 
     boxFeed: {
-     width:'100%',
-     paddingHorizontal:'10%'
+        width:'100%',
+        paddingHorizontal:'10%'
 
     },
 
     feed: {
         fontSize: 50,
-        marginTop: '2%',
+        marginTop: '10%',
         alignItems:'center',
         backgroundColor: colors.grey
         
@@ -89,57 +90,60 @@ const styles = StyleSheet.create({
 
     feed2: {
         fontSize: 100,
-        marginVertical: '2%',
+        marginVertical: '5%',
         backgroundColor: colors.grey    
         
     },
 
     boxButton: {
         flex: 1,
+        paddingVertical:'18%',
+        marginTop: '16%',
         justifyContent:'space-between',
         paddingHorizontal: '10%',
         width:'100%',
         backgroundColor: colors.gray,
-        alignItems:'center',
+        alignItems:'flex-end',             
         flexDirection:'row'
         
     },
 
     buttonInicio: {
         backgroundColor: colors.green_cyan,
+        width: 100,
+        height: 40,
+        borderRadius: 50,
         textAlign: 'center',
-        width: 60,
-        height: 60,
-        borderRadius: 16,
         justifyContent: 'center',
-        margin: 10
-
-       
+        
+    
     },
 
     buttonMenu: {  
         backgroundColor: colors.green_cyan, 
-        width: 60,
-        height: 60,
-        borderRadius: 16,
+        width: 100,
+        height: 40,
+        borderRadius: 50,
         textAlign: 'center',
         justifyContent: 'center',
-        margin: 10
+        
               
     },
 
     buttonPerfil: {
         backgroundColor: colors.green_cyan,
-        width: 60,
-        height: 60,
-        borderRadius: 16,
+        width: 100,
+        height: 40,
+        borderRadius: 50,
         textAlign: 'center',
         justifyContent: 'center',
-        margin: 10
+        
 
     },
 
     buttonText: {
+        textAlign: 'center',
+        
         
         
     },
