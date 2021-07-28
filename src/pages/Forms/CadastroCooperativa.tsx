@@ -10,11 +10,11 @@ import {
     Alert
 } from 'react-native';
 
-import { Button } from '../components/Button';
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
+import { Button } from '../../components/Button';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import sacola from '../assets/sacola.png';
+import sacola from '../../assets/sacola.png';
 
 
 

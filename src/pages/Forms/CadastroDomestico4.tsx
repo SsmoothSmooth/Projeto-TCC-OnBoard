@@ -10,11 +10,11 @@ import {
     Alert
 } from 'react-native';
 
-import { Button } from '../components/Button';
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
+import { Button } from '../../components/Button';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import happyPlanet from '../assets/happyPlanet.png';
+import happyPlanet from '../../assets/happyPlanet.png';
 
 
 

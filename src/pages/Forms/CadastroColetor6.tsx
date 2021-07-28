@@ -9,11 +9,11 @@ import {
 
 } from 'react-native';
 
-import { Button } from '../components/Button';
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
+import { Button } from '../../components/Button';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import celebrationPlanet from '../assets/celebrationPlanet.png';
+import celebrationPlanet from '../../assets/celebrationPlanet.png';
 
 
 
