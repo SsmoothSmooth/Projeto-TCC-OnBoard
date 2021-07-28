@@ -108,7 +108,8 @@ const styles = StyleSheet.create({
     boxHeader: {
         width: '100%',
         justifyContent: 'center',
-        paddingTop: '16%',
+        paddingTop: '23%',
+        paddingBottom: '8%',
         backgroundColor: colors.green_cyan
 
     },
