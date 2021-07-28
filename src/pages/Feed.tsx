@@ -40,7 +40,6 @@ export function Feed(){
     )
 }
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -60,7 +59,6 @@ const styles = StyleSheet.create({
         marginTop: -48,
         backgroundColor: colors.gray,
         paddingTop: '25%',
-        
         
     },
 
@@ -113,7 +111,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'center',
         
-    
     },
 
     buttonMenu: {  
@@ -123,7 +120,6 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         textAlign: 'center',
         justifyContent: 'center',
-        
               
     },
 
@@ -134,13 +130,12 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         textAlign: 'center',
         justifyContent: 'center',
-        
-
+    
     },
 
     buttonText: {
         textAlign: 'center',
-        
+    
     },
   
 });
