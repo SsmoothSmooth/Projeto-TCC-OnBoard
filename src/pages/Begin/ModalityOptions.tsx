@@ -5,6 +5,7 @@ import {
     SafeAreaView,
     Image,
     StyleSheet,
+    TouchableOpacity,
     Dimensions
 } from 'react-native';
 
@@ -14,6 +15,7 @@ import { useNavigation } from '@react-navigation/core';
 import happyPlanet from '../../assets/happyPlanet.png';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
 
@@ -22,23 +24,23 @@ export function ModalityOptions() {
     const navigation = useNavigation();
 
 
-    function touchInit() {
+    function touchColetor() {
 
         navigation.navigate('CadastroColetor')
     }
 
-    function touchInit2() {
+    function touchDomestico() {
 
         navigation.navigate('CadastroDomestico')
     }
 
-    function touchInit3() {
+    function touchCooperativa() {
 
         navigation.navigate('CadastroCooperativa')
     }
-    function touchInit4() {
+    function touchConfirmAccess() {
 
-        navigation.navigate('ConfirmAcess')
+        navigation.navigate('ConfirmAccess')
     }
 
 
@@ -47,67 +49,61 @@ export function ModalityOptions() {
 
             <View style={styles.wrapper}>
 
-                <Image
-                    source={happyPlanet}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
+                <View style={styles.boxHeader}>
 
-                <Text style={styles.subtitle}>
-                    Em qual categoria {'\n'}
-                    voce se encontra?
+                    <Image
+                        source={happyPlanet}
+                        style={styles.image}
+                        resizeMode="contain"
+                        />
 
-                </Text>
+                    <Text style={styles.title}>
+                         Em qual categoria {'\n'}
+                        voce se encontra? {'\n'}
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="Coletores"
-                        onPress={touchInit}
+                    </Text>
 
-                    />
-                </Text>
+                </View>
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="Domesticos"
-                        onPress={touchInit2}
+                <View style={styles.boxButton}>
+                        <Button
+                            style={styles.button}
+                            title="Coletores"
+                            onPress={touchColetor}   
+                        />
+                        <Button
+                            style={styles.button}
+                            title="Domesticos"
+                            onPress={touchDomestico} 
+                        />
+                        <Button
+                            style={styles.button}
+                            title="Cooperativas"
+                            onPress={touchCooperativa}
+                        />
 
-                    />
-                </Text>
+                </View>
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="Cooperativas"
-                        onPress={touchInit3}
-
-                    />
-
-                </Text>
-
-                <Text
-                    style={styles.button}
-                >
-
-                    <Button
-                        title="<"
-                        onPress={touchInit4}
-
+                <View style={styles.boxBackButton}>
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchConfirmAccess}
+                    >
+                    <FontAwesome5
+                        name="arrow-alt-circle-left"
+                        style={styles.backButtonIcon}
+                        
                     />
 
-                </Text>
+                    </TouchableOpacity>
+                </View>
+                
 
             </View>
         </SafeAreaView>
     )
 }
-
-
 
 const styles = StyleSheet.create({
     container: {
@@ -117,38 +113,69 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        paddingBottom: '2%'
+    },
+    
+    boxHeader:{
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: '15%'
     },
 
+    image: {
+        margin: '8%',
+    },
+    
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
         lineHeight: 34
 
     },
 
-    subtitle: {
-        textAlign: 'center',
-        fontSize: 18,
-        color: colors.heading,
-        paddingHorizontal: 20,
-        fontFamily: fonts.text
+    boxButton: {
+        width: '100%',
+        paddingHorizontal: '20%',
     },
 
-    image: {
-        height: Dimensions.get('window').width * 0.7
-    },
-
-    //Arrumar depois - colocar outra tag 
     button: {
+        backgroundColor: colors.green_cyan,
+        height: 80,
+        borderRadius: 16,
+        paddingHorizontal: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: '15%', 
+    },
 
+    boxBackButton: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 5,
+        paddingBottom: '10%',
+    },
+
+    backButton: {
+        backgroundColor: colors.green,
+        height: 60,
+        width: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+
+    },
+
+    backButtonIcon: {
+        color: colors.green_cyan,
+        fontSize: 35,
     }
-
 })
 
 
