@@ -1,30 +1,29 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { CadastroCooperativa } from '../pages/CadastroCooperativa';
-import { CadastroCooperativa2 } from '../pages/CadastroCooperativa2';
-import { CadastroCooperativa3 } from '../pages/CadastroCooperativa3';
-import { CadastroCooperativa4 } from '../pages/CadastroCooperativa4';
-import { CadastroCooperativa5 } from '../pages/CadastroCooperativa5';
-
-import { CadastroDomestico } from '../pages/CadastroDomestico';
-import { CadastroDomestico2 } from '../pages/CadastroDomestico2';
-import { CadastroDomestico3 } from '../pages/CadastroDomestico3';
-import { CadastroDomestico4 } from '../pages/CadastroDomestico4';
-import { CadastroDomestico5 } from '../pages/CadastroDomestico5';
-
-import { CadastroColetor } from '../pages/CadastroColetor';
-import { CadastroColetor2 } from '../pages/CadastroColetor2';
-import { CadastroColetor3 } from '../pages/CadastroColetor3';
-import { CadastroColetor4 } from '../pages/CadastroColetor4';
-import { CadastroColetor5 } from '../pages/CadastroColetor5';
-import { CadastroColetor6 } from '../pages/CadastroColetor6';
-
-
 import { Welcome } from '../pages/Begin/Welcome';
 import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
 import { ModalityOptions } from '../pages/Begin/ModalityOptions';
 import { Login } from '../pages/Begin/Login';
+
+import { CadastroCooperativa } from '../pages/Forms/CadastroCooperativa';
+import { CadastroCooperativa2 } from '../pages/Forms/CadastroCooperativa2';
+import { CadastroCooperativa3 } from '../pages/Forms/CadastroCooperativa3';
+import { CadastroCooperativa4 } from '../pages/Forms/CadastroCooperativa4';
+import { CadastroCooperativa5 } from '../pages/Forms/CadastroCooperativa5';
+
+import { CadastroDomestico } from '../pages/Forms/CadastroDomestico';
+import { CadastroDomestico2 } from '../pages/Forms/CadastroDomestico2';
+import { CadastroDomestico3 } from '../pages/Forms/CadastroDomestico3';
+import { CadastroDomestico4 } from '../pages/Forms/CadastroDomestico4';
+import { CadastroDomestico5 } from '../pages/Forms/CadastroDomestico5';
+
+import { CadastroColetor } from '../pages/Forms/CadastroColetor';
+import { CadastroColetor2 } from '../pages/Forms/CadastroColetor2';
+import { CadastroColetor3 } from '../pages/Forms/CadastroColetor3';
+import { CadastroColetor4 } from '../pages/Forms/CadastroColetor4';
+import { CadastroColetor5 } from '../pages/Forms/CadastroColetor5';
+import { CadastroColetor6 } from '../pages/Forms/CadastroColetor6';
 
 const stackRoutes = createStackNavigator();
 
