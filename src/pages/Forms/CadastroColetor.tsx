@@ -15,6 +15,7 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import sacola from '../../assets/sacola.png';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
 
@@ -48,7 +49,7 @@ export function CadastroColetor() {
         navigation.navigate('CadastroColetor2')
     }
 
-    function touchInit2() {
+    function touchModalityOptions() {
         navigation.navigate('ModalityOptions')
     }
 
@@ -57,59 +58,65 @@ export function CadastroColetor() {
 
             <View style={styles.wrapper}>
 
+                <View style={styles.boxHeader}>
 
+                    <Text style={styles.title}>
+                        Coletores OnBoard
+                    </Text>
 
-                <Text style={styles.title}>
-                    ColetoresOnBoard
-                </Text>
-
-                <Image
-                    source={sacola}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
-
-                <Text style={styles.subtitle}>
-                    Nome Completo
-
-                </Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder="Digite seu nome"
-                    onChangeText={handleInputChange}
-                />
-
-                <Text style={styles.subtitle}>
-                    Email
-
-                </Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder="Digite seu email"
-                    onChangeText={handleInputChange2}
-                />
-
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="Confirmar"
-                        onPress={touchInit}
-
+                    <Image
+                        source={sacola}
+                        style={styles.image}
+                        resizeMode="contain"
                     />
-                </Text>
+                </View>
+                
+                <View style={styles.boxInput}>
+                    <Text style={styles.subtitle}>
+                        Nome Completo: {'\n'}
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="<"
-                        onPress={touchInit2}
+                    </Text>
 
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite seu nome"
+                        onChangeText={handleInputChange}
                     />
-                </Text>
+
+                    <Text style={styles.subtitle}>
+                        Email: {'\n'}
+
+                    </Text>
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite seu email"
+                        onChangeText={handleInputChange2}
+                    />
+                </View>
+
+                <View style={styles.boxButton}>
+                        <Button
+                            title="Confirmar"
+                            onPress={touchInit}
+
+                        />
+                </View>
+
+                <View style={styles.boxBackButton}>
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchModalityOptions}
+                    >
+                    <FontAwesome5
+                        name="arrow-alt-circle-left"
+                        style={styles.backButtonIcon}
+                        
+                    />
+
+                    </TouchableOpacity>
+                </View>
 
             </View>
         </SafeAreaView>
@@ -126,10 +133,18 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        paddingBottom: '2%'
     },
 
+    boxHeader:{
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: '15%'
+    },
+    
     title: {
         fontSize: 28,
         fontWeight: 'bold',
@@ -138,38 +153,63 @@ const styles = StyleSheet.create({
         color: colors.heading,
         fontFamily: fonts.heading,
         lineHeight: 34
+        
+    },
+    
+    image: {
+        margin: '8%',
+    },
 
+    boxInput: {
+        width: '100%',
+        paddingHorizontal: '15%',
     },
 
     subtitle: {
-        textAlign: 'center',
-        fontSize: 12,
+        textAlign: 'left',        
+        fontSize: 20,
+        paddingTop: '2%',
         color: colors.heading,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
         fontFamily: fonts.text
     },
 
     input: {
+        width: '100%',
         borderBottomWidth: 1,
         borderColor: '#52665A',
         color: colors.heading,
-        width: '100%',
         fontSize: 20,
-        marginTop: 20,
-        padding: 15,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: '15%'
 
     },
 
-    image: {
-        height: 50,
+    boxButton: {
+        width: '100%',
+        paddingHorizontal: '20%',
     },
 
+    boxBackButton: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 5,
+        paddingBottom: '10%',
+    },
 
-    button: {
+    backButton: {
+        backgroundColor: colors.green,
+        height: 60,
+        width: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
 
+    },
 
+    backButtonIcon: {
+        color: colors.green_cyan,
+        fontSize: 35,
     }
 
 })
