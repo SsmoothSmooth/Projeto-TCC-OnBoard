@@ -7,8 +7,9 @@ import { Feed } from '../pages/Feed';
 import { ModalityOptions } from '../pages/ModalityOptions';
 import { Login } from '../pages/Login';
 import { Password } from '../pages/Password';
+import { Sacola } from '../pages/Sacola';
 
-import colors from '../styles/colors';
+
 
 const stackRoutes = createStackNavigator();
 
@@ -57,8 +58,10 @@ const AppRoutes: React.FC = () => (
             component={Password}
         />
 
-
-
+        <stackRoutes.Screen
+            name="Sacola"
+            component={Sacola}
+        />
 
     </stackRoutes.Navigator>
 )
