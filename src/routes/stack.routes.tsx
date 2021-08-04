@@ -12,18 +12,12 @@ import { CadastroCooperativa3 } from '../pages/Forms/CadastroCooperativa3';
 import { CadastroCooperativa4 } from '../pages/Forms/CadastroCooperativa4';
 import { CadastroCooperativa5 } from '../pages/Forms/CadastroCooperativa5';
 
-import { CadastroDomestico } from '../pages/Forms/CadastroDomestico';
-import { CadastroDomestico2 } from '../pages/Forms/CadastroDomestico2';
-import { CadastroDomestico3 } from '../pages/Forms/CadastroDomestico3';
-import { CadastroDomestico4 } from '../pages/Forms/CadastroDomestico4';
-import { CadastroDomestico5 } from '../pages/Forms/CadastroDomestico5';
-
-import { CadastroColetor } from '../pages/Forms/CadastroColetor';
-import { CadastroColetor2 } from '../pages/Forms/CadastroColetor2';
-import { CadastroColetor3 } from '../pages/Forms/CadastroColetor3';
-import { CadastroColetor4 } from '../pages/Forms/CadastroColetor4';
-import { CadastroColetor5 } from '../pages/Forms/CadastroColetor5';
-import { CadastroColetor6 } from '../pages/Forms/CadastroColetor6';
+import { FormIdentification } from '../pages/Forms/FormIdentification';
+import { FormAddress } from '../pages/Forms/FormAddress';
+import { FormPersonalData } from '../pages/Forms/FormPersonalData';
+import { FormContact } from '../pages/Forms/FormContact';
+import { FormNickname } from '../pages/Forms/FormNickname';
+import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 
 const stackRoutes = createStackNavigator();
 
@@ -63,69 +57,39 @@ const AppRoutes: React.FC = () => (
         />
 
         <stackRoutes.Screen
-            name="CadastroDomestico"
-            component={CadastroDomestico}
+            name="FormIdentification"
+            component={FormIdentification}
 
         />
 
         <stackRoutes.Screen
-            name="CadastroDomestico2"
-            component={CadastroDomestico2}
+            name="FormAddress"
+            component={FormAddress}
 
         />
 
         <stackRoutes.Screen
-            name="CadastroDomestico3"
-            component={CadastroDomestico3}
+            name="FormPersonalData"
+            component={FormPersonalData}
 
         />
 
         <stackRoutes.Screen
-            name="CadastroDomestico4"
-            component={CadastroDomestico4}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroDomestico5"
-            component={CadastroDomestico5}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroColetor"
-            component={CadastroColetor}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroColetor2"
-            component={CadastroColetor2}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroColetor3"
-            component={CadastroColetor3}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroColetor4"
-            component={CadastroColetor4}
+            name="FormContact"
+            component={FormContact}
 
         />
 
 
         <stackRoutes.Screen
-            name="CadastroColetor6"
-            component={CadastroColetor6}
+            name="FormNickname"
+            component={FormNickname}
 
         />
 
         <stackRoutes.Screen
-            name="CadastroColetor5"
-            component={CadastroColetor5}
+            name="FormConfirmed"
+            component={FormConfirmed}
 
         />
 

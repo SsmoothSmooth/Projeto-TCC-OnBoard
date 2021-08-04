@@ -1,44 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
     SafeAreaView,
-    Image,
     StyleSheet,
     TouchableOpacity,
-    Dimensions
+    TextInput,
+    Image,
+    Alert
 } from 'react-native';
 
 import { Button } from '../../components/Button';
-
-import { useNavigation } from '@react-navigation/core';
-import happyPlanet from '../../assets/happyPlanet.png';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import { useNavigation } from '@react-navigation/core';
+import happyPlanet from '../../assets/happyPlanet.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 
 
-export function ModalityOptions() {
-
+export function FormNickname() {
     const navigation = useNavigation();
 
+    const [isFilled, setIsFilled] = useState(false);
+    const [name, setName] = useState<string>();
 
-    function touchForm() {
-
-        navigation.navigate('FormIdentification')
+    function handleInputChange(value: string) {
+        setIsFilled(!!value);
+        setName(value);
     }
 
-    //Formularios das cooperativas Colocar alguma identifcação quando for selecionado
-    function touchFormCooperative() {
+    function touchFormAddress() {
 
-        navigation.navigate('FormIdentification')
-    }
-    function touchConfirmAccess() {
+        if (!name)
+            return Alert.alert('Preenchimento obrigatório');
 
-        navigation.navigate('ConfirmAccess')
+        navigation.navigate('FormConfirmed')
     }
 
+    function touchModalityOptions() {
+        navigation.navigate('FormContact')
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -51,40 +53,37 @@ export function ModalityOptions() {
                         source={happyPlanet}
                         style={styles.image}
                         resizeMode="contain"
-                        />
+                    />
 
                     <Text style={styles.title}>
-                         Em qual categoria {'\n'}
-                        voce se encontra? {'\n'}
-
+                        Como podemos te chamar? {'\n'}
                     </Text>
+
+                </View>
+                
+                <View style={styles.boxInput}>
+   
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite seu apelido"
+                        onChangeText={handleInputChange}
+                    />
 
                 </View>
 
                 <View style={styles.boxButton}>
                         <Button
-                            style={styles.button}
-                            title="Coletores"
-                            onPress={touchForm}   
-                        />
-                        <Button
-                            style={styles.button}
-                            title="Domesticos"
-                            onPress={touchForm} 
-                        />
-                        <Button
-                            style={styles.button}
-                            title="Cooperativas"
-                            onPress={touchFormCooperative}
-                        />
+                            title="Confirmar"
+                            onPress={touchFormAddress}
 
+                        />
                 </View>
 
                 <View style={styles.boxBackButton}>
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchConfirmAccess}
+                        onPress={touchModalityOptions}
                     >
                     <FontAwesome5
                         name="arrow-alt-circle-left"
@@ -94,7 +93,6 @@ export function ModalityOptions() {
 
                     </TouchableOpacity>
                 </View>
-                
 
             </View>
         </SafeAreaView>
@@ -113,14 +111,14 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingBottom: '2%'
     },
-    
+
     boxHeader:{
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: '15%'
     },
-
+    
     image: {
         margin: '8%',
     },
@@ -129,25 +127,32 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
+        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
         lineHeight: 34
+        
+    },
+
+    boxInput: {
+        width: '100%',
+        paddingHorizontal: '15%',
+    },
+
+    input: {
+        width: '100%',
+        borderBottomWidth: 1,
+        borderColor: '#52665A',
+        color: colors.heading,
+        fontSize: 20,
+        textAlign: 'center',
+        marginBottom: '15%'
 
     },
 
     boxButton: {
         width: '100%',
         paddingHorizontal: '20%',
-    },
-
-    button: {
-        backgroundColor: colors.green_cyan,
-        height: 80,
-        borderRadius: 16,
-        paddingHorizontal: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: '15%', 
     },
 
     boxBackButton: {
@@ -172,7 +177,5 @@ const styles = StyleSheet.create({
         color: colors.green_cyan,
         fontSize: 35,
     }
+
 })
-
-
-
