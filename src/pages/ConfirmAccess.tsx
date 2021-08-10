@@ -11,66 +11,80 @@ import {
 
 import { Button } from '../components/Button';
 
-import handsPlanet from '../assets/handsPlanet.png';
+import handsPlanet from '../../assets/handsPlanet.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import { FontAwesome5 } from '@expo/vector-icons';
 
-export function ConfirmAccess(){
+export function ConfirmAccess() {
     const navigation = useNavigation();
 
-    function touchModality(){
+    function touchModality() {
         navigation.navigate('ModalityOptions')
     }
 
-    function touchLogin(){
+    function touchLogin() {
         navigation.navigate('Login')
     }
-    return(
+
+    function touchWelcome() {
+        navigation.navigate('Welcome')
+    }
+    return (
         <SafeAreaView style={styles.container}>
 
             <View style={styles.wrapper}>
 
-                <Text style={styles.title}>
-                    Coletores OnBoard
-                </Text>
+                <View style={styles.boxHeader}>
+                    <Text style={styles.title}>
+                        Coletores OnBoard {'\n'}
+                    </Text>
+                </View>
 
-                <Image
-                    source={handsPlanet}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
+                <View style={styles.boxImage}>
+                    <Image
+                        source={handsPlanet}
+                        style={styles.image}
+                        resizeMode="contain"
+                    />
+                </View>
 
-                <Text
-                    style={styles.button}
-                >
-                        <Button 
+                <View style={styles.wrapperButton}>
+
+                    <View style={styles.boxButton}>
+                        <Button
                             title="Cadastrar"
                             onPress={touchModality}
                         />
-                </Text>
+
+                        <Button
+                            title="Entrar"
+                            onPress={touchLogin}
+                        />
+                    </View>
 
 
-                <TouchableOpacity
-                    style={styles.button}
-                    activeOpacity={0.5}
-                    onPress={touchModality}
-                ></TouchableOpacity>
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="Entrar"
-                        onPress={touchLogin}
-                    />    
-                </Text>
+                    <View style={styles.boxBackButton}>
+                        <TouchableOpacity
+                            style={styles.backButton}
+                            activeOpacity={0.5}
+                            onPress={touchWelcome}
 
-                <TouchableOpacity
-                    style={styles.button}
-                    activeOpacity={0.5}
-                    onPress={touchLogin}
-                ></TouchableOpacity>
+                        >
+                            <FontAwesome5
+                                name="arrow-alt-circle-left"
+                                style={styles.backButtonIcon}
+
+                            />
+
+                        </TouchableOpacity>
+                    </View>
+
+                </View>
+
+
 
 
             </View>
@@ -86,28 +100,71 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        paddingBottom: '2%'
+    },
+
+    boxHeader: {
+        width: '100%',
+        justifyContent: 'center',
+        paddingTop: '16%',
+        backgroundColor: colors.green_cyan
+
     },
 
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
+        lineHeight: 32,
 
+    },
+
+    boxImage: {
+        width: '100%',
+        alignItems: 'center',
     },
 
     image: {
-        height: Dimensions.get('window').width * 0.7
+        height: Dimensions.get('window').width * 0.7,
+        borderRadius: 15
     },
 
-    //Arrumar depois - colocar outra tag 
-    button: {
+    wrapperButton: {
+        width: '100%',
+    },
 
+    boxButton: {
+        width: '100%',
+        paddingHorizontal: '20%'
+
+    },
+
+    boxBackButton: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 5,
+        paddingBottom: '10%',
+    },
+
+    backButton: {
+        backgroundColor: colors.green,
+        height: 60,
+        width: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+
+    },
+
+    backButtonIcon: {
+        color: colors.green_cyan,
+        fontSize: 35,
     }
+
 
 })

@@ -11,7 +11,7 @@ import {
 
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import handsLoves from '../assets/handsLoves.png';
+import handsLoves from '../../assets/handsLoves.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
@@ -21,7 +21,6 @@ export function Welcome() {
 
     function touchInit() {
         navigation.navigate('ConfirmAccess')
-
     }
 
     return (
@@ -29,36 +28,45 @@ export function Welcome() {
 
             <View style={styles.wrapper}>
 
-                <Text style={styles.title}>
-                    Realize o descarte {'\n'}
-                    e reciclavel da {'\n'}
-                    maneira correta! {'\n'}
-                </Text>
+                <View style={styles.boxHeader}>
+                    <Text style={styles.title}>
+                        Realize o descarte {'\n'}
+                        e reciclavel da {'\n'}
+                        maneira correta! {'\n'}
+                    </Text>
+                </View>
 
-                <Image
-                    source={handsLoves}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
-
-                <Text style={styles.subtitle}>
-                    Venham conosco {'\n'}
-                mudar o meio ambiente {'\n'}
-                entre na Coletores Onboard.
-                </Text>
-
-                <TouchableOpacity
-                    style={styles.button}
-                    activeOpacity={0.5}
-                    onPress={touchInit}
-                >
-                    <FontAwesome5
-                        name="arrow-alt-circle-right"
-                        style={styles.buttonIcon}
-
+                <View style={styles.boxImage}>
+                    <Image
+                        source={handsLoves}
+                        style={styles.image}
+                        resizeMode="contain"
                     />
+                </View>
 
-                </TouchableOpacity>
+                <View style={styles.boxSubtitle}>
+                    <Text style={styles.subtitle}>
+                        Venham conosco  {'\n'}
+                        mudar o meio ambiente {'\n'}
+                        entre na Coletores Onboard.
+                    </Text>
+                </View>
+
+
+                <View style={styles.boxButton}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        activeOpacity={0.5}
+                        onPress={touchInit}
+                    >
+                        <FontAwesome5
+                            name="arrow-alt-circle-right"
+                            style={styles.buttonIcon}
+
+                        />
+
+                    </TouchableOpacity>
+                </View>
 
 
             </View>
@@ -74,31 +82,55 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        paddingBottom: '2%'
+    },
+
+    boxHeader: {
+        backgroundColor: colors.green_cyan,
+        width: '100%',
+        justifyContent: 'center',
+        paddingTop: '16%'
     },
 
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
-
+        lineHeight: 32,
     },
 
+    boxImage: {
+        width: '100%',
+        alignItems: 'center'
+    },
+
+
     image: {
-        height: Dimensions.get('window').width * 0.7
+        height: Dimensions.get('window').width * 0.7,
+        borderRadius: 15,
+    },
+
+    boxSubtitle: {
+        width: '100%',
     },
 
     subtitle: {
         textAlign: 'center',
         fontSize: 18,
         color: colors.heading,
-        paddingHorizontal: 20,
-        fontFamily: fonts.text
+        fontFamily: fonts.text,
+        margin: 10
+    },
+
+    boxButton: {
+        width: '100%',
+        padding: '16%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
     button: {
@@ -108,12 +140,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
-        marginBottom: 10
+
     },
 
     buttonIcon: {
         color: colors.green_cyan,
         fontSize: 35,
     }
+
 
 })
