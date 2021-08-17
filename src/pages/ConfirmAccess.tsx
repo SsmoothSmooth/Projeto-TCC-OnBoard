@@ -11,7 +11,7 @@ import {
 
 import { Button } from '../components/Button';
 
-import handsPlanet from '../assets/handsPlanet.png';
+import handsPlanet from 'src/assets/handsPlanet.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
