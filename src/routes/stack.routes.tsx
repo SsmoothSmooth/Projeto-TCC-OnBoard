@@ -19,12 +19,13 @@ import { CadastroColetor3 } from '../pages/CadastroColetor3';
 import { CadastroColetor4 } from '../pages/CadastroColetor4';
 import { CadastroColetor5 } from '../pages/CadastroColetor5';
 import { CadastroColetor6 } from '../pages/CadastroColetor6';
+import { TelaMenuColetor } from '../pages/TelaMenuColetor';
 
 
-import { Welcome } from '../pages/Begin/Welcome';
-import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
-import { ModalityOptions } from '../pages/Begin/ModalityOptions';
-import { Login } from '../pages/Begin/Login';
+import { Welcome } from '../pages/Welcome';
+import { ConfirmAccess } from '../pages/ConfirmAccess';
+import { ModalityOptions } from '../pages/ModalityOptions';
+import { Login } from '../pages/Login';
 
 const stackRoutes = createStackNavigator();
 
@@ -119,14 +120,20 @@ const AppRoutes: React.FC = () => (
 
 
         <stackRoutes.Screen
+            name="CadastroColetor5"
+            component={CadastroColetor5}
+
+        />
+
+        <stackRoutes.Screen
             name="CadastroColetor6"
             component={CadastroColetor6}
 
         />
 
         <stackRoutes.Screen
-            name="CadastroColetor5"
-            component={CadastroColetor5}
+            name="TelaMenuColetor"
+            component={TelaMenuColetor}
 
         />
 
@@ -159,7 +166,7 @@ const AppRoutes: React.FC = () => (
             component={CadastroCooperativa5}
 
         />
-        
+
     </stackRoutes.Navigator>
 )
 
