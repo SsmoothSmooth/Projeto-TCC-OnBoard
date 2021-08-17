@@ -8,26 +8,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
-import mapa from '../src/assets/mapa.png';
-import meusresultados from '../src/assets/meusresultados.png';
-import pontosdevenda from '../src/assets/pontosdevenda.png';
-import tabelasdepreco from '../src/assets/tabelasdepreco.png';
-import { useNavigation } from '@react-navigation/core';
-
-export function TelaMenuColetor() {
-    const navigation = useNavigation();
-
-    function touchInit() {
-        navigation.navigate('')
-    }
-
-    function touchInit2() {
-        navigation.navigate('')
-    }
-
-
+const App = () => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={styles.container}>
@@ -35,7 +16,7 @@ export function TelaMenuColetor() {
                     style={styles.buttonFacebookStyle}
                     activeOpacity={0.5}>
                     <Image
-                        source={require(mapa.png)}
+                        source={require('./assets/mapa.png')}
                         style={styles.buttonImageIconStyle}
                     />
                     <View style={styles.buttonIconSeparatorStyle} />
@@ -84,3 +65,4 @@ const styles = StyleSheet.create({
     },
 });
 
+export default App;

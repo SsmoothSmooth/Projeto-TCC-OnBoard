@@ -22,7 +22,7 @@ export function CadastroColetor6() {
 
     function touchInit() {
 
-        navigation.navigate('')
+        navigation.navigate('TelaMenuColetor')
     }
 
     function touchInit2() {
