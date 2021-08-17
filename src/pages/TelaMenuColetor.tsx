@@ -10,7 +10,7 @@ import {
 
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
-import mapa from '../src/assets/mapa.png';
+import mapa from '../assets/mapa.png';
 import meusresultados from '../src/assets/meusresultados.png';
 import pontosdevenda from '../src/assets/pontosdevenda.png';
 import tabelasdepreco from '../src/assets/tabelasdepreco.png';
