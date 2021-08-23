@@ -1,68 +1,60 @@
 import React from 'react';
 import {
-    SafeAreaView,
-    StyleSheet,
-    View,
     Text,
-    Image,
     TouchableOpacity,
+    TouchableOpacityProps,
+    StyleSheet,
+    Image
 } from 'react-native';
 
-const App = () => {
+import colors from '../styles/colors';
+import fonts from '../styles/fonts';
+
+interface ButtonProps extends TouchableOpacityProps {
+    title: string;
+    Image: string;
+}
+
+export function Button({ title, ...rest }: ButtonProps) {
     return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <View style={styles.container}>
-                <TouchableOpacity
-                    style={styles.buttonFacebookStyle}
-                    activeOpacity={0.5}>
-                    <Image
-                        source={require('./assets/mapa.png')}
-                        style={styles.buttonImageIconStyle}
-                    />
-                    <View style={styles.buttonIconSeparatorStyle} />
-                    <Text style={styles.buttonTextStyle}>
-                        mapa
-                    </Text>
-                </TouchableOpacity>
-            </View>
-        </SafeAreaView>
-    );
+        <TouchableOpacity
+            style={styles.container}
+            {...rest}
+            activeOpacity={0.5}
+        >
+            <Image
+                source={require('Image')}
+                style={styles.Image}
+            />
+
+
+        </TouchableOpacity>
+    )
 };
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        margin: 10,
-        marginTop: 200,
-        padding: 30,
-    },
-    buttonFacebookStyle: {
-        flexDirection: 'row',
+        backgroundColor: colors.green_cyan,
+        height: 56,
+        borderRadius: 16,
+        paddingHorizontal: 20,
+        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#485a96',
-        borderWidth: 0.5,
-        borderColor: '#fff',
-        height: 40,
-        borderRadius: 5,
-        margin: 5,
+        marginVertical: 10
     },
-    buttonImageIconStyle: {
+
+    text: {
+        fontSize: 16,
+        color: 'black',
+        fontFamily: fonts.heading,
+    },
+
+
+    Image: {
         padding: 10,
         margin: 5,
-        height: 25,
-        width: 25,
+        height: 93,
+        width: 93,
         resizeMode: 'stretch',
     },
-    buttonTextStyle: {
-        color: '#fff',
-        marginBottom: 4,
-        marginLeft: 10,
-    },
-    buttonIconSeparatorStyle: {
-        backgroundColor: '#fff',
-        width: 1,
-        height: 40,
-    },
 });
-
-export default App;

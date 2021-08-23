@@ -11,7 +11,7 @@ import {
 
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import handsLoves from 'src/assets/handsLoves.png';
+import handsLoves from '../assets/handsLoves.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';

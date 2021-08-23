@@ -11,7 +11,7 @@ import {
 
 import { Button } from '../components/Button';
 
-import happyPlanet from 'src/assets/happyPlanet.png';
+import happyPlanet from '../assets/happyPlanet.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
