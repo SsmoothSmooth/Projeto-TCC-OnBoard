@@ -15,6 +15,7 @@ import handsLoves from '../../assets/handsLoves.png';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import { Button } from '../../components/Button';
 
 export function Welcome(){
     const navigation = useNavigation();
@@ -50,6 +51,16 @@ export function Welcome(){
                         mudar o meio ambiente {'\n'}
                         entre na Coletores Onboard. 
                     </Text>
+                </View>
+
+                {/* Teste screen */}
+
+                <View style={styles.testButton}>
+                        <Button
+                            title="View Interface"
+                            onPress={touchInit}
+
+                        />
                 </View>
 
 
@@ -146,7 +157,14 @@ const styles = StyleSheet.create({
     buttonIcon: {
         color: colors.green_cyan,
         fontSize: 35,
-    }
+    },
 
+    // teste
+
+    testButton: {
+        width: '100%',
+        paddingHorizontal: '20%',
+        backgroundColor: 'coral'
+    }
 
 })
