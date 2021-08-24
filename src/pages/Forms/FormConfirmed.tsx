@@ -34,44 +34,39 @@ export function FormConfirmed() {
 
             <View style={styles.wrapper}>
 
+                <View style={styles.boxImage}>
+                    
+                    <Image
+                        source={celebrationPlanet}
+                        style={styles.image}
+                        resizeMode="contain"
+                    />
 
-                <Image
-                    source={celebrationPlanet}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
+                </View>
 
-                <Text style={styles.title}>
-                    Prontinho
+                <View style={styles.boxText}>
 
-                </Text>
+                    <Text style={styles.title}>
+                        Prontinho
+
+                    </Text>
 
 
-                <Text style={styles.subtitle}>
-                    Agora vamos começar a cuidar {'\n'}
-                    do meio ambiente.
+                    <Text style={styles.subtitle}>
+                        Agora vamos começar a cuidar {'\n'}
+                        do meio ambiente.
 
-                </Text>
+                    </Text>
 
-                <Text
-                    style={styles.button}
-                >
+                </View>
+
+                <View style={styles.boxButton}>
                     <Button
-                        title="Confirmar"
+                        title="Começar"
                         onPress={touchInit}
-
                     />
-                </Text>
+                </View>
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="<"
-                        onPress={touchInit2}
-
-                    />
-                </Text>
 
             </View>
         </SafeAreaView>
@@ -90,6 +85,21 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         paddingHorizontal: 20
+    },
+
+    boxImage: {
+        width: '100%',
+        alignItems: 'center'
+    },
+
+    image: {
+        height: Dimensions.get('window').width * 0.6
+    },
+
+    boxText: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
 
     title: {
@@ -112,26 +122,11 @@ const styles = StyleSheet.create({
         fontFamily: fonts.text
     },
 
-    input: {
-        borderBottomWidth: 1,
-        borderColor: '#52665A',
-        color: colors.heading,
+
+
+    boxButton: {
         width: '100%',
-        fontSize: 20,
-        marginTop: 20,
-        padding: 15,
-        textAlign: 'center'
-
+        paddingHorizontal: '20%',
     },
-
-    image: {
-        height: Dimensions.get('window').width * 0.6
-    },
-
-
-    button: {
-
-
-    }
 
 })
