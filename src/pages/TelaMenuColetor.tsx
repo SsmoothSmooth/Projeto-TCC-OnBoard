@@ -16,7 +16,7 @@ import tabelasdepreco from '../assets/tabelasdepreco.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../components/Button';
-import { CategoriaButton } from '../components/CategoriaButton';
+import { CategoriaButton2 } from '../components/CategoriaButton2';
 
 
 export function TelaMenuColetor() {
@@ -34,7 +34,7 @@ export function TelaMenuColetor() {
 
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.wrapper}>
+            <View>
 
                 <View style={styles.boxHeader}>
                     <Text style={styles.title}>
@@ -43,9 +43,11 @@ export function TelaMenuColetor() {
 
                 </View>
 
-                <CategoriaButton
-                    image='mapa'
-                />
+                <View style={styles.ImageIconStyle1}>
+                    <CategoriaButton2>
+                        {mapa.ImageIconStyle1}
+                    </CategoriaButton2>
+                </View>
 
 
 
@@ -98,6 +100,7 @@ const styles = StyleSheet.create({
         height: 93,
         width: 93,
         resizeMode: 'stretch',
+
     },
 
     ImageIconStyle2: {

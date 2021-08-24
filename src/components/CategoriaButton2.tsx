@@ -1,30 +1,25 @@
 import React from 'react';
+import { Component } from 'react';
 import {
     TouchableOpacity,
     TouchableOpacityProps,
     StyleSheet,
-    Image
+    Image,
 } from 'react-native';
 
 import colors from '../styles/colors';
+import mapa from '../assets/mapa.png';
 import fonts from '../styles/fonts';
 
-interface ButtonProps extends TouchableOpacityProps {
-    Image: string;
+export default class CategoriaButton2 extends Component {
 
+    render() {
+        return (
+            <Image source={require('../assets/mapa.png')} style={styles.Image}></Image>
+
+        );
+    }
 }
-
-export function CategoriaButton({ Image, ...rest }: ButtonProps) {
-    return (
-        <TouchableOpacity
-            style={styles.Imageprops}
-            {...rest}
-            activeOpacity={0.5}
-        >
-
-        </TouchableOpacity>
-    )
-};
 
 const styles = StyleSheet.create({
     container: {
@@ -44,7 +39,7 @@ const styles = StyleSheet.create({
     },
 
 
-    Imageprops: {
+    Image: {
         padding: 10,
         margin: 5,
         height: 93,
