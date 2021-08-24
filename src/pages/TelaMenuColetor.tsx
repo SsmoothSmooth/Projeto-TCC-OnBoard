@@ -4,7 +4,8 @@ import {
     StyleSheet,
     View,
     Text,
-    Image
+    Image,
+    TouchableOpacity,
 } from 'react-native';
 
 import colors from '../styles/colors';
@@ -16,7 +17,6 @@ import tabelasdepreco from '../assets/tabelasdepreco.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../components/Button';
-import { CategoriaButton2 } from '../components/CategoriaButton2';
 
 
 export function TelaMenuColetor() {
@@ -34,23 +34,49 @@ export function TelaMenuColetor() {
 
         <SafeAreaView style={styles.container}>
 
-            <View>
-
-                <View style={styles.boxHeader}>
-                    <Text style={styles.title}>
-                        Menu {'\n'}
-                    </Text>
-
-                </View>
-
-                <View style={styles.ImageIconStyle1}>
-                    <CategoriaButton2>
-                        {mapa.ImageIconStyle1}
-                    </CategoriaButton2>
-                </View>
 
 
+            <View style={styles.boxHeader}>
+                <Text style={styles.title}>
+                    Menu {'\n'}
+                </Text>
 
+            </View>
+
+            <View style={styles.wrapper}>
+
+                <TouchableOpacity activeOpacity={0.5}>
+                    <Image
+                        source={require('../assets/mapa.png')}
+                        style={styles.ImageIconStyle1}
+                    />
+                </TouchableOpacity>
+
+                <TouchableOpacity activeOpacity={0.5}>
+
+                    <Image
+                        source={require('../assets/meusresultados.png')}
+                        style={styles.ImageIconStyle2}
+                    />
+
+                </TouchableOpacity>
+
+                <TouchableOpacity activeOpacity={0.5}>
+                    <Image
+                        source={require('../assets/pontosdevenda.png')}
+                        style={styles.ImageIconStyle3}
+                    />
+
+                </TouchableOpacity>
+
+
+                <TouchableOpacity activeOpacity={0.5}>
+                    <Image
+                        source={require('../assets/tabelasdepreco.png')}
+                        style={styles.ImageIconStyle4}
+                    />
+
+                </TouchableOpacity>
 
 
             </View>
@@ -100,7 +126,6 @@ const styles = StyleSheet.create({
         height: 93,
         width: 93,
         resizeMode: 'stretch',
-
     },
 
     ImageIconStyle2: {
