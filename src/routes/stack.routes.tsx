@@ -23,9 +23,9 @@ import { FormContact } from '../pages/Forms/FormContact';
 import { FormNickname } from '../pages/Forms/FormNickname';
 import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 
-// Import do aplicativos
+// Import dos módulos
 
-import { Feed } from '../pages/Interface/Feed';
+import { Feed } from '../pages/Modulos/Feed';
 
 const stackRoutes = createStackNavigator();
 

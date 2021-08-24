@@ -20,13 +20,9 @@ import celebrationPlanet from '../../assets/celebrationPlanet.png';
 export function FormConfirmed() {
     const navigation = useNavigation();
 
-    function touchInit() {
+    function touchInitFeed() {
 
-        navigation.navigate('')
-    }
-
-    function touchInit2() {
-        navigation.navigate('FormNickname')
+        navigation.navigate('Feed')
     }
 
     return (
@@ -63,7 +59,7 @@ export function FormConfirmed() {
                 <View style={styles.boxButton}>
                     <Button
                         title="Começar"
-                        onPress={touchInit}
+                        onPress={touchInitFeed}
                     />
                 </View>
 
