@@ -11,11 +11,10 @@ import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
 interface ButtonProps extends TouchableOpacityProps {
-    title: string;
-    Image: string;
+    image: string;
 }
 
-export function Button({ title, ...rest }: ButtonProps) {
+export function CategoriaButton({ image, ...rest }: ButtonProps) {
     return (
         <TouchableOpacity
             style={styles.container}
