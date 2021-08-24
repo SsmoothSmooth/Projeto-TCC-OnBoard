@@ -1,8 +1,9 @@
 export default {
     green_cyan: '#A8FFCB',
-    green_light: '#BDE660',
+    green_light: '#BDE665',
     green: '#32B768',
-
-    heading: '#52665A'
+    gray: '#CCE2E4',
+    heading: '#52665A',
+    grey: '#DADADA'
 
 };

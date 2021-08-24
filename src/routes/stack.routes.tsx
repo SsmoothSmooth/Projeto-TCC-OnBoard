@@ -1,10 +1,14 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
+// Import das paginas inicias
+
 import { Welcome } from '../pages/Begin/Welcome';
 import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
 import { ModalityOptions } from '../pages/Begin/ModalityOptions';
 import { Login } from '../pages/Begin/Login';
+
+//  Import dos formularios
 
 import { CadastroCooperativa } from '../pages/Forms/CadastroCooperativa';
 import { CadastroCooperativa2 } from '../pages/Forms/CadastroCooperativa2';
@@ -18,6 +22,10 @@ import { FormPersonalData } from '../pages/Forms/FormPersonalData';
 import { FormContact } from '../pages/Forms/FormContact';
 import { FormNickname } from '../pages/Forms/FormNickname';
 import { FormConfirmed } from '../pages/Forms/FormConfirmed';
+
+// Import do aplicativos
+
+import { Feed } from '../pages/Interface/Feed';
 
 const stackRoutes = createStackNavigator();
 
@@ -42,6 +50,7 @@ const AppRoutes: React.FC = () => (
             component={ConfirmAccess}
 
         />
+
 
         <stackRoutes.Screen
             name="Login"
@@ -120,6 +129,12 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="CadastroCooperativa5"
             component={CadastroCooperativa5}
+
+        />
+
+        <stackRoutes.Screen 
+            name="Feed"
+            component={Feed}
 
         />
         
