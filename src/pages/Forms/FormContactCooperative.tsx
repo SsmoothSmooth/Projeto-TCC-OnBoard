@@ -16,15 +16,15 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 
 
-export function CadastroCooperativa4() {
+export function FormContactCooperative() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('CadastroCooperativa5')
+    function touchNext() {
+        navigation.navigate('FormDescriptionCooperative')
     }
 
-    function touchInit2() {
-        navigation.navigate('CadastroCooperativa3')
+    function touchBack() {
+        navigation.navigate('FormIdentificationCooperative')
     }
 
     return (
@@ -76,7 +76,7 @@ export function CadastroCooperativa4() {
                 >
                     <Button
                         title="Confirmar"
-                        onPress={touchInit}
+                        onPress={touchNext}
 
                     />
                 </Text>
@@ -86,7 +86,7 @@ export function CadastroCooperativa4() {
                 >
                     <Button
                         title="<"
-                        onPress={touchInit2}
+                        onPress={touchBack}
 
                     />
                 </Text>

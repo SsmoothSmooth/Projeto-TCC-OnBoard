@@ -1,56 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     View,
     Text,
     SafeAreaView,
     StyleSheet,
     TouchableOpacity,
-    TextInput,
-    Image,
-    Alert
+    TextInput
+
+
 } from 'react-native';
 
 import { Button } from '../../components/Button';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import sacola from '../../assets/sacola.png';
 
 
-
-export function CadastroCooperativa() {
-
+export function FormIdentificationCooperative() {
     const navigation = useNavigation();
 
-    const [isFilled, setIsFilled] = useState(false);
-    const [name, setName] = useState<string>();
-    const [name2, setName2] = useState<string>();
-
-    function handleInputChange(value: string) {
-        setIsFilled(!!value);
-        setName(value);
-
+    function touchNext() {
+        navigation.navigate('FormContactCooperative')
     }
 
-    function handleInputChange2(value2: string) {
-        setIsFilled(!!value2);
-        setName2(value2);
-
-    }
-
-    function touchInit() {
-
-        if (!name)
-            return Alert.alert('Preenchimento obrigatório do Nome');
-        if (!name2)
-            return Alert.alert('Preenchimento obrigatório do Email');
-        else
-
-
-            navigation.navigate('CadastroCooperativa2')
-    }
-
-    function touchInit2() {
+    function touchBack() {
         navigation.navigate('ModalityOptions')
     }
 
@@ -62,35 +35,40 @@ export function CadastroCooperativa() {
 
 
                 <Text style={styles.title}>
-                    ColetoresOnBoard
+                    Preencha os dados
                 </Text>
 
-                <Image
-                    source={sacola}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
+
 
                 <Text style={styles.subtitle}>
-                    Nome Completo
+                    CNPJ
 
                 </Text>
 
                 <TextInput
                     style={styles.input}
-                    placeholder="Digite o Nome Fantasia"
-                    onChangeText={handleInputChange}
+                    placeholder="01.002.003/0004-XX"
                 />
 
                 <Text style={styles.subtitle}>
-                    Email
+                    Data da Fundação da empresa
 
                 </Text>
 
                 <TextInput
                     style={styles.input}
-                    placeholder="Digite seu Email"
-                    onChangeText={handleInputChange2}
+                    placeholder="00/00/20XX"
+                />
+
+
+                <Text style={styles.subtitle}>
+                    Responsável Legal da Empresa
+
+                </Text>
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="Nome Completo"
                 />
 
                 <Text
@@ -98,7 +76,7 @@ export function CadastroCooperativa() {
                 >
                     <Button
                         title="Confirmar"
-                        onPress={touchInit}
+                        onPress={touchNext}
 
                     />
                 </Text>
@@ -108,7 +86,7 @@ export function CadastroCooperativa() {
                 >
                     <Button
                         title="<"
-                        onPress={touchInit2}
+                        onPress={touchBack}
 
                     />
                 </Text>

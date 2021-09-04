@@ -7,7 +7,6 @@ import {
     TouchableOpacity,
     TextInput
 
-
 } from 'react-native';
 
 import { Button } from '../../components/Button';
@@ -16,15 +15,17 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 
 
-export function CadastroCooperativa3() {
+
+
+export function FormPersonalDataCooperative() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('CadastroCooperativa4')
+    function touchNext() {
+        navigation.navigate('FormConfirmed')
     }
 
-    function touchInit2() {
-        navigation.navigate('CadastroCooperativa2')
+    function touchBack() {
+        navigation.navigate('FormEmailCooperative')
     }
 
     return (
@@ -41,34 +42,23 @@ export function CadastroCooperativa3() {
 
 
                 <Text style={styles.subtitle}>
-                    CNPJ
+                    Cidade/ UF
 
                 </Text>
 
                 <TextInput
                     style={styles.input}
-                    placeholder="01.002.003/0004-XX"
+                    placeholder="Digite a sua cidade/ UF"
                 />
 
                 <Text style={styles.subtitle}>
-                    Data da Fundação da empresa
+                    Endereço
 
                 </Text>
 
                 <TextInput
                     style={styles.input}
-                    placeholder="00/00/20XX"
-                />
-
-
-                <Text style={styles.subtitle}>
-                    Responsável Legal da Empresa
-
-                </Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder="Nome Completo"
+                    placeholder="Digite o seu endereço"
                 />
 
                 <Text
@@ -76,7 +66,7 @@ export function CadastroCooperativa3() {
                 >
                     <Button
                         title="Confirmar"
-                        onPress={touchInit}
+                        onPress={touchNext}
 
                     />
                 </Text>
@@ -86,7 +76,7 @@ export function CadastroCooperativa3() {
                 >
                     <Button
                         title="<"
-                        onPress={touchInit2}
+                        onPress={touchBack}
 
                     />
                 </Text>

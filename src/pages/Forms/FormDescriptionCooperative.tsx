@@ -17,15 +17,15 @@ import { useNavigation } from '@react-navigation/core';
 
 
 
-export function CadastroCooperativa2() {
+export function FormDescriptionCooperative() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('CadastroCooperativa3')
+    function touchNext() {
+        navigation.navigate('FormEmailCooperative')
     }
 
-    function touchInit2() {
-        navigation.navigate('CadastroCooperativa')
+    function touchBack() {
+        navigation.navigate('FormContactCooperative')
     }
 
     return (
@@ -36,29 +36,12 @@ export function CadastroCooperativa2() {
 
 
                 <Text style={styles.title}>
-                    Preencha os dados
-                </Text>
-
-
-
-                <Text style={styles.subtitle}>
-                    Cidade/ UF
-
+                    Descrição da sua Empresa
                 </Text>
 
                 <TextInput
                     style={styles.input}
-                    placeholder="Digite a sua cidade/ UF"
-                />
-
-                <Text style={styles.subtitle}>
-                    Endereço
-
-                </Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder="Digite o seu endereço"
+                    placeholder="Fale sobre a sua Empresa"
                 />
 
                 <Text
@@ -66,7 +49,7 @@ export function CadastroCooperativa2() {
                 >
                     <Button
                         title="Confirmar"
-                        onPress={touchInit}
+                        onPress={touchNext}
 
                     />
                 </Text>
@@ -76,7 +59,7 @@ export function CadastroCooperativa2() {
                 >
                     <Button
                         title="<"
-                        onPress={touchInit2}
+                        onPress={touchBack}
 
                     />
                 </Text>

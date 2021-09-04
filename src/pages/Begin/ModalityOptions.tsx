@@ -29,10 +29,9 @@ export function ModalityOptions() {
         navigation.navigate('FormIdentification')
     }
 
-    //Formularios das cooperativas Colocar alguma identifcação quando for selecionado
     function touchFormCooperative() {
 
-        navigation.navigate('FormIdentification')
+        navigation.navigate('FormIdentificationCooperative')
     }
     function touchConfirmAccess() {
 

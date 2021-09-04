@@ -10,11 +10,11 @@ import { Login } from '../pages/Begin/Login';
 
 //  Import dos formularios
 
-import { CadastroCooperativa } from '../pages/Forms/CadastroCooperativa';
-import { CadastroCooperativa2 } from '../pages/Forms/CadastroCooperativa2';
-import { CadastroCooperativa3 } from '../pages/Forms/CadastroCooperativa3';
-import { CadastroCooperativa4 } from '../pages/Forms/CadastroCooperativa4';
-import { CadastroCooperativa5 } from '../pages/Forms/CadastroCooperativa5';
+import { FormEmailCooperative } from '../pages/Forms/FormEmailCooperative';
+import { FormPersonalDataCooperative } from '../pages/Forms/FormPersonalDataCooperative';
+import { FormIdentificationCooperative } from '../pages/Forms/FormIdentificationCooperative';
+import { FormContactCooperative } from '../pages/Forms/FormContactCooperative';
+import { FormDescriptionCooperative } from '../pages/Forms/FormDescriptionCooperative';
 
 import { FormIdentification } from '../pages/Forms/FormIdentification';
 import { FormAddress } from '../pages/Forms/FormAddress';
@@ -65,6 +65,8 @@ const AppRoutes: React.FC = () => (
 
         />
 
+        {/* Formularios Coletores / Domesticos */}
+
         <stackRoutes.Screen
             name="FormIdentification"
             component={FormIdentification}
@@ -96,41 +98,47 @@ const AppRoutes: React.FC = () => (
 
         />
 
+        {/* Rota da Cooperativa */}
+
+        <stackRoutes.Screen
+            name="FormEmailCooperative"
+            component={FormEmailCooperative}
+
+        />
+
+        <stackRoutes.Screen
+            name="FormPersonalDataCooperative"
+            component={FormPersonalDataCooperative}
+
+        />
+
+        <stackRoutes.Screen
+            name="FormIdentificationCooperative"
+            component={FormIdentificationCooperative}
+
+        />
+
+        <stackRoutes.Screen
+            name="FormContactCooperative"
+            component={FormContactCooperative}
+
+        />
+
+        <stackRoutes.Screen
+            name="FormDescriptionCooperative"
+            component={FormDescriptionCooperative}
+
+        />
+
+        {/* Finalização dos formulario */}
+
         <stackRoutes.Screen
             name="FormConfirmed"
             component={FormConfirmed}
 
         />
 
-        <stackRoutes.Screen
-            name="CadastroCooperativa"
-            component={CadastroCooperativa}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroCooperativa2"
-            component={CadastroCooperativa2}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroCooperativa3"
-            component={CadastroCooperativa3}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroCooperativa4"
-            component={CadastroCooperativa4}
-
-        />
-
-        <stackRoutes.Screen
-            name="CadastroCooperativa5"
-            component={CadastroCooperativa5}
-
-        />
+        {/* Modulos */}
 
         <stackRoutes.Screen 
             name="Feed"
