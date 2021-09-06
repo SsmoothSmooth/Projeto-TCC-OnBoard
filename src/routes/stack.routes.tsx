@@ -20,6 +20,7 @@ import { CadastroColetor4 } from '../pages/CadastroColetor4';
 import { CadastroColetor5 } from '../pages/CadastroColetor5';
 import { CadastroColetor6 } from '../pages/CadastroColetor6';
 import { TelaMenuColetor } from '../pages/TelaMenuColetor';
+import { TabelaPrecoColetor } from '../pages/TelaMenuColetor';
 
 
 import { Welcome } from '../pages/Welcome';
@@ -136,6 +137,13 @@ const AppRoutes: React.FC = () => (
             component={TelaMenuColetor}
 
         />
+
+        <stackRoutes.Screen
+            name="TabelaPrecoColetor"
+            component={TabelaPrecoColetor}
+
+        />
+
 
         <stackRoutes.Screen
             name="CadastroCooperativa"

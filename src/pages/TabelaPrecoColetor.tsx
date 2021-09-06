@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
+
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 import mapa from '../assets/mapa.png';
@@ -19,7 +20,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../components/Button';
 
 
-export function TelaMenuColetor() {
+export function TabelaPrecoColetor() {
     const navigation = useNavigation();
 
     function touchInit() {
@@ -30,73 +31,27 @@ export function TelaMenuColetor() {
         navigation.navigate('')
     }
 
-    function touchInit3() {
-        navigation.navigate('')
-    }
-
-    function touchInit4() {
-        navigation.navigate('TabelaPrecoColetor')
-    }
-
     return (
 
         <SafeAreaView style={styles.container}>
 
-
-
             <View style={styles.boxHeader}>
                 <Text style={styles.title}>
-                    Menu {'\n'}
+                    Tabela de Preço {'\n'}
                 </Text>
 
             </View>
 
-            <View style={styles.wrapper}>
-
-                <TouchableOpacity activeOpacity={0.5}>
-                    <Image
-                        source={require('../assets/mapa.png')}
-                        style={styles.ImageIconStyle1}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.5}>
-
-                    <Image
-                        source={require('../assets/meusresultados.png')}
-                        style={styles.ImageIconStyle2}
-                    />
-
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.5}>
-                    <Image
-                        source={require('../assets/pontosdevenda.png')}
-                        style={styles.ImageIconStyle3}
-                    />
-
-                </TouchableOpacity>
-
-
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    onPress={touchInit4}
-                >
-                    <Image
-                        source={require('../assets/tabelasdepreco.png')}
-                        style={styles.ImageIconStyle4}
-                    />
-
-                </TouchableOpacity>
-
-
+            <View>
+                <Text style={styles.subtitle}>
+                    Cooperativa
+                </Text>
             </View>
 
-
         </SafeAreaView>
-
     )
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -119,6 +74,15 @@ const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         lineHeight: 34
 
+    },
+
+    subtitle: {
+        textAlign: 'center',
+        fontSize: 12,
+        color: colors.heading,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        fontFamily: fonts.text
     },
 
     wrapper: {
