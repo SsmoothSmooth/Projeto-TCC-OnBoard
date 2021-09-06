@@ -30,17 +30,15 @@ export function Feed(){
 
             <View style={styles.boxButton}>
                 <TouchableOpacity style={styles.buttonInicio}>
-                    <Text style={styles.buttonText}>Inicio</Text>
+                     <Text style={styles.buttonText}>Inicio</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonMenu}
-                    onPress={touchSacola}
-                >
-                    <Text style={styles.buttonText}>Menu</Text>
+                <TouchableOpacity style={styles.buttonMenu}onPress={touchSacola}>
+                     <Text style={styles.buttonText}>Menu</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonPerfil}>
-                    <Text style={styles.buttonText}>Perfil</Text> 
+                     <Text style={styles.buttonText}>Perfil</Text> 
                 </TouchableOpacity>  
             </View>
 
@@ -52,7 +50,6 @@ export function Feed(){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    
     },
 
     wrapper: {
@@ -65,7 +62,7 @@ const styles = StyleSheet.create({
 
     boxHeader: {
         width: '100%',
-        marginTop: -48,
+        marginTop: -60,
         backgroundColor: colors.gray,
         paddingTop: '25%',
         
