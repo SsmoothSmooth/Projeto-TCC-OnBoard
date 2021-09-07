@@ -8,15 +8,15 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 import mapa from '../assets/mapa.png';
 import meusresultados from '../assets/meusresultados.png';
 import pontosdevenda from '../assets/pontosdevenda.png';
 import tabelasdepreco from '../assets/tabelasdepreco.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { Button } from '../components/Button';
+import { Button } from '../../components/Button';
 
 
 export function TelaMenuColetor() {
@@ -55,7 +55,7 @@ export function TelaMenuColetor() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../assets/mapa.png')}
+                        source={require('../../assets/mapa.png')}
                         style={styles.ImageIconStyle1}
                     />
                 </TouchableOpacity>
@@ -63,7 +63,7 @@ export function TelaMenuColetor() {
                 <TouchableOpacity activeOpacity={0.5}>
 
                     <Image
-                        source={require('../assets/meusresultados.png')}
+                        source={require('../../assets/meusresultados.png')}
                         style={styles.ImageIconStyle2}
                     />
 
@@ -71,7 +71,7 @@ export function TelaMenuColetor() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../assets/pontosdevenda.png')}
+                        source={require('../../assets/pontosdevenda.png')}
                         style={styles.ImageIconStyle3}
                     />
 
@@ -83,7 +83,7 @@ export function TelaMenuColetor() {
                     onPress={touchInit4}
                 >
                     <Image
-                        source={require('../assets/tabelasdepreco.png')}
+                        source={require('../../assets/tabelasdepreco.png')}
                         style={styles.ImageIconStyle4}
                     />
 
