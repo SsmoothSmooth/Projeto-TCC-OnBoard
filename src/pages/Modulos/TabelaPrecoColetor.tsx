@@ -9,15 +9,15 @@ import {
 } from 'react-native';
 
 
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 import mapa from '../assets/mapa.png';
 import meusresultados from '../assets/meusresultados.png';
 import pontosdevenda from '../assets/pontosdevenda.png';
 import tabelasdepreco from '../assets/tabelasdepreco.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { Button } from '../components/Button';
+import { Button } from '../../components/Button';
 
 
 export function TabelaPrecoColetor() {
