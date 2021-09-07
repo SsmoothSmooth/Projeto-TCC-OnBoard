@@ -26,6 +26,9 @@ import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 // Import dos módulos
 
 import { Feed } from '../pages/Modulos/Feed';
+import { Sacola } from '../pages/Modulos/Sacola';
+import { TelaMenuColetor } from '../pages/Modulos/TelaMenuColetor';
+import { TabelaPrecoColetor } from '../pages/Modulos/TabelaPrecoColetor';
 
 const stackRoutes = createStackNavigator();
 
@@ -38,6 +41,8 @@ const AppRoutes: React.FC = () => (
             },
         }}
     >
+
+        {/* Rota Begin */}
 
         <stackRoutes.Screen
             name="Welcome"
@@ -65,7 +70,7 @@ const AppRoutes: React.FC = () => (
 
         />
 
-        {/* Formularios Coletores / Domesticos */}
+        {/* Rota Forms */}
 
         <stackRoutes.Screen
             name="FormIdentification"
@@ -138,11 +143,29 @@ const AppRoutes: React.FC = () => (
 
         />
 
-        {/* Modulos */}
+        {/* Rota Módulos */}
 
         <stackRoutes.Screen 
             name="Feed"
             component={Feed}
+
+        />
+
+        <stackRoutes.Screen 
+            name="Sacola"
+            component={Sacola}
+
+        />
+
+        <stackRoutes.Screen 
+            name="TelaMenuColetor"
+            component={TelaMenuColetor}
+
+        />
+
+        <stackRoutes.Screen 
+            name="TabelaPrecoColetor"
+            component={TabelaPrecoColetor}
 
         />
         
