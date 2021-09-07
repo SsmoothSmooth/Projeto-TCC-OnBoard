@@ -24,6 +24,12 @@ export function Welcome(){
         navigation.navigate('ConfirmAccess')
     }
 
+    // Rota para testar a interface
+
+    // function touchTest(){
+    //     navigation.navigate('')
+    // }
+
     return(
         <SafeAreaView style={styles.container}>
 
@@ -58,7 +64,7 @@ export function Welcome(){
                 <View style={styles.testButton}>
                         <Button
                             title="View Interface"
-                            onPress={touchInit}
+                            //onPress={touchTest}
 
                         />
                 </View>
