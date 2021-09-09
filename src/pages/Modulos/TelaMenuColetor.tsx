@@ -89,23 +89,21 @@ export function TelaMenuColetor() {
 
                 </TouchableOpacity>
 
-
-                <View style={styles.boxButton}>
-                    <TouchableOpacity style={styles.buttonInicio}>
-                        <Text style={styles.buttonText}>Inicio</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.buttonMenu}>
-                        <Text style={styles.buttonText}>Menu</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.buttonPerfil}>
-                        <Text style={styles.buttonText}>Perfil</Text>
-                    </TouchableOpacity>
-                </View>
-
             </View>
 
+            <View style={styles.boxButton}>
+                <TouchableOpacity style={styles.buttonInicio}>
+                    <Text style={styles.buttonText}>Inicio</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.buttonMenu}>
+                    <Text style={styles.buttonText}>Menu</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.buttonPerfil}>
+                    <Text style={styles.buttonText}>Perfil</Text>
+                </TouchableOpacity>
+            </View>
 
         </SafeAreaView>
 

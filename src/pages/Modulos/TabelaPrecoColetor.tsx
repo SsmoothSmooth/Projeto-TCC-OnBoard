@@ -15,7 +15,7 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
-
+import Vector from '../../assets/Vector.png'
 
 export function TabelaPrecoColetor() {
     const navigation = useNavigation();
@@ -46,7 +46,7 @@ export function TabelaPrecoColetor() {
             </View>
 
             <View style={styles.Button}>
-                <Image source>
+                <Image source={Vector} />
                 <Text>Coop.recicle </Text>
             </View>
 
