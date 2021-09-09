@@ -46,11 +46,8 @@ export function TabelaPrecoColetor() {
             </View>
 
             <View style={styles.Button}>
-                <Button
-                    title='Coop.recicle'
-                />
-
-
+                <Image source>
+                <Text>Coop.recicle </Text>
             </View>
 
         </SafeAreaView>
@@ -92,8 +89,12 @@ const styles = StyleSheet.create({
     },
 
     Button: {
-        width: '100%',
-        paddingHorizontal: '20%',
+        backgroundColor: colors.gray,
+        width: 100,
+        height: 40,
+        borderRadius: 50,
+        textAlign: 'center',
+        justifyContent: 'center',
 
     },
 
