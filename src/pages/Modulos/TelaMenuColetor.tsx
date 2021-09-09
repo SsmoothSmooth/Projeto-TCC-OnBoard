@@ -90,6 +90,20 @@ export function TelaMenuColetor() {
                 </TouchableOpacity>
 
 
+                <View style={styles.boxButton}>
+                    <TouchableOpacity style={styles.buttonInicio}>
+                        <Text style={styles.buttonText}>Inicio</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.buttonMenu}>
+                        <Text style={styles.buttonText}>Menu</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.buttonPerfil}>
+                        <Text style={styles.buttonText}>Perfil</Text>
+                    </TouchableOpacity>
+                </View>
+
             </View>
 
 
@@ -166,56 +180,48 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
 
-    boxInput: {
-        width: '100%',
-        alignItems: 'center',
-        paddingHorizontal: '15%',
-        paddingVertical: 30
-
-    },
-
-    input: {
-        borderBottomWidth: 1,
-        borderColor: '#52665A',
-        color: colors.heading,
-        width: '100%',
-        fontSize: 24,
-        textAlign: 'center',
-        marginVertical: '10%'
-    },
-
-    wrapperButton: {
-        width: '100%',
-    },
-
     boxButton: {
+        flex: 1,
+        paddingVertical: '18%',
+        marginTop: '16%',
+        justifyContent: 'space-between',
+        paddingHorizontal: '10%',
         width: '100%',
-        paddingHorizontal: '20%'
+        backgroundColor: colors.gray,
+        alignItems: 'flex-end',
+        flexDirection: 'row'
 
     },
 
-    boxBackButton: {
-        width: '100%',
-        alignItems: 'center',
+    buttonInicio: {
+        backgroundColor: colors.green_cyan,
+        width: 100,
+        height: 40,
+        borderRadius: 50,
+        textAlign: 'center',
         justifyContent: 'center',
-        paddingTop: 5,
-        paddingBottom: '10%',
+
     },
 
-    backButton: {
-        backgroundColor: colors.green,
-        height: 60,
-        width: 60,
-        alignItems: 'center',
+    buttonMenu: {
+        backgroundColor: colors.green_cyan,
+        width: 100,
+        height: 40,
+        borderRadius: 50,
+        textAlign: 'center',
         justifyContent: 'center',
-        borderRadius: 20,
 
     },
 
-    backButtonIcon: {
-        color: colors.green_cyan,
-        fontSize: 35,
-    }
+    buttonPerfil: {
+        backgroundColor: colors.green_cyan,
+        width: 100,
+        height: 40,
+        borderRadius: 50,
+        textAlign: 'center',
+        justifyContent: 'center',
+
+    },
 
 
 })

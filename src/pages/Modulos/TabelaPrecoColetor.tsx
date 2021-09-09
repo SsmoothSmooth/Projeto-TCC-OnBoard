@@ -6,15 +6,12 @@ import {
     Text,
     Image,
     TouchableOpacity,
+    ColorPropType,
 } from 'react-native';
 
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import mapa from '../assets/mapa.png';
-import meusresultados from '../assets/meusresultados.png';
-import pontosdevenda from '../assets/pontosdevenda.png';
-import tabelasdepreco from '../assets/tabelasdepreco.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
@@ -48,6 +45,14 @@ export function TabelaPrecoColetor() {
                 </Text>
             </View>
 
+            <View style={styles.Button}>
+                <Button
+                    title='Coop.recicle'
+                />
+
+
+            </View>
+
         </SafeAreaView>
     )
 }
@@ -78,11 +83,18 @@ const styles = StyleSheet.create({
 
     subtitle: {
         textAlign: 'center',
+        fontWeight: 'bold',
         fontSize: 12,
         color: colors.heading,
         paddingHorizontal: 10,
         paddingVertical: 10,
         fontFamily: fonts.text
+    },
+
+    Button: {
+        width: '100%',
+        paddingHorizontal: '20%',
+
     },
 
     wrapper: {
@@ -92,42 +104,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         margin: 45
-    },
-
-
-    ImageIconStyle1: {
-        padding: 10,
-        margin: 5,
-        height: 93,
-        width: 93,
-        resizeMode: 'stretch',
-    },
-
-    ImageIconStyle2: {
-        padding: 10,
-        marginHorizontal: 30,
-        margin: 5,
-        height: 100,
-        width: 100,
-        resizeMode: 'contain',
-
-    },
-
-    ImageIconStyle3: {
-        padding: 10,
-        margin: 5,
-        height: 100,
-        width: 100,
-        resizeMode: 'contain',
-    },
-
-    ImageIconStyle4: {
-        padding: 10,
-        marginHorizontal: 30,
-        margin: 5,
-        height: 100,
-        width: 100,
-        resizeMode: 'contain',
     },
 
     boxInput: {

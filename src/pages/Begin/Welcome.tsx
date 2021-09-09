@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    View, 
-    Text, 
-    SafeAreaView, 
+    View,
+    Text,
+    SafeAreaView,
     Image,
     StyleSheet,
     TouchableOpacity,
@@ -17,35 +17,35 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { Button } from '../../components/Button';
 
-export function Welcome(){
+export function Welcome() {
     const navigation = useNavigation();
 
-    function touchInit(){
+    function touchInit() {
         navigation.navigate('ConfirmAccess')
     }
 
     // Rota para testar a interface
 
-    // function touchTest(){
-    //     navigation.navigate('')
-    // }
+    function touchTest() {
+        navigation.navigate('TelaMenuColetor')
+    }
 
-    return(
+    return (
         <SafeAreaView style={styles.container}>
 
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
                     <Text style={styles.title}>
-                        Realize o descarte {'\n'} 
+                        Realize o descarte {'\n'}
                         e reciclavel da {'\n'}
                         maneira correta! {'\n'}
                     </Text>
                 </View>
 
                 <View style={styles.boxImage}>
-                    <Image 
-                        source={ handsLoves }
+                    <Image
+                        source={handsLoves}
                         style={styles.image}
                         resizeMode="contain"
                     />
@@ -55,18 +55,18 @@ export function Welcome(){
                     <Text style={styles.subtitle}>
                         Venham conosco  {'\n'}
                         mudar o meio ambiente {'\n'}
-                        entre na Coletores Onboard. 
+                        entre na Coletores Onboard.
                     </Text>
                 </View>
 
                 {/* Teste screen */}
 
                 <View style={styles.testButton}>
-                        <Button
-                            title="View Interface"
-                            //onPress={touchTest}
+                    <Button
+                        title="View Interface"
+                        onPress={touchTest}
 
-                        />
+                    />
                 </View>
 
 
@@ -79,7 +79,7 @@ export function Welcome(){
                         <FontAwesome5
                             name="arrow-alt-circle-right"
                             style={styles.buttonIcon}
-                            
+
                         />
 
                     </TouchableOpacity>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         paddingBottom: '2%'
     },
 
-    boxHeader:{
+    boxHeader: {
         backgroundColor: colors.green_cyan,
         width: '100%',
         justifyContent: 'center',
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         lineHeight: 32,
     },
 
-    boxImage:{
+    boxImage: {
         width: '100%',
         alignItems: 'center'
     },
