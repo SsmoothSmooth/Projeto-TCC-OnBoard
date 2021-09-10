@@ -19,7 +19,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 
 
-export function TelaMenuColetor() {
+export function CategoriaColetor() {
     const navigation = useNavigation();
 
     function touchInit() {
