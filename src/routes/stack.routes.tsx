@@ -29,6 +29,7 @@ import { Feed } from '../pages/Modulos/Feed';
 import { Sacola } from '../pages/Modulos/Sacola';
 import { TelaMenuColetor } from '../pages/Modulos/TelaMenuColetor';
 import { TabelaPrecoColetor } from '../pages/Modulos/TabelaPrecoColetor';
+import { CategoriaColetor } from '../pages/Modulos/CategoriaColetor';
 
 const stackRoutes = createStackNavigator();
 
@@ -145,30 +146,36 @@ const AppRoutes: React.FC = () => (
 
         {/* Rota Módulos */}
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Feed"
             component={Feed}
 
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Sacola"
             component={Sacola}
 
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="TelaMenuColetor"
             component={TelaMenuColetor}
 
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="TabelaPrecoColetor"
             component={TabelaPrecoColetor}
 
         />
-        
+
+        <stackRoutes.Screen
+            name="CategoriaColetor"
+            component={CategoriaColetor}
+
+        />
+
     </stackRoutes.Navigator>
 )
 
