@@ -10,10 +10,10 @@ import {
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import mapa from '../assets/mapa.png';
-import meusresultados from '../assets/meusresultados.png';
-import pontosdevenda from '../assets/pontosdevenda.png';
-import tabelasdepreco from '../assets/tabelasdepreco.png';
+import metal from '../assets/metal.png';
+import papel from '../assets/papel.png';
+import plastico from '../assets/plastico.png';
+import vidro from '../assets/vidro.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
@@ -35,7 +35,7 @@ export function TelaMenuColetor() {
     }
 
     function touchInit4() {
-        navigation.navigate('TabelaPrecoColetor')
+        navigation.navigate('')
     }
 
     return (
@@ -46,7 +46,7 @@ export function TelaMenuColetor() {
 
             <View style={styles.boxHeader}>
                 <Text style={styles.title}>
-                    Menu {'\n'}
+                    Categorias {'\n'}
                 </Text>
 
             </View>
@@ -55,7 +55,7 @@ export function TelaMenuColetor() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../../assets/mapa.png')}
+                        source={require('../../assets/papel.png')}
                         style={styles.ImageIconStyle1}
                     />
                 </TouchableOpacity>
@@ -63,7 +63,7 @@ export function TelaMenuColetor() {
                 <TouchableOpacity activeOpacity={0.5}>
 
                     <Image
-                        source={require('../../assets/meusresultados.png')}
+                        source={require('../../assets/metal.png')}
                         style={styles.ImageIconStyle2}
                     />
 
@@ -71,7 +71,7 @@ export function TelaMenuColetor() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../../assets/pontosdevenda.png')}
+                        source={require('../../assets/vidro.png')}
                         style={styles.ImageIconStyle3}
                     />
 
@@ -83,7 +83,7 @@ export function TelaMenuColetor() {
                     onPress={touchInit4}
                 >
                     <Image
-                        source={require('../../assets/tabelasdepreco.png')}
+                        source={require('../../assets/plastico.png')}
                         style={styles.ImageIconStyle4}
                     />
 
@@ -231,4 +231,3 @@ const styles = StyleSheet.create({
 
     },
 })
-

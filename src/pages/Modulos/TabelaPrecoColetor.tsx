@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     subtitle: {
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 12,
+        fontSize: 20,
         color: colors.heading,
         paddingHorizontal: 10,
         paddingVertical: 10,
@@ -90,12 +90,14 @@ const styles = StyleSheet.create({
 
     Button: {
         backgroundColor: colors.gray,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
+        height: 60,
+        width: '85%',
+        borderRadius: 40,
+        paddingHorizontal: 30,
         justifyContent: 'center',
-
+        alignItems: 'center',
+        marginVertical: 10,
+        paddingTop: '5%',
     },
 
     wrapper: {
