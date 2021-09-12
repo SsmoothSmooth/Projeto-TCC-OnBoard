@@ -10,16 +10,17 @@ import {
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import metal from '../assets/metal.png';
-import papel from '../assets/papel.png';
-import plastico from '../assets/plastico.png';
-import vidro from '../assets/vidro.png';
+import mapa from '../assets/mapa.png';
+import meusresultados from '../assets/meusresultados.png';
+import pontosdevenda from '../assets/pontosdevenda.png';
+import tabelasdepreco from '../assets/tabelasdepreco.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
+import { Header } from '../../components/Header'
 
 
-export function CategoriaColetor() {
+export function TelaMenuDomestico() {
     const navigation = useNavigation();
 
     function touchInit() {
@@ -35,18 +36,20 @@ export function CategoriaColetor() {
     }
 
     function touchInit4() {
-        navigation.navigate('')
+        navigation.navigate('TabelaPrecoColetor')
     }
 
     return (
 
         <SafeAreaView style={styles.container}>
 
-
+            <View>
+                <Header />
+            </View>
 
             <View style={styles.boxHeader}>
                 <Text style={styles.title}>
-                    Categorias {'\n'}
+                    Menu {'\n'}
                 </Text>
 
             </View>
@@ -55,7 +58,7 @@ export function CategoriaColetor() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../../assets/papel.png')}
+                        source={require('../../assets/mapa.png')}
                         style={styles.ImageIconStyle1}
                     />
                 </TouchableOpacity>
@@ -63,7 +66,7 @@ export function CategoriaColetor() {
                 <TouchableOpacity activeOpacity={0.5}>
 
                     <Image
-                        source={require('../../assets/metal.png')}
+                        source={require('../../assets/meusresultados.png')}
                         style={styles.ImageIconStyle2}
                     />
 
@@ -71,7 +74,7 @@ export function CategoriaColetor() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../../assets/vidro.png')}
+                        source={require('../../assets/pontosdevenda.png')}
                         style={styles.ImageIconStyle3}
                     />
 
@@ -83,7 +86,7 @@ export function CategoriaColetor() {
                     onPress={touchInit4}
                 >
                     <Image
-                        source={require('../../assets/plastico.png')}
+                        source={require('../../assets/tabelasdepreco.png')}
                         style={styles.ImageIconStyle4}
                     />
 
@@ -91,22 +94,19 @@ export function CategoriaColetor() {
 
             </View>
 
-            <View style={styles.boxBackButton}>
-                <TouchableOpacity
-                    style={styles.backButton}
-                    activeOpacity={0.5}
-                //onPress={}
+            <View style={styles.boxButton}>
+                <TouchableOpacity style={styles.buttonInicio}>
+                    <Text style={styles.buttonText}>Inicio</Text>
+                </TouchableOpacity>
 
-                >
-                    <FontAwesome5
-                        name="arrow-alt-circle-left"
-                        style={styles.backButtonIcon}
+                <TouchableOpacity style={styles.buttonMenu}>
+                    <Text style={styles.buttonText}>Menu</Text>
+                </TouchableOpacity>
 
-                    />
-
+                <TouchableOpacity style={styles.buttonPerfil}>
+                    <Text style={styles.buttonText}>Perfil</Text>
                 </TouchableOpacity>
             </View>
-
 
         </SafeAreaView>
 
@@ -229,26 +229,8 @@ const styles = StyleSheet.create({
 
     },
 
-    boxBackButton: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 5,
-        paddingBottom: '10%',
-    },
+    buttonText: {
+        textAlign: 'center',
 
-    backButton: {
-        backgroundColor: colors.green,
-        height: 60,
-        width: 60,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 20,
-
-    },
-
-    backButtonIcon: {
-        color: colors.green_cyan,
-        fontSize: 35,
     },
 })

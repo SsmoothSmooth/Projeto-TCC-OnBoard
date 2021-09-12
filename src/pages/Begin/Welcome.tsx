@@ -27,7 +27,7 @@ export function Welcome() {
     // Rota para testar a interface
 
     function touchTest() {
-        navigation.navigate('TelaMenuColetor')
+        navigation.navigate('CategoriaColetor')
     }
 
     return (
