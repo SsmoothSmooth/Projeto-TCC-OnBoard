@@ -10,10 +10,10 @@ import {
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import Descarte from '../assets/Descarte.png';
-import SacolaLixo from '../assets/SacolaLixo.png';
-import MeusResultados2 from '../assets/MeusResultados2.png';
-import Manual from '../assets/Manual.png';
+import Descarte from '../../assets/Descarte.png';
+import SacolaLixo from '../../assets/SacolaLixo.png';
+import MeusResultados2 from '../../assets/MeusResultados2.png';
+import Manual from '../../assets/Manual.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
@@ -60,7 +60,7 @@ export function TelaMenuDomestico() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../assets/Descarte.png')}
+                        source={require('../../assets/Descarte.png')}
                         style={styles.ImageIconStyle1}
                     />
                 </TouchableOpacity>
@@ -68,7 +68,7 @@ export function TelaMenuDomestico() {
                 <TouchableOpacity activeOpacity={0.5}>
 
                     <Image
-                        source={require('../assets/SacolaLixo.png')}
+                        source={require('../../assets/SacolaLixo.png')}
                         style={styles.ImageIconStyle2}
                     />
 
@@ -76,7 +76,7 @@ export function TelaMenuDomestico() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../assets/MeusResultados2.png')}
+                        source={require('../../assets/MeusResultados2.png')}
                         style={styles.ImageIconStyle3}
                     />
 
@@ -88,7 +88,7 @@ export function TelaMenuDomestico() {
                     onPress={touchInit4}
                 >
                     <Image
-                        source={require('../assets/Manual.png')}
+                        source={require('../../assets/Manual.png')}
                         style={styles.ImageIconStyle4}
                     />
 
