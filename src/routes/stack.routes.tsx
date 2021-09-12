@@ -177,7 +177,7 @@ const AppRoutes: React.FC = () => (
 
         />
         <stackRoutes.Screen
-            name="TelaMenuDomesticor"
+            name="TelaMenuDomestico"
             component={TelaMenuDomestico}
 
         />

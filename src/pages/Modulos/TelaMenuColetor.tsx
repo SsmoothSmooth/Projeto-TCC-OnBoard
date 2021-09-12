@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     },
 
     boxHeader: {
-        backgroundColor: colors.green_cyan,
+        backgroundColor: colors.gray,
         width: '100%',
         justifyContent: 'center',
         paddingTop: '10%',
