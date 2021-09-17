@@ -11,7 +11,7 @@ export function Sacola(){
 
 
     return(
-        <SafeAreaView style={StyleSheet.container}> 
+        <SafeAreaView style={styles.container}> 
 
             <View style={styles.boxHeader}>
                   <Text style={styles.title}>Sacola{'\n'}</Text>
