@@ -116,12 +116,13 @@ const styles = StyleSheet.create({
 
     boxImage:{
         width: '100%',
+        paddingVertical: '3%',
         alignItems: 'center'
     },
 
 
     image: {
-        height: Dimensions.get('window').width * 0.7,
+        height: Dimensions.get('window').width * 0.5,
         borderRadius: 15,
     },
 

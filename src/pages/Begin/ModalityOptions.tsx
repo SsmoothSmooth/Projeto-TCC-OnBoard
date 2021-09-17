@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '15%', 
+        marginVertical: '5%', 
     },
 
     boxBackButton: {
