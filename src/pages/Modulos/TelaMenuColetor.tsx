@@ -42,16 +42,15 @@ export function TelaMenuColetor() {
 
         <SafeAreaView style={styles.container}>
 
-
-
-            <View style={styles.boxHeader}>
-                <Text style={styles.title}>
-                    Menu {'\n'}
-                </Text>
-
-            </View>
-
             <View style={styles.wrapper}>
+
+
+                <View style={styles.boxHeader}>
+                    <Text style={styles.title}>
+                        Menu {'\n'}
+                    </Text>
+
+                </View>
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
@@ -115,11 +114,29 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
+    wrapper: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 2,
+        marginHorizontal: 2,
+        marginTop: '-5%'
+
+
+
+    },
+
     boxHeader: {
         backgroundColor: colors.gray,
         width: '100%',
         justifyContent: 'center',
-        paddingTop: '10%',
+        paddingTop: '15%',
+        marginTop: '15%',
+
+
+
     },
 
     title: {
@@ -132,18 +149,6 @@ const styles = StyleSheet.create({
         lineHeight: 34
 
     },
-
-    wrapper: {
-        flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 40,
-        marginHorizontal: 40,
-
-    },
-
 
     ImageIconStyle1: {
         padding: 20,
@@ -186,7 +191,7 @@ const styles = StyleSheet.create({
     boxButton: {
         flex: 1,
         paddingVertical: '10%',
-        marginTop: '70%',
+        marginTop: '130%',
         justifyContent: 'space-between',
         paddingHorizontal: '10%',
         width: '100%',

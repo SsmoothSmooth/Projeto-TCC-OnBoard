@@ -31,6 +31,7 @@ import { TelaMenuColetor } from '../pages/Modulos/TelaMenuColetor';
 import { TabelaPrecoColetor } from '../pages/Modulos/TabelaPrecoColetor';
 import { CategoriaColetor } from '../pages/Modulos/CategoriaColetor';
 import { TelaMenuDomestico } from '../pages/Modulos/TelaMenuDomestico';
+import { TelaMenuCooperativa } from '../pages/Modulos/TelaMenuCooperativa';
 
 const stackRoutes = createStackNavigator();
 
@@ -179,6 +180,12 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="TelaMenuDomestico"
             component={TelaMenuDomestico}
+
+        />
+
+        <stackRoutes.Screen
+            name="TelaMenuCooperativa"
+            component={TelaMenuCooperativa}
 
         />
 

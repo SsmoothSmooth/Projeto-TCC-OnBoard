@@ -10,16 +10,17 @@ import {
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import metal from '../assets/metal.png';
-import papel from '../assets/papel.png';
-import plastico from '../assets/plastico.png';
-import vidro from '../assets/vidro.png';
+import Descarte from '../../assets/Descarte.png';
+import SacolaLixo from '../../assets/SacolaLixo.png';
+import MeusResultados2 from '../../assets/MeusResultados2.png';
+import Manual from '../../assets/Manual.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
+import { Header } from '../../components/Header'
 
 
-export function CategoriaColetor() {
+export function TelaMenuCooperativa() {
     const navigation = useNavigation();
 
     function touchInit() {
@@ -42,18 +43,25 @@ export function CategoriaColetor() {
 
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.boxHeader}>
-                <Text style={styles.title}>
-                    Categorias {'\n'}
-                </Text>
-
-            </View>
-
             <View style={styles.wrapper}>
+
+                <View style={styles.headerStyle}>
+                    <Header />
+                </View>
+
+                <View style={styles.boxHeader}>
+
+                    <Text style={styles.title}>
+                        Menu {'\n'}
+                    </Text>
+
+                </View>
+
+
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../../assets/papel.png')}
+                        source={require('../../assets/Descarte.png')}
                         style={styles.ImageIconStyle1}
                     />
                 </TouchableOpacity>
@@ -61,7 +69,7 @@ export function CategoriaColetor() {
                 <TouchableOpacity activeOpacity={0.5}>
 
                     <Image
-                        source={require('../../assets/metal.png')}
+                        source={require('../../assets/SacolaLixo.png')}
                         style={styles.ImageIconStyle2}
                     />
 
@@ -69,7 +77,7 @@ export function CategoriaColetor() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../../assets/vidro.png')}
+                        source={require('../../assets/MeusResultados2.png')}
                         style={styles.ImageIconStyle3}
                     />
 
@@ -81,7 +89,7 @@ export function CategoriaColetor() {
                     onPress={touchInit4}
                 >
                     <Image
-                        source={require('../../assets/plastico.png')}
+                        source={require('../../assets/Manual.png')}
                         style={styles.ImageIconStyle4}
                     />
 
@@ -89,22 +97,19 @@ export function CategoriaColetor() {
 
             </View>
 
-            <View style={styles.boxBackButton}>
-                <TouchableOpacity
-                    style={styles.backButton}
-                    activeOpacity={0.5}
-                //onPress={}
+            <View style={styles.boxButton}>
+                <TouchableOpacity style={styles.buttonInicio}>
+                    <Text style={styles.buttonText}>Inicio</Text>
+                </TouchableOpacity>
 
-                >
-                    <FontAwesome5
-                        name="arrow-alt-circle-left"
-                        style={styles.backButtonIcon}
+                <TouchableOpacity style={styles.buttonMenu}>
+                    <Text style={styles.buttonText}>Menu</Text>
+                </TouchableOpacity>
 
-                    />
-
+                <TouchableOpacity style={styles.buttonPerfil}>
+                    <Text style={styles.buttonText}>Perfil</Text>
                 </TouchableOpacity>
             </View>
-
 
         </SafeAreaView>
 
@@ -116,35 +121,41 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
-    boxHeader: {
-        backgroundColor: colors.gray,
-        width: '100%',
-        justifyContent: 'center',
-        paddingTop: '10%',
-    },
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 38,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 34
-
-    },
-
     wrapper: {
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 40,
-        marginHorizontal: 40,
+        margin: 60,
+        marginHorizontal: 35,
+        marginTop: 10
 
     },
 
+    headerStyle: {
+        backgroundColor: colors.gray,
+
+    },
+
+    boxHeader: {
+
+        width: '100%',
+        justifyContent: 'center',
+
+    },
+
+
+    title: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        textAlign: 'left',
+        color: colors.heading,
+        fontFamily: fonts.heading,
+        lineHeight: 30,
+
+
+    },
 
     ImageIconStyle1: {
         padding: 20,
@@ -187,7 +198,7 @@ const styles = StyleSheet.create({
     boxButton: {
         flex: 1,
         paddingVertical: '10%',
-        marginTop: '70%',
+        marginTop: '105%',
         justifyContent: 'space-between',
         paddingHorizontal: '10%',
         width: '100%',
@@ -227,26 +238,8 @@ const styles = StyleSheet.create({
 
     },
 
-    boxBackButton: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 5,
-        paddingBottom: '10%',
-    },
+    buttonText: {
+        textAlign: 'center',
 
-    backButton: {
-        backgroundColor: colors.green,
-        height: 60,
-        width: 60,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 20,
-
-    },
-
-    backButtonIcon: {
-        color: colors.green_cyan,
-        fontSize: 35,
     },
 })

@@ -61,9 +61,4 @@ const styles = StyleSheet.create({
         lineHeight: 40
     }
 
-
-
-
-
-
 })

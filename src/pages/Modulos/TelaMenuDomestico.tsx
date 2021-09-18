@@ -43,12 +43,11 @@ export function TelaMenuDomestico() {
 
         <SafeAreaView style={styles.container}>
 
-
-            <View style={styles.headerStyle}>
-                <Header />
-            </View>
-
             <View style={styles.wrapper}>
+
+                <View style={styles.headerStyle}>
+                    <Header />
+                </View>
 
                 <View style={styles.boxHeader}>
 
@@ -120,6 +119,18 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
+    wrapper: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 60,
+        marginHorizontal: 35,
+        marginTop: 10
+
+    },
+
     headerStyle: {
         backgroundColor: colors.gray,
     },
@@ -140,18 +151,6 @@ const styles = StyleSheet.create({
         lineHeight: 30
 
     },
-
-    wrapper: {
-        flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 40,
-        marginHorizontal: 40,
-
-    },
-
 
     ImageIconStyle1: {
         padding: 20,
@@ -194,7 +193,7 @@ const styles = StyleSheet.create({
     boxButton: {
         flex: 1,
         paddingVertical: '10%',
-        marginTop: '70%',
+        marginTop: '105%',
         justifyContent: 'space-between',
         paddingHorizontal: '10%',
         width: '100%',
