@@ -10,10 +10,10 @@ import {
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import Descarte from '../../assets/Descarte.png';
-import SacolaLixo from '../../assets/SacolaLixo.png';
-import MeusResultados2 from '../../assets/MeusResultados2.png';
-import Manual from '../../assets/Manual.png';
+import News from '../../assets/News.png';
+import TabelasPrecoCooperativa from '../../assets/TabelasPrecoCooperativa.png';
+import EventosCampanhas from '../../assets/EventosCampanhas.png';
+import Notificações from '../../assets/Notificações.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
@@ -45,23 +45,17 @@ export function TelaMenuCooperativa() {
 
             <View style={styles.wrapper}>
 
-                <View style={styles.headerStyle}>
-                    <Header />
-                </View>
-
                 <View style={styles.boxHeader}>
-
                     <Text style={styles.title}>
                         Menu {'\n'}
                     </Text>
-
                 </View>
 
 
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../../assets/Descarte.png')}
+                        source={require('../../assets/News.png')}
                         style={styles.ImageIconStyle1}
                     />
                 </TouchableOpacity>
@@ -69,7 +63,7 @@ export function TelaMenuCooperativa() {
                 <TouchableOpacity activeOpacity={0.5}>
 
                     <Image
-                        source={require('../../assets/SacolaLixo.png')}
+                        source={require('../../assets/TabelasPrecoCooperativa.png')}
                         style={styles.ImageIconStyle2}
                     />
 
@@ -77,7 +71,7 @@ export function TelaMenuCooperativa() {
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
-                        source={require('../../assets/MeusResultados2.png')}
+                        source={require('../../assets/EventosCampanhas.png')}
                         style={styles.ImageIconStyle3}
                     />
 
@@ -89,7 +83,7 @@ export function TelaMenuCooperativa() {
                     onPress={touchInit4}
                 >
                     <Image
-                        source={require('../../assets/Manual.png')}
+                        source={require('../../assets/Notificações.png')}
                         style={styles.ImageIconStyle4}
                     />
 
