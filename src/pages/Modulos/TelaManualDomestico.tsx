@@ -18,7 +18,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import Vector from '../../assets/Vector.png'
 import avaliacao from '../assets/avaliacao.png'
-import folhas from '../../assets/folhas.png'
+
 
 
 export function TelaManualDomestico() {
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
 
     boxHeader: {
         backgroundColor: colors.gray,
-        width: '120%',
+        width: '140%',
         justifyContent: 'center',
         paddingTop: '5%',
         marginTop: '5%',
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     Button: {
         backgroundColor: colors.gray,
         flexDirection: 'row',
-        height: 50,
+        height: 40,
         width: '90%',
         borderRadius: 50,
         paddingHorizontal: 10,
