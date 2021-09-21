@@ -38,7 +38,7 @@ export function TelaManualDomestico() {
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
-                    <Image source={require('../../assets/folhas.png')} />
+
 
                     <Text style={styles.title}>
                         Manual  {'\n'}
