@@ -18,9 +18,10 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import Vector from '../../assets/Vector.png'
 import avaliacao from '../assets/avaliacao.png'
+import folhas from '../../assets/folhas.png'
 
 
-export function TabelaPrecoColetor() {
+export function TelaManualDomestico() {
     const navigation = useNavigation();
 
     function touchInit() {
@@ -37,38 +38,36 @@ export function TabelaPrecoColetor() {
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
+                    <Image source={require('../../assets/folhas.png')} />
+
                     <Text style={styles.title}>
-                        Tabela de Preço {'\n'}
+                        Manual  {'\n'}
+                        OnBoard {'\n'}
                     </Text>
                 </View>
 
                 <View>
                     <Text style={styles.subtitle}>
-                        Cooperativa
+                        Reciclar é fazer nossa parte {'\n'}
+                        para um mundo mais {'\n'}
+                        sustentável {'\n'}
                     </Text>
                 </View>
 
 
 
                 <View style={styles.Button}>
-                    <Image source={Vector} />
-                    <Text> Coop.recicle {'\n'} </Text>
+                    <Text> O que é reciclagem {'\n'} </Text>
                 </View>
 
                 <View style={styles.Button}>
-                    <Image source={Vector} />
-                    <Text> Coop.recicle 2 {'\n'} </Text>
+                    <Text> Aterros Sanitários {'\n'} </Text>
                 </View>
 
                 <View style={styles.Button}>
-                    <Image source={Vector} />
-                    <Text> Coop.recicle 3 {'\n'} </Text>
+                    <Text> Tipos de reciclagem {'\n'} </Text>
                 </View>
 
-                <View style={styles.Button}>
-                    <Image source={Vector} />
-                    <Text> Coop.recicle 4 {'\n'} </Text>
-                </View>
 
                 <View style={styles.boxButton}>
                     <TouchableOpacity style={styles.buttonInicio}>
@@ -101,17 +100,19 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 2,
-        marginHorizontal: 2,
+        margin: 20,
+        marginHorizontal: 20,
         marginTop: '-5%'
     },
 
     boxHeader: {
         backgroundColor: colors.gray,
-        width: '100%',
+        width: '120%',
         justifyContent: 'center',
         paddingTop: '5%',
         marginTop: '5%',
+        alignItems: 'center'
+
     },
 
     title: {
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.gray,
         flexDirection: 'row',
         height: 50,
-        width: '80%',
+        width: '90%',
         borderRadius: 50,
         paddingHorizontal: 10,
         justifyContent: 'center',

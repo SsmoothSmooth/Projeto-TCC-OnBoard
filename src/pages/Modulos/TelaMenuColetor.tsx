@@ -123,9 +123,6 @@ const styles = StyleSheet.create({
         margin: 2,
         marginHorizontal: 2,
         marginTop: '-5%'
-
-
-
     },
 
     boxHeader: {
@@ -134,9 +131,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: '15%',
         marginTop: '15%',
-
-
-
     },
 
     title: {

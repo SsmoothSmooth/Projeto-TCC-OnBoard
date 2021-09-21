@@ -121,33 +121,28 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 60,
-        marginHorizontal: 35,
-        marginTop: 10
-
-    },
-
-    headerStyle: {
-        backgroundColor: colors.gray,
-
+        margin: 5,
+        marginHorizontal: -5,
+        marginTop: '-10%'
     },
 
     boxHeader: {
-
+        backgroundColor: colors.gray,
         width: '100%',
         justifyContent: 'center',
-
+        paddingTop: '15%',
+        marginTop: '15%',
     },
 
 
     title: {
-        fontSize: 25,
+        fontSize: 28,
         fontWeight: 'bold',
-        textAlign: 'left',
+        textAlign: 'center',
+        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 30,
-
+        lineHeight: 34
 
     },
 
@@ -192,7 +187,7 @@ const styles = StyleSheet.create({
     boxButton: {
         flex: 1,
         paddingVertical: '10%',
-        marginTop: '105%',
+        marginTop: '130%',
         justifyContent: 'space-between',
         paddingHorizontal: '10%',
         width: '100%',
