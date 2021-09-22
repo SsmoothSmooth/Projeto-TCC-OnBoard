@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     Dimensions
 } from 'react-native';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 import { FontAwesome5 } from '@expo/vector-icons';
 
@@ -16,6 +17,7 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { Button } from '../../components/Button';
+import { Header } from '../../components/Header';
 
 export function Welcome(){
     const navigation = useNavigation();
@@ -25,33 +27,28 @@ export function Welcome(){
     }
 
     return(
-        <SafeAreaView style={styles.container}>
 
+        <SafeAreaView style={styles.container}>
             <View style={styles.wrapper}>
 
-                <View style={styles.boxHeader}>
-                    <Text style={styles.title}>
-                        Realize o descarte {'\n'} 
-                        e reciclavel da {'\n'}
-                        maneira correta! {'\n'}
-                    </Text>
-                </View>
-
-                <View style={styles.boxImage}>
-                    <Image 
-                        source={ handsLoves }
-                        style={styles.image}
-                        resizeMode="contain"
+                <View style={styles.header}>
+                    <Header
+                        title="Realize o descarte e a coleta de lixo reciclavel da maneira correta!"
                     />
                 </View>
 
-                <View style={styles.boxSubtitle}>
-                    <Text style={styles.subtitle}>
-                        Venham conosco  {'\n'}
-                        mudar o meio ambiente {'\n'}
-                        entre na Coletores Onboard. 
-                    </Text>
-                </View>
+                <Image 
+                    source={ handsLoves }
+                    style={styles.image}
+                    resizeMode="contain"
+                    />
+
+                <Text style={styles.subtitle}>
+                    Venham conosco  {'\n'}
+                    mudar o meio ambiente {'\n'}
+                    entre na Coletores Onboard. 
+                </Text>
+
 
                 {/* Teste screen */}
 
@@ -59,26 +56,22 @@ export function Welcome(){
                         <Button
                             title="View Interface"
                             onPress={touchInit}
-
-                        />
-                </View>
-
-
-                <View style={styles.boxButton}>
-                    <TouchableOpacity
-                        style={styles.button}
-                        activeOpacity={0.5}
-                        onPress={touchInit}
-                    >
-                        <FontAwesome5
-                            name="arrow-alt-circle-right"
-                            style={styles.buttonIcon}
                             
-                        />
-
-                    </TouchableOpacity>
+                            />
                 </View>
 
+                <TouchableOpacity
+                    style={styles.button}
+                    activeOpacity={0.5}
+                    onPress={touchInit}
+                    >
+                    <FontAwesome5
+                        name="arrow-alt-circle-right"
+                        style={styles.buttonIcon}
+                        
+                        />
+
+                </TouchableOpacity>
 
             </View>
         </SafeAreaView>
@@ -87,47 +80,27 @@ export function Welcome(){
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: 'white',
-        paddingBottom: '2%'
+        paddingBottom: '16%'
     },
 
-    boxHeader:{
+    header: {
+        width: '100%',
         backgroundColor: colors.green_cyan,
-        width: '100%',
-        justifyContent: 'center',
-        paddingTop: '16%'
+        paddingVertical: '2%'
     },
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 32,
-    },
-
-    boxImage:{
-        width: '100%',
-        paddingVertical: '3%',
-        alignItems: 'center'
-    },
-
 
     image: {
+        marginTop: '3%',
         height: Dimensions.get('window').width * 0.5,
         borderRadius: 15,
-    },
-
-    boxSubtitle: {
-        width: '100%',
     },
 
     subtitle: {
@@ -136,13 +109,6 @@ const styles = StyleSheet.create({
         color: colors.heading,
         fontFamily: fonts.text,
         margin: 10
-    },
-
-    boxButton: {
-        width: '100%',
-        padding: '16%',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
 
     button: {
