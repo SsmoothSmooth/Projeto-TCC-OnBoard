@@ -4,10 +4,7 @@ import {
     StyleSheet,
     View,
     Text,
-    Image,
     TouchableOpacity,
-
-
 } from 'react-native';
 
 
@@ -53,8 +50,6 @@ export function TelaManualDomestico() {
                         sustentável {'\n'}
                     </Text>
                 </View>
-
-
 
                 <View style={styles.Button}>
                     <Text> O que é reciclagem {'\n'} </Text>
