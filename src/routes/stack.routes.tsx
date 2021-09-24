@@ -33,6 +33,8 @@ import { CategoriaColetor } from '../pages/Modulos/CategoriaColetor';
 import { TelaMenuDomestico } from '../pages/Modulos/TelaMenuDomestico';
 import { TelaManualDomestico } from '../pages/Modulos/TelaManualDomestico';
 import { TelaMenuCooperativa } from '../pages/Modulos/TelaMenuCooperativa';
+import { TelaEventosCampanhas } from '../pages/Modulos/TelaEventosCampanhas';
+import { TelaNotificacoesCooperativas } from '../pages/Modulos/TelaNotificacoesCoopeativas';
 
 const stackRoutes = createStackNavigator();
 
@@ -195,6 +197,19 @@ const AppRoutes: React.FC = () => (
             component={TelaMenuCooperativa}
 
         />
+
+        <stackRoutes.Screen
+            name="TelaEventosCampanhas"
+            component={TelaEventosCampanhas}
+
+        />
+
+        <stackRoutes.Screen
+            name="TelaNotificacoesCooperativas"
+            component={TelaNotificacoesCooperativas}
+
+        />
+
 
     </stackRoutes.Navigator>
 )

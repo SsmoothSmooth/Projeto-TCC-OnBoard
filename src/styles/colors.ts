@@ -4,6 +4,7 @@ export default {
     green: '#32B768',
     gray: '#CCE2E4',
     heading: '#52665A',
-    grey: '#DADADA'
+    grey: '#DADADA',
+    green_solid: '#D9FCAC'
 
 };
