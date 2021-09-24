@@ -27,7 +27,7 @@ export function Welcome() {
     // Rota para testar a interface
 
     function touchTest() {
-        navigation.navigate('TelaManualDomestico')
+        navigation.navigate('TabelaPrecoColetor')
     }
 
     return (

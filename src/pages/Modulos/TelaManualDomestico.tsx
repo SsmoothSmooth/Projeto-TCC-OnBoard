@@ -15,6 +15,8 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import Vector from '../../assets/Vector.png'
 import avaliacao from '../assets/avaliacao.png'
+import { TelaMenuDomestico } from './TelaMenuDomestico';
+import { TelaMenuColetor } from './TelaMenuColetor';
 
 
 
@@ -22,7 +24,7 @@ export function TelaManualDomestico() {
     const navigation = useNavigation();
 
     function touchInit() {
-        navigation.navigate('')
+        navigation.navigate('TelaMenuColetor')
     }
 
     function touchInit2() {
@@ -51,18 +53,30 @@ export function TelaManualDomestico() {
                     </Text>
                 </View>
 
-                <View style={styles.Button}>
-                    <Text> O que é reciclagem {'\n'} </Text>
+
+                <View>
+                    <Button
+                        style={styles.ButtonMenu}
+                        title="O que é reciclagem "
+                        onPress={touchInit}
+                    />
                 </View>
 
-                <View style={styles.Button}>
-                    <Text> Aterros Sanitários {'\n'} </Text>
+                <View>
+                    <Button
+                        style={styles.ButtonMenu}
+                        title="Aterros Sanitários "
+                        onPress={touchInit}
+                    />
                 </View>
 
-                <View style={styles.Button}>
-                    <Text> Tipos de reciclagem {'\n'} </Text>
+                <View>
+                    <Button
+                        style={styles.ButtonMenu}
+                        title="Tipos de reciclagem"
+                        onPress={touchInit}
+                    />
                 </View>
-
 
                 <View style={styles.boxButton}>
                     <TouchableOpacity style={styles.buttonInicio}>
@@ -131,11 +145,11 @@ const styles = StyleSheet.create({
         fontFamily: fonts.text
     },
 
-    Button: {
+    ButtonMenu: {
         backgroundColor: colors.gray,
         flexDirection: 'row',
-        height: 40,
-        width: '90%',
+        height: 45,
+        width: '100%',
         borderRadius: 50,
         paddingHorizontal: 10,
         justifyContent: 'center',

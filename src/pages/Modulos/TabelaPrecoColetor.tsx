@@ -24,7 +24,7 @@ export function TabelaPrecoColetor() {
     const navigation = useNavigation();
 
     function touchInit() {
-        navigation.navigate('')
+        navigation.navigate('TelaMenuCooperativa')
     }
 
     function touchInit2() {
@@ -42,32 +42,45 @@ export function TabelaPrecoColetor() {
                     </Text>
                 </View>
 
-                <View>
-                    <Text style={styles.subtitle}>
-                        Cooperativa
-                    </Text>
-                </View>
+                <View style={styles.wrapperMenu}>
 
+                    <View>
+                        <Text style={styles.subtitle}>
+                            Cooperativa
+                        </Text>
+                    </View>
 
+                    <View>
+                        <Button
+                            style={styles.ButtonMenu}
+                            title=" Coop.recicle "
+                            onPress={touchInit}
+                        />
+                    </View>
 
-                <View style={styles.Button}>
-                    <Image source={Vector} />
-                    <Text> Coop.recicle {'\n'} </Text>
-                </View>
+                    <View>
+                        <Button
+                            style={styles.ButtonMenu}
+                            title=" Coop.recicle 2 "
+                            onPress={touchInit}
+                        />
+                    </View>
 
-                <View style={styles.Button}>
-                    <Image source={Vector} />
-                    <Text> Coop.recicle 2 {'\n'} </Text>
-                </View>
+                    <View>
+                        <Button
+                            style={styles.ButtonMenu}
+                            title=" Coop.recicle 3 "
+                            onPress={touchInit}
+                        />
+                    </View>
 
-                <View style={styles.Button}>
-                    <Image source={Vector} />
-                    <Text> Coop.recicle 3 {'\n'} </Text>
-                </View>
-
-                <View style={styles.Button}>
-                    <Image source={Vector} />
-                    <Text> Coop.recicle 4 {'\n'} </Text>
+                    <View>
+                        <Button
+                            style={styles.ButtonMenu}
+                            title=" Coop.recicle 4 "
+                            onPress={touchInit}
+                        />
+                    </View>
                 </View>
 
                 <View style={styles.boxButton}>
@@ -135,13 +148,26 @@ const styles = StyleSheet.create({
         fontFamily: fonts.text
     },
 
-    Button: {
+    wrapperMenu: {
+        flex: 1,
+        flexDirection: 'column',
+        height: '45%',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20,
+        marginHorizontal: 10,
+        padding: 20
+
+
+    },
+
+    ButtonMenu: {
         backgroundColor: colors.gray,
-        flexDirection: 'row',
         height: 50,
-        width: '80%',
+        width: '130%',
         borderRadius: 50,
-        paddingHorizontal: 10,
+        paddingHorizontal: 80,
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 10,
@@ -160,7 +186,6 @@ const styles = StyleSheet.create({
         backgroundColor: colors.gray,
         alignItems: 'center',
         flexDirection: 'row'
-
     },
 
     buttonInicio: {
