@@ -26,6 +26,10 @@ export function Welcome(){
         navigation.navigate('ConfirmAccess')
     }
 
+    function test(){
+        navigation.navigate('Feed')
+    }
+
     return(
 
         <SafeAreaView style={styles.container}>
@@ -55,7 +59,7 @@ export function Welcome(){
                 <View style={styles.testButton}>
                         <Button
                             title="View Interface"
-                            onPress={touchInit}
+                            onPress={test}
                             
                             />
                 </View>

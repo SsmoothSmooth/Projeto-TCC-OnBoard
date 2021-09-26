@@ -4,6 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import { ModHeader } from '../../components/ModHeader';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export function Feed(){
     const navigation = useNavigation();
@@ -13,37 +16,60 @@ export function Feed(){
     }
 
     return(
+        
         <SafeAreaView style={styles.container}> 
             <View style={styles.wrapper}>
 
-            <View style={styles.boxHeader}>
-                 <Text style={styles.title}>News{'\n'}</Text>
-            </View>
+                <View style={styles.header}>
+                 <ModHeader
+                    title="News"
+                 />
+                </View>
+                
+                <ScrollView style={styles.boxFeed}>
+                    <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus vehicula libero.
+                    </Text>
+                    <Text>
+                        Sed faucibus mi in tincidunt tincidunt. 
+                        Donec ac lacus vitae velit luctus auctor sit amet volutpat lectus.
 
-            <View style={styles.boxFeed}>
-                <Text style={styles.feed}> </Text>
-                <Text style={styles.feed}> </Text>
-                <Text style={styles.feed}> </Text>
+                    </Text>
 
-                <Text style={styles.feed2}> </Text>
-            </View>
+                    <Text>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
 
-            <View style={styles.boxButton}>
-                <TouchableOpacity style={styles.buttonInicio}>
-                    <Text style={styles.buttonText}>Inicio</Text>
-                </TouchableOpacity>
+                    <Text>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
 
-                <TouchableOpacity style={styles.buttonMenu}
-                    onPress={touchSacola}
-                >
-                    <Text style={styles.buttonText}>Menu</Text>
-                </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonPerfil}>
-                    <Text style={styles.buttonText}>Perfil</Text> 
-                </TouchableOpacity>  
-            </View>
+                    <Text>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
 
+
+                    <Text>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
+
+                </ScrollView>
+
+                <View style={styles.boxButton}>
+                    <ModHeader
+                        title="News"
+                    />
+                </View>
+            
             </View> 
         </SafeAreaView> 
     )
@@ -63,88 +89,18 @@ const styles = StyleSheet.create({
          
     },
 
-    boxHeader: {
+    header: {
         width: '100%',
-        marginTop: -48,
+        paddingVertical: '2%',
         backgroundColor: colors.gray,
-        paddingTop: '25%',
-        
-    },
-
-    title: {
-        fontSize: 60,
-        textAlign: 'center',
-        fontFamily: fonts.heading
-   
     },
 
     boxFeed: {
-        width:'100%',
-        paddingHorizontal:'10%'
-
-    },
-
-    feed: {
-        fontSize: 50,
-        marginTop: '10%',
-        alignItems:'center',
-        backgroundColor: colors.grey
-        
-    },
-
-    feed2: {
-        fontSize: 100,
-        marginVertical: '5%',
-        backgroundColor: colors.grey    
-        
+        paddingHorizontal: '10%'
     },
 
     boxButton: {
-        flex: 1,
-        paddingVertical:'18%',
-        marginTop: '16%',
-        justifyContent:'space-between',
-        paddingHorizontal: '10%',
-        width:'100%',
-        backgroundColor: colors.gray,
-        alignItems:'flex-end',             
-        flexDirection:'row'
-        
-    },
-
-    buttonInicio: {
-        backgroundColor: colors.green_cyan,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-        
-    },
-
-    buttonMenu: {  
-        backgroundColor: colors.green_cyan, 
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-              
-    },
-
-    buttonPerfil: {
-        backgroundColor: colors.green_cyan,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-    
-    },
-
-    buttonText: {
-        textAlign: 'center',
-    
-    },
-  
+        width: '100%',
+        backgroundColor: colors.gray
+    }
 });
