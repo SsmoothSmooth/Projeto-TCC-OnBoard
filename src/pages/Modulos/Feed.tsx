@@ -1,12 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+
 import { useNavigation } from '@react-navigation/core';
 import { ModHeader } from '../../components/ModHeader';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { ScrollView } from 'react-native-gesture-handler';
+import { NavBar } from '../../components/NavBar';
 
 export function Feed(){
     const navigation = useNavigation();
@@ -27,7 +28,7 @@ export function Feed(){
                 </View>
                 
                 <ScrollView style={styles.boxFeed}>
-                    <Text>
+                    <Text style={styles.text}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus vehicula libero.
                     </Text>
                     <Text>
@@ -36,27 +37,27 @@ export function Feed(){
 
                     </Text>
 
-                    <Text>
+                    <Text style={styles.text}>
                         neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
                         per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
                         Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
                     </Text>
 
-                    <Text>
-                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
-                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
-                    </Text>
-
-
-                    <Text>
+                    <Text style={styles.text}>
                         neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
                         per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
                         Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
                     </Text>
 
 
-                    <Text>
+                    <Text style={styles.text}>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
+
+
+                    <Text style={styles.text}>
                         neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
                         per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
                         Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
@@ -65,26 +66,36 @@ export function Feed(){
                 </ScrollView>
 
                 <View style={styles.boxButton}>
-                    <ModHeader
-                        title="News"
+                    <NavBar
+                        style={styles.button}
+                        title="Inicio"
+                    />
+
+                    <NavBar
+                        style={styles.button}
+                        title="Menu"
+                    />
+
+                    <NavBar
+                        style={styles.button}
+                        title="Perfil"
                     />
                 </View>
             
             </View> 
-        </SafeAreaView> 
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    
     },
 
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         backgroundColor: 'white',
          
     },
@@ -99,8 +110,25 @@ const styles = StyleSheet.create({
         paddingHorizontal: '10%'
     },
 
+    text: {
+        paddingTop: '10%'
+    },
+
+
     boxButton: {
+        flexDirection: 'row',
+        justifyContent:'space-around',
         width: '100%',
         backgroundColor: colors.gray
-    }
+    },
+
+    button: {
+        backgroundColor: colors.green_cyan,
+        height: 56,
+        borderRadius: 16,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: '5%', 
+    },
+
 });
