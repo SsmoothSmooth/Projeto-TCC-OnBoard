@@ -40,10 +40,9 @@ export function TelaNotificacoesCooperativas() {
                         />
                     </View>
 
-
                     <View>
                         <Button
-                            style={styles.ButtonMenu}
+                            style={styles.ButtonMenu2}
                             title="contatos"
                             onPress={touchInit}
                         />
@@ -110,29 +109,35 @@ const styles = StyleSheet.create({
 
     wrapperMenu: {
         flex: 1,
-        flexDirection: 'column',
         height: '45%',
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 30,
-        marginHorizontal: 30,
-        padding: 20
-
+        marginHorizontal: 20,
+        padding: 10
     },
 
     ButtonMenu: {
-
         backgroundColor: '#D9FCAC',
-        height: 80,
-        width: '105%',
-        borderRadius: 60,
-        paddingHorizontal: 100,
+        height: 50,
+        width: '100%',
+        borderRadius: 80,
+        paddingHorizontal: 50,
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 20,
+    },
 
-
+    ButtonMenu2: {
+        backgroundColor: '#D9FCAC',
+        height: 50,
+        width: '100%',
+        borderRadius: 80,
+        paddingHorizontal: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 20,
     },
 
     boxButton: {
