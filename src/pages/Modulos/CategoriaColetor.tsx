@@ -44,10 +44,9 @@ export function CategoriaColetor() {
         <SafeAreaView style={styles.container}>
 
             <View style={styles.boxHeader}>
-                <Text style={styles.title}>
-                    Categorias {'\n'}
-                </Text>
-
+                <ModHeader
+                    title="Categorias"
+                />
             </View>
 
             <View style={styles.wrapper}>
