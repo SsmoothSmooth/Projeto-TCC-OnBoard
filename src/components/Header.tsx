@@ -1,64 +1,47 @@
 import React from 'react';
 import {
-    View,
+    StyleSheet,
     Text,
-    Image,
-    StyleSheet
+    View
 } from 'react-native';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-
-
-import userImg from '../assets/zezinho.png'
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
+interface TextHeader {
+    title: string
+}
 
-export function Header() {
-
+export function Header({ title, ...rest }: TextHeader) {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={styles.greeting}>Olá,</Text>
-                <Text style={styles.userName}>Zezinho</Text>
+                <Text style={styles.title}>
+                    {title}
+                </Text>
             </View>
-
-            <Image source={userImg} style={styles.image} />
-
         </View>
     )
 }
 
-
 const styles = StyleSheet.create({
+
     container: {
         width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
-        paddingVertical: 20,
-        paddingHorizontal: 20
+        marginTop: getStatusBarHeight(),
+        paddingBottom: 8
     },
 
-    image: {
-        width: 56,
-        height: 56,
-        borderRadius: 26,
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
-    },
-
-    greeting: {
-        fontSize: 32,
-        color: colors.heading,
-        fontFamily: fonts.text
-    },
-
-    userName: {
-        fontSize: 32,
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        paddingHorizontal: '10%',
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 40
-    }
+        lineHeight: 32,
+    },
 
-})
+});

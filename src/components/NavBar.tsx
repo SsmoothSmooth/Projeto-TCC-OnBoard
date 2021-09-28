@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: 'black',
         fontFamily: fonts.heading,
-        paddingHorizontal: '27%'
+        paddingHorizontal: '5%'
     },
 
 })

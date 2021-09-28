@@ -11,6 +11,8 @@ import {
 
 import { Button } from '../../components/Button';
 
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+
 import { useNavigation } from '@react-navigation/core';
 import happyPlanet from '../../assets/happyPlanet.png';
 import colors from '../../styles/colors';
@@ -44,56 +46,48 @@ export function ModalityOptions() {
 
             <View style={styles.wrapper}>
 
-                <View style={styles.boxHeader}>
-
-                    <Image
-                        source={happyPlanet}
-                        style={styles.image}
-                        resizeMode="contain"
-                        />
-
-                    <Text style={styles.title}>
-                         Em qual categoria {'\n'}
-                        voce se encontra? {'\n'}
-
-                    </Text>
-
-                </View>
-
-                <View style={styles.boxButton}>
-                        <Button
-                            style={styles.button}
-                            title="Coletores"
-                            onPress={touchForm}   
-                        />
-                        <Button
-                            style={styles.button}
-                            title="Domesticos"
-                            onPress={touchForm} 
-                        />
-                        <Button
-                            style={styles.button}
-                            title="Cooperativas"
-                            onPress={touchFormCooperative}
-                        />
-
-                </View>
-
-                <View style={styles.boxBackButton}>
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchConfirmAccess}
-                    >
-                    <FontAwesome5
-                        name="arrow-alt-circle-left"
-                        style={styles.backButtonIcon}
-                        
+                <Image
+                    source={happyPlanet}
+                    style={styles.image}
+                    resizeMode="contain"
                     />
 
-                    </TouchableOpacity>
-                </View>
+                <Text style={styles.title}>
+                        Em qual categoria {'\n'}
+                    voce se encontra? {'\n'}
+
+                </Text>
                 
+                <View style={styles.boxButton}>
+                    <Button
+                        style={styles.button}
+                        title="Coletores"
+                        onPress={touchForm}   
+                    />
+                    <Button
+                        style={styles.button}
+                        title="Domesticos"
+                        onPress={touchForm} 
+                    />
+                    <Button
+                        style={styles.button}
+                        title="Cooperativas"
+                        onPress={touchFormCooperative}
+                    />
+                </View>
+
+                <TouchableOpacity
+                    style={styles.backButton}
+                    activeOpacity={0.5}
+                    onPress={touchConfirmAccess}
+                >
+                <FontAwesome5
+                    name="arrow-alt-circle-left"
+                    style={styles.backButtonIcon}
+                    
+                />
+
+                </TouchableOpacity>  
 
             </View>
         </SafeAreaView>
@@ -102,7 +96,8 @@ export function ModalityOptions() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {
@@ -110,14 +105,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-        paddingBottom: '2%'
-    },
-    
-    boxHeader:{
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingTop: '15%'
+        paddingBottom: '16%'
     },
 
     image: {
@@ -141,20 +129,11 @@ const styles = StyleSheet.create({
 
     button: {
         backgroundColor: colors.green_cyan,
-        height: 80,
+        height: 60,
         borderRadius: 16,
-        paddingHorizontal: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '15%', 
-    },
-
-    boxBackButton: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 5,
-        paddingBottom: '10%',
+        marginVertical: '5%', 
     },
 
     backButton: {

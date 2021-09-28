@@ -13,6 +13,8 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Header } from '../../components/Header';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 export function Login() {
     const navigation = useNavigation();
@@ -26,10 +28,10 @@ export function Login() {
 
         <View style={styles.wrapper}>
 
-            <View style={styles.boxHeader}>
-                <Text style={styles.title}>
-                    Login {'\n'}
-                </Text>
+            <View style={styles.header}>
+                <Header 
+                    title={"Login"}
+                />
 
             </View>
 
@@ -46,35 +48,28 @@ export function Login() {
                 />
             </View>
 
-            <View style={styles.wrapperButton}>
 
-                    <View style={styles.boxButton}>
-                        <Button 
-                            title="Confirmar"
+            <View style={styles.boxButton}>
+                <Button 
+                    title="Confirmar"
 
-                        />
-    
-                    </View>
+                />
 
+            </View>
 
+            <TouchableOpacity
+                style={styles.backButton}
+                activeOpacity={0.5}
+                onPress={touchConfirmAccess}
 
-                    <View style={styles.boxBackButton}>
-                        <TouchableOpacity
-                            style={styles.backButton}
-                            activeOpacity={0.5}
-                            onPress={touchConfirmAccess}
-    
-                        >
-                            <FontAwesome5
-                                name="arrow-alt-circle-left"
-                                style={styles.backButtonIcon}
-                                
-                            />
+            >
+                <FontAwesome5
+                    name="arrow-alt-circle-left"
+                    style={styles.backButtonIcon}
+                    
+                />
 
-                        </TouchableOpacity>
-                    </View>
-
-                </View>
+            </TouchableOpacity>
 
         </View>
     </SafeAreaView>
@@ -84,7 +79,8 @@ export function Login() {
 
     const styles = StyleSheet.create({
         container: {
-            flex: 1
+            flex: 1,
+            marginTop: getStatusBarHeight(),
         },
     
         wrapper: {
@@ -92,27 +88,15 @@ export function Login() {
             alignItems: 'center',
             justifyContent: 'space-between',
             backgroundColor: 'white',
-            paddingBottom: '2%'
+            paddingBottom: '16%'
         },
 
-        boxHeader: {
-            backgroundColor: colors.green_cyan,
+        header: {
             width: '100%',
-            justifyContent: 'center',
-            paddingTop: '16%',
+            backgroundColor: colors.green_cyan,
+            padding: '10%'
         },
     
-        title: {
-            fontSize: 28,
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginTop: 38,
-            color: colors.heading,
-            fontFamily: fonts.heading,
-            lineHeight: 34
-    
-        },
-
         boxInput:{
             width: '100%',
             alignItems: 'center',
@@ -131,22 +115,10 @@ export function Login() {
             marginVertical: '10%'
         },
 
-        wrapperButton:{
-            width: '100%',
-        },
-    
         boxButton: {
             width: '100%',
             paddingHorizontal: '20%'
     
-        },
-    
-        boxBackButton: {
-            width: '100%',
-            alignItems: 'center',
-            justifyContent: 'center',
-            paddingTop: 5,
-            paddingBottom: '10%',
         },
     
         backButton: {

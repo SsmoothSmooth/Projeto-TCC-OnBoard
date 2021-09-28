@@ -1,9 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+
 import { useNavigation } from '@react-navigation/core';
+import { ModHeader } from '../../components/ModHeader';
+import { ScrollView } from 'react-native-gesture-handler';
+import { NavBar } from '../../components/NavBar';
 
 export function Feed(){
     const navigation = useNavigation();
@@ -13,138 +17,118 @@ export function Feed(){
     }
 
     return(
+        
         <SafeAreaView style={styles.container}> 
             <View style={styles.wrapper}>
 
-            <View style={styles.boxHeader}>
-                 <Text style={styles.title}>News{'\n'}</Text>
-            </View>
+                <View style={styles.header}>
+                 <ModHeader
+                    title="News"
+                 />
+                </View>
+                
+                <ScrollView style={styles.boxFeed}>
+                    <Text style={styles.text}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus vehicula libero.
+                    </Text>
+                    <Text>
+                        Sed faucibus mi in tincidunt tincidunt. 
+                        Donec ac lacus vitae velit luctus auctor sit amet volutpat lectus.
 
-            <View style={styles.boxFeed}>
-                <Text style={styles.feed}> </Text>
-                <Text style={styles.feed}> </Text>
-                <Text style={styles.feed}> </Text>
+                    </Text>
 
-                <Text style={styles.feed2}> </Text>
-            </View>
+                    <Text style={styles.text}>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
 
-            <View style={styles.boxButton}>
-                <TouchableOpacity style={styles.buttonInicio}>
-                    <Text style={styles.buttonText}>Inicio</Text>
-                </TouchableOpacity>
+                    <Text style={styles.text}>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
 
-                <TouchableOpacity style={styles.buttonMenu}
-                    onPress={touchSacola}
-                >
-                    <Text style={styles.buttonText}>Menu</Text>
-                </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonPerfil}>
-                    <Text style={styles.buttonText}>Perfil</Text> 
-                </TouchableOpacity>  
-            </View>
+                    <Text style={styles.text}>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
 
+
+                    <Text style={styles.text}>
+                        neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                        per inceptos himenaeos. Aenean ultricies maximus urna non rhoncus. Praesent sit amet tristique tellus.
+                        Nulla dictum rhoncus felis, quis hendrerit nisi semper volutpat. Nulla facilisi.{'\n'}{'\n'}
+                    </Text>
+
+                </ScrollView>
+
+                <View style={styles.boxButton}>
+                    <NavBar
+                        style={styles.button}
+                        title="Inicio"
+                    />
+
+                    <NavBar
+                        style={styles.button}
+                        title="Menu"
+                    />
+
+                    <NavBar
+                        style={styles.button}
+                        title="Perfil"
+                    />
+                </View>
+            
             </View> 
-        </SafeAreaView> 
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    
     },
 
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         backgroundColor: 'white',
          
     },
 
-    boxHeader: {
+    header: {
         width: '100%',
-        marginTop: -48,
+        paddingVertical: '2%',
         backgroundColor: colors.gray,
-        paddingTop: '25%',
-        
-    },
-
-    title: {
-        fontSize: 60,
-        textAlign: 'center',
-        fontFamily: fonts.heading
-   
     },
 
     boxFeed: {
-        width:'100%',
-        paddingHorizontal:'10%'
-
+        paddingHorizontal: '10%'
     },
 
-    feed: {
-        fontSize: 50,
-        marginTop: '10%',
-        alignItems:'center',
-        backgroundColor: colors.grey
-        
+    text: {
+        paddingTop: '10%'
     },
 
-    feed2: {
-        fontSize: 100,
-        marginVertical: '5%',
-        backgroundColor: colors.grey    
-        
-    },
 
     boxButton: {
-        flex: 1,
-        paddingVertical:'18%',
-        marginTop: '16%',
-        justifyContent:'space-between',
-        paddingHorizontal: '10%',
-        width:'100%',
-        backgroundColor: colors.gray,
-        alignItems:'flex-end',             
-        flexDirection:'row'
-        
+        flexDirection: 'row',
+        justifyContent:'space-around',
+        width: '100%',
+        backgroundColor: colors.gray
     },
 
-    buttonInicio: {
+    button: {
         backgroundColor: colors.green_cyan,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
+        height: 56,
+        borderRadius: 16,
         justifyContent: 'center',
-        
+        alignItems: 'center',
+        marginVertical: '5%', 
     },
 
-    buttonMenu: {  
-        backgroundColor: colors.green_cyan, 
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-              
-    },
-
-    buttonPerfil: {
-        backgroundColor: colors.green_cyan,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-    
-    },
-
-    buttonText: {
-        textAlign: 'center',
-    
-    },
-  
 });

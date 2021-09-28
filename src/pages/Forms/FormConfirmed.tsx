@@ -6,7 +6,6 @@ import {
     StyleSheet,
     Image,
     Dimensions
-
 } from 'react-native';
 
 import { Button } from '../../components/Button';
@@ -14,6 +13,7 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import celebrationPlanet from '../../assets/celebrationPlanet.png';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
@@ -30,23 +30,18 @@ export function FormConfirmed() {
 
             <View style={styles.wrapper}>
 
-                <View style={styles.boxImage}>
-                    
-                    <Image
-                        source={celebrationPlanet}
-                        style={styles.image}
-                        resizeMode="contain"
-                    />
+                <Image
+                    source={celebrationPlanet}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
 
-                </View>
-
-                <View style={styles.boxText}>
+                <View  >
 
                     <Text style={styles.title}>
                         Prontinho
 
                     </Text>
-
 
                     <Text style={styles.subtitle}>
                         Agora vamos começar a cuidar {'\n'}
@@ -73,29 +68,20 @@ export function FormConfirmed() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
-    },
-
-    boxImage: {
-        width: '100%',
-        alignItems: 'center'
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        paddingBottom: '16%'
     },
 
     image: {
         height: Dimensions.get('window').width * 0.6
-    },
-
-    boxText: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center'
     },
 
     title: {

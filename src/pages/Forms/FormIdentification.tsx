@@ -16,6 +16,7 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import sacola from '../../assets/sacola.png';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
@@ -58,18 +59,15 @@ export function FormIdentification() {
 
             <View style={styles.wrapper}>
 
-                <View style={styles.boxHeader}>
+                <Text style={styles.title}>
+                    Coletores OnBoard
+                </Text>
 
-                    <Text style={styles.title}>
-                        Coletores OnBoard
-                    </Text>
-
-                    <Image
-                        source={sacola}
-                        style={styles.image}
-                        resizeMode="contain"
-                    />
-                </View>
+                <Image
+                    source={sacola}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
                 
                 <View style={styles.boxInput}>
                     <Text style={styles.subtitle}>
@@ -103,7 +101,6 @@ export function FormIdentification() {
                         />
                 </View>
 
-                <View style={styles.boxBackButton}>
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
@@ -116,18 +113,16 @@ export function FormIdentification() {
                     />
 
                     </TouchableOpacity>
-                </View>
 
             </View>
         </SafeAreaView>
     )
 }
 
-
-
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {
@@ -135,25 +130,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-        paddingBottom: '2%'
-    },
-
-    boxHeader:{
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingTop: '15%'
+        paddingBottom: '16%'
     },
     
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
-        
+        lineHeight: 34,
+        paddingTop: '4%'
     },
     
     image: {
@@ -187,14 +174,6 @@ const styles = StyleSheet.create({
     boxButton: {
         width: '100%',
         paddingHorizontal: '20%',
-    },
-
-    boxBackButton: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 5,
-        paddingBottom: '10%',
     },
 
     backButton: {
