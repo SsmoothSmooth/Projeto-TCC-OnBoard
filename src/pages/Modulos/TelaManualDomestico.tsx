@@ -17,6 +17,7 @@ import Vector from '../../assets/Vector.png'
 import avaliacao from '../assets/avaliacao.png'
 import { TelaMenuDomestico } from './TelaMenuDomestico';
 import { TelaMenuColetor } from './TelaMenuColetor';
+import { NavBar } from '../../components/NavBar';
 
 
 
@@ -79,17 +80,21 @@ export function TelaManualDomestico() {
                 </View>
 
                 <View style={styles.boxButton}>
-                    <TouchableOpacity style={styles.buttonInicio}>
-                        <Text style={styles.buttonText}>Inicio</Text>
-                    </TouchableOpacity>
+                    <NavBar
+                        style={styles.buttonInicio}
+                        title="Inicio"
+                    />
 
-                    <TouchableOpacity style={styles.buttonMenu}>
-                        <Text style={styles.buttonText}>Menu</Text>
-                    </TouchableOpacity>
+                    <NavBar
+                        style={styles.buttonMenu}
+                        title="Menu"
+                    />
 
-                    <TouchableOpacity style={styles.buttonPerfil}>
-                        <Text style={styles.buttonText}>Perfil</Text>
-                    </TouchableOpacity>
+                    <NavBar
+                        style={styles.buttonPerfil}
+                        title="Perfil"
+                    />
+
                 </View>
             </View>
 

@@ -18,6 +18,7 @@ import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
+import { NavBar } from '../../components/NavBar';
 
 
 export function TelaMenuColetor() {
@@ -90,17 +91,21 @@ export function TelaMenuColetor() {
             </View>
 
             <View style={styles.boxButton}>
-                <TouchableOpacity style={styles.buttonInicio}>
-                    <Text style={styles.buttonText}>Inicio</Text>
-                </TouchableOpacity>
+                <NavBar
+                    style={styles.buttonInicio}
+                    title="Inicio"
+                />
 
-                <TouchableOpacity style={styles.buttonMenu}>
-                    <Text style={styles.buttonText}>Menu</Text>
-                </TouchableOpacity>
+                <NavBar
+                    style={styles.buttonMenu}
+                    title="Menu"
+                />
 
-                <TouchableOpacity style={styles.buttonPerfil}>
-                    <Text style={styles.buttonText}>Perfil</Text>
-                </TouchableOpacity>
+                <NavBar
+                    style={styles.buttonPerfil}
+                    title="Perfil"
+                />
+
             </View>
 
         </SafeAreaView>
