@@ -17,7 +17,8 @@ import Notificações from '../../assets/Notificações.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
-import { Header } from '../../components/Header'
+import { Header } from '../../components/Header';
+import { ModHeader } from '../../components/ModHeader';
 
 
 export function TelaMenuCooperativa() {
@@ -43,15 +44,13 @@ export function TelaMenuCooperativa() {
 
         <SafeAreaView style={styles.container}>
 
+            <View style={styles.boxHeader}>
+                <ModHeader
+                    title="Menu"
+                />
+            </View>
+
             <View style={styles.wrapper}>
-
-                <View style={styles.boxHeader}>
-                    <Text style={styles.title}>
-                        Menu {'\n'}
-                    </Text>
-                </View>
-
-
 
                 <TouchableOpacity activeOpacity={0.5}>
                     <Image
@@ -115,37 +114,24 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
+    boxHeader: {
+        backgroundColor: colors.gray,
+        width: '100%',
+        justifyContent: 'center',
+        paddingTop: '5%',
+        paddingVertical: '10%'
+    },
+
     wrapper: {
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 5,
-        marginHorizontal: -5,
-        marginTop: '-10%'
-    },
-
-    boxHeader: {
-        backgroundColor: colors.gray,
-        width: '100%',
-        justifyContent: 'center',
-        paddingTop: '15%',
-        marginTop: '15%',
-    },
-
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 38,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 34
+        margin: 50,
+        marginHorizontal: 40,
 
     },
-
     ImageIconStyle1: {
         padding: 20,
         paddingHorizontal: 20,
@@ -187,14 +173,13 @@ const styles = StyleSheet.create({
     boxButton: {
         flex: 1,
         paddingVertical: '10%',
-        marginTop: '130%',
+        marginTop: '70%',
         justifyContent: 'space-between',
         paddingHorizontal: '10%',
         width: '100%',
         backgroundColor: colors.gray,
         alignItems: 'flex-end',
         flexDirection: 'row'
-
     },
 
     buttonInicio: {

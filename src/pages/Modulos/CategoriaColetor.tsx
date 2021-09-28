@@ -120,18 +120,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.gray,
         width: '100%',
         justifyContent: 'center',
-        paddingTop: '10%',
-    },
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 38,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 34
-
+        paddingTop: '5%',
+        paddingVertical: '10%'
     },
 
     wrapper: {
@@ -140,7 +130,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 40,
+        margin: 50,
         marginHorizontal: 40,
 
     },

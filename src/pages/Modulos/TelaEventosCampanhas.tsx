@@ -12,6 +12,7 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
+import { ModHeader } from '../../components/ModHeader';
 
 export function TelaEventosCampanhas() {
     const navigation = useNavigation();
@@ -25,10 +26,9 @@ export function TelaEventosCampanhas() {
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
-                    <Text style={styles.title}>
-                        Eventos/ {'\n'}
-                        Campanhas
-                    </Text>
+                    <ModHeader
+                        title="Eventos / Campanhas "
+                    />
                 </View>
 
                 <View style={styles.wrapperMenu}>
@@ -83,7 +83,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.gray,
         width: '100%',
         justifyContent: 'center',
-        paddingTop: '10%',
+        paddingTop: '5%',
+        paddingVertical: '10%',
         marginTop: '5%',
 
     },
@@ -117,11 +118,10 @@ const styles = StyleSheet.create({
 
     ButtonMenu: {
         backgroundColor: '#D9FCAC',
-        height: 80,
-        width: '100%',
+        height: 60,
+        width: '120%',
         borderRadius: 50,
-        paddingTop: 5,
-        paddingHorizontal: 90,
+        paddingHorizontal: 50,
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 20,

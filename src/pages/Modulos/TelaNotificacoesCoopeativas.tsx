@@ -12,6 +12,7 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
+import { ModHeader } from '../../components/ModHeader';
 
 export function TelaNotificacoesCooperativas() {
     const navigation = useNavigation();
@@ -25,9 +26,9 @@ export function TelaNotificacoesCooperativas() {
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
-                    <Text style={styles.title}>
-                        Notificações
-                    </Text>
+                    <ModHeader
+                        title="Notificações"
+                    />
                 </View>
 
                 <View style={styles.wrapperMenu}>
@@ -83,16 +84,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         margin: 2,
         marginHorizontal: 2,
-        marginTop: '-10%',
+        marginTop: '-5%'
     },
 
     boxHeader: {
         backgroundColor: colors.gray,
         width: '100%',
         justifyContent: 'center',
-        paddingTop: '10%',
-        marginTop: '15%',
-
+        paddingTop: '5%',
+        paddingVertical: '10%',
+        marginTop: '5%',
     },
 
     title: {
@@ -109,13 +110,14 @@ const styles = StyleSheet.create({
 
     wrapperMenu: {
         flex: 1,
+        flexDirection: 'column',
         height: '45%',
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 30,
-        marginHorizontal: 30,
-        padding: 10
+        marginTop: 20,
+        marginHorizontal: 10,
+        padding: 20
     },
 
     ButtonMenu: {
@@ -144,7 +146,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: '10%',
         paddingHorizontal: '100%',
-        marginTop: '30%',
+        marginTop: '50%',
         justifyContent: 'center',
         marginHorizontal: '30%',
         width: '100%',

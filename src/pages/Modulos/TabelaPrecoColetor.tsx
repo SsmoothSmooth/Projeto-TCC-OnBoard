@@ -18,7 +18,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import Vector from '../../assets/Vector.png'
 import avaliacao from '../assets/avaliacao.png'
-
+import { ModHeader } from '../../components/ModHeader';
 
 export function TabelaPrecoColetor() {
     const navigation = useNavigation();
@@ -37,9 +37,9 @@ export function TabelaPrecoColetor() {
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
-                    <Text style={styles.title}>
-                        Tabela de Preço {'\n'}
-                    </Text>
+                    <ModHeader
+                        title="Tabelas de Preço"
+                    />
                 </View>
 
                 <View style={styles.wrapperMenu}>
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         paddingTop: '5%',
+        paddingVertical: '10%',
         marginTop: '5%',
     },
 
@@ -158,8 +159,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginHorizontal: 10,
         padding: 20
-
-
     },
 
     ButtonMenu: {

@@ -40,9 +40,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         paddingHorizontal: '10%',
+        paddingVertical: 10,
         color: colors.heading,
         fontFamily: fonts.heading,
-        fontSize: 40,
+        fontSize: 30,
     },
 
 });
