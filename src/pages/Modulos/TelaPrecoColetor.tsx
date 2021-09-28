@@ -21,7 +21,7 @@ import avaliacao from '../assets/avaliacao.png'
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
 
-export function TabelaPrecoColetor() {
+export function TelaPrecoColetor() {
     const navigation = useNavigation();
 
     function touchInit() {

@@ -28,7 +28,7 @@ import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 import { Feed } from '../pages/Modulos/Feed';
 import { Sacola } from '../pages/Modulos/Sacola';
 import { TelaMenuColetor } from '../pages/Modulos/TelaMenuColetor';
-import { TabelaPrecoColetor } from '../pages/Modulos/TabelaPrecoColetor';
+import { TelaPrecoColetor } from '../pages/Modulos/TelaPrecoColetor';
 import { CategoriaColetor } from '../pages/Modulos/CategoriaColetor';
 import { TelaMenuDomestico } from '../pages/Modulos/TelaMenuDomestico';
 import { TelaManualDomestico } from '../pages/Modulos/TelaManualDomestico';
@@ -170,8 +170,8 @@ const AppRoutes: React.FC = () => (
         />
 
         <stackRoutes.Screen
-            name="TabelaPrecoColetor"
-            component={TabelaPrecoColetor}
+            name="TelaPrecoColetor"
+            component={TelaPrecoColetor}
 
         />
 
