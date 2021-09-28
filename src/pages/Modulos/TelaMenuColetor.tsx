@@ -19,6 +19,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
+import { MenuButton } from '../../components/MenuButton';
 
 
 export function TelaMenuColetor() {
@@ -52,41 +53,12 @@ export function TelaMenuColetor() {
 
             <View style={styles.wrapper}>
 
-                <TouchableOpacity activeOpacity={0.5}>
-                    <Image
-                        source={require('../../assets/mapa.png')}
-                        style={styles.ImageIconStyle1}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.5}>
-
-                    <Image
-                        source={require('../../assets/meusresultados.png')}
-                        style={styles.ImageIconStyle2}
-                    />
-
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.5}>
-                    <Image
-                        source={require('../../assets/pontosdevenda.png')}
-                        style={styles.ImageIconStyle3}
-                    />
-
-                </TouchableOpacity>
+                <MenuButton
+                    photo="../../assets/mapa.png"
+                    title="Mapa"
+                />
 
 
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    onPress={touchInit4}
-                >
-                    <Image
-                        source={require('../../assets/tabelasdepreco.png')}
-                        style={styles.ImageIconStyle4}
-                    />
-
-                </TouchableOpacity>
 
             </View>
 
