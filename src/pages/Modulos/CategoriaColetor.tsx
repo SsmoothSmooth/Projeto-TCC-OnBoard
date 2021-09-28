@@ -17,6 +17,7 @@ import vidro from '../assets/vidro.png';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
+import { ModHeader } from '../../components/ModHeader';
 
 
 export function CategoriaColetor() {

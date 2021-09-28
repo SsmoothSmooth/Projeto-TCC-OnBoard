@@ -114,15 +114,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 30,
-        marginHorizontal: 20,
+        marginHorizontal: 30,
         padding: 10
     },
 
     ButtonMenu: {
         backgroundColor: '#D9FCAC',
-        height: 50,
-        width: '100%',
-        borderRadius: 80,
+        height: 60,
+        width: '120%',
+        borderRadius: 60,
         paddingHorizontal: 50,
         justifyContent: 'center',
         alignItems: 'center',
@@ -131,10 +131,10 @@ const styles = StyleSheet.create({
 
     ButtonMenu2: {
         backgroundColor: '#D9FCAC',
-        height: 50,
-        width: '100%',
-        borderRadius: 80,
-        paddingHorizontal: 50,
+        height: 60,
+        width: '120%',
+        borderRadius: 60,
+        paddingHorizontal: 100,
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 20,
