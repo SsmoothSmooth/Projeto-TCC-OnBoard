@@ -24,9 +24,9 @@ export function MenuButton({ title, photo, ...rest }: ButtonProps) {
             {...rest}
             activeOpacity={0.5}
         >
-            <Image style={styles.Image}
-                source={require('photo')}
-            />
+
+            <Image source={require('./mapa.png')} />
+
             <Text style={styles.text}>
                 {title}
             </Text>
