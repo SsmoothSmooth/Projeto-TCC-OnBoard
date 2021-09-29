@@ -27,7 +27,7 @@ export function Welcome() {
     }
 
     function test() {
-        navigation.navigate('CategoriaColetor')
+        navigation.navigate('TelaMenuColetor')
     }
 
     return (

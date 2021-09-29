@@ -12,8 +12,9 @@ import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
 interface ButtonProps extends TouchableOpacityProps {
-    title: string;
     photo: string;
+    title: string;
+
 }
 
 export function MenuButton({ title, photo, ...rest }: ButtonProps) {
@@ -23,9 +24,8 @@ export function MenuButton({ title, photo, ...rest }: ButtonProps) {
             {...rest}
             activeOpacity={0.5}
         >
-            <Image
-                source={require(photo)}
-                style={styles.Image}
+            <Image style={styles.Image}
+                source={require('photo')}
             />
             <Text style={styles.text}>
                 {title}
@@ -49,5 +49,13 @@ const styles = StyleSheet.create({
         paddingHorizontal: '5%'
     },
 
-    Image: {}
+    Image: {
+        padding: 20,
+        paddingHorizontal: 20,
+        marginVertical: 20,
+        margin: 5,
+        height: 100,
+        width: 100,
+        resizeMode: 'stretch',
+    },
 })

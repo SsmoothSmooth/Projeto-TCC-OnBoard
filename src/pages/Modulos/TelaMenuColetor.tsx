@@ -44,40 +44,42 @@ export function TelaMenuColetor() {
     return (
 
         <SafeAreaView style={styles.container}>
-
-            <View style={styles.boxHeader}>
-                <ModHeader
-                    title="Menu"
-                />
-            </View>
-
             <View style={styles.wrapper}>
 
-                <MenuButton
-                    photo={('../../assets/mapa.png')}
-                    title="Mapa"
-                />
+                <View style={styles.boxHeader}>
+                    <ModHeader
+                        title="Menu"
+                    />
+                </View>
 
+
+                <View>
+                    <MenuButton
+                        photo={'../../assets/mapa.png'}
+                        title="Mapa"
+                        style={styles.Image}
+                    />
+
+                </View>
+
+                <View style={styles.boxButton}>
+                    <NavBar
+                        style={styles.buttonInicio}
+                        title="Inicio"
+                    />
+
+                    <NavBar
+                        style={styles.buttonMenu}
+                        title="Menu"
+                    />
+
+                    <NavBar
+                        style={styles.buttonPerfil}
+                        title="Perfil"
+                    />
+
+                </View>
             </View>
-
-            <View style={styles.boxButton}>
-                <NavBar
-                    style={styles.buttonInicio}
-                    title="Inicio"
-                />
-
-                <NavBar
-                    style={styles.buttonMenu}
-                    title="Menu"
-                />
-
-                <NavBar
-                    style={styles.buttonPerfil}
-                    title="Perfil"
-                />
-
-            </View>
-
         </SafeAreaView>
 
     )
@@ -88,6 +90,13 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
+    wrapper: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        backgroundColor: 'white',
+    },
+
     boxHeader: {
         backgroundColor: colors.gray,
         width: '100%',
@@ -96,18 +105,9 @@ const styles = StyleSheet.create({
         paddingVertical: '10%'
     },
 
-    wrapper: {
-        flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 50,
-        marginHorizontal: 40,
 
-    },
 
-    ImageIconStyle1: {
+    Image: {
         padding: 20,
         paddingHorizontal: 20,
         marginVertical: 20,
