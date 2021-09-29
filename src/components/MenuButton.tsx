@@ -42,13 +42,6 @@ const styles = StyleSheet.create({
         marginTop: getStatusBarHeight(),
     },
 
-    text: {
-        fontSize: 16,
-        color: 'black',
-        fontFamily: fonts.heading,
-        paddingHorizontal: '5%'
-    },
-
     Image: {
         padding: 20,
         paddingHorizontal: 20,
@@ -58,4 +51,12 @@ const styles = StyleSheet.create({
         width: 100,
         resizeMode: 'stretch',
     },
+
+    text: {
+        fontSize: 16,
+        color: 'black',
+        fontFamily: fonts.heading,
+        paddingHorizontal: '5%'
+    },
+
 })
