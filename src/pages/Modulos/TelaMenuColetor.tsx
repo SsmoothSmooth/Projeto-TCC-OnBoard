@@ -10,7 +10,7 @@ import {
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import mapa from '../assets/mapa.png';
+import mapa from '../../assets/mapa.png';
 import meusresultados from '../assets/meusresultados.png';
 import pontosdevenda from '../assets/pontosdevenda.png';
 import tabelasdepreco from '../assets/tabelasdepreco.png';
@@ -54,11 +54,9 @@ export function TelaMenuColetor() {
             <View style={styles.wrapper}>
 
                 <MenuButton
-                    photo="../../assets/mapa.png"
+                    photo={('../../assets/mapa.png')}
                     title="Mapa"
                 />
-
-
 
             </View>
 
