@@ -1,16 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack'; 
 
-<<<<<<< HEAD
-import { Welcome } from '../pages/Welcome';
-import { ConfirmAccess } from '../pages/ConfirmAccess';
-import { ModalityOptions } from '../pages/ModalityOptions';
-import { Login } from '../pages/Login';
-import { Password } from '../pages/Password';
-import { TelaPerfilColetores } from '../pages/TelaPerfilColetores'
-=======
 // Import das paginas inicias
->>>>>>> 510429b2c30817d1a7180be5c79ffbcfb3c64387
 
 import { Welcome } from '../pages/Begin/Welcome';
 import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
@@ -35,6 +26,7 @@ import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 // Import dos módulos
 
 import { Feed } from '../pages/Modulos/Feed';
+import { TelaPerfilColetores } from '../pages/Modulos/TelaPerfilColetores';
 
 const stackRoutes = createStackNavigator();
 
@@ -88,15 +80,9 @@ const AppRoutes: React.FC = () => (
 
         />
 
-<<<<<<< HEAD
-        <stackRoutes.Screen 
-            name="TelaPerfilColetores"
-            component={TelaPerfilColetores}
-=======
         <stackRoutes.Screen
             name="FormPersonalData"
             component={FormPersonalData}
->>>>>>> 510429b2c30817d1a7180be5c79ffbcfb3c64387
 
         />
 
@@ -158,6 +144,12 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen 
             name="Feed"
             component={Feed}
+
+        />
+
+        <stackRoutes.Screen 
+            name="TelaPerfilColetores"
+            component={TelaPerfilColetores}
 
         />
         
