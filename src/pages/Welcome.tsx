@@ -21,6 +21,7 @@ export function Welcome(){
 
     function touchInit(){
         navigation.navigate('ConfirmAccess')
+        
     }
 
     return(

@@ -6,6 +6,7 @@ import { ConfirmAccess } from '../pages/ConfirmAccess';
 import { ModalityOptions } from '../pages/ModalityOptions';
 import { Login } from '../pages/Login';
 import { Password } from '../pages/Password';
+import { TelaPerfilColetores } from '../pages/TelaPerfilColetores'
 
 import colors from '../styles/colors';
 
@@ -50,7 +51,11 @@ const AppRoutes: React.FC = () => (
             component={Password}
         />
 
+        <stackRoutes.Screen 
+            name="TelaPerfilColetores"
+            component={TelaPerfilColetores}
 
+        />
 
 
     </stackRoutes.Navigator>

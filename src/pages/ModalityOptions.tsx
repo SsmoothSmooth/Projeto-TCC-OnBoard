@@ -14,8 +14,16 @@ import { Button } from '../components/Button';
 import happyPlanet from '../assets/happyPlanet.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
+import { useNavigation } from '@react-navigation/core';
 
 export function ModalityOptions() {
+        const navigation = useNavigation();
+    
+        function touchPerfil(){
+            navigation.navigate('TelaPerfilColetores')
+            
+        }
+
     return(
         <SafeAreaView style={styles.container}>
 
@@ -38,7 +46,7 @@ export function ModalityOptions() {
             >
                 <Button
                     title="Coletores"
-
+                    onPress={touchPerfil}
                 />
             </Text>
 
