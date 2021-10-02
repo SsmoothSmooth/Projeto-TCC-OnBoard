@@ -27,7 +27,7 @@ export function Welcome(){
     }
 
     function test(){
-        navigation.navigate('TelaPerfilColetores')
+        navigation.navigate('TelaPerfil')
     }
 
     return(

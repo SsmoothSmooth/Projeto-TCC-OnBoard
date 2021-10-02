@@ -26,7 +26,7 @@ import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 // Import dos módulos
 
 import { Feed } from '../pages/Modulos/Feed';
-import { TelaPerfilColetores } from '../pages/Modulos/TelaPerfilColetores';
+import { TelaPerfil } from '../pages/Modulos/TelaPerfil';
 
 const stackRoutes = createStackNavigator();
 
@@ -148,8 +148,8 @@ const AppRoutes: React.FC = () => (
         />
 
         <stackRoutes.Screen 
-            name="TelaPerfilColetores"
-            component={TelaPerfilColetores}
+            name="TelaPerfil"
+            component={TelaPerfil}
 
         />
         
