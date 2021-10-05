@@ -17,16 +17,16 @@ interface ButtonProps extends TouchableOpacityProps {
 
 }
 
-export function MenuButton({ title, photo, ...rest }: ButtonProps) {
+export function MenuButton({ photo, title, ...rest }: ButtonProps) {
     return (
         <TouchableOpacity
             style={styles.container}
             {...rest}
             activeOpacity={0.5}
         >
-
-            <Image source={require('./mapa.png')} />
-
+            <Image style={styles.Image}
+                source={require(photo)}
+            />
             <Text style={styles.text}>
                 {title}
             </Text>
