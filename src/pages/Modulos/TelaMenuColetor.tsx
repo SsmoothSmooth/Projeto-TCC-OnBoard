@@ -19,7 +19,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
-import { MenuButton } from '../../components/MenuButton';
+
 
 
 export function TelaMenuColetor() {
@@ -41,6 +41,7 @@ export function TelaMenuColetor() {
         navigation.navigate('TabelaPrecoColetor')
     }
 
+
     return (
 
         <SafeAreaView style={styles.container}>
@@ -53,12 +54,42 @@ export function TelaMenuColetor() {
                 </View>
 
 
-                <View>
-                    <MenuButton
-                        photo={'../../assets/mapa.png'}
-                        title="Mapa"
-                        style={styles.Image}
-                    />
+                <View style={styles.MenuButton}>
+                    <TouchableOpacity activeOpacity={0.5}>
+                        <Image
+                            source={require('../../assets/mapa.png')}
+                            style={styles.ImageIconStyle1}
+                        />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity activeOpacity={0.5}>
+
+                        <Image
+                            source={require('../../assets/meusresultados.png')}
+                            style={styles.ImageIconStyle2}
+                        />
+
+                    </TouchableOpacity>
+
+                    <TouchableOpacity activeOpacity={0.5}>
+                        <Image
+                            source={require('../../assets/pontosdevenda.png')}
+                            style={styles.ImageIconStyle3}
+                        />
+
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                        onPress={touchInit4}
+                    >
+                        <Image
+                            source={require('../../assets/tabelasdepreco.png')}
+                            style={styles.ImageIconStyle4}
+                        />
+
+                    </TouchableOpacity>
 
                 </View>
 
@@ -106,8 +137,17 @@ const styles = StyleSheet.create({
     },
 
 
+    MenuButton: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 50,
+        marginHorizontal: 40,
+    },
 
-    Image: {
+    ImageIconStyle1: {
         padding: 20,
         paddingHorizontal: 20,
         marginVertical: 20,
