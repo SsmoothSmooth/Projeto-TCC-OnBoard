@@ -3,14 +3,11 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
-    Text,
-    TouchableOpacity,
 } from 'react-native';
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
@@ -91,7 +88,6 @@ const styles = StyleSheet.create({
         paddingTop: '5%',
         paddingVertical: '10%',
         marginTop: '5%',
-
     },
 
     title: {
@@ -103,7 +99,6 @@ const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         lineHeight: 34,
         paddingVertical: 10
-
     },
 
     wrapperMenu: {
@@ -116,9 +111,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginHorizontal: 20,
         padding: 20
-
-
-
     },
 
     ButtonMenu: {
@@ -130,8 +122,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 20,
-
-
     },
 
     boxButton: {
@@ -165,7 +155,6 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonPerfil: {
@@ -176,14 +165,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
-
-    buttonText: {
-        textAlign: 'center',
-
-    },
-
 })
 
 

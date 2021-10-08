@@ -173,12 +173,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'center',
     },
-
-    buttonText: {
-        textAlign: 'center',
-
-    },
-
 })
 
 

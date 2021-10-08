@@ -3,21 +3,12 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
-    Text,
     Image,
     TouchableOpacity,
 } from 'react-native';
 
 import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import Descarte from '../../assets/Descarte.png';
-import SacolaLixo from '../../assets/SacolaLixo.png';
-import MeusResultados2 from '../../assets/MeusResultados2.png';
-import Manual from '../../assets/Manual.png';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Button } from '../../components/Button';
-import { Header } from '../../components/Header';
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
 
@@ -216,7 +207,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonPerfil: {
@@ -227,6 +217,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 })

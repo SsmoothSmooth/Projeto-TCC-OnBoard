@@ -11,12 +11,7 @@ import {
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
-import Vector from '../../assets/Vector.png'
-import avaliacao from '../assets/avaliacao.png'
-import { TelaMenuDomestico } from './TelaMenuDomestico';
-import { TelaMenuColetor } from './TelaMenuColetor';
 import { NavBar } from '../../components/NavBar';
 
 
@@ -126,7 +121,6 @@ const styles = StyleSheet.create({
         paddingTop: '5%',
         marginTop: '5%',
         alignItems: 'center'
-
     },
 
     title: {
@@ -137,7 +131,6 @@ const styles = StyleSheet.create({
         color: colors.heading,
         fontFamily: fonts.heading,
         lineHeight: 34
-
     },
 
     subtitle: {
@@ -161,7 +154,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 10,
         paddingTop: 10,
-
     },
 
     boxButton: {
@@ -175,7 +167,6 @@ const styles = StyleSheet.create({
         backgroundColor: colors.gray,
         alignItems: 'center',
         flexDirection: 'row'
-
     },
 
     buttonInicio: {
@@ -186,7 +177,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonMenu: {
@@ -196,7 +186,6 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonPerfil: {
@@ -207,13 +196,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
-
-    buttonText: {
-        textAlign: 'center',
-
-    },
-
 })
 

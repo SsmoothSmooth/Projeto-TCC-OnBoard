@@ -3,20 +3,12 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
-    Text,
     Image,
     TouchableOpacity,
 } from 'react-native';
 
 import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import metal from '../assets/metal.png';
-import papel from '../assets/papel.png';
-import plastico from '../assets/plastico.png';
-import vidro from '../assets/vidro.png';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
 
@@ -194,7 +186,6 @@ const styles = StyleSheet.create({
         backgroundColor: colors.gray,
         alignItems: 'flex-end',
         flexDirection: 'row'
-
     },
 
     buttonInicio: {
@@ -242,7 +233,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
-
     },
 
     backButtonIcon: {
