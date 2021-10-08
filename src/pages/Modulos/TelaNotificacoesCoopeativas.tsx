@@ -3,14 +3,10 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
-    Text,
-    TouchableOpacity,
 } from 'react-native';
 
 import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
@@ -32,11 +28,11 @@ export function TelaNotificacoesCooperativas() {
                     />
                 </View>
 
-                <View style={styles.wrapperMenu}>
+                <View style={styles.ButtonMenu}>
 
-                    <View>
+                    <View >
                         <Button
-                            style={styles.ButtonMenu}
+                            style={styles.Button1}
                             title="Materiais para coleta"
                             onPress={touchInit}
                         />
@@ -44,7 +40,7 @@ export function TelaNotificacoesCooperativas() {
 
                     <View>
                         <Button
-                            style={styles.ButtonMenu2}
+                            style={styles.Button2}
                             title="contatos"
                             onPress={touchInit}
                         />
@@ -102,21 +98,8 @@ const styles = StyleSheet.create({
         marginTop: '5%',
     },
 
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 40,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 34,
-        paddingVertical: 10
-
-    },
-
-    wrapperMenu: {
+    ButtonMenu: {
         flex: 1,
-        flexDirection: 'column',
         height: '45%',
         width: '100%',
         alignItems: 'center',
@@ -126,7 +109,7 @@ const styles = StyleSheet.create({
         padding: 20
     },
 
-    ButtonMenu: {
+    Button1: {
         backgroundColor: '#D9FCAC',
         height: 60,
         width: '120%',
@@ -137,7 +120,7 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
 
-    ButtonMenu2: {
+    Button2: {
         backgroundColor: '#D9FCAC',
         height: 60,
         width: '120%',
@@ -166,10 +149,9 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
-        marginHorizontal: 10,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonMenu: {
@@ -177,9 +159,9 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonPerfil: {
@@ -187,10 +169,9 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
-        marginHorizontal: 10,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonText: {

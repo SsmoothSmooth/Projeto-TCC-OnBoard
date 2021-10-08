@@ -9,14 +9,7 @@ import {
 } from 'react-native';
 
 import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import mapa from '../../assets/mapa.png';
-import meusresultados from '../assets/meusresultados.png';
-import pontosdevenda from '../assets/pontosdevenda.png';
-import tabelasdepreco from '../assets/tabelasdepreco.png';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
 
@@ -55,14 +48,18 @@ export function TelaMenuColetor() {
 
 
                 <View style={styles.MenuButton}>
-                    <TouchableOpacity activeOpacity={0.5}>
+
+                    <TouchableOpacity
+                        activeOpacity={0.5}>
+
                         <Image
                             source={require('../../assets/mapa.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity
+                        activeOpacity={0.5}>
 
                         <Image
                             source={require('../../assets/meusresultados.png')}
@@ -71,7 +68,9 @@ export function TelaMenuColetor() {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity
+                        activeOpacity={0.5}>
+
                         <Image
                             source={require('../../assets/pontosdevenda.png')}
                             style={styles.ImageIconStyle3}
@@ -126,6 +125,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         backgroundColor: 'white',
+        flexWrap: 'wrap',
     },
 
     boxHeader: {
@@ -164,7 +164,6 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         resizeMode: 'stretch',
-
     },
 
     ImageIconStyle3: {
@@ -202,9 +201,9 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonMenu: {
@@ -212,9 +211,9 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonPerfil: {
@@ -222,14 +221,9 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
-    },
-
-    buttonText: {
-        textAlign: 'center',
-
     },
 })
 

@@ -9,15 +9,7 @@ import {
 } from 'react-native';
 
 import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import News from '../../assets/News.png';
-import TabelasPrecoCooperativa from '../../assets/TabelasPrecoCooperativa.png';
-import EventosCampanhas from '../../assets/EventosCampanhas.png';
-import Notificações from '../../assets/Notificações.png';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Button } from '../../components/Button';
-import { Header } from '../../components/Header';
 import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
 
@@ -44,68 +36,78 @@ export function TelaMenuCooperativa() {
     return (
 
         <SafeAreaView style={styles.container}>
-
-            <View style={styles.boxHeader}>
-                <ModHeader
-                    title="Menu"
-                />
-            </View>
-
             <View style={styles.wrapper}>
 
-                <TouchableOpacity activeOpacity={0.5}>
-                    <Image
-                        source={require('../../assets/News.png')}
-                        style={styles.ImageIconStyle1}
+                <View style={styles.boxHeader}>
+                    <ModHeader
+                        title="Menu"
                     />
-                </TouchableOpacity>
+                </View>
 
-                <TouchableOpacity activeOpacity={0.5}>
+                <View style={styles.MenuButton}>
 
-                    <Image
-                        source={require('../../assets/TabelasPrecoCooperativa.png')}
-                        style={styles.ImageIconStyle2}
+                    <TouchableOpacity
+                        activeOpacity={0.5}>
+
+                        <Image
+                            source={require('../../assets/News.png')}
+                            style={styles.ImageIconStyle1}
+                        />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        activeOpacity={0.5}>
+
+                        <Image
+                            source={require('../../assets/TabelasPrecoCooperativa.png')}
+                            style={styles.ImageIconStyle2}
+                        />
+
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity
+
+                        activeOpacity={0.5}>
+
+                        <Image
+                            source={require('../../assets/EventosCampanhas.png')}
+                            style={styles.ImageIconStyle3}
+                        />
+
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                        onPress={touchInit4}
+                    >
+                        <Image
+                            source={require('../../assets/Notificações.png')}
+                            style={styles.ImageIconStyle4}
+                        />
+
+                    </TouchableOpacity>
+
+                </View>
+
+                <View style={styles.boxButton}>
+                    <NavBar
+                        style={styles.buttonInicio}
+                        title="Inicio"
                     />
 
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.5}>
-                    <Image
-                        source={require('../../assets/EventosCampanhas.png')}
-                        style={styles.ImageIconStyle3}
+                    <NavBar
+                        style={styles.buttonMenu}
+                        title="Menu"
                     />
 
-                </TouchableOpacity>
-
-
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    onPress={touchInit4}
-                >
-                    <Image
-                        source={require('../../assets/Notificações.png')}
-                        style={styles.ImageIconStyle4}
+                    <NavBar
+                        style={styles.buttonPerfil}
+                        title="Perfil"
                     />
 
-                </TouchableOpacity>
-
-            </View>
-
-            <View style={styles.boxButton}>
-                <NavBar
-                    style={styles.buttonInicio}
-                    title="Inicio"
-                />
-
-                <NavBar
-                    style={styles.buttonMenu}
-                    title="Menu"
-                />
-
-                <NavBar
-                    style={styles.buttonPerfil}
-                    title="Perfil"
-                />
+                </View>
 
             </View>
 
@@ -119,6 +121,15 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
+    wrapper: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        backgroundColor: 'white',
+        flexWrap: 'wrap',
+
+    },
+
     boxHeader: {
         backgroundColor: colors.gray,
         width: '100%',
@@ -127,7 +138,7 @@ const styles = StyleSheet.create({
         paddingVertical: '10%'
     },
 
-    wrapper: {
+    MenuButton: {
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -135,8 +146,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         margin: 50,
         marginHorizontal: 40,
-
     },
+
     ImageIconStyle1: {
         padding: 20,
         paddingHorizontal: 20,
@@ -192,6 +203,7 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
 
@@ -202,6 +214,7 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
 
@@ -212,9 +225,9 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonText: {
