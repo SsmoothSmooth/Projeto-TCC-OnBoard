@@ -13,7 +13,7 @@ import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
 
 
-export function CategoriaColetor() {
+export function TelaMateriasColetaCooperativa() {
     const navigation = useNavigation();
 
     function touchInit() {
@@ -40,7 +40,7 @@ export function CategoriaColetor() {
 
                 <View style={styles.boxHeader}>
                     <ModHeader
-                        title="Categorias"
+                        title="Materiais para Coleta"
                     />
                 </View>
 

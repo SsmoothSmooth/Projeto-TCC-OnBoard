@@ -29,7 +29,9 @@ import { Feed } from '../pages/Modulos/Feed';
 import { Sacola } from '../pages/Modulos/Sacola';
 import { TelaMenuColetor } from '../pages/Modulos/TelaMenuColetor';
 import { TelaPrecoColetor } from '../pages/Modulos/TelaPrecoColetor';
-import { CategoriaColetor } from '../pages/Modulos/CategoriaColetor';
+import { TelaCategoriaColetor } from '../pages/Modulos/TelaCategoriaColetor';
+import { TelaCategoriaDomestico } from '../pages/Modulos/TelaCategoriaDomestico';
+import { TelaMateriasColetaCooperativa } from '../pages/Modulos/TelaMateriasColetaCooperativa';
 import { TelaMenuDomestico } from '../pages/Modulos/TelaMenuDomestico';
 import { TelaManualDomestico } from '../pages/Modulos/TelaManualDomestico';
 import { TelaMenuCooperativa } from '../pages/Modulos/TelaMenuCooperativa';
@@ -176,10 +178,25 @@ const AppRoutes: React.FC = () => (
         />
 
         <stackRoutes.Screen
-            name="CategoriaColetor"
-            component={CategoriaColetor}
+            name="TelaCategoriaColetor"
+            component={TelaCategoriaColetor}
 
         />
+
+
+        <stackRoutes.Screen
+            name="TelaCategoriaDomestico"
+            component={TelaCategoriaDomestico}
+
+        />
+
+
+        <stackRoutes.Screen
+            name="TelaMateriasColetaCooperativa"
+            component={TelaMateriasColetaCooperativa}
+
+        />
+
         <stackRoutes.Screen
             name="TelaMenuDomestico"
             component={TelaMenuDomestico}
