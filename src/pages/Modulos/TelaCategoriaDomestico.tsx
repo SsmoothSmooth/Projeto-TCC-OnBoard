@@ -48,7 +48,7 @@ export function TelaCategoriaDomestico() {
 
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/papel.png')}
+                            source={require('../../assets/PapelDomestico.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
@@ -56,7 +56,7 @@ export function TelaCategoriaDomestico() {
                     <TouchableOpacity activeOpacity={0.5}>
 
                         <Image
-                            source={require('../../assets/metal.png')}
+                            source={require('../../assets/MetalDomestico.png')}
                             style={styles.ImageIconStyle2}
                         />
 
@@ -64,7 +64,7 @@ export function TelaCategoriaDomestico() {
 
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/vidro.png')}
+                            source={require('../../assets/VidroDomestico.png')}
                             style={styles.ImageIconStyle3}
                         />
 
@@ -76,7 +76,7 @@ export function TelaCategoriaDomestico() {
                         onPress={touchInit4}
                     >
                         <Image
-                            source={require('../../assets/plastico.png')}
+                            source={require('../../assets/PlasticoDomestico.png')}
                             style={styles.ImageIconStyle4}
                         />
 
@@ -216,27 +216,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-    },
-
-    boxBackButton: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 5,
-        paddingBottom: '10%',
-    },
-
-    backButton: {
-        backgroundColor: colors.green,
-        height: 60,
-        width: 60,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 20,
-    },
-
-    backButtonIcon: {
-        color: colors.green_cyan,
-        fontSize: 35,
     },
 })

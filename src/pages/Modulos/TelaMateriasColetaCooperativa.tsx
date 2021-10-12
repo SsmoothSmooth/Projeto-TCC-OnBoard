@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         paddingTop: '5%',
-        paddingVertical: '10%'
+        paddingVertical: '5%'
     },
 
     MenuButton: {

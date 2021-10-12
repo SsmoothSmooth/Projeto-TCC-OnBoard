@@ -3,6 +3,7 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
+    TouchableOpacity,
 } from 'react-native';
 
 import colors from '../../styles/colors';
@@ -10,7 +11,7 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export function TelaEventosCampanhas() {
     const navigation = useNavigation();
@@ -29,35 +30,32 @@ export function TelaEventosCampanhas() {
                     />
                 </View>
 
-                <View style={styles.wrapperMenu}>
+                <View style={styles.ButtonMenu}>
 
-                    <View>
-                        <Button
-                            style={styles.ButtonMenu}
-                            title="criar novo Evento / Campanha "
-                            onPress={touchInit}
+                    <Button
+                        style={styles.ButtonStyle}
+                        title="criar novo Evento / Campanha "
+                        onPress={touchInit}
+                    />
+
+                </View>
+
+                <View style={styles.boxBackButton}>
+
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchInit}
+                    >
+                        <FontAwesome5
+                            name="chevron-left"
+                            style={styles.backButtonIcon}
+
                         />
-                    </View>
+                    </TouchableOpacity>
 
                 </View>
 
-                <View style={styles.boxButton}>
-                    <NavBar
-                        style={styles.buttonInicio}
-                        title="Inicio"
-                    />
-
-                    <NavBar
-                        style={styles.buttonMenu}
-                        title="Menu"
-                    />
-
-                    <NavBar
-                        style={styles.buttonPerfil}
-                        title="Perfil"
-                    />
-
-                </View>
             </View>
 
         </SafeAreaView>
@@ -72,13 +70,10 @@ const styles = StyleSheet.create({
 
     wrapper: {
         flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
         alignItems: 'center',
-        justifyContent: 'center',
-        margin: 2,
-        marginHorizontal: 2,
-        marginTop: '-5%'
+        justifyContent: 'space-around',
+        backgroundColor: 'white',
+        flexWrap: 'wrap',
     },
 
     boxHeader: {
@@ -86,8 +81,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         paddingTop: '5%',
-        paddingVertical: '10%',
-        marginTop: '5%',
+        paddingVertical: '10%'
     },
 
     title: {
@@ -101,19 +95,17 @@ const styles = StyleSheet.create({
         paddingVertical: 10
     },
 
-    wrapperMenu: {
+    ButtonMenu: {
         flex: 1,
-        flexDirection: 'column',
-        height: '45%',
-        width: '100%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20,
-        marginHorizontal: 20,
-        padding: 20
+        margin: 50,
+        marginHorizontal: 40,
     },
 
-    ButtonMenu: {
+    ButtonStyle: {
         backgroundColor: '#D9FCAC',
         height: 60,
         width: '120%',
@@ -121,51 +113,33 @@ const styles = StyleSheet.create({
         paddingHorizontal: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 20,
+        marginVertical: 50,
     },
 
-    boxButton: {
+    boxBackButton: {
         flex: 1,
         paddingVertical: '10%',
-        paddingHorizontal: '100%',
-        marginTop: '30%',
-        justifyContent: 'center',
-        marginHorizontal: '30%',
+        marginTop: '60%',
+        justifyContent: 'space-between',
+        paddingHorizontal: '10%',
         width: '100%',
         backgroundColor: colors.gray,
         alignItems: 'center',
-        flexDirection: 'row'
     },
 
-    buttonInicio: {
+    backButton: {
         backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        marginHorizontal: 10,
-        textAlign: 'center',
+        height: 50,
+        width: 50,
+        alignItems: 'center',
         justifyContent: 'center',
-
+        borderRadius: 20,
     },
 
-    buttonMenu: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
-
-    buttonPerfil: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        marginHorizontal: 10,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
+    backButtonIcon: {
+        color: colors.black,
+        fontSize: 20,
+    }
 })
 
 

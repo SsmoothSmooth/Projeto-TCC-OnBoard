@@ -6,6 +6,7 @@ export default {
     heading: '#52665A',
     grey: '#DADADA',
     green_solid: '#D9FCAC',
-    gray_background: '#CFCFCF'
+    gray_background: '#CFCFCF',
+    black: '#000000'
 
 };

@@ -27,7 +27,7 @@ export function Welcome() {
     }
 
     function test() {
-        navigation.navigate('TelaNotificacoesCooperativas')
+        navigation.navigate('TelaEventosCampanhas')
     }
 
     return (

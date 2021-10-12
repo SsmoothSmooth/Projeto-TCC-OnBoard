@@ -10,14 +10,15 @@ import {
 import colors from '../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
 import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 
 
 export function TelaCategoriaColetor() {
     const navigation = useNavigation();
 
     function touchInit() {
-        navigation.navigate('')
+        navigation.navigate('TelaMenuColetor')
     }
 
     function touchInit2() {
@@ -84,23 +85,22 @@ export function TelaCategoriaColetor() {
 
                 </View>
 
-                <View style={styles.boxButton}>
-                    <NavBar
-                        style={styles.buttonInicio}
-                        title="Inicio"
-                    />
+                <View style={styles.boxBackButton}>
 
-                    <NavBar
-                        style={styles.buttonMenu}
-                        title="Menu"
-                    />
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchInit}
+                    >
+                        <FontAwesome5
+                            name="chevron-left"
+                            style={styles.backButtonIcon}
 
-                    <NavBar
-                        style={styles.buttonPerfil}
-                        title="Perfil"
-                    />
+                        />
+                    </TouchableOpacity>
 
                 </View>
+
             </View>
 
         </SafeAreaView>
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
         resizeMode: 'stretch',
     },
 
-    boxButton: {
+    boxBackButton: {
         flex: 1,
         paddingVertical: '10%',
         marginTop: '70%',
@@ -184,59 +184,20 @@ const styles = StyleSheet.create({
         paddingHorizontal: '10%',
         width: '100%',
         backgroundColor: colors.gray,
-        alignItems: 'flex-end',
-        flexDirection: 'row'
-    },
-
-    buttonInicio: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        paddingHorizontal: 20,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
-
-    buttonMenu: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        paddingHorizontal: 20,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
-
-    buttonPerfil: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        paddingHorizontal: 20,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
-
-    boxBackButton: {
-        width: '100%',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 5,
-        paddingBottom: '10%',
     },
 
     backButton: {
-        backgroundColor: colors.green,
-        height: 60,
-        width: 60,
+        backgroundColor: colors.green_cyan,
+        height: 50,
+        width: 50,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
     },
 
     backButtonIcon: {
-        color: colors.green_cyan,
-        fontSize: 35,
-    },
+        color: colors.black,
+        fontSize: 20,
+    }
 })
