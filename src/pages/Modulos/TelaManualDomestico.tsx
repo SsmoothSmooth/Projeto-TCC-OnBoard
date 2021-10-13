@@ -184,6 +184,7 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
+        marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
     },

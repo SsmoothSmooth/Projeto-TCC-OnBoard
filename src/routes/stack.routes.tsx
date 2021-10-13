@@ -36,6 +36,7 @@ import { TelaMenuDomestico } from '../pages/Modulos/TelaMenuDomestico';
 import { TelaManualDomestico } from '../pages/Modulos/TelaManualDomestico';
 import { TelaMenuCooperativa } from '../pages/Modulos/TelaMenuCooperativa';
 import { TelaEventosCampanhas } from '../pages/Modulos/TelaEventosCampanhas';
+import { TelaNovoEventoCampanha } from '../pages/Modulos/TelaNovoEventoCampanha';
 import { TelaNotificacoesCooperativas } from '../pages/Modulos/TelaNotificacoesCoopeativas';
 
 const stackRoutes = createStackNavigator();
@@ -218,6 +219,13 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="TelaEventosCampanhas"
             component={TelaEventosCampanhas}
+
+        />
+
+
+        <stackRoutes.Screen
+            name="TelaNovoEventoCampanha"
+            component={TelaNovoEventoCampanha}
 
         />
 
