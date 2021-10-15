@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 10,
         paddingTop: 10,
+        flexWrap: 'wrap'
     },
 
     boxButton: {
@@ -166,7 +167,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: colors.gray,
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
 
     buttonInicio: {
@@ -175,6 +176,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 50,
         marginHorizontal: 10,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
     },
@@ -185,6 +187,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 50,
         marginHorizontal: 10,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
     },
@@ -195,6 +198,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 50,
         marginHorizontal: 10,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
     },

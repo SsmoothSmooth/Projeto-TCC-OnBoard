@@ -40,45 +40,41 @@ export function TelaPrecoColetor() {
                     />
                 </View>
 
-                <View style={styles.wrapperMenu}>
 
-                    <View>
-                        <Text style={styles.subtitle}>
-                            Cooperativa
-                        </Text>
-                    </View>
+                <View>
 
-                    <View>
-                        <Button
-                            style={styles.ButtonMenu}
-                            title=" Coop.recicle "
-                            onPress={touchInit}
-                        />
-                    </View>
+                    <Text style={styles.subtitle}>
+                        Cooperativa
+                    </Text>
 
-                    <View>
-                        <Button
-                            style={styles.ButtonMenu}
-                            title=" Coop.recicle 2 "
-                            onPress={touchInit}
-                        />
-                    </View>
+                </View>
 
-                    <View>
-                        <Button
-                            style={styles.ButtonMenu}
-                            title=" Coop.recicle 3 "
-                            onPress={touchInit}
-                        />
-                    </View>
+                <View style={styles.ButtonStyle}>
 
-                    <View>
-                        <Button
-                            style={styles.ButtonMenu}
-                            title=" Coop.recicle 4 "
-                            onPress={touchInit}
-                        />
-                    </View>
+                    <Button
+                        style={styles.Button}
+                        title=" Coop.recicle "
+                        onPress={touchInit}
+                    />
+
+                    <Button
+                        style={styles.Button}
+                        title=" Coop.recicle 2 "
+                        onPress={touchInit}
+                    />
+
+                    <Button
+                        style={styles.Button}
+                        title=" Coop.recicle 3 "
+                        onPress={touchInit}
+                    />
+
+                    <Button
+                        style={styles.Button}
+                        title=" Coop.recicle 4 "
+                        onPress={touchInit}
+                    />
+
                 </View>
 
                 <View style={styles.boxButton}>
@@ -98,9 +94,10 @@ export function TelaPrecoColetor() {
                     />
 
                 </View>
+
             </View>
 
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }
 
@@ -112,13 +109,12 @@ const styles = StyleSheet.create({
 
     wrapper: {
         flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 2,
+        margin: 10,
         marginHorizontal: 2,
-        marginTop: '-5%'
+
+
     },
 
     boxHeader: {
@@ -128,16 +124,7 @@ const styles = StyleSheet.create({
         paddingTop: '5%',
         paddingVertical: '10%',
         marginTop: '5%',
-    },
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 38,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 34
+        margin: '10%'
     },
 
     subtitle: {
@@ -150,24 +137,24 @@ const styles = StyleSheet.create({
         fontFamily: fonts.text
     },
 
-    wrapperMenu: {
+    ButtonStyle: {
         flex: 1,
-        flexDirection: 'column',
-        height: '45%',
+        height: '55%',
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20,
-        marginHorizontal: 10,
-        padding: 20
+        marginTop: 40,
+        marginHorizontal: 20,
+        padding: 30,
+
     },
 
-    ButtonMenu: {
+    Button: {
         backgroundColor: colors.gray,
         height: 50,
-        width: '130%',
+        width: '100%',
         borderRadius: 50,
-        paddingHorizontal: 80,
+        paddingHorizontal: 70,
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 10,
@@ -176,9 +163,9 @@ const styles = StyleSheet.create({
 
     boxButton: {
         flex: 1,
-        paddingVertical: '10%',
+        paddingVertical: '20%',
         paddingHorizontal: '100%',
-        marginTop: '50%',
+        marginTop: '60%',
         justifyContent: 'center',
         marginHorizontal: '30%',
         width: '100%',

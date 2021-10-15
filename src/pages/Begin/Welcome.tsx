@@ -27,7 +27,7 @@ export function Welcome() {
     }
 
     function test() {
-        navigation.navigate('TelaNovoEventoCampanha')
+        navigation.navigate('TelaPrecoColetor')
     }
 
     return (
