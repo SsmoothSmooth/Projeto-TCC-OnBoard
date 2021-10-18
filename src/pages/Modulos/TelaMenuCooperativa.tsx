@@ -126,7 +126,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         backgroundColor: 'white',
         flexWrap: 'wrap',
-
     },
 
     boxHeader: {

@@ -34,6 +34,7 @@ import { TelaCategoriaDomestico } from '../pages/Modulos/TelaCategoriaDomestico'
 import { TelaMateriasColetaCooperativa } from '../pages/Modulos/TelaMateriasColetaCooperativa';
 import { TelaMenuDomestico } from '../pages/Modulos/TelaMenuDomestico';
 import { TelaManualDomestico } from '../pages/Modulos/TelaManualDomestico';
+import { TelaManualTipo } from '../pages/Modulos/TelaManualTipo';
 import { TelaMenuCooperativa } from '../pages/Modulos/TelaMenuCooperativa';
 import { TelaEventosCampanhas } from '../pages/Modulos/TelaEventosCampanhas';
 import { TelaNovoEventoCampanha } from '../pages/Modulos/TelaNovoEventoCampanha';
@@ -207,6 +208,12 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="TelaManualDomestico"
             component={TelaManualDomestico}
+
+        />
+
+        <stackRoutes.Screen
+            name="TelaManualTipo"
+            component={TelaManualTipo}
 
         />
 
