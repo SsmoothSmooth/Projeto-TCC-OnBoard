@@ -5,8 +5,6 @@ import {
     View,
     Text,
     TouchableOpacity,
-
-
 } from 'react-native';
 
 
@@ -142,7 +140,7 @@ const styles = StyleSheet.create({
     },
 
     Button: {
-        backgroundColor: colors.gray,
+        backgroundColor: colors.lightgrey,
         height: 50,
         width: '100%',
         borderRadius: 50,

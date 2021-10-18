@@ -7,6 +7,7 @@ export default {
     grey: '#DADADA',
     green_solid: '#D9FCAC',
     gray_background: '#CFCFCF',
-    black: '#000000'
-
+    black: '#000000',
+    gray_shape: '#F5FAF7',
+    lightgrey: '#d3d3d3'
 };
