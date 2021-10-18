@@ -49,7 +49,7 @@ export function TelaPrecoColetor() {
 
                 </View>
 
-                <View style={styles.ButtonStyle}>
+                <View style={styles.BoxButton}>
 
                     <Button
                         style={styles.Button}
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         fontFamily: fonts.text
     },
 
-    ButtonStyle: {
+    BoxButton: {
         flex: 1,
         height: '55%',
         width: '100%',
