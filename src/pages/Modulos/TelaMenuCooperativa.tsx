@@ -25,11 +25,11 @@ export function TelaMenuCooperativa() {
     }
 
     function touchInit3() {
-        navigation.navigate('')
+        navigation.navigate('TelaEventosCampanhas')
     }
 
     function touchInit4() {
-        navigation.navigate('')
+        navigation.navigate('TelaNotificacoesCooperativas')
     }
 
     return (
@@ -47,6 +47,7 @@ export function TelaMenuCooperativa() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}>
+                        onPress={touchInit4}
 
                         <Image
                             source={require('../../assets/News.png')}
@@ -56,6 +57,7 @@ export function TelaMenuCooperativa() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}>
+                        onPress={touchInit3}
 
                         <Image
                             source={require('../../assets/TabelasPrecoCooperativa.png')}
@@ -68,6 +70,7 @@ export function TelaMenuCooperativa() {
                     <TouchableOpacity
 
                         activeOpacity={0.5}>
+                        onPress={touchInit4}
 
                         <Image
                             source={require('../../assets/EventosCampanhas.png')}
