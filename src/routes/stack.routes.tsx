@@ -21,6 +21,7 @@ import { FormAddress } from '../pages/Forms/FormAddress';
 import { FormPersonalData } from '../pages/Forms/FormPersonalData';
 import { FormContact } from '../pages/Forms/FormContact';
 import { FormNickname } from '../pages/Forms/FormNickname';
+import { FormConfirmedCooperative } from '../pages/Forms/formConfirmedCooperative';
 import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 
 // Import dos módulos
@@ -131,6 +132,13 @@ const AppRoutes: React.FC = () => (
         />
 
         {/* Finalização dos formulario */}
+
+        <stackRoutes.Screen
+            name="FormConfirmedCooperative"
+            component={FormConfirmedCooperative}
+
+        />
+        
 
         <stackRoutes.Screen
             name="FormConfirmed"
