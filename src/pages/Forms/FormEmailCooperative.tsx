@@ -15,6 +15,8 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import sacola from '../../assets/sacola.png';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
@@ -38,7 +40,7 @@ export function FormEmailCooperative() {
 
     }
 
-    function touchINext() {
+    function touchNext() {
 
         if (!name)
             return Alert.alert('Preenchimento obrigatório do Nome Fantasia');
@@ -47,11 +49,11 @@ export function FormEmailCooperative() {
         else
 
 
-            navigation.navigate('FormPersonalDataCooperative')
+            navigation.navigate('FormContactCooperative')
     }
 
     function touchBack() {
-        navigation.navigate('FormDescriptionCooperative')
+        navigation.navigate('FormPersonalDataCooperative')
     }
 
     return (
@@ -71,47 +73,51 @@ export function FormEmailCooperative() {
                     resizeMode="contain"
                 />
 
-                <Text style={styles.subtitle}>
-                    Nome Completo
+                <View style={styles.boxInput}>
 
-                </Text>
+                    <Text style={styles.subtitle}>
+                        Nome Completo
 
-                <TextInput
-                    style={styles.input}
-                    placeholder="Digite o Nome Fantasia"
-                    onChangeText={handleInputChange}
-                />
+                    </Text>
 
-                <Text style={styles.subtitle}>
-                    Email
-
-                </Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder="Digite seu Email"
-                    onChangeText={handleInputChange2}
-                />
-
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="Confirmar"
-                        onPress={touchINext}
-
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite o Nome Fantasia"
+                        onChangeText={handleInputChange}
                     />
-                </Text>
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="<"
+                    <Text style={styles.subtitle}>
+                        Email
+
+                    </Text>
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite seu Email"
+                        onChangeText={handleInputChange2}
+                    />
+
+                </View>
+
+                <View style={styles.boxButton}>
+                        <Button
+                            title="Confirmar"
+                            onPress={touchNext}
+                        />
+                </View>
+
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
                         onPress={touchBack}
-
+                    >
+                    <FontAwesome5
+                        name="arrow-alt-circle-left"
+                        style={styles.backButtonIcon}
+                        
                     />
-                </Text>
+
+                    </TouchableOpacity>
 
             </View>
         </SafeAreaView>
@@ -122,56 +128,74 @@ export function FormEmailCooperative() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        paddingBottom: '16%'
     },
 
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
-
-    },
-
-    subtitle: {
-        textAlign: 'center',
-        fontSize: 12,
-        color: colors.heading,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        fontFamily: fonts.text
-    },
-
-    input: {
-        borderBottomWidth: 1,
-        borderColor: '#52665A',
-        color: colors.heading,
-        width: '100%',
-        fontSize: 20,
-        marginTop: 20,
-        padding: 15,
-        textAlign: 'center'
+        lineHeight: 34,
+        paddingTop: '4%'
 
     },
 
     image: {
-        height: 50,
+        margin: '8%',
     },
 
+    boxInput: {
+        width: '100%',
+        paddingHorizontal: '15%',
+    },
 
-    button: {
+    subtitle: {
+        textAlign: 'left',        
+        fontSize: 20,
+        paddingTop: '2%',
+        color: colors.heading,
+        fontFamily: fonts.text
+    },
 
+    input: {
+        width: '100%',
+        borderBottomWidth: 1,
+        borderColor: '#52665A',
+        color: colors.heading,
+        fontSize: 20,
+        textAlign: 'center',
+        marginBottom: '15%'
+    },
 
+    boxButton: {
+        width: '100%',
+        paddingHorizontal: '20%',
+    },
+
+    backButton: {
+        backgroundColor: colors.green,
+        height: 60,
+        width: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+
+    },
+
+    backButtonIcon: {
+        color: colors.green_cyan,
+        fontSize: 35,
     }
 
 })

@@ -14,6 +14,8 @@ import { Button } from '../../components/Button';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
 export function FormContactCooperative() {
@@ -24,7 +26,7 @@ export function FormContactCooperative() {
     }
 
     function touchBack() {
-        navigation.navigate('FormIdentificationCooperative')
+        navigation.navigate('FormEmailCooperative')
     }
 
     return (
@@ -32,11 +34,11 @@ export function FormContactCooperative() {
 
             <View style={styles.wrapper}>
 
-
-
                 <Text style={styles.title}>
                     Informe Número para Contato
                 </Text>
+
+                <View style={styles.boxInput}>
 
 
 
@@ -70,26 +72,27 @@ export function FormContactCooperative() {
                     style={styles.input}
                     placeholder="(xx)00000-0000"
                 />
+                </View>
 
-                <Text
-                    style={styles.button}
-                >
+                <View style={styles.boxButton}>
                     <Button
                         title="Confirmar"
                         onPress={touchNext}
 
                     />
-                </Text>
+                </View>
 
-                <Text
-                    style={styles.button}
+                <TouchableOpacity
+                    style={styles.backButton}
+                    activeOpacity={0.5}
+                    onPress={touchBack}
                 >
-                    <Button
-                        title="<"
-                        onPress={touchBack}
-
+                    <FontAwesome5
+                        name="arrow-alt-circle-left"
+                        style={styles.backButtonIcon}
+                        
                     />
-                </Text>
+                </TouchableOpacity>
 
             </View>
         </SafeAreaView>
@@ -100,56 +103,72 @@ export function FormContactCooperative() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        paddingBottom: '16%'
     },
 
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
+        lineHeight: 34,
+        paddingTop: '4%'
 
     },
 
+    boxInput: {
+        width: '100%',
+        paddingHorizontal: '15%',
+    },
+
     subtitle: {
-        textAlign: 'center',
-        fontSize: 12,
+        textAlign: 'left',        
+        fontSize: 20,
+        paddingTop: '2%',
         color: colors.heading,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
         fontFamily: fonts.text
     },
 
     input: {
+        width: '100%',
         borderBottomWidth: 1,
         borderColor: '#52665A',
         color: colors.heading,
-        width: '100%',
         fontSize: 20,
-        marginTop: 20,
-        padding: 15,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: '15%'
 
     },
 
-    image: {
-        height: 50,
+    boxButton: {
+        width: '100%',
+        paddingHorizontal: '20%',
     },
 
+    backButton: {
+        backgroundColor: colors.green,
+        height: 60,
+        width: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
 
-    button: {
+    },
 
-
+    backButtonIcon: {
+        color: colors.green_cyan,
+        fontSize: 35,
     }
+
 
 })

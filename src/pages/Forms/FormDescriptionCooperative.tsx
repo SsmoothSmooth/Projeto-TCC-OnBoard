@@ -13,6 +13,8 @@ import { Button } from '../../components/Button';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
@@ -21,7 +23,7 @@ export function FormDescriptionCooperative() {
     const navigation = useNavigation();
 
     function touchNext() {
-        navigation.navigate('FormEmailCooperative')
+        navigation.navigate('FormConfirmedCooperative')
     }
 
     function touchBack() {
@@ -34,35 +36,39 @@ export function FormDescriptionCooperative() {
             <View style={styles.wrapper}>
 
 
+                <View style={styles.boxInput}>
 
-                <Text style={styles.title}>
-                    Descrição da sua Empresa
-                </Text>
+                    <Text style={styles.title}>
+                        Descrição da sua Empresa
+                    </Text>
 
-                <TextInput
-                    style={styles.input}
-                    placeholder="Fale sobre a sua Empresa"
-                />
-
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="Confirmar"
-                        onPress={touchNext}
-
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Fale sobre a sua Empresa"
                     />
-                </Text>
 
-                <Text
-                    style={styles.button}
-                >
-                    <Button
-                        title="<"
+                </View>
+
+                <View style={styles.boxButton}>
+                        <Button
+                            title="Confirmar"
+                            onPress={touchNext}
+
+                        />
+
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
                         onPress={touchBack}
+                        >
+                    <FontAwesome5
+                        name="arrow-alt-circle-left"
+                        style={styles.backButtonIcon}
+                        
+                        />
 
-                    />
-                </Text>
+                    </TouchableOpacity>
+                </View>
 
             </View>
         </SafeAreaView>
@@ -73,7 +79,8 @@ export function FormDescriptionCooperative() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {
@@ -94,35 +101,51 @@ const styles = StyleSheet.create({
 
     },
 
+    boxInput: {
+        width: '100%',
+        paddingHorizontal: '10%',
+    },
+
     subtitle: {
-        textAlign: 'center',
-        fontSize: 12,
+        textAlign: 'left',        
+        fontSize: 20,
+        paddingTop: '2%',
         color: colors.heading,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
         fontFamily: fonts.text
     },
 
     input: {
-        borderBottomWidth: 1,
+        width: '100%',
+        borderBottomWidth: 2,
         borderColor: '#52665A',
         color: colors.heading,
-        width: '100%',
         fontSize: 20,
-        marginTop: 20,
-        padding: 15,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: '15%',
+        marginBottom: '15%'
 
     },
 
-    image: {
-        height: 50,
+    boxButton: {
+        width: '100%',
+        paddingHorizontal: '20%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
+    backButton: {
+        backgroundColor: colors.green,
+        height: 60,
+        width: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
 
-    button: {
+    },
 
-
+    backButtonIcon: {
+        color: colors.green_cyan,
+        fontSize: 35,
     }
 
 })
