@@ -26,7 +26,7 @@ import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 
 // Import dos módulos
 
-import { Feed } from '../pages/Modulos/Feed';
+import { Feed } from '../pages/Modulos/Domesticos/Feed';
 
 const stackRoutes = createStackNavigator();
 
@@ -39,6 +39,7 @@ const AppRoutes: React.FC = () => (
             },
         }}
     >
+        {/* Begin */}
 
         <stackRoutes.Screen
             name="Welcome"
@@ -66,7 +67,7 @@ const AppRoutes: React.FC = () => (
 
         />
 
-        {/* Formularios Coletores / Domesticos */}
+        {/* Formulários Coletores / Domesticos */}
 
         <stackRoutes.Screen
             name="FormIdentification"
@@ -99,7 +100,7 @@ const AppRoutes: React.FC = () => (
 
         />
 
-        {/* Rota da Cooperativa */}
+        {/* Formulário da Cooperativa */}
 
         <stackRoutes.Screen
             name="FormEmailCooperative"
@@ -138,7 +139,6 @@ const AppRoutes: React.FC = () => (
             component={FormConfirmedCooperative}
 
         />
-        
 
         <stackRoutes.Screen
             name="FormConfirmed"
@@ -146,13 +146,30 @@ const AppRoutes: React.FC = () => (
 
         />
 
-        {/* Modulos */}
+        {/* Modulos - Doméstico*/}
 
         <stackRoutes.Screen 
-            name="Feed"
+            name="FeedDomesticos"
             component={Feed}
 
         />
+
+        {/* Modulos - Coletores*/}
+
+        <stackRoutes.Screen 
+            name="FeedColetores"
+            component={Feed}
+
+        />
+
+        {/* Modulos - Cooperativa*/}
+
+        <stackRoutes.Screen 
+            name="FeedCooperativas"
+            component={FeedCooperativas}
+
+        />
+
         
     </stackRoutes.Navigator>
 )

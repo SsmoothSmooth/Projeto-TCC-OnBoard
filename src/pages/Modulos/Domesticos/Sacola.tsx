@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import mapImg from '../assets/mapIcon.png';
 
@@ -11,7 +11,7 @@ export function Sacola(){
 
 
     return(
-        <SafeAreaView style={StyleSheet.container}> 
+        <SafeAreaView style={styles.container}> 
 
             <View style={styles.boxHeader}>
                   <Text style={styles.title}>Sacola{'\n'}</Text>

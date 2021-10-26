@@ -2,12 +2,12 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
+import { ModHeader } from '../../../components/ModHeader';
 import { ScrollView } from 'react-native-gesture-handler';
-import { NavBar } from '../../components/NavBar';
+import { NavBar } from '../../../components/NavBar';
 
 export function Feed(){
     const navigation = useNavigation();
