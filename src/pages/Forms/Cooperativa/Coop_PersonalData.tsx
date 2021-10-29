@@ -23,11 +23,11 @@ export function Coop_PersonalData() {
     const navigation = useNavigation();
 
     function touchNext() {
-        navigation.navigate('Coop_Email')
+        navigation.navigate('Coop_Identification')
     }
 
     function touchBack() {
-        navigation.navigate('Coop_Identification')
+        navigation.navigate('Coop_Email')
     }
 
     return (

@@ -38,7 +38,7 @@ export function C_PersonalData() {
     }
 
 
-    function touchInit() {
+    function touchNext() {
 
         if (!name)
             return Alert.alert('Preenchimento obrigatório do CPF');
@@ -46,11 +46,11 @@ export function C_PersonalData() {
         if (!name2)
             return Alert.alert('Preenchimento obrigatório data de nascimento');
 
-        navigation.navigate('FormContact')
+        navigation.navigate('C_Contact')
     }
 
-    function touchFormIdentidication() {
-        navigation.navigate('FormAddress')
+    function touchBack() {
+        navigation.navigate('C_Address')
     }
 
     return (
@@ -90,7 +90,7 @@ export function C_PersonalData() {
                 <View style={styles.boxButton}>
                         <Button
                             title="Confirmar"
-                            onPress={touchInit}
+                            onPress={touchNext}
 
                         />
                 </View>
@@ -98,7 +98,7 @@ export function C_PersonalData() {
                 <TouchableOpacity
                     style={styles.backButton}
                     activeOpacity={0.5}
-                    onPress={touchFormIdentidication}
+                    onPress={touchBack}
                 >
                 <FontAwesome5
                     name="arrow-alt-circle-left"

@@ -14,7 +14,7 @@ import { Button } from '../../../components/Button';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import sacola from '../../assets/sacola.png';
+import sacola from '../../../assets/sacola.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 

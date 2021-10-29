@@ -14,7 +14,7 @@ import { Button } from '../../../components/Button';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import happyPlanet from '../../assets/happyPlanet.png';
+import happyPlanet from '../../../assets/happyPlanet.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
@@ -55,7 +55,7 @@ export function C_Nickname() {
                 />
 
                 <Text style={styles.title}>
-                    Como podemos te chamar? {'\n'}
+                    Como podemos te chamar ? {'\n'}
                 </Text>
                 
                 <View style={styles.boxInput}>
