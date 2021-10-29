@@ -19,7 +19,8 @@ import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 export function Login() {
     const navigation = useNavigation();
 
-    function touchConfirmAccess() {
+    
+    function touchBack() {
         navigation.navigate('ConfirmAccess')
     }
 
@@ -52,7 +53,7 @@ export function Login() {
             <View style={styles.boxButton}>
                 <Button 
                     title="Confirmar"
-
+                    // onPress={touchLogin}
                 />
 
             </View>
@@ -60,7 +61,7 @@ export function Login() {
             <TouchableOpacity
                 style={styles.backButton}
                 activeOpacity={0.5}
-                onPress={touchConfirmAccess}
+                onPress={touchBack}
 
             >
                 <FontAwesome5

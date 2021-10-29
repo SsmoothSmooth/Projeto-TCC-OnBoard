@@ -26,9 +26,11 @@ export function Welcome() {
         navigation.navigate('ConfirmAccess')
     }
 
-    function test() {
-        navigation.navigate('TelaManualTipo')
-    }
+    // Usar para testar as telas
+ 
+    // function test(){
+    //     navigation.navigate('')
+    // }
 
     return (
 
@@ -57,11 +59,11 @@ export function Welcome() {
                 {/* Teste screen */}
 
                 <View style={styles.testButton}>
-                    <Button
-                        title="View Interface"
-                        onPress={test}
-
-                    />
+                        <Button
+                            title="View Interface"
+                            // onPress={test}
+                            
+                            />
                 </View>
 
                 <TouchableOpacity

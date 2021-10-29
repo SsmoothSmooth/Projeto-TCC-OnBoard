@@ -6,20 +6,21 @@ import {
     StyleSheet,
     TouchableOpacity,
     TextInput,
+    Image,
     Alert
-
-
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import sacola from '../../../assets/sacola.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
-export function FormPersonalData() {
+
+export function D_Identification() {
     const navigation = useNavigation();
 
     const [isFilled, setIsFilled] = useState(false);
@@ -38,19 +39,19 @@ export function FormPersonalData() {
     }
 
 
-    function touchInit() {
+    function touchNext() {
 
         if (!name)
-            return Alert.alert('Preenchimento obrigatório do CPF');
+            return Alert.alert('Preenchimento obrigatório do Nome');
 
         if (!name2)
-            return Alert.alert('Preenchimento obrigatório data de nascimento');
+            return Alert.alert('Preenchimento obrigatório do Email');
 
-        navigation.navigate('FormContact')
+        navigation.navigate('D_Address')
     }
 
-    function touchFormIdentidication() {
-        navigation.navigate('FormAddress')
+    function touchBack() {
+        navigation.navigate('ModalityOptions')
     }
 
     return (
@@ -59,30 +60,35 @@ export function FormPersonalData() {
             <View style={styles.wrapper}>
 
                 <Text style={styles.title}>
-                    Preencha os dados {'\n'}
+                    Coletores OnBoard
                 </Text>
-            
-                <View style={styles.boxInput}>
 
+                <Image
+                    source={sacola}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
+                
+                <View style={styles.boxInput}>
                     <Text style={styles.subtitle}>
-                        CPF: {'\n'}
+                        Nome Completo: {'\n'}
 
                     </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="000.000.000-XX"
+                        placeholder="Digite seu nome"
                         onChangeText={handleInputChange}
                     />
 
                     <Text style={styles.subtitle}>
-                       Data de nascimento: {'\n'}
+                        Email: {'\n'}
 
                     </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="00/00/20XX"
+                        placeholder="Digite seu email"
                         onChangeText={handleInputChange2}
                     />
                 </View>
@@ -90,22 +96,23 @@ export function FormPersonalData() {
                 <View style={styles.boxButton}>
                         <Button
                             title="Confirmar"
-                            onPress={touchInit}
+                            onPress={touchNext}
 
                         />
                 </View>
 
-                <TouchableOpacity
-                    style={styles.backButton}
-                    activeOpacity={0.5}
-                    onPress={touchFormIdentidication}
-                >
-                <FontAwesome5
-                    name="arrow-alt-circle-left"
-                    style={styles.backButtonIcon}
-                    
-                />
-                </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchBack}
+                    >
+                    <FontAwesome5
+                        name="arrow-alt-circle-left"
+                        style={styles.backButtonIcon}
+                        
+                    />
+
+                    </TouchableOpacity>
 
             </View>
         </SafeAreaView>
@@ -130,11 +137,10 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
         lineHeight: 34,
-        paddingTop: '4%'        
+        paddingTop: '4%'
     },
     
     image: {
