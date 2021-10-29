@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-// Import das paginas inicias
+// Import das paginas inicias { Begin }
 
 import { Welcome } from '../pages/Begin/Welcome';
 import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
@@ -10,23 +10,46 @@ import { Login } from '../pages/Begin/Login';
 
 //  Import dos formularios
 
-import { FormEmailCooperative } from '../pages/Forms/FormEmailCooperative';
-import { FormPersonalDataCooperative } from '../pages/Forms/FormPersonalDataCooperative';
-import { FormIdentificationCooperative } from '../pages/Forms/FormIdentificationCooperative';
-import { FormContactCooperative } from '../pages/Forms/FormContactCooperative';
-import { FormDescriptionCooperative } from '../pages/Forms/FormDescriptionCooperative';
+// { Coletores }
 
-import { FormIdentification } from '../pages/Forms/FormIdentification';
-import { FormAddress } from '../pages/Forms/FormAddress';
-import { FormPersonalData } from '../pages/Forms/FormPersonalData';
-import { FormContact } from '../pages/Forms/FormContact';
-import { FormNickname } from '../pages/Forms/FormNickname';
-import { FormConfirmedCooperative } from '../pages/Forms/formConfirmedCooperative';
-import { FormConfirmed } from '../pages/Forms/FormConfirmed';
+import { C_Identification } from '../pages/Forms/Coletores/C_Identification';
+import { C_Address } from '../pages/Forms/Coletores/C_Address';
+import { C_PersonalData } from '../pages/Forms/Coletores/C_PersonalData';
+import { C_Contact } from '../pages/Forms/Coletores/C_Contact';
+import { C_Nickname } from '../pages/Forms/Coletores/C_Nickname';
+import { C_Confirmed } from '../pages/Forms/Coletores/C_Confirmed';
+
+// { Cooperativa }
+
+import { Coop_Email } from '../pages/Forms/Cooperativa/Coop_Email';
+import { Coop_PersonalData } from '../pages/Forms/Cooperativa/Coop_PersonalData';
+import { Coop_Identification } from '../pages/Forms/Cooperativa/Coop_Identification';
+import { Coop_Contact } from '../pages/Forms/Cooperativa/Coop_Contact';
+import { Coop_Description } from '../pages/Forms/Cooperativa/Coop_Description';
+import { Coop_Confirmed } from '../pages/Forms/Cooperativa/Coop_Confirmed';
+
+// { Domestico }
+
+import { D_Identification } from '../pages/Forms/Domesticos/D_Identification';
+import { D_Address } from '../pages/Forms/Domesticos/D_Address';
+import { D_PersonalData } from '../pages/Forms/Domesticos/D_PersonalData';
+import { D_Contact } from '../pages/Forms/Domesticos/D_Contact';
+import { D_Nickname } from '../pages/Forms/Domesticos/D_Nickname';
+import { D_Confirmed } from '../pages/Forms/Domesticos/D_Confirmed';
 
 // Import dos módulos
 
-import { Feed } from '../pages/Modulos/Domesticos/Feed';
+// { Coletores }
+
+import { Mod_C_Feed } from '../pages/Modulos/Coletores/Mod_C_Feed';
+
+// { Cooperativa }
+
+import { Mod_Coop_Feed } from '../pages/Modulos/Cooperativas/Mod_Coop_Feed';
+
+// { Domestico }
+
+import { Mod_D_Feed } from '../pages/Modulos/Domesticos/Mod_D_Feed';
 
 const stackRoutes = createStackNavigator();
 
@@ -39,138 +62,158 @@ const AppRoutes: React.FC = () => (
             },
         }}
     >
-        {/* Begin */}
+        {/* BEGIN */}
 
         <stackRoutes.Screen
             name="Welcome"
             component={Welcome}
-
         />
 
         <stackRoutes.Screen
             name="ConfirmAccess"
             component={ConfirmAccess}
-
         />
-
 
         <stackRoutes.Screen
             name="Login"
             component={Login}
-
         />
-
 
         <stackRoutes.Screen
             name="ModalityOptions"
             component={ModalityOptions}
-
         />
 
-        {/* Formulários Coletores / Domesticos */}
+        {/*** End BEGIN ***/}
+
+        {/* FORMULÁRIO*/}
+
+        {/* Formulários Coletores */}
 
         <stackRoutes.Screen
-            name="FormIdentification"
-            component={FormIdentification}
-
-        />
-
-        <stackRoutes.Screen
-            name="FormAddress"
-            component={FormAddress}
-
+            name="C_Identification"
+            component={C_Identification}
         />
 
         <stackRoutes.Screen
-            name="FormPersonalData"
-            component={FormPersonalData}
-
+            name="C_Address"
+            component={C_Address}
         />
 
         <stackRoutes.Screen
-            name="FormContact"
-            component={FormContact}
-
-        />
-
-
-        <stackRoutes.Screen
-            name="FormNickname"
-            component={FormNickname}
-
-        />
-
-        {/* Formulário da Cooperativa */}
-
-        <stackRoutes.Screen
-            name="FormEmailCooperative"
-            component={FormEmailCooperative}
-
+            name="C_PersonalData"
+            component={C_PersonalData}
         />
 
         <stackRoutes.Screen
-            name="FormPersonalDataCooperative"
-            component={FormPersonalDataCooperative}
-
+            name="C_Contact"
+            component={C_Contact}
         />
 
         <stackRoutes.Screen
-            name="FormIdentificationCooperative"
-            component={FormIdentificationCooperative}
-
+            name="C_Nickname"
+            component={C_Nickname}
         />
 
         <stackRoutes.Screen
-            name="FormContactCooperative"
-            component={FormContactCooperative}
-
+            name="C_Confirmed"
+            component={C_Confirmed}
         />
 
-        <stackRoutes.Screen
-            name="FormDescriptionCooperative"
-            component={FormDescriptionCooperative}
-
-        />
-
-        {/* Finalização dos formulario */}
-
-        <stackRoutes.Screen
-            name="FormConfirmedCooperative"
-            component={FormConfirmedCooperative}
-
-        />
-
-        <stackRoutes.Screen
-            name="FormConfirmed"
-            component={FormConfirmed}
-
-        />
-
-        {/* Modulos - Doméstico*/}
-
-        <stackRoutes.Screen 
-            name="FeedDomesticos"
-            component={Feed}
-
-        />
-
-        {/* Modulos - Coletores*/}
-
-        <stackRoutes.Screen 
-            name="FeedColetores"
-            component={Feed}
-
-        />
-
-        {/* Modulos - Cooperativa*/}
-
-        <stackRoutes.Screen 
-            name="FeedCooperativas"
-            component={FeedCooperativas}
-
-        />
-
+        {/* Formulários Cooperativas */}
         
+        <stackRoutes.Screen
+            name="Coop_Email"
+            component={Coop_Email}
+        />
+
+        <stackRoutes.Screen
+            name="Coop_PersonalData"
+            component={Coop_PersonalData}
+        />
+
+        <stackRoutes.Screen
+            name="Coop_Identification"
+            component={Coop_Identification}
+        />
+
+        <stackRoutes.Screen
+            name="Coop_Contact"
+            component={Coop_Contact}
+        />
+
+        <stackRoutes.Screen
+            name="Coop_Description"
+            component={Coop_Description}
+        />
+
+        <stackRoutes.Screen
+            name="Coop_Confirmed"
+            component={Coop_Confirmed}
+        />
+
+        {/* Formulários Domésticos */}
+
+        <stackRoutes.Screen
+            name="D_Identification"
+            component={D_Identification}
+        />
+
+        <stackRoutes.Screen
+            name="D_Address"
+            component={D_Address}
+        />
+
+        <stackRoutes.Screen
+            name="D_PersonalData"
+            component={D_PersonalData}
+        />
+
+        <stackRoutes.Screen
+            name="D_Contact"
+            component={D_Contact}
+        />
+
+        <stackRoutes.Screen
+            name="D_Nickname"
+            component={D_Nickname}
+        />
+
+        <stackRoutes.Screen
+            name="D_Confirmed"
+            component={D_Confirmed}
+        />
+
+        {/*** End FORMULÁRIO ***/}
+
+        {/* MÓDULO */}
+
+        {/* Módulos - Coletores */}
+
+        <stackRoutes.Screen 
+            name="Mod_C_Feed"
+            component={Mod_C_Feed}
+
+        />
+
+        {/* Módulos - Cooperativa */}
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_Feed"
+            component={Mod_Coop_Feed}
+
+        />
+        {/* Módulos - Dómesticos */}
+
+        <stackRoutes.Screen 
+            name="Mod_D_Feed"
+            component={Mod_D_Feed}
+
+        />
+        
+        {/*** End MÓDULO ***/}
+
+
     </stackRoutes.Navigator>
 )
 

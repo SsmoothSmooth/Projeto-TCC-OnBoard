@@ -1,59 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     View,
     Text,
     SafeAreaView,
     StyleSheet,
     TouchableOpacity,
-    TextInput,
-    Image,
-    Alert
+    TextInput
+
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import sacola from '../../assets/sacola.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
-export function FormEmailCooperative() {
 
+export function Coop_PersonalData() {
     const navigation = useNavigation();
 
-    const [isFilled, setIsFilled] = useState(false);
-    const [name, setName] = useState<string>();
-    const [name2, setName2] = useState<string>();
-
-    function handleInputChange(value: string) {
-        setIsFilled(!!value);
-        setName(value);
-
-    }
-
-    function handleInputChange2(value2: string) {
-        setIsFilled(!!value2);
-        setName2(value2);
-
-    }
-
     function touchNext() {
-
-        if (!name)
-            return Alert.alert('Preenchimento obrigatório do Nome Fantasia');
-        if (!name2)
-            return Alert.alert('Preenchimento obrigatório do Email');
-        else
-
-
-            navigation.navigate('FormContactCooperative')
+        navigation.navigate('Coop_Email')
     }
 
     function touchBack() {
-        navigation.navigate('FormPersonalDataCooperative')
+        navigation.navigate('Coop_Identification')
     }
 
     return (
@@ -64,46 +38,38 @@ export function FormEmailCooperative() {
 
 
                 <Text style={styles.title}>
-                    ColetoresOnBoard
+                    Preencha os dados
                 </Text>
-
-                <Image
-                    source={sacola}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
 
                 <View style={styles.boxInput}>
 
                     <Text style={styles.subtitle}>
-                        Nome Completo
+                        Cidade/ UF
 
                     </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="Digite o Nome Fantasia"
-                        onChangeText={handleInputChange}
+                        placeholder="Digite a sua cidade/ UF"
                     />
 
                     <Text style={styles.subtitle}>
-                        Email
+                        Endereço
 
                     </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="Digite seu Email"
-                        onChangeText={handleInputChange2}
+                        placeholder="Digite o seu endereço"
                     />
-
                 </View>
 
                 <View style={styles.boxButton}>
-                        <Button
-                            title="Confirmar"
-                            onPress={touchNext}
-                        />
+                    <Button
+                        title="Confirmar"
+                        onPress={touchNext}
+
+                    />
                 </View>
 
                     <TouchableOpacity
@@ -144,15 +110,11 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
+        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34,
-        paddingTop: '4%'
+        lineHeight: 34
 
-    },
-
-    image: {
-        margin: '8%',
     },
 
     boxInput: {
@@ -176,6 +138,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         marginBottom: '15%'
+
     },
 
     boxButton: {

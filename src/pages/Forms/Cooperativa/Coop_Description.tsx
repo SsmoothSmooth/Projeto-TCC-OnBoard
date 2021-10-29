@@ -7,26 +7,27 @@ import {
     TouchableOpacity,
     TextInput
 
-
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
-export function FormContactCooperative() {
+
+
+export function Coop_Description() {
     const navigation = useNavigation();
 
     function touchNext() {
-        navigation.navigate('FormDescriptionCooperative')
+        navigation.navigate('Coop_Confirmed')
     }
 
     function touchBack() {
-        navigation.navigate('FormEmailCooperative')
+        navigation.navigate('Coop_Contact')
     }
 
     return (
@@ -34,65 +35,40 @@ export function FormContactCooperative() {
 
             <View style={styles.wrapper}>
 
-                <Text style={styles.title}>
-                    Informe Número para Contato
-                </Text>
 
                 <View style={styles.boxInput}>
 
+                    <Text style={styles.title}>
+                        Descrição da sua Empresa
+                    </Text>
 
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Fale sobre a sua Empresa"
+                    />
 
-                <Text style={styles.subtitle}>
-                    Telefone
-
-                </Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder="(xx)00000-0000"
-                />
-
-                <Text style={styles.subtitle}>
-                    Celular
-
-                </Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder="(xx)00000-0000"
-                />
-
-
-                <Text style={styles.subtitle}>
-                    Whatssap
-
-                </Text>
-
-                <TextInput
-                    style={styles.input}
-                    placeholder="(xx)00000-0000"
-                />
                 </View>
 
                 <View style={styles.boxButton}>
-                    <Button
-                        title="Confirmar"
-                        onPress={touchNext}
+                        <Button
+                            title="Confirmar"
+                            onPress={touchNext}
 
-                    />
-                </View>
+                        />
 
-                <TouchableOpacity
-                    style={styles.backButton}
-                    activeOpacity={0.5}
-                    onPress={touchBack}
-                >
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchBack}
+                        >
                     <FontAwesome5
                         name="arrow-alt-circle-left"
                         style={styles.backButtonIcon}
                         
-                    />
-                </TouchableOpacity>
+                        />
+
+                    </TouchableOpacity>
+                </View>
 
             </View>
         </SafeAreaView>
@@ -110,25 +86,24 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: 'white',
-        paddingBottom: '16%'
+        justifyContent: 'space-around',
+        paddingHorizontal: 20
     },
 
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
+        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34,
-        paddingTop: '4%'
+        lineHeight: 34
 
     },
 
     boxInput: {
         width: '100%',
-        paddingHorizontal: '15%',
+        paddingHorizontal: '10%',
     },
 
     subtitle: {
@@ -141,11 +116,12 @@ const styles = StyleSheet.create({
 
     input: {
         width: '100%',
-        borderBottomWidth: 1,
+        borderBottomWidth: 2,
         borderColor: '#52665A',
         color: colors.heading,
         fontSize: 20,
         textAlign: 'center',
+        marginTop: '15%',
         marginBottom: '15%'
 
     },
@@ -153,6 +129,8 @@ const styles = StyleSheet.create({
     boxButton: {
         width: '100%',
         paddingHorizontal: '20%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
     backButton: {
@@ -169,6 +147,5 @@ const styles = StyleSheet.create({
         color: colors.green_cyan,
         fontSize: 35,
     }
-
 
 })

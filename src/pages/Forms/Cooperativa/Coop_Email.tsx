@@ -1,88 +1,115 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
     SafeAreaView,
     StyleSheet,
     TouchableOpacity,
-    TextInput
-
-
+    TextInput,
+    Image,
+    Alert
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import sacola from '../../assets/sacola.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
-export function FormIdentificationCooperative() {
+
+export function Coop_Email() {
+
     const navigation = useNavigation();
 
-    function touchFormAddress() {
-        navigation.navigate('FormPersonalDataCooperative')
+    const [isFilled, setIsFilled] = useState(false);
+    const [name, setName] = useState<string>();
+    const [name2, setName2] = useState<string>();
+
+    function handleInputChange(value: string) {
+        setIsFilled(!!value);
+        setName(value);
+
     }
 
-    function touchModalityOptions() {
+    function handleInputChange2(value2: string) {
+        setIsFilled(!!value2);
+        setName2(value2);
+
+    }
+
+    function touchNext() {
+
+        if (!name)
+            return Alert.alert('Preenchimento obrigatório do Nome Fantasia');
+        if (!name2)
+            return Alert.alert('Preenchimento obrigatório do Email');
+        else
+
+
+            navigation.navigate('Coop_PersonalData')
+    }
+
+    function touchBack() {
         navigation.navigate('ModalityOptions')
     }
 
     return (
         <SafeAreaView style={styles.container}>
+
             <View style={styles.wrapper}>
 
+
+
                 <Text style={styles.title}>
-                    Preencha os dados
+                    ColetoresOnBoard
                 </Text>
+
+                <Image
+                    source={sacola}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
 
                 <View style={styles.boxInput}>
 
                     <Text style={styles.subtitle}>
-                        CNPJ: {'\n'}
+                        Nome Completo
+
                     </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="01.002.003/0004-XX"
+                        placeholder="Digite o Nome Fantasia"
+                        onChangeText={handleInputChange}
                     />
 
                     <Text style={styles.subtitle}>
-                        Data da Fundação da empresa
+                        Email
 
                     </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="00/00/20XX"
+                        placeholder="Digite seu Email"
+                        onChangeText={handleInputChange2}
                     />
 
-
-                    <Text style={styles.subtitle}>
-                        Responsável Legal da Empresa
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Nome Completo"
-                    />
-                    
                 </View>
 
                 <View style={styles.boxButton}>
                         <Button
                             title="Confirmar"
-                            onPress={touchFormAddress}
-
+                            onPress={touchNext}
                         />
                 </View>
 
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchModalityOptions}
+                        onPress={touchBack}
                     >
                     <FontAwesome5
                         name="arrow-alt-circle-left"
@@ -91,6 +118,7 @@ export function FormIdentificationCooperative() {
                     />
 
                     </TouchableOpacity>
+
             </View>
         </SafeAreaView>
     )
@@ -123,6 +151,10 @@ const styles = StyleSheet.create({
 
     },
 
+    image: {
+        margin: '8%',
+    },
+
     boxInput: {
         width: '100%',
         paddingHorizontal: '15%',
@@ -130,7 +162,7 @@ const styles = StyleSheet.create({
 
     subtitle: {
         textAlign: 'left',        
-        fontSize: 16,
+        fontSize: 20,
         paddingTop: '2%',
         color: colors.heading,
         fontFamily: fonts.text
@@ -144,7 +176,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         marginBottom: '15%'
-
     },
 
     boxButton: {

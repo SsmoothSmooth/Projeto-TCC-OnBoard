@@ -7,27 +7,26 @@ import {
     TouchableOpacity,
     TextInput
 
+
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
-
-
-export function FormPersonalDataCooperative() {
+export function Coop_Contact() {
     const navigation = useNavigation();
 
     function touchNext() {
-        navigation.navigate('FormEmailCooperative')
+        navigation.navigate('Coop_Description')
     }
 
     function touchBack() {
-        navigation.navigate('FormIdentificationCooperative')
+        navigation.navigate('Coop_Identification')
     }
 
     return (
@@ -35,33 +34,44 @@ export function FormPersonalDataCooperative() {
 
             <View style={styles.wrapper}>
 
-
-
                 <Text style={styles.title}>
-                    Preencha os dados
+                    Informe Número para Contato
                 </Text>
 
                 <View style={styles.boxInput}>
 
-                    <Text style={styles.subtitle}>
-                        Cidade/ UF
 
-                    </Text>
 
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Digite a sua cidade/ UF"
-                    />
+                <Text style={styles.subtitle}>
+                    Telefone
 
-                    <Text style={styles.subtitle}>
-                        Endereço
+                </Text>
 
-                    </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="(xx)00000-0000"
+                />
 
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Digite o seu endereço"
-                    />
+                <Text style={styles.subtitle}>
+                    Celular
+
+                </Text>
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="(xx)00000-0000"
+                />
+
+
+                <Text style={styles.subtitle}>
+                    Whatssap
+
+                </Text>
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="(xx)00000-0000"
+                />
                 </View>
 
                 <View style={styles.boxButton}>
@@ -72,18 +82,17 @@ export function FormPersonalDataCooperative() {
                     />
                 </View>
 
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchBack}
-                    >
+                <TouchableOpacity
+                    style={styles.backButton}
+                    activeOpacity={0.5}
+                    onPress={touchBack}
+                >
                     <FontAwesome5
                         name="arrow-alt-circle-left"
                         style={styles.backButtonIcon}
                         
                     />
-
-                    </TouchableOpacity>
+                </TouchableOpacity>
 
             </View>
         </SafeAreaView>
@@ -110,10 +119,10 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34
+        lineHeight: 34,
+        paddingTop: '4%'
 
     },
 
@@ -160,5 +169,6 @@ const styles = StyleSheet.create({
         color: colors.green_cyan,
         fontSize: 35,
     }
+
 
 })

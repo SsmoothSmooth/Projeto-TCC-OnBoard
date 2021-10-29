@@ -26,9 +26,11 @@ export function Welcome(){
         navigation.navigate('ConfirmAccess')
     }
 
-    function test(){
-        navigation.navigate('Feed')
-    }
+    // Usar para testar as telas
+ 
+    // function test(){
+    //     navigation.navigate('')
+    // }
 
     return(
 
@@ -59,7 +61,7 @@ export function Welcome(){
                 <View style={styles.testButton}>
                         <Button
                             title="View Interface"
-                            onPress={test}
+                            // onPress={test}
                             
                             />
                 </View>

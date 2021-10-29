@@ -1,33 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
     SafeAreaView,
     StyleSheet,
     TouchableOpacity,
-    TextInput
-
+    TextInput,
+    Image,
+    Alert
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
+import happyPlanet from '../../assets/happyPlanet.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
-
-export function FormDescriptionCooperative() {
+export function D_Nickname() {
     const navigation = useNavigation();
 
+    const [isFilled, setIsFilled] = useState(false);
+    const [name, setName] = useState<string>();
+
+    function handleInputChange(value: string) {
+        setIsFilled(!!value);
+        setName(value);
+    }
+
     function touchNext() {
-        navigation.navigate('FormConfirmedCooperative')
+
+        if (!name)
+            return Alert.alert('Preenchimento obrigatório');
+
+        navigation.navigate('D_Confirmed')
     }
 
     function touchBack() {
-        navigation.navigate('FormContactCooperative')
+        navigation.navigate('D_Contact')
     }
 
     return (
@@ -35,16 +48,22 @@ export function FormDescriptionCooperative() {
 
             <View style={styles.wrapper}>
 
+                <Image
+                    source={happyPlanet}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
 
+                <Text style={styles.title}>
+                    Como podemos te chamar? {'\n'}
+                </Text>
+                
                 <View style={styles.boxInput}>
-
-                    <Text style={styles.title}>
-                        Descrição da sua Empresa
-                    </Text>
-
+   
                     <TextInput
                         style={styles.input}
-                        placeholder="Fale sobre a sua Empresa"
+                        placeholder="Digite seu apelido"
+                        onChangeText={handleInputChange}
                     />
 
                 </View>
@@ -55,27 +74,25 @@ export function FormDescriptionCooperative() {
                             onPress={touchNext}
 
                         />
-
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchBack}
-                        >
-                    <FontAwesome5
-                        name="arrow-alt-circle-left"
-                        style={styles.backButtonIcon}
-                        
-                        />
-
-                    </TouchableOpacity>
                 </View>
+
+                <TouchableOpacity
+                    style={styles.backButton}
+                    activeOpacity={0.5}
+                    onPress={touchBack}
+                >
+                <FontAwesome5
+                    name="arrow-alt-circle-left"
+                    style={styles.backButtonIcon}
+                    
+                />
+
+                </TouchableOpacity>
 
             </View>
         </SafeAreaView>
     )
 }
-
-
 
 const styles = StyleSheet.create({
     container: {
@@ -86,10 +103,16 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-around',
-        paddingHorizontal: 20
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        paddingBottom: '20%'
     },
 
+    
+    image: {
+        margin: '8%',
+    },
+    
     title: {
         fontSize: 28,
         fontWeight: 'bold',
@@ -98,30 +121,21 @@ const styles = StyleSheet.create({
         color: colors.heading,
         fontFamily: fonts.heading,
         lineHeight: 34
-
+        
     },
 
     boxInput: {
         width: '100%',
-        paddingHorizontal: '10%',
-    },
-
-    subtitle: {
-        textAlign: 'left',        
-        fontSize: 20,
-        paddingTop: '2%',
-        color: colors.heading,
-        fontFamily: fonts.text
+        paddingHorizontal: '15%',
     },
 
     input: {
         width: '100%',
-        borderBottomWidth: 2,
+        borderBottomWidth: 1,
         borderColor: '#52665A',
         color: colors.heading,
         fontSize: 20,
         textAlign: 'center',
-        marginTop: '15%',
         marginBottom: '15%'
 
     },
@@ -129,8 +143,6 @@ const styles = StyleSheet.create({
     boxButton: {
         width: '100%',
         paddingHorizontal: '20%',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
 
     backButton: {

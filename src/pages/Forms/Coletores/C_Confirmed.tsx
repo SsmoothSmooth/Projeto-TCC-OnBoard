@@ -8,21 +8,21 @@ import {
     Dimensions
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import celebrationPlanet from '../../assets/celebrationPlanet.png';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
-export function FormConfirmed() {
+export function C_Confirmed() {
     const navigation = useNavigation();
 
-    function touchInitFeed() {
+    function touchNext() {
 
-        navigation.navigate('Feed')
+        navigation.navigate('Mod_C_Feed')
     }
 
     return (
@@ -54,7 +54,7 @@ export function FormConfirmed() {
                 <View style={styles.boxButton}>
                     <Button
                         title="Começar"
-                        onPress={touchInitFeed}
+                        onPress={touchNext}
                     />
                 </View>
 

@@ -8,19 +8,18 @@ import {
     Dimensions
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import celebrationPlanet from '../../assets/celebrationPlanet.png';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-export function FormConfirmedCooperative() {
+export function Coop_Confirmed() {
     const navigation = useNavigation();
 
-    function touchInitFeed() {
-
-        navigation.navigate('Feed')
+    function touchNext() {
+        navigation.navigate('Mod_Coop_Feed')
     }
 
     return (
@@ -52,7 +51,7 @@ export function FormConfirmedCooperative() {
                 <View style={styles.boxButton}>
                     <Button
                         title="Começar"
-                        onPress={touchInitFeed}
+                        onPress={touchNext}
                     />
                 </View>
 

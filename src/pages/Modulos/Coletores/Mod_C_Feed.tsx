@@ -9,7 +9,7 @@ import { ModHeader } from '../../../components/ModHeader';
 import { ScrollView } from 'react-native-gesture-handler';
 import { NavBar } from '../../../components/NavBar';
 
-export function Feed(){
+export function Mod_C_Feed(){
     const navigation = useNavigation();
 
     function touchSacola(){

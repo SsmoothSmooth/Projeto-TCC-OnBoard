@@ -11,15 +11,15 @@ import {
 
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
-export function FormPersonalData() {
+export function D_PersonalData() {
     const navigation = useNavigation();
 
     const [isFilled, setIsFilled] = useState(false);
@@ -38,7 +38,7 @@ export function FormPersonalData() {
     }
 
 
-    function touchInit() {
+    function touchNext() {
 
         if (!name)
             return Alert.alert('Preenchimento obrigatório do CPF');
@@ -46,11 +46,11 @@ export function FormPersonalData() {
         if (!name2)
             return Alert.alert('Preenchimento obrigatório data de nascimento');
 
-        navigation.navigate('FormContact')
+        navigation.navigate('D_Contact')
     }
 
-    function touchFormIdentidication() {
-        navigation.navigate('FormAddress')
+    function touchBack() {
+        navigation.navigate('D_Address')
     }
 
     return (
@@ -90,7 +90,7 @@ export function FormPersonalData() {
                 <View style={styles.boxButton}>
                         <Button
                             title="Confirmar"
-                            onPress={touchInit}
+                            onPress={touchNext}
 
                         />
                 </View>
@@ -98,7 +98,7 @@ export function FormPersonalData() {
                 <TouchableOpacity
                     style={styles.backButton}
                     activeOpacity={0.5}
-                    onPress={touchFormIdentidication}
+                    onPress={touchBack}
                 >
                 <FontAwesome5
                     name="arrow-alt-circle-left"

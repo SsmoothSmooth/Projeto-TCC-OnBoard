@@ -10,48 +10,37 @@ import {
     Alert
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import sacola from '../../assets/sacola.png';
+import happyPlanet from '../../assets/happyPlanet.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
-export function FormIdentification() {
+export function C_Contact() {
     const navigation = useNavigation();
 
     const [isFilled, setIsFilled] = useState(false);
     const [name, setName] = useState<string>();
-    const [name2, setName2] = useState<string>();
 
     function handleInputChange(value: string) {
         setIsFilled(!!value);
         setName(value);
     }
 
-    function handleInputChange2(value2: string) {
-        setIsFilled(!!value2);
-        setName2(value2);
-
-    }
-
-
-    function touchFormAddress() {
+    function touchNext() {
 
         if (!name)
-            return Alert.alert('Preenchimento obrigatório do Nome');
+            return Alert.alert('Preenchimento obrigatório do número de telefone');
 
-        if (!name2)
-            return Alert.alert('Preenchimento obrigatório do Email');
-
-        navigation.navigate('FormAddress')
+        navigation.navigate('C_Nickname')
     }
 
-    function touchModalityOptions() {
-        navigation.navigate('ModalityOptions')
+    function touchBack() {
+        navigation.navigate('C_PersonalData')
     }
 
     return (
@@ -59,62 +48,48 @@ export function FormIdentification() {
 
             <View style={styles.wrapper}>
 
-                <Text style={styles.title}>
-                    Coletores OnBoard
-                </Text>
-
                 <Image
-                    source={sacola}
+                    source={happyPlanet}
                     style={styles.image}
                     resizeMode="contain"
                 />
+
+                <Text style={styles.title}>
+                    Informe seu telefone {'\n'}
+                </Text>
                 
                 <View style={styles.boxInput}>
-                    <Text style={styles.subtitle}>
-                        Nome Completo: {'\n'}
-
-                    </Text>
-
+   
                     <TextInput
                         style={styles.input}
-                        placeholder="Digite seu nome"
+                        placeholder="Ex: (DDD) 00000-0000"
                         onChangeText={handleInputChange}
                     />
 
-                    <Text style={styles.subtitle}>
-                        Email: {'\n'}
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Digite seu email"
-                        onChangeText={handleInputChange2}
-                    />
                 </View>
 
                 <View style={styles.boxButton}>
                         <Button
                             title="Confirmar"
-                            onPress={touchFormAddress}
+                            onPress={touchNext}
 
                         />
                 </View>
 
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchModalityOptions}
-                    >
-                    <FontAwesome5
-                        name="arrow-alt-circle-left"
-                        style={styles.backButtonIcon}
-                        
-                    />
+                <TouchableOpacity
+                    style={styles.backButton}
+                    activeOpacity={0.5}
+                    onPress={touchBack}
+                >
+                <FontAwesome5
+                    name="arrow-alt-circle-left"
+                    style={styles.backButtonIcon}
+                    
+                />
 
-                    </TouchableOpacity>
-
+                </TouchableOpacity>
             </View>
+
         </SafeAreaView>
     )
 }
@@ -130,34 +105,27 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-        paddingBottom: '16%'
+        paddingBottom: '20%'
+    },
+    
+    image: {
+        margin: '10%',
     },
     
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
+        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34,
-        paddingTop: '4%'
-    },
-    
-    image: {
-        margin: '8%',
+        lineHeight: 34
+        
     },
 
     boxInput: {
         width: '100%',
         paddingHorizontal: '15%',
-    },
-
-    subtitle: {
-        textAlign: 'left',        
-        fontSize: 20,
-        paddingTop: '2%',
-        color: colors.heading,
-        fontFamily: fonts.text
     },
 
     input: {
