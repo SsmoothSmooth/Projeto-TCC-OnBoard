@@ -39,6 +39,8 @@ import { TelaMenuCooperativa } from '../pages/Modulos/TelaMenuCooperativa';
 import { TelaEventosCampanhas } from '../pages/Modulos/TelaEventosCampanhas';
 import { TelaNovoEventoCampanha } from '../pages/Modulos/TelaNovoEventoCampanha';
 import { TelaNotificacoesCooperativas } from '../pages/Modulos/TelaNotificacoesCoopeativas';
+import { TelaTabelaPreçoCooperativa } from '../pages/Modulos/TelaTabelaPreçoCooperativa';
+
 
 const stackRoutes = createStackNavigator();
 
@@ -239,6 +241,12 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="TelaNotificacoesCooperativas"
             component={TelaNotificacoesCooperativas}
+
+        />
+
+        <stackRoutes.Screen
+            name="TelaTabelaPreçoCooperativa"
+            component={TelaTabelaPreçoCooperativa}
 
         />
 

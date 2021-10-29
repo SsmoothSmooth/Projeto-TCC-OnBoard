@@ -46,9 +46,9 @@ export function TelaMenuCooperativa() {
                 <View style={styles.MenuButton}>
 
                     <TouchableOpacity
-                        activeOpacity={0.5}>
-                        onPress={touchInit4}
-
+                        activeOpacity={0.5}
+                        onPress={touchInit}
+                    >
                         <Image
                             source={require('../../assets/News.png')}
                             style={styles.ImageIconStyle1}
@@ -56,9 +56,9 @@ export function TelaMenuCooperativa() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        activeOpacity={0.5}>
-                        onPress={touchInit3}
-
+                        activeOpacity={0.5}
+                        onPress={touchInit}
+                    >
                         <Image
                             source={require('../../assets/TabelasPrecoCooperativa.png')}
                             style={styles.ImageIconStyle2}
@@ -69,9 +69,9 @@ export function TelaMenuCooperativa() {
 
                     <TouchableOpacity
 
-                        activeOpacity={0.5}>
-                        onPress={touchInit4}
-
+                        activeOpacity={0.5}
+                        onPress={touchInit3}
+                    >
                         <Image
                             source={require('../../assets/EventosCampanhas.png')}
                             style={styles.ImageIconStyle3}
@@ -82,7 +82,7 @@ export function TelaMenuCooperativa() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchInit4}
+                        onPress={touchInit}
                     >
                         <Image
                             source={require('../../assets/Notificações.png')}

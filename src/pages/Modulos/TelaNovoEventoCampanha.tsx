@@ -5,7 +5,9 @@ import {
     View,
     TouchableOpacity,
     Text,
-    TextInput
+    TextInput,
+    TouchableWithoutFeedback,
+    Keyboard
 } from 'react-native';
 
 import colors from '../../styles/colors';
@@ -14,6 +16,7 @@ import { useNavigation } from '@react-navigation/core';
 import { Button } from '../../components/Button';
 import { ModHeader } from '../../components/ModHeader';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 export function TelaNovoEventoCampanha() {
     const navigation = useNavigation();
@@ -51,93 +54,101 @@ export function TelaNovoEventoCampanha() {
         navigation.navigate('')
     }
 
+    function touchInit2() {
+        navigation.navigate('TelaEventosCampanhas')
+    }
+
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.wrapper}>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
-                <View style={styles.boxHeader}>
-                    <ModHeader
-                        title="Novo Evento/Campanha "
-                    />
-                </View>
+                <View style={styles.wrapper}>
 
-
-                <View style={styles.boxInput}>
-
-                    <Text style={styles.subtitle}>
-                        Dia: {'\n'}
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Digite um Dia"
-                        onChangeText={handleInputChange}
-                    />
-
-                    <Text style={styles.subtitle}>
-                        Local: {'\n'}
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Digite um Local"
-                        onChangeText={handleInputChange2}
-                    />
-
-                    <Text style={styles.subtitle}>
-                        Horário: {'\n'}
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Digite um Horário"
-                        onChangeText={handleInputChange3}
-                    />
-
-                    <Text style={styles.subtitle}>
-                        Tema: {'\n'}
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Opcional"
-                        onChangeText={handleInputChange4}
-                    />
-
-                </View>
-
-                <View style={styles.ButtonMenu}>
-
-
-                    <Button
-                        style={styles.Button1}
-                        title="Salvar"
-                        onPress={touchInit}
-                    />
-                </View>
-
-
-                <View style={styles.boxBackButton}>
-
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchInit}
-                    >
-                        <FontAwesome5
-                            name="chevron-left"
-                            style={styles.backButtonIcon}
+                    <View style={styles.boxHeader}>
+                        <ModHeader
+                            title="Novo Evento/Campanha "
                         />
-                    </TouchableOpacity>
+                    </View>
 
+
+                    <View style={styles.boxInput}>
+
+                        <Text style={styles.subtitle}>
+                            Dia: {'\n'}
+
+                        </Text>
+
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Digite um Dia"
+                            onChangeText={handleInputChange}
+                        />
+
+                        <Text style={styles.subtitle}>
+                            Local: {'\n'}
+
+                        </Text>
+
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Digite um Local"
+                            onChangeText={handleInputChange2}
+                        />
+
+                        <Text style={styles.subtitle}>
+                            Horário: {'\n'}
+
+                        </Text>
+
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Digite um Horário"
+                            onChangeText={handleInputChange3}
+                        />
+
+                        <Text style={styles.subtitle}>
+                            Tema: {'\n'}
+
+                        </Text>
+
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Opcional"
+                            onChangeText={handleInputChange4}
+                        />
+
+                    </View>
+
+                    <View style={styles.ButtonMenu}>
+
+
+                        <Button
+                            style={styles.Button1}
+                            title="Salvar"
+                            onPress={touchInit}
+                        />
+                    </View>
+
+
+                    <View style={styles.boxBackButton}>
+
+                        <TouchableOpacity
+                            style={styles.backButton}
+                            activeOpacity={0.5}
+                            onPress={touchInit2}
+                        >
+                            <FontAwesome5
+                                name="chevron-left"
+                                style={styles.backButtonIcon}
+                            />
+                        </TouchableOpacity>
+
+
+                    </View>
 
                 </View>
 
-            </View>
+            </TouchableWithoutFeedback>
 
         </SafeAreaView>
     )
@@ -147,6 +158,7 @@ export function TelaNovoEventoCampanha() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {

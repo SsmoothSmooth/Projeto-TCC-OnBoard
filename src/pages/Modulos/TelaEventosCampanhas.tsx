@@ -17,7 +17,11 @@ export function TelaEventosCampanhas() {
     const navigation = useNavigation();
 
     function touchInit() {
-        navigation.navigate('')
+        navigation.navigate('TelaNovoEventoCampanha')
+    }
+
+    function touchInit2() {
+        navigation.navigate('TelaMenuCooperativa')
     }
 
     return (
@@ -45,7 +49,7 @@ export function TelaEventosCampanhas() {
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchInit}
+                        onPress={touchInit2}
                     >
                         <FontAwesome5
                             name="chevron-left"
