@@ -1,43 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
     SafeAreaView,
-    Image,
     StyleSheet,
     TouchableOpacity,
-    Dimensions
+    TextInput,
+    Image,
+    Alert
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
+import { useNavigation } from '@react-navigation/core';
+import happyPlanet from '../../../assets/happyPlanet.png';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-import { useNavigation } from '@react-navigation/core';
-import happyPlanet from '../../assets/happyPlanet.png';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import { FontAwesome5 } from '@expo/vector-icons';
 
-export function ModalityOptions() {
 
+export function D_Nickname() {
     const navigation = useNavigation();
 
-    function touchFormColetor() {
-        navigation.navigate('C_Identification')
-    }
-    
-    function touchFormDomestico() {
-        navigation.navigate('D_Identification')
-    }
-    
-    function touchFormCooperative() {
-        navigation.navigate('Coop_Email')
-    }
-    function touchBack() {
-        navigation.navigate('ConfirmAccess')
+    const [isFilled, setIsFilled] = useState(false);
+    const [name, setName] = useState<string>();
+
+    function handleInputChange(value: string) {
+        setIsFilled(!!value);
+        setName(value);
     }
 
+    function touchNext() {
+
+        if (!name)
+            return Alert.alert('Preenchimento obrigatório');
+
+        navigation.navigate('D_Confirmed')
+    }
+
+    function touchBack() {
+        navigation.navigate('D_Contact')
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -48,30 +52,28 @@ export function ModalityOptions() {
                     source={happyPlanet}
                     style={styles.image}
                     resizeMode="contain"
-                    />
+                />
 
                 <Text style={styles.title}>
-                        Em qual categoria {'\n'}
-                    voce se encontra? {'\n'}
-
+                    Como podemos te chamar? {'\n'}
                 </Text>
                 
+                <View style={styles.boxInput}>
+   
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite seu apelido"
+                        onChangeText={handleInputChange}
+                    />
+
+                </View>
+
                 <View style={styles.boxButton}>
-                    <Button
-                        style={styles.button}
-                        title="Coletores"
-                        onPress={touchFormColetor}   
-                    />
-                    <Button
-                        style={styles.button}
-                        title="Domesticos"
-                        onPress={touchFormDomestico} 
-                    />
-                    <Button
-                        style={styles.button}
-                        title="Cooperativas"
-                        onPress={touchFormCooperative}
-                    />
+                        <Button
+                            title="Confirmar"
+                            onPress={touchNext}
+
+                        />
                 </View>
 
                 <TouchableOpacity
@@ -85,7 +87,7 @@ export function ModalityOptions() {
                     
                 />
 
-                </TouchableOpacity>  
+                </TouchableOpacity>
 
             </View>
         </SafeAreaView>
@@ -103,9 +105,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-        paddingBottom: '16%'
+        paddingBottom: '20%'
     },
 
+    
     image: {
         margin: '8%',
     },
@@ -114,24 +117,32 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
+        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
         lineHeight: 34
+        
+    },
+
+    boxInput: {
+        width: '100%',
+        paddingHorizontal: '15%',
+    },
+
+    input: {
+        width: '100%',
+        borderBottomWidth: 1,
+        borderColor: '#52665A',
+        color: colors.heading,
+        fontSize: 20,
+        textAlign: 'center',
+        marginBottom: '15%'
 
     },
 
     boxButton: {
         width: '100%',
         paddingHorizontal: '20%',
-    },
-
-    button: {
-        backgroundColor: colors.green_cyan,
-        height: 60,
-        borderRadius: 16,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: '5%', 
     },
 
     backButton: {
@@ -148,7 +159,5 @@ const styles = StyleSheet.create({
         color: colors.green_cyan,
         fontSize: 35,
     }
+
 })
-
-
-

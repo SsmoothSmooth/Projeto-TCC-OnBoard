@@ -5,23 +5,29 @@ import {
     SafeAreaView,
     StyleSheet,
     TouchableOpacity,
-    TextInput,
+    TextInput
+
 } from 'react-native';
 
-import { Button } from '../../components/Button'
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { Header } from '../../components/Header';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-export function Login() {
+
+
+
+export function Coop_PersonalData() {
     const navigation = useNavigation();
 
+    function touchNext() {
+        navigation.navigate('Coop_Identification')
+    }
 
     function touchBack() {
-        navigation.navigate('ConfirmAccess')
+        navigation.navigate('Coop_Email')
     }
 
     return (
@@ -29,55 +35,62 @@ export function Login() {
 
             <View style={styles.wrapper}>
 
-                <View style={styles.header}>
-                    <Header
-                        title={"Login"}
-                    />
 
-                </View>
+
+                <Text style={styles.title}>
+                    Preencha os dados
+                </Text>
 
                 <View style={styles.boxInput}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="digite um usuário"
-                    />
+
+                    <Text style={styles.subtitle}>
+                        Cidade/ UF
+
+                    </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="digite uma senha"
-                        secureTextEntry
+                        placeholder="Digite a sua cidade/ UF"
+                    />
+
+                    <Text style={styles.subtitle}>
+                        Endereço
+
+                    </Text>
+
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite o seu endereço"
                     />
                 </View>
 
                 <View style={styles.boxButton}>
                     <Button
                         title="Confirmar"
-                    // onPress={touchLogin}
-                    />
+                        onPress={touchNext}
 
                     />
-
                 </View>
 
-                <TouchableOpacity
-                    style={styles.backButton}
-                    activeOpacity={0.5}
-                    onPress={touchBack}
-
-                >
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchBack}
+                    >
                     <FontAwesome5
                         name="arrow-alt-circle-left"
                         style={styles.backButtonIcon}
-
+                        
                     />
 
-                </TouchableOpacity>
+                    </TouchableOpacity>
 
             </View>
         </SafeAreaView>
-
     )
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -93,34 +106,44 @@ const styles = StyleSheet.create({
         paddingBottom: '16%'
     },
 
-    header: {
-        width: '100%',
-        backgroundColor: colors.green_cyan,
-        padding: '10%'
+    title: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginTop: 38,
+        color: colors.heading,
+        fontFamily: fonts.heading,
+        lineHeight: 34
+
     },
 
     boxInput: {
         width: '100%',
-        alignItems: 'center',
         paddingHorizontal: '15%',
-        paddingVertical: 30
+    },
 
+    subtitle: {
+        textAlign: 'left',        
+        fontSize: 20,
+        paddingTop: '2%',
+        color: colors.heading,
+        fontFamily: fonts.text
     },
 
     input: {
+        width: '100%',
         borderBottomWidth: 1,
         borderColor: '#52665A',
         color: colors.heading,
-        width: '100%',
-        fontSize: 24,
+        fontSize: 20,
         textAlign: 'center',
-        marginVertical: '10%'
+        marginBottom: '15%'
+
     },
 
     boxButton: {
         width: '100%',
-        paddingHorizontal: '20%'
-
+        paddingHorizontal: '20%',
     },
 
     backButton: {
@@ -137,6 +160,5 @@ const styles = StyleSheet.create({
         color: colors.green_cyan,
         fontSize: 35,
     }
-
 
 })

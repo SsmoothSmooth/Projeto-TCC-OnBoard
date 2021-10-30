@@ -30,7 +30,7 @@ export function ConfirmAccess(){
         navigation.navigate('Login')
     }
 
-    function touchWelcome(){
+    function touchBack(){
         navigation.navigate('Welcome')
     }
     return(
@@ -68,7 +68,7 @@ export function ConfirmAccess(){
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchWelcome}
+                        onPress={touchBack}
 
                     >
                         <FontAwesome5

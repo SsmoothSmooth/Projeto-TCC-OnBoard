@@ -26,8 +26,10 @@ export function Welcome() {
         navigation.navigate('ConfirmAccess')
     }
 
+    // Usar para testar as telas
+
     function test() {
-        navigation.navigate('TelaTabelaPreçoCooperativa')
+        navigation.navigate('Mod_D_Manual_Guia')
     }
 
     return (
