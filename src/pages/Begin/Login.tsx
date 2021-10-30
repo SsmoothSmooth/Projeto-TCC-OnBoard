@@ -55,8 +55,6 @@ export function Login() {
                     // onPress={touchLogin}
                     />
 
-                    />
-
                 </View>
 
                 <TouchableOpacity

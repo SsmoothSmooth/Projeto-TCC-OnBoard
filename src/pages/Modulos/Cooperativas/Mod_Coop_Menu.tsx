@@ -72,7 +72,7 @@ export function Mod_Coop_Menu() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchInit}
+                        onPress={touchPreco}
                     >
                         <Image
                             source={require('../../../assets/TabelasPrecoCooperativa.png')}
