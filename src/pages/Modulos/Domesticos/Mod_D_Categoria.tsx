@@ -7,13 +7,13 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
 
 
-export function TelaCategoriaDomestico() {
+export function Mod_D_Categoria() {
     const navigation = useNavigation();
 
     function touchInit() {
@@ -32,6 +32,20 @@ export function TelaCategoriaDomestico() {
         navigation.navigate('')
     }
 
+     // Footer
+
+     function touchInicio() {
+        navigation.navigate('Mod_D_Feed')
+    }
+
+    function touchMenu() {
+        navigation.navigate('Mod_D_Menu')
+    }
+
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_Coop_Perfil')
+    // }
+
     return (
 
         <SafeAreaView style={styles.container}>
@@ -48,7 +62,7 @@ export function TelaCategoriaDomestico() {
 
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/PapelDomestico.png')}
+                            source={require('../../../assets/PapelDomestico.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
@@ -56,7 +70,7 @@ export function TelaCategoriaDomestico() {
                     <TouchableOpacity activeOpacity={0.5}>
 
                         <Image
-                            source={require('../../assets/MetalDomestico.png')}
+                            source={require('../../../assets/MetalDomestico.png')}
                             style={styles.ImageIconStyle2}
                         />
 
@@ -64,7 +78,7 @@ export function TelaCategoriaDomestico() {
 
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/VidroDomestico.png')}
+                            source={require('../../../assets/VidroDomestico.png')}
                             style={styles.ImageIconStyle3}
                         />
 
@@ -76,7 +90,7 @@ export function TelaCategoriaDomestico() {
                         onPress={touchInit4}
                     >
                         <Image
-                            source={require('../../assets/PlasticoDomestico.png')}
+                            source={require('../../../assets/PlasticoDomestico.png')}
                             style={styles.ImageIconStyle4}
                         />
 
@@ -88,11 +102,13 @@ export function TelaCategoriaDomestico() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
+                        onPress = {touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
+                        onPress = {touchMenu}
                     />
 
                     <NavBar

@@ -10,22 +10,22 @@ import {
 } from 'react-native';
 
 
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import colors from '../../../../styles/colors';
+import fonts from '../../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../components/Button';
-import { ModHeader } from '../../components/ModHeader';
+import { Button } from '../../../../components/Button';
+import { ModHeader } from '../../../../components/ModHeader';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export function TelaManualTipo() {
+export function Mod_D_Manual_Categoria() {
     const navigation = useNavigation();
 
     function touchInit() {
-        navigation.navigate('TelaMenuCooperativa')
+        navigation.navigate('')
     }
 
-    function touchInit2() {
-        navigation.navigate('')
+    function touchBack() {
+        navigation.navigate('Mod_D_Manual_Guia')
     }
 
     return (
@@ -77,7 +77,7 @@ export function TelaManualTipo() {
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchInit}
+                        onPress={touchBack}
                     >
                         <FontAwesome5
                             name="chevron-left"

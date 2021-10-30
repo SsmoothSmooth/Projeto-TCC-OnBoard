@@ -42,6 +42,8 @@ import { D_Confirmed } from '../pages/Forms/Domesticos/D_Confirmed';
 // { Coletores }
 
 import { Mod_C_Feed } from '../pages/Modulos/Coletores/Mod_C_Feed';
+import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
+import { Mod_C_Categoria } from '../pages/Modulos/Coletores/Mod_C_Categoria';
 
 // { Cooperativa }
 
@@ -50,6 +52,20 @@ import { Mod_Coop_Feed } from '../pages/Modulos/Cooperativas/Mod_Coop_Feed';
 // { Domestico }
 
 import { Mod_D_Feed } from '../pages/Modulos/Domesticos/Mod_D_Feed';
+
+// **********
+
+import { Mod_C_Tabela_Preco } from '../pages/Modulos/Coletores/Mod_C_Tabela_Preco';
+import { Mod_Coop_Campanha } from '../pages/Modulos/Cooperativas/Mod_Coop_Campanha';
+import { Mod_Coop_Criar_Evento } from '../pages/Modulos/Cooperativas/Mod_Coop_Criar_Evento';
+import { Mod_Coop_Menu } from '../pages/Modulos/Cooperativas/Mod_Coop_Menu';
+import { Mod_Coop_Notificacao } from '../pages/Modulos/Cooperativas/Mod_Coop_Notificacao';
+import { Mod_Coop_Tipo_Material } from '../pages/Modulos/Cooperativas/Mod_Coop_Tipo_Material';
+import { Mod_D_Menu } from '../pages/Modulos/Domesticos/Mod_D_Menu';
+import { Mod_D_Categoria } from '../pages/Modulos/Domesticos/Mod_D_Categoria';
+import { Mod_D_Sacola } from '../pages/Modulos/Domesticos/Mod_D_Sacola';
+import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Categoria';
+import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
 
 const stackRoutes = createStackNavigator();
 
@@ -195,22 +211,87 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen 
             name="Mod_C_Feed"
             component={Mod_C_Feed}
-
         />
+
+        <stackRoutes.Screen 
+            name="Mod_C_Menu"
+            component={Mod_C_Menu}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_C_Categoria"
+            component={Mod_C_Categoria}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_C_Tabela_Preco"
+            component={Mod_C_Tabela_Preco}
+        />
+
 
         {/* Módulos - Cooperativa */}
 
         <stackRoutes.Screen 
             name="Mod_Coop_Feed"
             component={Mod_Coop_Feed}
-
         />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_Menu"
+            component={Mod_Coop_Menu}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_Campanha"
+            component={Mod_Coop_Campanha}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_Criar_Evento"
+            component={Mod_Coop_Criar_Evento}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_Notificacao"
+            component={Mod_Coop_Notificacao}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_Tipo_Material"
+            component={Mod_Coop_Tipo_Material}
+        />
+
+
         {/* Módulos - Dómesticos */}
 
         <stackRoutes.Screen 
             name="Mod_D_Feed"
             component={Mod_D_Feed}
+        />
 
+        <stackRoutes.Screen 
+            name="Mod_D_Menu"
+            component={Mod_D_Menu}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_D_Categoria"
+            component={Mod_D_Categoria}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_D_Sacola"
+            component={Mod_D_Sacola}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_D_Manual_Categoria"
+            component={Mod_D_Manual_Categoria}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_D_Manual_Guia"
+            component={Mod_D_Manual_Guia}
         />
         
         {/*** End MÓDULO ***/}

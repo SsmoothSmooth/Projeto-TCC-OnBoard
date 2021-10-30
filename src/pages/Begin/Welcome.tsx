@@ -28,9 +28,9 @@ export function Welcome() {
 
     // Usar para testar as telas
  
-    // function test(){
-    //     navigation.navigate('')
-    // }
+    function test(){
+        navigation.navigate('Mod_D_Manual_Guia')
+    }
 
     return (
 
@@ -61,7 +61,7 @@ export function Welcome() {
                 <View style={styles.testButton}>
                         <Button
                             title="View Interface"
-                            // onPress={test}
+                            onPress={test}
                             
                             />
                 </View>

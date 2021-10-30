@@ -8,14 +8,14 @@ import {
     TextInput
 } from 'react-native';
 
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../components/Button';
-import { ModHeader } from '../../components/ModHeader';
+import { Button } from '../../../components/Button';
+import { ModHeader } from '../../../components/ModHeader';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export function TelaNovoEventoCampanha() {
+export function Mod_Coop_Criar_Evento() {
     const navigation = useNavigation();
 
     const [isFilled, setIsFilled] = useState(false);
@@ -47,8 +47,12 @@ export function TelaNovoEventoCampanha() {
 
     }
 
-    function touchInit() {
+    function touchSalvar() {
         navigation.navigate('')
+    }
+
+    function touchBack() {
+        navigation.navigate('Mod_Coop_Campanha')
     }
 
     return (
@@ -116,7 +120,7 @@ export function TelaNovoEventoCampanha() {
                     <Button
                         style={styles.Button1}
                         title="Salvar"
-                        onPress={touchInit}
+                        onPress={touchSalvar}
                     />
                 </View>
 
@@ -126,7 +130,7 @@ export function TelaNovoEventoCampanha() {
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchInit}
+                        onPress={touchBack}
                     >
                         <FontAwesome5
                             name="chevron-left"

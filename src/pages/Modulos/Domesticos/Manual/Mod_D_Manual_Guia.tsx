@@ -3,53 +3,78 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
+    Text,
+    TouchableOpacity,
 } from 'react-native';
 
-import colors from '../../styles/colors';
-import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../components/Button';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
 
-export function TelaNotificacoesCooperativas() {
+import colors from '../../../../styles/colors';
+import fonts from '../../../../styles/fonts';
+import { useNavigation } from '@react-navigation/core';
+import { Button } from '../../../../components/Button';
+import { NavBar } from '../../../../components/NavBar';
+
+
+
+export function Mod_D_Manual_Guia() {
     const navigation = useNavigation();
 
     function touchInit() {
         navigation.navigate('')
     }
 
+    function touchCategoria() {
+        navigation.navigate('Mod_D_Manual_Categoria')
+    }
+
     return (
+
         <SafeAreaView style={styles.container}>
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
-                    <ModHeader
-                        title="Notificações"
+
+
+                    <Text style={styles.title}>
+                        Manual  {'\n'}
+                        OnBoard {'\n'}
+                    </Text>
+                </View>
+
+                <View>
+                    <Text style={styles.subtitle}>
+                        Reciclar é fazer nossa parte {'\n'}
+                        para um mundo mais {'\n'}
+                        sustentável {'\n'}
+                    </Text>
+                </View>
+
+
+                <View>
+                    <Button
+                        style={styles.ButtonMenu}
+                        title="O que é reciclagem "
+                        onPress={touchInit}
                     />
                 </View>
 
-                <View style={styles.ButtonMenu}>
+                <View>
+                    <Button
+                        style={styles.ButtonMenu}
+                        title="Aterros Sanitários "
+                        onPress={touchInit}
+                    />
+                </View>
 
-                    <View >
-                        <Button
-                            style={styles.Button1}
-                            title="Materiais para coleta"
-                            onPress={touchInit}
-                        />
-                    </View>
-
-                    <View>
-                        <Button
-                            style={styles.Button2}
-                            title="contatos"
-                            onPress={touchInit}
-                        />
-                    </View>
-
+                <View>
+                    <Button
+                        style={styles.ButtonMenu}
+                        title="Tipos de reciclagem"
+                        onPress={touchCategoria}
+                    />
                 </View>
 
                 <View style={styles.boxButton}>
-
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
@@ -84,51 +109,52 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 2,
-        marginHorizontal: 2,
+        margin: 20,
+        marginHorizontal: 20,
         marginTop: '-5%'
     },
 
     boxHeader: {
         backgroundColor: colors.gray,
-        width: '100%',
+        width: '140%',
         justifyContent: 'center',
         paddingTop: '5%',
-        paddingVertical: '10%',
         marginTop: '5%',
+        alignItems: 'center'
+    },
+
+    title: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginTop: 38,
+        color: colors.heading,
+        fontFamily: fonts.heading,
+        lineHeight: 34
+    },
+
+    subtitle: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: colors.heading,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        fontFamily: fonts.text
     },
 
     ButtonMenu: {
-        flex: 1,
-        height: '45%',
+        backgroundColor: colors.gray,
+        flexDirection: 'row',
+        height: 45,
         width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 20,
-        marginHorizontal: 10,
-        padding: 20
-    },
-
-    Button1: {
-        backgroundColor: '#D9FCAC',
-        height: 60,
-        width: '120%',
-        borderRadius: 60,
-        paddingHorizontal: 50,
+        borderRadius: 50,
+        paddingHorizontal: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 20,
-    },
-
-    Button2: {
-        backgroundColor: '#D9FCAC',
-        height: 60,
-        width: '120%',
-        borderRadius: 60,
-        paddingHorizontal: 100,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: 20,
+        marginVertical: 10,
+        paddingTop: 10,
+        flexWrap: 'wrap'
     },
 
     boxButton: {
@@ -141,7 +167,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: colors.gray,
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
 
     buttonInicio: {
@@ -149,8 +175,8 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
-        paddingHorizontal: 20,
         marginHorizontal: 10,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
     },
@@ -160,8 +186,8 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
-        paddingHorizontal: 20,
         marginHorizontal: 10,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
     },
@@ -171,12 +197,10 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
-        paddingHorizontal: 20,
         marginHorizontal: 10,
+        paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
     },
 })
-
-
 

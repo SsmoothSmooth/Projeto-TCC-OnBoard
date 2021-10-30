@@ -4,10 +4,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import mapImg from '../../assets/mapIcon.png';
+import mapImg from '../../../assets/mapIcon.png';
 
 
-export function Sacola() {
+export function Mod_D_Sacola() {
 
 
     return(

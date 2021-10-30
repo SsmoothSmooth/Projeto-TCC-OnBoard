@@ -6,18 +6,22 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../components/Button';
-import { ModHeader } from '../../components/ModHeader';
+import { Button } from '../../../components/Button';
+import { ModHeader } from '../../../components/ModHeader';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export function TelaEventosCampanhas() {
+export function Mod_Coop_Campanha() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('')
+    function touchCampanha() {
+        navigation.navigate('Mod_Coop_Criar_Evento')
+    }
+
+    function touchBack() {
+        navigation.navigate('Mod_Coop_Menu')
     }
 
     return (
@@ -35,7 +39,7 @@ export function TelaEventosCampanhas() {
                     <Button
                         style={styles.ButtonStyle}
                         title="criar novo Evento / Campanha "
-                        onPress={touchInit}
+                        onPress = { touchCampanha}
                     />
 
                 </View>
@@ -45,7 +49,7 @@ export function TelaEventosCampanhas() {
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchInit}
+                        onPress={touchBack}
                     >
                         <FontAwesome5
                             name="chevron-left"

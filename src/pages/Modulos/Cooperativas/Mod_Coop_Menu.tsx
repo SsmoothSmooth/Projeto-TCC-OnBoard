@@ -7,32 +7,44 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
 
 
-
-export function TelaMenuColetor() {
+export function Mod_Coop_Menu() {
     const navigation = useNavigation();
 
-    function touchInit() {
+    function touchNew() {
+        navigation.navigate('Mod_Coop_Feed')
+    }
+
+    function touchPreco() {
         navigation.navigate('')
     }
 
-    function touchInit2() {
-        navigation.navigate('')
+    function touchCampanha() {
+        navigation.navigate('Mod_Coop_Campanha')
     }
 
-    function touchInit3() {
-        navigation.navigate('')
+    function touchNotificacao() {
+        navigation.navigate('Mod_Coop_Notificacao')
     }
 
-    function touchInit4() {
-        navigation.navigate('TabelaPrecoColetor')
+    // Footer
+
+    function touchInicio() {
+        navigation.navigate('Mod_Coop_Feed')
     }
 
+    function touchMenu() {
+        navigation.navigate('Mod_Coop_Menu')
+    }
+
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_Coop_Perfil')
+    // }
 
     return (
 
@@ -45,14 +57,15 @@ export function TelaMenuColetor() {
                     />
                 </View>
 
-
                 <View style={styles.MenuButton}>
 
                     <TouchableOpacity
-                        activeOpacity={0.5}>
+                        activeOpacity={0.5}
+                        onPress = {touchNew}
+                        >
 
                         <Image
-                            source={require('../../assets/mapa.png')}
+                            source={require('../../../assets/News.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
@@ -61,17 +74,20 @@ export function TelaMenuColetor() {
                         activeOpacity={0.5}>
 
                         <Image
-                            source={require('../../assets/meusresultados.png')}
+                            source={require('../../../assets/TabelasPrecoCooperativa.png')}
                             style={styles.ImageIconStyle2}
                         />
 
                     </TouchableOpacity>
 
+
                     <TouchableOpacity
-                        activeOpacity={0.5}>
+                        activeOpacity={0.5}
+                        onPress = { touchCampanha}
+                    >
 
                         <Image
-                            source={require('../../assets/pontosdevenda.png')}
+                            source={require('../../../assets/EventosCampanhas.png')}
                             style={styles.ImageIconStyle3}
                         />
 
@@ -80,10 +96,10 @@ export function TelaMenuColetor() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchInit4}
+                        onPress = {touchNotificacao}
                     >
                         <Image
-                            source={require('../../assets/tabelasdepreco.png')}
+                            source={require('../../../assets/Notificações.png')}
                             style={styles.ImageIconStyle4}
                         />
 
@@ -95,11 +111,13 @@ export function TelaMenuColetor() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
+                        onPress = {touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
+                        onPress = {touchMenu}
                     />
 
                     <NavBar
@@ -108,7 +126,9 @@ export function TelaMenuColetor() {
                     />
 
                 </View>
+
             </View>
+
         </SafeAreaView>
 
     )
@@ -134,7 +154,6 @@ const styles = StyleSheet.create({
         paddingTop: '5%',
         paddingVertical: '10%'
     },
-
 
     MenuButton: {
         flex: 1,
@@ -163,6 +182,7 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         resizeMode: 'stretch',
+
     },
 
     ImageIconStyle3: {
@@ -203,6 +223,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
+
     },
 
     buttonMenu: {
@@ -213,6 +234,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
+
     },
 
     buttonPerfil: {
@@ -224,5 +246,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'center',
     },
-})
 
+    buttonText: {
+        textAlign: 'center',
+
+    },
+})

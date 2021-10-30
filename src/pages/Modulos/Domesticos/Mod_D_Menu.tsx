@@ -7,34 +7,50 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
 
 
-export function TelaMenuCooperativa() {
+export function Mod_D_Menu() {
     const navigation = useNavigation();
 
-    function touchInit() {
+    function touchDescarte() {
+        navigation.navigate('Mod_D_Categoria')
+    }
+
+    function touchSacola() {
+        navigation.navigate('Mod_D_Sacola')
+    }
+
+    function touchResultado() {
         navigation.navigate('')
     }
 
-    function touchInit2() {
-        navigation.navigate('')
+    function touchManual() {
+        navigation.navigate('Mod_D_Manual_Guia')
     }
 
-    function touchInit3() {
-        navigation.navigate('')
+    // Footer
+
+    function touchInicio() {
+        navigation.navigate('Mod_D_Feed')
     }
 
-    function touchInit4() {
-        navigation.navigate('')
+    function touchMenu() {
+        navigation.navigate('Mod_D_Menu')
     }
+
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_Coop_Perfil')
+    // }
+
 
     return (
 
         <SafeAreaView style={styles.container}>
+
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
@@ -45,32 +61,32 @@ export function TelaMenuCooperativa() {
 
                 <View style={styles.MenuButton}>
 
-                    <TouchableOpacity
-                        activeOpacity={0.5}>
-
+                    <TouchableOpacity 
+                    activeOpacity={0.5}
+                    onPress = {touchDescarte}
+                    >
+                        
                         <Image
-                            source={require('../../assets/News.png')}
+                            source={require('../../../assets/Descarte.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity
-                        activeOpacity={0.5}>
+                    <TouchableOpacity 
+                        activeOpacity={0.5}
+                        onPress={touchSacola}    
+                    >
 
                         <Image
-                            source={require('../../assets/TabelasPrecoCooperativa.png')}
+                            source={require('../../../assets/SacolaLixo.png')}
                             style={styles.ImageIconStyle2}
                         />
 
                     </TouchableOpacity>
 
-
-                    <TouchableOpacity
-
-                        activeOpacity={0.5}>
-
+                    <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/EventosCampanhas.png')}
+                            source={require('../../../assets/MeusResultados2.png')}
                             style={styles.ImageIconStyle3}
                         />
 
@@ -79,10 +95,10 @@ export function TelaMenuCooperativa() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchInit4}
+                        onPress = {touchManual}
                     >
                         <Image
-                            source={require('../../assets/Notificações.png')}
+                            source={require('../../../assets/Manual.png')}
                             style={styles.ImageIconStyle4}
                         />
 
@@ -90,15 +106,18 @@ export function TelaMenuCooperativa() {
 
                 </View>
 
+
                 <View style={styles.boxButton}>
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
+                        onPress = {touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
+                        onPress = {touchMenu}
                     />
 
                     <NavBar
@@ -107,7 +126,6 @@ export function TelaMenuCooperativa() {
                     />
 
                 </View>
-
             </View>
 
         </SafeAreaView>
@@ -163,7 +181,6 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         resizeMode: 'stretch',
-
     },
 
     ImageIconStyle3: {
@@ -204,7 +221,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonMenu: {
@@ -215,7 +231,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-
     },
 
     buttonPerfil: {
@@ -226,10 +241,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         textAlign: 'center',
         justifyContent: 'center',
-    },
-
-    buttonText: {
-        textAlign: 'center',
-
     },
 })

@@ -7,29 +7,18 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
+import { ModHeader } from '../../../components/ModHeader';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
-export function TelaMenuDomestico() {
+
+export function Mod_C_Categoria() {
     const navigation = useNavigation();
 
     function touchInit() {
         navigation.navigate('')
-    }
-
-    function touchInit2() {
-        navigation.navigate('')
-    }
-
-    function touchInit3() {
-        navigation.navigate('')
-    }
-
-    function touchInit4() {
-        navigation.navigate('TabelaPrecoColetor')
     }
 
     return (
@@ -40,7 +29,7 @@ export function TelaMenuDomestico() {
 
                 <View style={styles.boxHeader}>
                     <ModHeader
-                        title="Menu"
+                        title="Categorias"
                     />
                 </View>
 
@@ -48,7 +37,7 @@ export function TelaMenuDomestico() {
 
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/Descarte.png')}
+                            source={require('../../../assets/papel.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
@@ -56,7 +45,7 @@ export function TelaMenuDomestico() {
                     <TouchableOpacity activeOpacity={0.5}>
 
                         <Image
-                            source={require('../../assets/SacolaLixo.png')}
+                            source={require('../../../assets/metal.png')}
                             style={styles.ImageIconStyle2}
                         />
 
@@ -64,7 +53,7 @@ export function TelaMenuDomestico() {
 
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/MeusResultados2.png')}
+                            source={require('../../../assets/vidro.png')}
                             style={styles.ImageIconStyle3}
                         />
 
@@ -73,10 +62,9 @@ export function TelaMenuDomestico() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchInit4}
                     >
                         <Image
-                            source={require('../../assets/Manual.png')}
+                            source={require('../../../assets/plastico.png')}
                             style={styles.ImageIconStyle4}
                         />
 
@@ -84,28 +72,25 @@ export function TelaMenuDomestico() {
 
                 </View>
 
+                <View style={styles.boxBackButton}>
 
-                <View style={styles.boxButton}>
-                    <NavBar
-                        style={styles.buttonInicio}
-                        title="Inicio"
-                    />
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        activeOpacity={0.5}
+                        onPress={touchInit}
+                    >
+                        <FontAwesome5
+                            name="chevron-left"
+                            style={styles.backButtonIcon}
 
-                    <NavBar
-                        style={styles.buttonMenu}
-                        title="Menu"
-                    />
-
-                    <NavBar
-                        style={styles.buttonPerfil}
-                        title="Perfil"
-                    />
+                        />
+                    </TouchableOpacity>
 
                 </View>
+
             </View>
 
         </SafeAreaView>
-
     )
 }
 
@@ -157,6 +142,7 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         resizeMode: 'stretch',
+
     },
 
     ImageIconStyle3: {
@@ -177,7 +163,7 @@ const styles = StyleSheet.create({
         resizeMode: 'stretch',
     },
 
-    boxButton: {
+    boxBackButton: {
         flex: 1,
         paddingVertical: '10%',
         marginTop: '70%',
@@ -185,37 +171,20 @@ const styles = StyleSheet.create({
         paddingHorizontal: '10%',
         width: '100%',
         backgroundColor: colors.gray,
-        alignItems: 'flex-end',
-        flexDirection: 'row'
+        alignItems: 'center',
     },
 
-    buttonInicio: {
+    backButton: {
         backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        paddingHorizontal: 20,
-        textAlign: 'center',
+        height: 50,
+        width: 50,
+        alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: 20,
     },
 
-    buttonMenu: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        paddingHorizontal: 20,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
-
-    buttonPerfil: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        paddingHorizontal: 20,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
+    backButtonIcon: {
+        color: colors.black,
+        fontSize: 20,
+    }
 })

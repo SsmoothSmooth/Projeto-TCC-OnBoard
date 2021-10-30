@@ -16,6 +16,20 @@ export function Mod_D_Feed(){
         navigation.navigate('Sacola')
     }
 
+    // Footer
+
+    function touchInicio() {
+        navigation.navigate('Mod_D_Feed')
+    }
+
+    function touchMenu() {
+        navigation.navigate('Mod_D_Menu')
+    }
+
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_Coop_Perfil')
+    // }
+
     return(
         
         <SafeAreaView style={styles.container}> 
@@ -69,11 +83,13 @@ export function Mod_D_Feed(){
                     <NavBar
                         style={styles.button}
                         title="Inicio"
+                        onPress = {touchInicio}
                     />
 
                     <NavBar
                         style={styles.button}
                         title="Menu"
+                        onPress = {touchMenu}
                     />
 
                     <NavBar

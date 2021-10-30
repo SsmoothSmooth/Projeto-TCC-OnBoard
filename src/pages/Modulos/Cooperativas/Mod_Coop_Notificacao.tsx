@@ -3,86 +3,77 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
-    Text,
-    TouchableOpacity,
 } from 'react-native';
 
-
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../components/Button';
-import { NavBar } from '../../components/NavBar';
+import { Button } from '../../../components/Button';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
 
-
-
-export function TelaManualDomestico() {
+export function Mod_Coop_Notificacao() {
     const navigation = useNavigation();
 
     function touchInit() {
-        navigation.navigate('TelaMenuColetor')
-    }
-
-    function touchInit2() {
         navigation.navigate('')
     }
 
-    return (
+    // Footer
 
+    function touchInicio() {
+        navigation.navigate('Mod_Coop_Feed')
+    }
+
+    function touchMenu() {
+        navigation.navigate('Mod_Coop_Menu')
+    }
+
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_Coop_Perfil')
+    // }
+
+    return (
         <SafeAreaView style={styles.container}>
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
-
-
-                    <Text style={styles.title}>
-                        Manual  {'\n'}
-                        OnBoard {'\n'}
-                    </Text>
-                </View>
-
-                <View>
-                    <Text style={styles.subtitle}>
-                        Reciclar é fazer nossa parte {'\n'}
-                        para um mundo mais {'\n'}
-                        sustentável {'\n'}
-                    </Text>
-                </View>
-
-
-                <View>
-                    <Button
-                        style={styles.ButtonMenu}
-                        title="O que é reciclagem "
-                        onPress={touchInit}
+                    <ModHeader
+                        title="Notificações"
                     />
                 </View>
 
-                <View>
-                    <Button
-                        style={styles.ButtonMenu}
-                        title="Aterros Sanitários "
-                        onPress={touchInit}
-                    />
-                </View>
+                <View style={styles.ButtonMenu}>
 
-                <View>
-                    <Button
-                        style={styles.ButtonMenu}
-                        title="Tipos de reciclagem"
-                        onPress={touchInit}
-                    />
+                    <View >
+                        <Button
+                            style={styles.Button1}
+                            title="Materiais para coleta"
+                            onPress={touchInit}
+                        />
+                    </View>
+
+                    <View>
+                        <Button
+                            style={styles.Button2}
+                            title="contatos"
+                            onPress={touchInit}
+                        />
+                    </View>
+
                 </View>
 
                 <View style={styles.boxButton}>
+
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
+                        onPress = {touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
+                        onPress = {touchMenu}
                     />
 
                     <NavBar
@@ -109,52 +100,51 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 20,
-        marginHorizontal: 20,
+        margin: 2,
+        marginHorizontal: 2,
         marginTop: '-5%'
     },
 
     boxHeader: {
         backgroundColor: colors.gray,
-        width: '140%',
+        width: '100%',
         justifyContent: 'center',
         paddingTop: '5%',
+        paddingVertical: '10%',
         marginTop: '5%',
-        alignItems: 'center'
-    },
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 38,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 34
-    },
-
-    subtitle: {
-        textAlign: 'center',
-        fontWeight: 'bold',
-        fontSize: 20,
-        color: colors.heading,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        fontFamily: fonts.text
     },
 
     ButtonMenu: {
-        backgroundColor: colors.gray,
-        flexDirection: 'row',
-        height: 45,
+        flex: 1,
+        height: '45%',
         width: '100%',
-        borderRadius: 50,
-        paddingHorizontal: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20,
+        marginHorizontal: 10,
+        padding: 20
+    },
+
+    Button1: {
+        backgroundColor: '#D9FCAC',
+        height: 60,
+        width: '120%',
+        borderRadius: 60,
+        paddingHorizontal: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 10,
-        paddingTop: 10,
-        flexWrap: 'wrap'
+        marginVertical: 20,
+    },
+
+    Button2: {
+        backgroundColor: '#D9FCAC',
+        height: 60,
+        width: '120%',
+        borderRadius: 60,
+        paddingHorizontal: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 20,
     },
 
     boxButton: {
@@ -167,7 +157,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: colors.gray,
         alignItems: 'center',
-        flexDirection: 'row',
+        flexDirection: 'row'
     },
 
     buttonInicio: {
@@ -175,8 +165,8 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
-        marginHorizontal: 10,
         paddingHorizontal: 20,
+        marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
     },
@@ -186,8 +176,8 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
-        marginHorizontal: 10,
         paddingHorizontal: 20,
+        marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
     },
@@ -197,10 +187,12 @@ const styles = StyleSheet.create({
         width: 90,
         height: 40,
         borderRadius: 50,
-        marginHorizontal: 10,
         paddingHorizontal: 20,
+        marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
     },
 })
+
+
 

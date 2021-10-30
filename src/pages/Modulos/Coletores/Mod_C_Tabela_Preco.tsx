@@ -11,23 +11,29 @@ import {
 } from 'react-native';
 
 
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../components/Button';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
+import { Button } from '../../../components/Button';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
 
-export function TelaPrecoColetor() {
+export function Mod_C_Tabela_Preco() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('TelaMenuCooperativa')
+    // Footer
+
+    function touchInicio() {
+        navigation.navigate('Mod_C_Feed')
     }
 
-    function touchInit2() {
-        navigation.navigate('')
+    function touchMenu() {
+        navigation.navigate('Mod_C_Menu')
     }
+
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_C_Perfil')
+    // }
 
     return (
 
@@ -54,25 +60,25 @@ export function TelaPrecoColetor() {
                     <Button
                         style={styles.Button}
                         title=" Coop.recicle "
-                        onPress={touchInit}
+                        
                     />
 
                     <Button
                         style={styles.Button}
                         title=" Coop.recicle 2 "
-                        onPress={touchInit}
+                        
                     />
 
                     <Button
                         style={styles.Button}
                         title=" Coop.recicle 3 "
-                        onPress={touchInit}
+                        
                     />
 
                     <Button
                         style={styles.Button}
                         title=" Coop.recicle 4 "
-                        onPress={touchInit}
+                     
                     />
 
                 </View>
@@ -81,11 +87,13 @@ export function TelaPrecoColetor() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
+                        onPress = {touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
+                        onPress = {touchMenu}
                     />
 
                     <NavBar

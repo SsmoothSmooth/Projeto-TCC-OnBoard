@@ -12,9 +12,24 @@ import { NavBar } from '../../../components/NavBar';
 export function Mod_Coop_Feed(){
     const navigation = useNavigation();
 
+    // Menu
     function touchSacola(){
         navigation.navigate('Sacola')
     }
+
+    // Footer
+
+    function touchInicio() {
+        navigation.navigate('Mod_Coop_Feed')
+    }
+
+    function touchMenu() {
+        navigation.navigate('Mod_Coop_Menu')
+    }
+
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_Coop_Perfil')
+    // }
 
     return(
         
@@ -69,11 +84,13 @@ export function Mod_Coop_Feed(){
                     <NavBar
                         style={styles.button}
                         title="Inicio"
+                        onPress = {touchInicio}
                     />
 
                     <NavBar
                         style={styles.button}
                         title="Menu"
+                        onPress = {touchMenu}
                     />
 
                     <NavBar

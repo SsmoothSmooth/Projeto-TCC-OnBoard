@@ -7,30 +7,32 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
 
 
-export function TelaMateriasColetaCooperativa() {
+export function Mod_Coop_Tipo_Material() {
     const navigation = useNavigation();
 
     function touchInit() {
         navigation.navigate('')
     }
 
-    function touchInit2() {
-        navigation.navigate('')
+    // Footer
+
+    function touchInicio() {
+        navigation.navigate('Mod_Coop_Feed')
     }
 
-    function touchInit3() {
-        navigation.navigate('')
+    function touchMenu() {
+        navigation.navigate('Mod_Coop_Menu')
     }
 
-    function touchInit4() {
-        navigation.navigate('')
-    }
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_Coop_Perfil')
+    // }
 
     return (
 
@@ -48,7 +50,7 @@ export function TelaMateriasColetaCooperativa() {
 
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/papel.png')}
+                            source={require('../../../assets/papel.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
@@ -56,7 +58,7 @@ export function TelaMateriasColetaCooperativa() {
                     <TouchableOpacity activeOpacity={0.5}>
 
                         <Image
-                            source={require('../../assets/metal.png')}
+                            source={require('../../../assets/metal.png')}
                             style={styles.ImageIconStyle2}
                         />
 
@@ -64,7 +66,7 @@ export function TelaMateriasColetaCooperativa() {
 
                     <TouchableOpacity activeOpacity={0.5}>
                         <Image
-                            source={require('../../assets/vidro.png')}
+                            source={require('../../../assets/vidro.png')}
                             style={styles.ImageIconStyle3}
                         />
 
@@ -73,10 +75,9 @@ export function TelaMateriasColetaCooperativa() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchInit4}
                     >
                         <Image
-                            source={require('../../assets/plastico.png')}
+                            source={require('../../../assets/plastico.png')}
                             style={styles.ImageIconStyle4}
                         />
 
@@ -88,11 +89,13 @@ export function TelaMateriasColetaCooperativa() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
+                        onPress = {touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
+                        onPress = {touchMenu}
                     />
 
                     <NavBar

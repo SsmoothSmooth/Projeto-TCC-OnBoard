@@ -7,65 +7,84 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
 
 
 
-export function TelaCategoriaColetor() {
+export function Mod_C_Menu() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('TelaMenuColetor')
+    // function touchMap() {
+    //     navigation.navigate('')
+    // }
+
+    // function touchResult() {
+    //     navigation.navigate('')
+    // }
+
+    // function touchSell() {
+    //     navigation.navigate('')
+    // }
+
+    function touchPreco() {
+        navigation.navigate('Mod_C_Tabela_Preco')
     }
 
-    function touchInit2() {
-        navigation.navigate('')
+    // Footer
+
+    function touchInicio() {
+        navigation.navigate('Mod_C_Feed')
     }
 
-    function touchInit3() {
-        navigation.navigate('')
+    function touchMenu() {
+        navigation.navigate('Mod_C_Menu')
     }
 
-    function touchInit4() {
-        navigation.navigate('')
-    }
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_C_Perfil')
+    // }
 
     return (
 
         <SafeAreaView style={styles.container}>
-
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
                     <ModHeader
-                        title="Categorias"
+                        title="Menu"
                     />
                 </View>
 
+
                 <View style={styles.MenuButton}>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity
+                        activeOpacity={0.5}>
+
                         <Image
-                            source={require('../../assets/papel.png')}
+                            source={require('../../../assets/mapa.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity
+                        activeOpacity={0.5}>
 
                         <Image
-                            source={require('../../assets/metal.png')}
+                            source={require('../../../assets/meusresultados.png')}
                             style={styles.ImageIconStyle2}
                         />
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity
+                        activeOpacity={0.5}>
+
                         <Image
-                            source={require('../../assets/vidro.png')}
+                            source={require('../../../assets/pontosdevenda.png')}
                             style={styles.ImageIconStyle3}
                         />
 
@@ -74,10 +93,10 @@ export function TelaCategoriaColetor() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchInit4}
+                        onPress={touchPreco}
                     >
                         <Image
-                            source={require('../../assets/plastico.png')}
+                            source={require('../../../assets/tabelasdepreco.png')}
                             style={styles.ImageIconStyle4}
                         />
 
@@ -85,25 +104,28 @@ export function TelaCategoriaColetor() {
 
                 </View>
 
-                <View style={styles.boxBackButton}>
+                <View style={styles.boxButton}>
+                    <NavBar
+                        style={styles.button}
+                        title="Inicio"
+                        onPress = {touchInicio}
+                    />
 
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchInit}
-                    >
-                        <FontAwesome5
-                            name="chevron-left"
-                            style={styles.backButtonIcon}
+                    <NavBar
+                        style={styles.button}
+                        title="Menu"
+                        onPress = {touchMenu}
+                    />
 
-                        />
-                    </TouchableOpacity>
+                    <NavBar
+                        style={styles.button}
+                        title="Perfil"
+                    />
 
                 </View>
-
             </View>
-
         </SafeAreaView>
+
     )
 }
 
@@ -127,6 +149,7 @@ const styles = StyleSheet.create({
         paddingTop: '5%',
         paddingVertical: '10%'
     },
+
 
     MenuButton: {
         flex: 1,
@@ -155,7 +178,6 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         resizeMode: 'stretch',
-
     },
 
     ImageIconStyle3: {
@@ -176,7 +198,7 @@ const styles = StyleSheet.create({
         resizeMode: 'stretch',
     },
 
-    boxBackButton: {
+    boxButton: {
         flex: 1,
         paddingVertical: '10%',
         marginTop: '70%',
@@ -184,20 +206,19 @@ const styles = StyleSheet.create({
         paddingHorizontal: '10%',
         width: '100%',
         backgroundColor: colors.gray,
-        alignItems: 'center',
+        alignItems: 'flex-end',
+        flexDirection: 'row'
     },
 
-    backButton: {
+    button: {
         backgroundColor: colors.green_cyan,
-        height: 50,
-        width: 50,
-        alignItems: 'center',
+        width: 90,
+        height: 40,
+        borderRadius: 50,
+        paddingHorizontal: 20,
+        textAlign: 'center',
         justifyContent: 'center',
-        borderRadius: 20,
     },
 
-    backButtonIcon: {
-        color: colors.black,
-        fontSize: 20,
-    }
 })
+
