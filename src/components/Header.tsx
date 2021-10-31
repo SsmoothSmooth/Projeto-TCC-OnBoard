@@ -1,5 +1,5 @@
 import React from 'react';
-import{
+import {
     StyleSheet,
     Text,
     View
@@ -13,12 +13,12 @@ interface TextHeader {
     title: string
 }
 
-export function Header({ title, ...rest}: TextHeader) {
+export function Header({ title, ...rest }: TextHeader) {
     return (
         <View style={styles.container}>
             <View>
                 <Text style={styles.title}>
-                    { title }
+                    {title}
                 </Text>
             </View>
         </View>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         marginTop: getStatusBarHeight(),
-        paddingBottom: 8 
+        paddingBottom: 8
     },
 
     title: {

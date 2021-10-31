@@ -1,5 +1,5 @@
 import React from 'react';
-import{
+import {
     StyleSheet,
     Text,
     View
@@ -12,16 +12,16 @@ import fonts from '../styles/fonts';
 interface TextHeader {
     photo?: string;
     title: string;
-    photo2? : string;
+    photo2?: string;
 
 }
 
-export function ModHeader({ title, ...rest}: TextHeader) {
+export function ModHeader({ title, ...rest }: TextHeader) {
     return (
         <View style={styles.container}>
             <View>
                 <Text style={styles.title}>
-                    { title }
+                    {title}
                 </Text>
             </View>
         </View>
@@ -40,9 +40,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         paddingHorizontal: '10%',
+        paddingVertical: 10,
         color: colors.heading,
         fontFamily: fonts.heading,
-        fontSize: 40,
+        fontSize: 30,
     },
 
 });

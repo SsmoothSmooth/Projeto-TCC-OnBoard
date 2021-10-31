@@ -10,17 +10,17 @@ import {
     Alert
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import happyPlanet from '../../assets/happyPlanet.png';
+import happyPlanet from '../../../assets/happyPlanet.png';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
-export function FormContact() {
+export function C_Nickname() {
     const navigation = useNavigation();
 
     const [isFilled, setIsFilled] = useState(false);
@@ -31,16 +31,16 @@ export function FormContact() {
         setName(value);
     }
 
-    function touchFormAddress() {
+    function touchNext() {
 
         if (!name)
-            return Alert.alert('Preenchimento obrigatório do número de telefone');
+            return Alert.alert('Preenchimento obrigatório');
 
-        navigation.navigate('FormNickname')
+        navigation.navigate('C_Confirmed')
     }
 
-    function touchModalityOptions() {
-        navigation.navigate('FormPersonalData')
+    function touchBack() {
+        navigation.navigate('C_Contact')
     }
 
     return (
@@ -55,14 +55,14 @@ export function FormContact() {
                 />
 
                 <Text style={styles.title}>
-                    Informe seu telefone {'\n'}
+                    Como podemos te chamar ? {'\n'}
                 </Text>
                 
                 <View style={styles.boxInput}>
    
                     <TextInput
                         style={styles.input}
-                        placeholder="Ex: (DDD) 00000-0000"
+                        placeholder="Digite seu apelido"
                         onChangeText={handleInputChange}
                     />
 
@@ -71,7 +71,7 @@ export function FormContact() {
                 <View style={styles.boxButton}>
                         <Button
                             title="Confirmar"
-                            onPress={touchFormAddress}
+                            onPress={touchNext}
 
                         />
                 </View>
@@ -79,7 +79,7 @@ export function FormContact() {
                 <TouchableOpacity
                     style={styles.backButton}
                     activeOpacity={0.5}
-                    onPress={touchModalityOptions}
+                    onPress={touchBack}
                 >
                 <FontAwesome5
                     name="arrow-alt-circle-left"
@@ -88,8 +88,8 @@ export function FormContact() {
                 />
 
                 </TouchableOpacity>
-            </View>
 
+            </View>
         </SafeAreaView>
     )
 }
@@ -107,9 +107,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingBottom: '20%'
     },
+
     
     image: {
-        margin: '10%',
+        margin: '8%',
     },
     
     title: {

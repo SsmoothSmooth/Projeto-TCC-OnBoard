@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    View, 
-    Text, 
-    SafeAreaView, 
+    View,
+    Text,
+    SafeAreaView,
     Image,
     StyleSheet,
     TouchableOpacity,
@@ -19,18 +19,20 @@ import { useNavigation } from '@react-navigation/core';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 
-export function Welcome(){
+export function Welcome() {
     const navigation = useNavigation();
 
-    function touchInit(){
+    function touchInit() {
         navigation.navigate('ConfirmAccess')
     }
 
+    // Usar para testar as telas
+ 
     function test(){
         navigation.navigate('AlterarSenha')
     }
 
-    return(
+    return (
 
         <SafeAreaView style={styles.container}>
             <View style={styles.wrapper}>
@@ -41,16 +43,16 @@ export function Welcome(){
                     />
                 </View>
 
-                <Image 
-                    source={ handsLoves }
+                <Image
+                    source={handsLoves}
                     style={styles.image}
                     resizeMode="contain"
-                    />
+                />
 
                 <Text style={styles.subtitle}>
                     Venham conosco  {'\n'}
                     mudar o meio ambiente {'\n'}
-                    entre na Coletores Onboard. 
+                    entre na Coletores Onboard.
                 </Text>
 
 
@@ -68,12 +70,12 @@ export function Welcome(){
                     style={styles.button}
                     activeOpacity={0.5}
                     onPress={touchInit}
-                    >
+                >
                     <FontAwesome5
                         name="arrow-alt-circle-right"
                         style={styles.buttonIcon}
-                        
-                        />
+
+                    />
 
                 </TouchableOpacity>
 

@@ -1,53 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     View,
     Text,
     SafeAreaView,
     StyleSheet,
     TouchableOpacity,
-    TextInput,
-    Alert
+    TextInput
+
 } from 'react-native';
 
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-export function FormAddress() {
+
+
+
+export function Coop_PersonalData() {
     const navigation = useNavigation();
 
-    const [isFilled, setIsFilled] = useState(false);
-    const [name, setName] = useState<string>();
-    const [name2, setName2] = useState<string>();
-
-    function handleInputChange(value: string) {
-        setIsFilled(!!value);
-        setName(value);
+    function touchNext() {
+        navigation.navigate('Coop_Identification')
     }
 
-    function handleInputChange2(value2: string) {
-        setIsFilled(!!value2);
-        setName2(value2);
-
-    }
-
-// Função
-    function touchInit() {
-
-        if (!name)
-            return Alert.alert('Preenchimento obrigatório da cidade - UF');
-
-        else if (!name2)
-            return Alert.alert('Preenchimento obrigatório do endereço');
-
-        navigation.navigate('FormPersonalData')
-    }
-
-    function touchFormIdentidication() {
-        navigation.navigate('FormIdentification')
+    function touchBack() {
+        navigation.navigate('Coop_Email')
     }
 
     return (
@@ -55,58 +35,62 @@ export function FormAddress() {
 
             <View style={styles.wrapper}>
 
-                    <Text style={styles.title}>
-                        Preencha os dados {'\n'}
-                    </Text>
-                
+
+
+                <Text style={styles.title}>
+                    Preencha os dados
+                </Text>
+
                 <View style={styles.boxInput}>
 
                     <Text style={styles.subtitle}>
-                        Cidade/ UF: {'\n'}
+                        Cidade/ UF
 
                     </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="Digite a sua cidade-UF"
-                        onChangeText={handleInputChange}
+                        placeholder="Digite a sua cidade/ UF"
                     />
 
                     <Text style={styles.subtitle}>
-                       Endereço: {'\n'}
+                        Endereço
 
                     </Text>
 
                     <TextInput
                         style={styles.input}
-                        placeholder="Digite seu endereço"
-                        onChangeText={handleInputChange2}
+                        placeholder="Digite o seu endereço"
                     />
                 </View>
 
                 <View style={styles.boxButton}>
-                        <Button
-                            title="Confirmar"
-                            onPress={touchInit}
+                    <Button
+                        title="Confirmar"
+                        onPress={touchNext}
 
-                        />
+                    />
                 </View>
 
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchFormIdentidication}
+                        onPress={touchBack}
                     >
                     <FontAwesome5
                         name="arrow-alt-circle-left"
                         style={styles.backButtonIcon}
+                        
                     />
+
                     </TouchableOpacity>
 
             </View>
         </SafeAreaView>
     )
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -121,19 +105,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingBottom: '16%'
     },
-    
+
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
+        marginTop: 38,
         color: colors.heading,
         fontFamily: fonts.heading,
-        lineHeight: 34,
-        paddingTop: '4%'
-    },
-    
-    image: {
-        margin: '8%',
+        lineHeight: 34
+
     },
 
     boxInput: {
