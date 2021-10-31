@@ -42,7 +42,6 @@ import { D_Confirmed } from '../pages/Forms/Domesticos/D_Confirmed';
 // { Coletores }
 
 import { Mod_C_Feed } from '../pages/Modulos/Coletores/Mod_C_Feed';
-import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
 import { Mod_C_Categoria } from '../pages/Modulos/Coletores/Mod_C_Categoria';
 
 // { Cooperativa }
@@ -67,6 +66,8 @@ import { Mod_D_Sacola } from '../pages/Modulos/Domesticos/Mod_D_Sacola';
 import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Categoria';
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
 import { Mod_D_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Descarte';
+import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
+import { Mod_C_Mapa } from '../pages/Modulos/Coletores/Mod_C_Mapa';
 
 const stackRoutes = createStackNavigator();
 
@@ -229,6 +230,11 @@ const AppRoutes: React.FC = () => (
             component={Mod_C_Tabela_Preco}
         />
 
+        <stackRoutes.Screen 
+            name="Mod_C_Mapa"
+            component={Mod_C_Mapa}
+        />
+
 
         {/* Módulos - Cooperativa */}
 
@@ -299,6 +305,7 @@ const AppRoutes: React.FC = () => (
             name="Mod_D_Manual_Guia"
             component={Mod_D_Manual_Guia}
         />
+
         
         {/*** End MÓDULO ***/}
 
