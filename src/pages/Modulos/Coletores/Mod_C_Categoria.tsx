@@ -13,7 +13,6 @@ import { ModHeader } from '../../../components/ModHeader';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 
-
 export function Mod_C_Categoria() {
     const navigation = useNavigation();
 

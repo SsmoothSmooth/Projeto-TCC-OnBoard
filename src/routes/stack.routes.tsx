@@ -67,7 +67,7 @@ import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
 import { Mod_D_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Descarte';
 import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
-import { Mod_C_Mapa } from '../pages/Modulos/Coletores/Mod_C_Mapa';
+import Mod_C_Mapa from '../pages/Modulos/Coletores/Mod_C_Mapa';
 
 const stackRoutes = createStackNavigator();
 
@@ -221,6 +221,11 @@ const AppRoutes: React.FC = () => (
         />
 
         <stackRoutes.Screen 
+            name="Mod_C_Mapa"
+            component={Mod_C_Mapa}
+        />
+
+        <stackRoutes.Screen 
             name="Mod_C_Categoria"
             component={Mod_C_Categoria}
         />
@@ -229,12 +234,6 @@ const AppRoutes: React.FC = () => (
             name="Mod_C_Tabela_Preco"
             component={Mod_C_Tabela_Preco}
         />
-
-        <stackRoutes.Screen 
-            name="Mod_C_Mapa"
-            component={Mod_C_Mapa}
-        />
-
 
         {/* Módulos - Cooperativa */}
 
