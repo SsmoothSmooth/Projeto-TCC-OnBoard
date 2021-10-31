@@ -16,6 +16,7 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import happyPlanet from '../../assets/happyPlanet.png';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 
 
@@ -47,19 +48,15 @@ export function FormContact() {
 
             <View style={styles.wrapper}>
 
-                <View style={styles.boxHeader}>
+                <Image
+                    source={happyPlanet}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
 
-                    <Image
-                        source={happyPlanet}
-                        style={styles.image}
-                        resizeMode="contain"
-                    />
-
-                    <Text style={styles.title}>
-                        Informe seu telefone {'\n'}
-                    </Text>
-
-                </View>
+                <Text style={styles.title}>
+                    Informe seu telefone {'\n'}
+                </Text>
                 
                 <View style={styles.boxInput}>
    
@@ -79,29 +76,28 @@ export function FormContact() {
                         />
                 </View>
 
-                <View style={styles.boxBackButton}>
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchModalityOptions}
-                    >
-                    <FontAwesome5
-                        name="arrow-alt-circle-left"
-                        style={styles.backButtonIcon}
-                        
-                    />
+                <TouchableOpacity
+                    style={styles.backButton}
+                    activeOpacity={0.5}
+                    onPress={touchModalityOptions}
+                >
+                <FontAwesome5
+                    name="arrow-alt-circle-left"
+                    style={styles.backButtonIcon}
+                    
+                />
 
-                    </TouchableOpacity>
-                </View>
-
+                </TouchableOpacity>
             </View>
+
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        marginTop: getStatusBarHeight(),
     },
 
     wrapper: {
@@ -109,18 +105,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-        paddingBottom: '2%'
-    },
-
-    boxHeader:{
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingTop: '15%'
+        paddingBottom: '20%'
     },
     
     image: {
-        margin: '8%',
+        margin: '10%',
     },
     
     title: {
@@ -153,14 +142,6 @@ const styles = StyleSheet.create({
     boxButton: {
         width: '100%',
         paddingHorizontal: '20%',
-    },
-
-    boxBackButton: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 5,
-        paddingBottom: '10%',
     },
 
     backButton: {
