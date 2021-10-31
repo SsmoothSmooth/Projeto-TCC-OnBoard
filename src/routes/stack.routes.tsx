@@ -67,6 +67,7 @@ import { Mod_D_Sacola } from '../pages/Modulos/Domesticos/Mod_D_Sacola';
 import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Categoria';
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
 import { TelaTabelaPreçoCooperativa } from '../pages/Modulos/TelaTabelaPreçoCooperativa';
+import { Tela_Contato_Cooperativa } from '../pages/Modulos/Tela_Contato_Cooperativa';
 
 const stackRoutes = createStackNavigator();
 
@@ -303,6 +304,12 @@ const AppRoutes: React.FC = () => (
 
         />
 
+
+        <stackRoutes.Screen
+            name="Tela_Contato_Cooperativa"
+            component={Tela_Contato_Cooperativa}
+
+        />
 
     </stackRoutes.Navigator>
 )

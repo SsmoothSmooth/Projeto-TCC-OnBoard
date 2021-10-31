@@ -29,7 +29,7 @@ export function Welcome() {
     // Usar para testar as telas
 
     function test() {
-        navigation.navigate('Mod_D_Manual_Guia')
+        navigation.navigate('Tela_Contato_Cooperativa')
     }
 
     return (
