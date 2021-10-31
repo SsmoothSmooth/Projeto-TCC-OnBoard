@@ -7,7 +7,6 @@ import {
     SafeAreaView, 
     StyleSheet,
     TouchableOpacity,
-    Dimensions,
     TextInput
 } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
