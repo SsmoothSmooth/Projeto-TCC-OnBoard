@@ -66,6 +66,7 @@ import { Mod_D_Categoria } from '../pages/Modulos/Domesticos/Mod_D_Categoria';
 import { Mod_D_Sacola } from '../pages/Modulos/Domesticos/Mod_D_Sacola';
 import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Categoria';
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
+import { Mod_D_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Descarte';
 
 const stackRoutes = createStackNavigator();
 
@@ -277,6 +278,11 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen 
             name="Mod_D_Categoria"
             component={Mod_D_Categoria}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_D_Descarte"
+            component={Mod_D_Descarte}
         />
 
         <stackRoutes.Screen 
