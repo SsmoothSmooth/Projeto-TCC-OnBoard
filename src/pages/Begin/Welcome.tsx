@@ -27,7 +27,7 @@ export function Welcome(){
     }
 
     function test(){
-        navigation.navigate('TelaPerfil')
+        navigation.navigate('AlterarSenha')
     }
 
     return(

@@ -13,7 +13,7 @@ import { ModHeader } from '../../components/ModHeader';
 import { NavBar } from '../../components/NavBar';
 import colors from '../../styles/colors';
 
-export function TelaPerfilColetores(){
+export function TelaPerfil(){
     // const navegation = useNavigation();
 
     // function touchAlteraSenha(){

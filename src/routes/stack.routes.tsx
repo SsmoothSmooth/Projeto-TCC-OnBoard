@@ -27,6 +27,7 @@ import { FormConfirmed } from '../pages/Forms/FormConfirmed';
 
 import { Feed } from '../pages/Modulos/Feed';
 import { TelaPerfil } from '../pages/Modulos/TelaPerfil';
+import { AlterarSenha } from '../pages/Modulos/AlterarSenha';
 
 const stackRoutes = createStackNavigator();
 
@@ -150,6 +151,12 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen 
             name="TelaPerfil"
             component={TelaPerfil}
+
+        />
+
+        <stackRoutes.Screen 
+            name="AlterarSenha"
+            component={AlterarSenha}
 
         />
         
