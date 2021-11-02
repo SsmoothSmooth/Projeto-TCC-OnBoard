@@ -53,7 +53,7 @@ export function Tela_Contato_Cooperativa() {
                     >
 
                         <Image
-                            source={require('../../../assets/julia_morato.png')}
+                            source={require('../../../assets/julia_morato.jpg')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
