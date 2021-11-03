@@ -10,7 +10,7 @@ import { NavBar } from '../../../components/NavBar';
 import { useNavigation } from '@react-navigation/core';
 import colors from '../../../styles/colors';
 
-const GOOGLE_MAPS_APIKEY = 'AIzaSyBDSiyQ__DOQZiN5ojyTwKa90nsxPzqJ9k';
+// const GOOGLE_MAPS_APIKEY = '...';
 
 
 // Pegar a regiao inicia do mapa e o tamanho
@@ -59,7 +59,7 @@ export default function Mod_C_Mapa() {
         // Permissão de uso para o usuario
       const permission = await Location.requestForegroundPermissionsAsync();
       var local = await Location.getCurrentPositionAsync({});
-        console.log(local.coords);
+        // console.log(local.coords);
       setCoordenadas({
         latitude: local.coords.latitude,
         longitude: local.coords.longitude,
@@ -118,14 +118,14 @@ const mapRef = useRef(null)
             
             />
      
-          <MapViewDirections
+          {/* <MapViewDirections
               lineDashPattern={[0]}
               origin={coordenadas}
               destination={outroLocal}
               apikey={GOOGLE_MAPS_APIKEY}
               strokeWidth={3}
               strokeColor="hotpink"
-            />
+            /> */}
              
           {/* {console.log(coordenadas.coords)} */}
     

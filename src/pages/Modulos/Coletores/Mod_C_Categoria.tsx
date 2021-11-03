@@ -16,8 +16,12 @@ import { FontAwesome5 } from '@expo/vector-icons';
 export function Mod_C_Categoria() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('')
+    function touchCategorias() {
+        navigation.navigate('Mod_C_Coleta')
+    }
+
+    function touchBack() {
+        navigation.navigate('Mod_C_Mapa')
     }
 
     return (
@@ -34,14 +38,14 @@ export function Mod_C_Categoria() {
 
                 <View style={styles.MenuButton}>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity activeOpacity={0.5} onPress={touchCategorias}>
                         <Image
                             source={require('../../../assets/papel.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity activeOpacity={0.5} onPress={touchCategorias} >
 
                         <Image
                             source={require('../../../assets/metal.png')}
@@ -50,7 +54,7 @@ export function Mod_C_Categoria() {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity activeOpacity={0.5} onPress={touchCategorias} >
                         <Image
                             source={require('../../../assets/vidro.png')}
                             style={styles.ImageIconStyle3}
@@ -61,6 +65,7 @@ export function Mod_C_Categoria() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
+                        onPress={touchCategorias}
                     >
                         <Image
                             source={require('../../../assets/plastico.png')}
@@ -76,7 +81,7 @@ export function Mod_C_Categoria() {
                     <TouchableOpacity
                         style={styles.backButton}
                         activeOpacity={0.5}
-                        onPress={touchInit}
+                        onPress={touchBack}
                     >
                         <FontAwesome5
                             name="chevron-left"
