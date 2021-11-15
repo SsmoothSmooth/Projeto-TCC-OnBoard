@@ -10,11 +10,11 @@ import {
     TextInput
 } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
-import { Button } from '../../components/Button';
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import { Button } from '../../../components/Button';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 
-export function AlterarSenha(){
+export function Mod_D_AlterarSenha(){
     // const navegation = useNavigation();
 
     //  function touchAlteraSenha(){

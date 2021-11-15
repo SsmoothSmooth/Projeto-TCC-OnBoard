@@ -1,3 +1,4 @@
+import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
 //import { useNavigation } from '@react-navigation/native';
 import {
@@ -8,12 +9,12 @@ import {
     TouchableOpacity,
     Dimensions
 } from 'react-native';
-import { Button } from '../../components/Button';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
-import colors from '../../styles/colors';
+import { Button } from '../../../components/Button';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
+import colors from '../../../styles/colors';
 
-export function TelaPerfil(){
+export function Mod_Coop_Ajuda(){
     // const navegation = useNavigation();
 
     // function touchAlteraSenha(){
@@ -39,49 +40,60 @@ export function TelaPerfil(){
 
                 <View style={styles.header}>
                 <ModHeader
-                    title="Perfil"
+                    title="Ajuda"
                  />
                 </View>
 
+                <Text style={styles.boxinfortion}>
+                        Perguntas Frequentes
+                </Text>
+
                 <View style={styles.boxButton}>
+
                     <Button
                         style={styles.button}
-                        title="Alterar Senha" 
+                        title="O que é reciclagem?" 
                     />
 
 
                     <Button
                         style={styles.button}
-                        title="Configurações"
+                        title="Quais materias são reciclágens?"
                     />
 
                     <Button
                         style={styles.button}
-                        title="Ajuda"
+                        title="Como excluir minha conta?"
                     />
 
                     <Button
                         style={styles.button}
-                        title="Sair"
+                        title="Enviar FeedBack"
                     />
+
+                    <Button
+                        style={styles.button}
+                        title="Quero trabalhar no Coletores OnBoard"
+                    />
+
+                    <Button
+                        style={styles.button}
+                        title="Sobre os Coletores OnBoard"
+                    />
+
                 </View>
 
-                <View style={styles.boxDownbar}>
-                    <NavBar
-                        style={styles.dbar}
-                        title="Inicio"
+                <TouchableOpacity
+                    style={styles.button}
+                    activeOpacity={0.5}
+                >
+
+                    <FontAwesome5
+                        name="arrow-alt-circle-left"
+                        style={styles.buttonIcon}                       
                     />
 
-                    <NavBar
-                        style={styles.dbar}
-                        title="Menu"
-                    />
-
-                    <NavBar
-                        style={styles.dbar}
-                        title="Perfil"
-                    />
-                </View>
+                </TouchableOpacity>
 
             </View>
 
@@ -109,10 +121,16 @@ const styles = StyleSheet.create({
         paddingVertical: '2%',
         backgroundColor: colors.gray,
     },
+
+    boxinfortion: {
+        fontWeight: 'bold',
+        fontSize: 26,
+        alignItems: 'center'
+    },
     
     boxButton: {
         width: '100%',
-        paddingHorizontal: '20%',
+        paddingHorizontal: '10%',
     },
 
     button: {
@@ -121,22 +139,12 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '5%', 
+        marginVertical: '3%', 
     },
 
-    boxDownbar: {
-        flexDirection: 'row',
-        justifyContent:'space-around',
-        width: '100%',
-        backgroundColor: colors.gray,
-    },
-
-    dbar: {
-        backgroundColor: colors.green_cyan,
-        height: 40,
-        borderRadius: 16,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: '5%', 
+    buttonIcon: {
+        color: colors.black,
+        fontSize: 35,
     }
+
 })

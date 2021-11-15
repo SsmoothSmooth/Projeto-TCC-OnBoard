@@ -44,31 +44,42 @@ import { D_Confirmed } from '../pages/Forms/Domesticos/D_Confirmed';
 import { Mod_C_Feed } from '../pages/Modulos/Coletores/Mod_C_Feed';
 import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
 import { Mod_C_Categoria } from '../pages/Modulos/Coletores/Mod_C_Categoria';
+import { Mod_C_Tabela_Preco } from '../pages/Modulos/Coletores/Mod_C_Tabela_Preco';
+import { Mod_C_TelaPerfil } from '../pages/Modulos/Coletores/Mod_C_TelaPerfil';
+import { Mod_C_AlterarSenha } from '../pages/Modulos/Coletores/Mod_C_AlterarSenha';
+import { Mod_C_Configuracoes } from '../pages/Modulos/Coletores/Mod_C_Configuracoes';
+import { Mod_C_Ajuda} from '../pages/Modulos/Coletores/Mod_C_Ajuda';
 
 // { Cooperativa }
 
 import { Mod_Coop_Feed } from '../pages/Modulos/Cooperativas/Mod_Coop_Feed';
-
-// { Domestico }
-
-import { Mod_D_Feed } from '../pages/Modulos/Domesticos/Mod_D_Feed';
-
-// **********
-
-import { Mod_C_Tabela_Preco } from '../pages/Modulos/Coletores/Mod_C_Tabela_Preco';
 import { Mod_Coop_Campanha } from '../pages/Modulos/Cooperativas/Mod_Coop_Campanha';
 import { Mod_Coop_Criar_Evento } from '../pages/Modulos/Cooperativas/Mod_Coop_Criar_Evento';
 import { Mod_Coop_Menu } from '../pages/Modulos/Cooperativas/Mod_Coop_Menu';
 import { Mod_Coop_Notificacao } from '../pages/Modulos/Cooperativas/Mod_Coop_Notificacao';
 import { Mod_Coop_Tipo_Material } from '../pages/Modulos/Cooperativas/Mod_Coop_Tipo_Material';
+import { Mod_Coop_TelaPerfil } from '../pages/Modulos/Cooperativas/Mod_Coop_TelaPerfil';
+import { Mod_Coop_AlterarSenha } from '../pages/Modulos/Cooperativas/Mod_Coop_AlterarSenha';
+import { Mod_Coop_Configuracoes } from '../pages/Modulos/Cooperativas/Mod_Coop_Configuracoes';
+import { Mod_Coop_Ajuda} from '../pages/Modulos/Cooperativas/Mod_Coop_Ajuda';
+
+// { Domestico }
+
+import { Mod_D_Feed } from '../pages/Modulos/Domesticos/Mod_D_Feed';
 import { Mod_D_Menu } from '../pages/Modulos/Domesticos/Mod_D_Menu';
 import { Mod_D_Categoria } from '../pages/Modulos/Domesticos/Mod_D_Categoria';
 import { Mod_D_Sacola } from '../pages/Modulos/Domesticos/Mod_D_Sacola';
 import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Categoria';
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
 import { Mod_D_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Descarte';
-import { TelaPerfil } from '../pages/Modulos/TelaPerfil';
-import { AlterarSenha } from '../pages/Modulos/AlterarSenha';
+import { Mod_D_TelaPerfil } from '../pages/Modulos/Domesticos/Mod_D_TelaPerfil';
+import { Mod_D_AlterarSenha } from '../pages/Modulos/Domesticos/Mod_D_AlterarSenha';
+import { Mod_D_Configuracoes } from '../pages/Modulos/Domesticos/Mod_D_Configuracoes';
+import { Mod_D_Ajuda} from '../pages/Modulos/Domesticos/Mod_D_Ajuda';
+
+// **********
+
+
 
 const stackRoutes = createStackNavigator();
 
@@ -231,6 +242,26 @@ const AppRoutes: React.FC = () => (
             component={Mod_C_Tabela_Preco}
         />
 
+        <stackRoutes.Screen 
+            name="Mod_C_TelaPerfil"
+            component={Mod_C_TelaPerfil}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_C_AlterarSenha"
+            component={Mod_C_AlterarSenha}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_C_Configuracoes"
+            component={Mod_C_Configuracoes}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_C_Ajuda"
+            component={Mod_C_Ajuda}
+        />
+
 
         {/* Módulos - Cooperativa */}
 
@@ -262,6 +293,26 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen 
             name="Mod_Coop_Tipo_Material"
             component={Mod_Coop_Tipo_Material}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_TelaPerfil"
+            component={Mod_Coop_TelaPerfil}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_AlterarSenha"
+            component={Mod_Coop_AlterarSenha}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_Configuracoes"
+            component={Mod_Coop_Configuracoes}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_Coop_Ajuda"
+            component={Mod_Coop_Ajuda}
         />
 
 
@@ -302,20 +353,28 @@ const AppRoutes: React.FC = () => (
             component={Mod_D_Manual_Guia}
         />
 
+        <stackRoutes.Screen 
+            name="Mod_D_TelaPerfil"
+            component={Mod_D_TelaPerfil}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_D_AlterarSenha"
+            component={Mod_D_AlterarSenha}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_D_Configuracoes"
+            component={Mod_D_Configuracoes}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_D_Ajuda"
+            component={Mod_D_Ajuda}
+        />
+
         {/* Criando */}
 
-        <stackRoutes.Screen 
-            name="TelaPerfil"
-            component={TelaPerfil}
-
-        />
-
-        <stackRoutes.Screen 
-            name="AlterarSenha"
-            component={AlterarSenha}
-
-        />
-        
         {/*** End MÓDULO ***/}
 
 
