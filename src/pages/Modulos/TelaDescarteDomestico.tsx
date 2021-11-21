@@ -47,15 +47,7 @@ export function TelaDescarteDomestico() {
                 </View>
 
 
-                <View style={styles.MenuButton}>
 
-                    <Button
-                        style={styles.Button1}
-                        title="Confirmar"
-                        onPress={touchInit}
-                    />
-
-                </View>
 
             </View>
         </SafeAreaView>
