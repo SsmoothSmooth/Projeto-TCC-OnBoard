@@ -25,9 +25,9 @@ export function Mod_C_Menu() {
     //     navigation.navigate('')
     // }
 
-    // function touchSell() {
-    //     navigation.navigate('')
-    // }
+    function touchSell() {
+        navigation.navigate('Mod_C_Ponto_Venda')
+    }
 
     function touchPreco() {
         navigation.navigate('Mod_C_Tabela_Preco')
@@ -83,7 +83,9 @@ export function Mod_C_Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        activeOpacity={0.5}>
+                        activeOpacity={0.5}
+                        onPress = {touchSell}
+                    >
 
                         <Image
                             source={require('../../../assets/pontosdevenda.png')}

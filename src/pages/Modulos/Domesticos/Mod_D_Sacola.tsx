@@ -5,60 +5,89 @@ import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import mapImg from '../../../assets/mapIcon.png';
+import { NavBar } from '../../../components/NavBar';
+import { Button } from '../../../components/Button';
+import { ModHeader } from '../../../components/ModHeader';
 
 
 export function Mod_D_Sacola() {
+    const navigation = useNavigation();
+
+
+     // Footer
+
+     function touchInicio() {
+        navigation.navigate('Mod_D_Feed')
+    }
+
+    function touchMenu() {
+        navigation.navigate('Mod_D_Menu')
+    }
+
+    // function touchPerfil() {
+    //     navigation.navigate('Mod_Coop_Perfil')
+    // }
+
 
 
     return(
-        <SafeAreaView style={styles.container}> 
-
+        <SafeAreaView style={styles.container}>
+            <View style={styles.wrapper}>
+                
             <View style={styles.boxHeader}>
-                <Text style={styles.title}>Sacola{'\n'}</Text>
-            </View>
+                    <ModHeader
+                        title="Sacola"
+                    />
+                </View>
 
-            <View style={styles.boxSubTitle}>
-                <Text >Sacola de lixo</Text>
-            </View>
+                <Text style={styles.subtitle}>
+                    Sacola de lixo
+                </Text>
 
-            <View style={styles.boxStreet}>
-                <Image source={mapImg} />
-                <Text >Local do descarte</Text>
-                <Text >Rua José Alvaro de Carvalho</Text>
-                <Text >Jardim dos Zés</Text>
-            </View>
+                <View style={styles.boxStreet}>
+                    <Image source={mapImg} />
+                    <Text >Local do descarte {'\n'} </Text>
+                    <Text >Rua José Alvaro de Carvalho{'\n'}</Text>
+                    <Text >Jardim dos Zés</Text>
+                    <Text>Alterar</Text>
+                </View>
 
-            <View style={styles.boxInformation}>
                 <Text >Materiais</Text>
-                <Text >Volumes</Text>
-                <Text >Papel</Text>
-                <Text >Pequeno</Text>
-                <Text >Metal</Text>
-                <Text >Médio</Text>
-                <Text >Vidro</Text>
-                <Text >Pequeno</Text>
-                <Text >Platico</Text>
-                <Text >Grande</Text>
-            </View>
+                <Text>Volume</Text>
 
-            <View style={styles.buttonConfirm}>
-                <Text >Confirmar</Text>
-            </View>
+                <View style={styles.boxInfo}>
+                    <Text>Papel</Text>
+                    <Text>Pequeno</Text>
+                    <Button style={styles.boxInfo}
+                    title = 'Editar'
+                    />
+                </View>
 
-            <View style={styles.boxButton}>
-                <TouchableOpacity style={styles.buttonInicio}>
-                    <Text style={styles.buttonText}>Inicio</Text>
-                </TouchableOpacity>
+                <Button
+                    style={styles.confirmarButton}
+                    title = 'Confirmar'
+                />
 
-                <TouchableOpacity style={styles.buttonMenu}>
-                    <Text style={styles.buttonText}>Menu</Text>
-                </TouchableOpacity>
+                <View style={styles.boxButton}>
+                    <NavBar
+                        style={styles.button}
+                        title="Inicio"
+                        onPress = {touchInicio}
+                    />
 
-                <TouchableOpacity style={styles.buttonPerfil}>
-                    <Text style={styles.buttonText}>Perfil</Text>
-                </TouchableOpacity>
-            </View>
+                    <NavBar
+                        style={styles.button}
+                        title="Menu"
+                        onPress = {touchMenu}
+                    />
 
+                    <NavBar
+                        style={styles.button}
+                        title="Perfil"
+                    />
+                </View>
+
+            </View> 
         </SafeAreaView>
     )
 }
@@ -68,106 +97,57 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 
+    wrapper: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        backgroundColor: 'white',
+        flexWrap: 'wrap',
+    },
+
     boxHeader: {
-        width: '100%',
-        marginTop: -60,
         backgroundColor: colors.gray,
-        paddingTop: '25%',
-        fontFamily: fonts.heading
-
+        width: '100%',
+        justifyContent: 'center',
+        paddingTop: '5%',
+        paddingVertical: '10%'
     },
 
-    title: {
-        fontSize: 60,
-        textAlign: 'center',
-        fontFamily: fonts.heading
-
-    },
-
-    boxSubTitle: {
-        fontSize: 100,
-        fontFamily: fonts.heading,
-        paddingHorizontal: '5%',
-        paddingTop: '5%'
-
-    },
-
-    boxImage: {
-        fontSize: 20,
-        fontFamily: fonts.heading,
-        paddingHorizontal: '5%',
-        paddingTop: '5%'
+    subtitle: {
 
     },
 
     boxStreet: {
-        alignItems: 'center',
-        textAlign: 'center',
-        flexDirection: 'row'
 
     },
 
-    boxInformation: {
-        flexDirection: 'row'
+    boxInfo: {
 
     },
 
-    buttonConfirm: {
-        backgroundColor: colors.green_cyan,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-
+    confirmarButton: {
+            backgroundColor: colors.green_cyan,
+            height: 50,
+            borderRadius: 16,
+            justifyContent: 'center',
+            alignItems: 'center',
     },
 
     boxButton: {
-        flex: 1,
-        paddingVertical: '18%',
-        marginTop: '16%',
-        justifyContent: 'space-between',
-        paddingHorizontal: '10%',
+        flexDirection: 'row',
+        justifyContent:'space-around',
         width: '100%',
-        backgroundColor: colors.gray,
-        alignItems: 'flex-end',
-        flexDirection: 'row'
-
+        backgroundColor: colors.gray
     },
 
-    buttonInicio: {
+    button: {
         backgroundColor: colors.green_cyan,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
+        height: 56,
+        borderRadius: 16,
         justifyContent: 'center',
-
+        alignItems: 'center',
+        marginVertical: '5%', 
     },
 
-    buttonMenu: {
-        backgroundColor: colors.green_cyan,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-
-    },
-
-    buttonPerfil: {
-        backgroundColor: colors.green_cyan,
-        width: 100,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-
-    },
-
-    buttonText: {
-        textAlign: 'center',
-
-    },
 
 });

@@ -29,7 +29,7 @@ export function Welcome() {
     // Usar para testar as telas
  
     function test(){
-        navigation.navigate('Mod_C_Menu')
+        navigation.navigate('Mod_D_Menu')
     }
 
     return (

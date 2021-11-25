@@ -69,6 +69,7 @@ import { Mod_D_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Descarte';
 import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
 import Mod_C_Mapa from '../pages/Modulos/Coletores/Mod_C_Mapa';
 import { Mod_C_Coleta } from '../pages/Modulos/Coletores/Mod_C_Coleta';
+import Mod_C_Ponto_Venda from '../pages/Modulos/Coletores/Mod_C_Ponto_Venda';
 
 const stackRoutes = createStackNavigator();
 
@@ -224,6 +225,11 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen 
             name="Mod_C_Mapa"
             component={Mod_C_Mapa}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_C_Ponto_Venda"
+            component={Mod_C_Ponto_Venda}
         />
 
         <stackRoutes.Screen 
