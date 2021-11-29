@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     SafeAreaView,
     StyleSheet,
@@ -6,7 +6,7 @@ import {
     Image,
     TouchableOpacity,
     Text,
-    TextInput,
+    TextInput
 } from 'react-native';
 
 import colors from '../../styles/colors';
@@ -16,25 +16,8 @@ import fonts from '../../styles/fonts';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 
-
-export function TelaPapelDomestico() {
+export function TelaDescarteDomestico() {
     const navigation = useNavigation();
-
-
-    const [isFilled, setIsFilled] = useState(false);
-    const [name, setName] = useState<string>();
-    const [name2, setName2] = useState<string>();
-
-    function handleInputChange(value: string) {
-        setIsFilled(!!value);
-        setName(value);
-    }
-
-    function handleInputChange2(value2: string) {
-        setIsFilled(!!value2);
-        setName2(value2);
-
-    }
 
     function touchSalvar() {
         navigation.navigate('')
@@ -45,13 +28,12 @@ export function TelaPapelDomestico() {
     }
 
     return (
-
         <SafeAreaView style={styles.container}>
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
                     <ModHeader
-                        title="Papel"
+                        title="Descarte"
                     />
                 </View>
 
@@ -59,42 +41,10 @@ export function TelaPapelDomestico() {
                     <Image source={require('../../assets/DescartePapel.png')} />
                 </View>
 
-                <View>
-                    <Text> Pequena (até 2Kg) </Text>
-                    <Text> Média (De 2Kg até 5Kg) </Text>
-                    <Text> Grande (De 5Kg até 10Kg) {'\n'} </Text>
-                </View>
-
-                <Text style={styles.title}> Gerenciamento de Valores </Text>
-
-                <View style={styles.boxInput}>
-
-                    <Text style={styles.subtitle}>
-                        Peso: {'\n'}
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={handleInputChange}
-                    />
-
-                    <Text style={styles.subtitle}>
-                        Valor: {'\n'}
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={handleInputChange2}
-                    />
-
-                </View>
-
                 <View style={styles.ButtonMenu}>
                     <Button
                         style={styles.Button1}
-                        title="Salvar"
+                        title="Confirmar"
                         onPress={touchSalvar}
                     />
                 </View>
@@ -229,4 +179,3 @@ const styles = StyleSheet.create({
     },
 
 })
-
