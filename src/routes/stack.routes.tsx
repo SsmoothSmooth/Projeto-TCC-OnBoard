@@ -68,6 +68,7 @@ import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
 import { TelaTabelaPreçoCooperativa } from '../pages/Modulos/TelaTabelaPreçoCooperativa';
 import { Tela_Contato_Cooperativa } from '../pages/Modulos/Tela_Contato_Cooperativa';
+import { TelaPapelDomestico } from '../pages/Modulos/TelaPapelDomestico';
 
 const stackRoutes = createStackNavigator();
 
@@ -308,6 +309,12 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="Tela_Contato_Cooperativa"
             component={Tela_Contato_Cooperativa}
+
+        />
+
+        <stackRoutes.Screen
+            name="TelaPapelDomestico"
+            component={TelaPapelDomestico}
 
         />
 
