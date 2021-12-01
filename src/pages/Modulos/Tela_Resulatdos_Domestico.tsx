@@ -14,7 +14,7 @@ import fonts from '../../styles/fonts';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button } from '../../components/Button';
 
-export function TelaDescarteDomestico() {
+export function Tela_Resultados_Domestico() {
     const navigation = useNavigation();
 
     function touchSalvar() {
@@ -31,8 +31,10 @@ export function TelaDescarteDomestico() {
 
                 <View style={styles.boxHeader}>
                     <ModHeader
-                        title="Descarte"
+                        title="Resultados"
                     />
+
+                    <Text style={styles.subtitle}> Papel {'\n'}  </Text>
 
                 </View>
 
@@ -43,9 +45,6 @@ export function TelaDescarteDomestico() {
                 </View>
 
                 <View>
-                    <Text style={styles.subtitle}>
-                        Papel {'\n'}
-                    </Text>
 
                     <View style={styles.DescarteImagem}>
                         <Image source={require('../../assets/Volume.png')} />

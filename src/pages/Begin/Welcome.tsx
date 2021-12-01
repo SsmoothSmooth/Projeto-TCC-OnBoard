@@ -29,7 +29,7 @@ export function Welcome() {
     // Usar para testar as telas
 
     function test() {
-        navigation.navigate('TelaDescarteDomestico')
+        navigation.navigate('Tela_Contato_Cooperativa')
     }
 
     return (

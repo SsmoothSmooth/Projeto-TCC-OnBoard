@@ -9,5 +9,6 @@ export default {
     gray_background: '#CFCFCF',
     black: '#000000',
     gray_shape: '#F5FAF7',
-    lightgrey: '#d3d3d3'
+    lightgrey: '#d3d3d3',
+    blue_linear: '#A0D4FF'
 };
