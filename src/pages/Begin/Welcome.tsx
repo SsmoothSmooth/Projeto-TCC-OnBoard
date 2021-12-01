@@ -29,7 +29,7 @@ export function Welcome() {
     // Usar para testar as telas
 
     function test() {
-        navigation.navigate('Tela_Contato_Cooperativa')
+        navigation.navigate('Tela_Resultados_Domestico')
     }
 
     return (
