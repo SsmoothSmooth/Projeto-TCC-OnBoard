@@ -6,12 +6,15 @@ import {
     Text,
     Image,
     TouchableOpacity,
+    Dimensions,
 } from 'react-native';
 
 import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
 import { ModHeader } from '../../../components/ModHeader';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import fonts from '../../../styles/fonts';
+import { Button } from '../../../components/Button';
 
 export function Mod_D_Descarte() {
     const navigation = useNavigation();
@@ -21,7 +24,7 @@ export function Mod_D_Descarte() {
         <SafeAreaView style={styles.container}>
             <View  style={styles.wrapper}> 
                
-               <View style={styles.header}>
+               <View style={styles.boxHeader}>
 
                     <ModHeader 
                         title = 'Descarte'
@@ -69,6 +72,13 @@ export function Mod_D_Descarte() {
                     </Text>
                 </View>
 
+                <View style={styles.boxButton}>
+                        <Button
+                            title="Confirmar"
+
+                        />
+                </View>
+
             </View>
         </SafeAreaView>
     )
@@ -88,31 +98,44 @@ const styles = StyleSheet.create({
         paddingBottom: '16%'
     },
 
-    header: {
+    boxHeader: {
         width: '100%',
         paddingVertical: '2%',
         backgroundColor: colors.gray,
     },
 
     boxImageDescarte: {
+        width: '100%',
         backgroundColor: 'pink',
+        alignItems: 'center'
     },
 
     subtitle: {
-
+        textAlign: 'left',        
+        fontSize: 20,
+        paddingTop: '2%',
+        paddingLeft: '2%',
+        color: colors.heading,
+        fontFamily: fonts.text
     },
 
     boxImageVolume: {
-        
+        width: '100%',
+        alignItems: 'center'
     },
 
     image: {
-
+        margin: '3%',
     },
 
     text: {
+        paddingTop: '1%'
+    },
 
-    }
+    boxButton: {
+        width: '100%',
+        paddingHorizontal: '20%',
+    },
 
   
 })

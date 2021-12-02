@@ -42,7 +42,6 @@ import { D_Confirmed } from '../pages/Forms/Domesticos/D_Confirmed';
 // { Coletores }
 
 import { Mod_C_Feed } from '../pages/Modulos/Coletores/Mod_C_Feed';
-import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
 import { Mod_C_Categoria } from '../pages/Modulos/Coletores/Mod_C_Categoria';
 import { Mod_C_Tabela_Preco } from '../pages/Modulos/Coletores/Mod_C_Tabela_Preco';
 import { Mod_C_TelaPerfil } from '../pages/Modulos/Coletores/Mod_C_TelaPerfil';
@@ -80,6 +79,10 @@ import { Mod_D_Ajuda} from '../pages/Modulos/Domesticos/Mod_D_Ajuda';
 // **********
 
 
+import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
+import Mod_C_Mapa from '../pages/Modulos/Coletores/Mod_C_Mapa';
+import { Mod_C_Coleta } from '../pages/Modulos/Coletores/Mod_C_Coleta';
+import Mod_C_Ponto_Venda from '../pages/Modulos/Coletores/Mod_C_Ponto_Venda';
 
 const stackRoutes = createStackNavigator();
 
@@ -233,6 +236,16 @@ const AppRoutes: React.FC = () => (
         />
 
         <stackRoutes.Screen 
+            name="Mod_C_Mapa"
+            component={Mod_C_Mapa}
+        />
+
+        <stackRoutes.Screen 
+            name="Mod_C_Ponto_Venda"
+            component={Mod_C_Ponto_Venda}
+        />
+
+        <stackRoutes.Screen 
             name="Mod_C_Categoria"
             component={Mod_C_Categoria}
         />
@@ -262,6 +275,10 @@ const AppRoutes: React.FC = () => (
             component={Mod_C_Ajuda}
         />
 
+        <stackRoutes.Screen
+            name="Mod_C_Coleta"
+            component={Mod_C_Coleta}
+        />
 
         {/* Módulos - Cooperativa */}
 

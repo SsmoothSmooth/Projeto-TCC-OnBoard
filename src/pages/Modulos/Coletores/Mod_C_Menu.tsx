@@ -17,17 +17,17 @@ import { NavBar } from '../../../components/NavBar';
 export function Mod_C_Menu() {
     const navigation = useNavigation();
 
-    // function touchMap() {
-    //     navigation.navigate('')
-    // }
+    function touchMap() {
+        navigation.navigate('Mod_C_Mapa')
+    }
 
     // function touchResult() {
     //     navigation.navigate('')
     // }
 
-    // function touchSell() {
-    //     navigation.navigate('')
-    // }
+    function touchSell() {
+        navigation.navigate('Mod_C_Ponto_Venda')
+    }
 
     function touchPreco() {
         navigation.navigate('Mod_C_Tabela_Preco')
@@ -62,7 +62,9 @@ export function Mod_C_Menu() {
                 <View style={styles.MenuButton}>
 
                     <TouchableOpacity
-                        activeOpacity={0.5}>
+                        activeOpacity={0.5}
+                        onPress = {touchMap}
+                    >
 
                         <Image
                             source={require('../../../assets/mapa.png')}
@@ -81,7 +83,9 @@ export function Mod_C_Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        activeOpacity={0.5}>
+                        activeOpacity={0.5}
+                        onPress = {touchSell}
+                    >
 
                         <Image
                             source={require('../../../assets/pontosdevenda.png')}
