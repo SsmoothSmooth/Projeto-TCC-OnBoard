@@ -48,14 +48,21 @@ export function Tela_Contato_Cooperativa() {
                         title="Contatos" />
                 </View>
 
-                <View>
+                <View style={styles.pesquisa}>
                     <TextInput
                         style={styles.input}
                         placeholder="Digite um nome" />
 
-                    <Image
-                        source={require('../../assets/lupa.jpg')}
-                        style={styles.ImageIconStyle1} />
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                    >
+
+                        <Image
+                            source={require('../../assets/lupa.png')}
+                            style={styles.ImageIconStyle1} />
+
+                    </TouchableOpacity>
+
 
                 </View>
 
@@ -69,8 +76,8 @@ export function Tela_Contato_Cooperativa() {
                         >
 
                             <Image
-                                source={require('../../assets/juliamorato.png')}
-                                style={styles.ImageIconStyle1} />
+                                source={require('../../assets/juliamorato.jpg')}
+                                style={styles.ImageIconStyle2} />
 
                         </TouchableOpacity>
 
@@ -90,7 +97,7 @@ export function Tela_Contato_Cooperativa() {
 
                             <Image
                                 source={require('../../assets/joão-paulo.jpg')}
-                                style={styles.ImageIconStyle2} />
+                                style={styles.ImageIconStyle3} />
 
                         </TouchableOpacity>
 
@@ -145,16 +152,33 @@ const styles = StyleSheet.create({
         paddingVertical: '10%'
     },
 
+    pesquisa: {
+        flexDirection: 'row'
+    },
+
     input: {
-        width: '100%',
+        width: '70%',
         borderBottomWidth: 1,
         borderColor: '#52665A',
         color: colors.heading,
-        fontSize: 25,
+        fontSize: 20,
         textAlign: 'center',
         justifyContent: 'center',
         marginBottom: 10,
     },
+
+    ImageIconStyle1: {
+        backgroundColor: colors.silver,
+        padding: 10,
+        paddingHorizontal: 10,
+        marginVertical: 10,
+        borderRadius: 50,
+        height: 50,
+        width: 50,
+        justifyContent: 'center',
+        resizeMode: 'contain'
+    },
+
 
     scrollview: {
 
@@ -170,8 +194,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
 
-
-    ImageIconStyle1: {
+    ImageIconStyle2: {
         padding: 20,
         paddingHorizontal: 20,
         marginVertical: 30,
@@ -182,7 +205,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start'
     },
 
-    ImageIconStyle2: {
+    ImageIconStyle3: {
         padding: 20,
         paddingHorizontal: 20,
         marginVertical: 30,

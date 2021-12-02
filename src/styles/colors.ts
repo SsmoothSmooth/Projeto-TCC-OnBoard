@@ -5,6 +5,7 @@ export default {
     gray: '#CCE2E4',
     heading: '#52665A',
     grey: '#DADADA',
+    silver: '#C4C4C4',
     green_solid: '#D9FCAC',
     gray_background: '#CFCFCF',
     black: '#000000',
