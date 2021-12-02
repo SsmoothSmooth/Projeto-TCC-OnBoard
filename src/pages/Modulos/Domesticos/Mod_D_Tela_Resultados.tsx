@@ -40,7 +40,7 @@ export function Mod_D_Tela_Resultados() {
                 <View>
                     <Text style={styles.subtitle}> Seus Resultados </Text>
                     <View style={styles.DescarteImagem}>
-                        <Image source={require('../../assets/Resultado.png')} />
+                        <Image source={require('../../../assets/Resultado.png')} />
                     </View>
                     <Text style={styles.subtitle}> Seus últimos descartes </Text>
                 </View>
@@ -51,7 +51,7 @@ export function Mod_D_Tela_Resultados() {
                         activeOpacity={0.5}
                     >
                         <Image
-                            source={require('../../assets/PapelResultados.png')}
+                            source={require('../../../assets/PapelResultados.png')}
                             style={styles.ImageIconStyle1}
                         />
 
@@ -62,7 +62,7 @@ export function Mod_D_Tela_Resultados() {
                     >
 
                         <Image
-                            source={require('../../assets/VidroResultados.png')}
+                            source={require('../../../assets/VidroResultados.png')}
                             style={styles.ImageIconStyle2}
                         />
 

@@ -38,7 +38,7 @@ export function Mod_D_Tela_Descarte() {
 
                 <View style={styles.backgroundColors}>
                     <View style={styles.DescarteImagem}>
-                        <Image source={require('../../assets/DescartePapel.png')} />
+                        <Image source={require('../../../assets/DescartePapel.png')} />
                     </View>
                 </View>
 
@@ -48,7 +48,7 @@ export function Mod_D_Tela_Descarte() {
                     </Text>
 
                     <View style={styles.DescarteImagem}>
-                        <Image source={require('../../assets/Volume.png')} />
+                        <Image source={require('../../../assets/Volume.png')} />
                         <Text> Volume</Text>
                         <Text> {'\n'}</Text>
                         <Text> Pequena (até 2Kg) </Text>

@@ -56,7 +56,7 @@ export function Mod_D_Tela_Papel() {
                 </View>
 
                 <View style={styles.DescarteImagem}>
-                    <Image source={require('../../assets/DescartePapel.png')} />
+                    <Image source={require('../../../assets/DescartePapel.png')} />
                 </View>
 
                 <View>

@@ -58,7 +58,7 @@ export function Mod_Coop_Tela_Contato() {
                     >
 
                         <Image
-                            source={require('../../assets/lupa.png')}
+                            source={require('../../../assets/lupa.png')}
                             style={styles.ImageIconStyle1} />
 
                     </TouchableOpacity>
@@ -76,7 +76,7 @@ export function Mod_Coop_Tela_Contato() {
                         >
 
                             <Image
-                                source={require('../../assets/juliamorato.jpg')}
+                                source={require('../../../assets/juliamorato.jpg')}
                                 style={styles.ImageIconStyle2} />
 
                         </TouchableOpacity>
@@ -96,7 +96,7 @@ export function Mod_Coop_Tela_Contato() {
                         >
 
                             <Image
-                                source={require('../../assets/joão-paulo.jpg')}
+                                source={require('../../../assets/joão-paulo.jpg')}
                                 style={styles.ImageIconStyle3} />
 
                         </TouchableOpacity>
