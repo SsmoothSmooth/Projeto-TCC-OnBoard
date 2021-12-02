@@ -6,6 +6,7 @@ import {
     Image,
     TouchableOpacity,
     Text,
+    TextInput
 } from 'react-native';
 
 import colors from '../../styles/colors';
@@ -47,6 +48,18 @@ export function Tela_Contato_Cooperativa() {
                         title="Contatos" />
                 </View>
 
+                <View>
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Digite um nome" />
+
+                    <Image
+                        source={require('../../assets/lupa.jpg')}
+                        style={styles.ImageIconStyle1} />
+
+                </View>
+
+
                 <ScrollView style={styles.scrollview}>
                     <View style={styles.MenuButton}>
 
@@ -56,7 +69,7 @@ export function Tela_Contato_Cooperativa() {
                         >
 
                             <Image
-                                source={require('../../assets/juliamorato.jpg')}
+                                source={require('../../assets/juliamorato.png')}
                                 style={styles.ImageIconStyle1} />
 
                         </TouchableOpacity>
@@ -132,6 +145,16 @@ const styles = StyleSheet.create({
         paddingVertical: '10%'
     },
 
+    input: {
+        width: '100%',
+        borderBottomWidth: 1,
+        borderColor: '#52665A',
+        color: colors.heading,
+        fontSize: 25,
+        textAlign: 'center',
+        justifyContent: 'center',
+        marginBottom: 10,
+    },
 
     scrollview: {
 

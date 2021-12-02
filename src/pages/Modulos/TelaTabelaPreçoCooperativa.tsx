@@ -41,7 +41,7 @@ export function TelaTabelaPreçoCooperativa() {
 
                 <View>
                     <Text style={styles.subtitle}>
-                        {""}Reciclável {" "}Peso{" "} Valor
+                        Reciclável{" "} Peso {" "} Valor
                     </Text>
                 </View>
 
