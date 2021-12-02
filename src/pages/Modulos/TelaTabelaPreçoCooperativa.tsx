@@ -13,6 +13,7 @@ import fonts from '../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
 import { Button } from '../../components/Button';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { ModHeader } from '../../components/ModHeader';
 
 
 
@@ -33,65 +34,51 @@ export function TelaTabelaPreçoCooperativa() {
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
-                    <Text style={styles.title}>
-                        Tabela de Preço
-                    </Text>
+                    <ModHeader
+                        title="Resultados"
+                    />
                 </View>
 
                 <View>
                     <Text style={styles.subtitle}>
-                        Reciclável  Peso  Valor
+                        {""}Reciclável {" "}Peso{" "} Valor
                     </Text>
                 </View>
 
+
+
                 <View style={styles.ButtonMenu}>
+                    <Button
+                        style={styles.ButtonPapel}
+                        title="Papel     1KG     $0.50"
+                        onPress={touchInit}
+                    />
 
-                    <View >
-                        <Button
-                            style={styles.Button}
-                            title="Papel  1KG  R$0.50"
-                            onPress={touchInit}
-                        />
-                    </View>
+                    <Button
+                        style={styles.ButtonMetal}
+                        title="Metal     5Kg     R$3.00"
+                        onPress={touchInit}
+                    />
 
-                    <View>
-                        <Button
-                            style={styles.Button}
-                            title="Metal  5Kg  R$3.00"
-                            onPress={touchInit}
-                        />
-                    </View>
+                    <Button
+                        style={styles.ButtonVidro}
+                        title="Vidro     3KG     R$2.00"
+                        onPress={touchInit}
+                    />
 
+                    <Button
+                        style={styles.ButtonPlastico}
+                        title="Plástico   10KG  R$10.00"
+                        onPress={touchInit}
+                    />
 
-                    <View>
-                        <Button
-                            style={styles.Button}
-                            title="Vidro  3KG  R$2.00"
-                            onPress={touchInit}
-                        />
-                    </View>
-
-
-                    <View>
-                        <Button
-                            style={styles.Button}
-                            title="Plástico  10KG  R$10.00"
-                            onPress={touchInit}
-                        />
-                    </View>
-
-
-                    <View>
-                        <Button
-                            style={styles.Button}
-                            title="Adicionar"
-                            onPress={touchInit}
-                        />
-                    </View>
+                    <Button
+                        style={styles.ButtonAdicionar}
+                        title="Adicionar"
+                        onPress={touchInit}
+                    />
 
                 </View>
-
-
 
                 <View style={styles.boxBackButton}>
 
@@ -122,36 +109,23 @@ const styles = StyleSheet.create({
 
     wrapper: {
         flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        alignItems: 'center',
         justifyContent: 'center',
-        margin: 20,
-        marginTop: '-5%',
-        marginHorizontal: 20,
+        backgroundColor: 'white',
+        flexWrap: 'wrap',
+        flexDirection: 'row'
     },
 
     boxHeader: {
         backgroundColor: colors.gray,
-        width: '140%',
+        width: '100%',
         justifyContent: 'center',
-        paddingTop: 10,
-        marginTop: 20,
-        paddingVertical: 25,
-        alignItems: 'center'
-    },
-
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 38,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 34
+        paddingTop: '5%',
+        paddingVertical: '5%'
     },
 
     subtitle: {
-        alignContent: 'center',
+        justifyContent: 'space-around',
         fontWeight: 'bold',
         fontSize: 20,
         color: colors.heading,
@@ -162,25 +136,63 @@ const styles = StyleSheet.create({
 
     ButtonMenu: {
         height: '60%',
-        width: '100%',
+        width: '90%',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20,
-        marginHorizontal: 15,
-        paddingVertical: 20
-
+        marginTop: '2%',
+        paddingVertical: 20,
+        marginHorizontal: '30%',
     },
 
-    Button: {
+    ButtonPapel: {
         backgroundColor: colors.gray,
         height: 45,
         width: '100%',
         borderRadius: 60,
-        paddingHorizontal: 85,
+        paddingHorizontal: 70,
         justifyContent: 'center',
         marginVertical: 15,
-        paddingTop: 10,
-        flexWrap: 'wrap'
+    },
+
+    ButtonMetal: {
+        backgroundColor: colors.gray,
+        height: 45,
+        width: '100%',
+        borderRadius: 60,
+        paddingHorizontal: 70,
+        justifyContent: 'center',
+        marginVertical: 15,
+    },
+
+    ButtonVidro: {
+        backgroundColor: colors.gray,
+        height: 45,
+        width: '100%',
+        borderRadius: 60,
+        paddingHorizontal: 70,
+        justifyContent: 'center',
+        marginVertical: 15,
+    },
+
+    ButtonPlastico: {
+        backgroundColor: colors.gray,
+        height: 45,
+        width: '100%',
+        borderRadius: 60,
+        paddingHorizontal: 70,
+        justifyContent: 'center',
+        textAlign: 'center',
+        marginVertical: 15,
+    },
+
+    ButtonAdicionar: {
+        backgroundColor: colors.gray,
+        height: 45,
+        width: '65%',
+        borderRadius: 60,
+        paddingHorizontal: 70,
+        justifyContent: 'center',
+        marginVertical: 20,
     },
 
 

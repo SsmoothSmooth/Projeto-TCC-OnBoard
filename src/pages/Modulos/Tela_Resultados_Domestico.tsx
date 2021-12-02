@@ -51,7 +51,7 @@ export function Tela_Resultados_Domestico() {
                         activeOpacity={0.5}
                     >
                         <Image
-                            source={require('../../../assets/Descarte.png')}
+                            source={require('../../assets/PapelResultados.png')}
                             style={styles.ImageIconStyle1}
                         />
 
@@ -62,7 +62,7 @@ export function Tela_Resultados_Domestico() {
                     >
 
                         <Image
-                            source={require('../../../assets/SacolaLixo.png')}
+                            source={require('../../assets/VidroResultados.png')}
                             style={styles.ImageIconStyle2}
                         />
 
@@ -135,7 +135,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: colors.heading,
         fontFamily: fonts.heading,
-        paddingRight: '50%'
+        paddingRight: '50%',
+
     },
 
     MenuButton: {
@@ -144,8 +145,9 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 50,
+        margin: 20,
         marginHorizontal: 40,
+        paddingBottom: 40
     },
 
     ImageIconStyle1: {
@@ -169,14 +171,14 @@ const styles = StyleSheet.create({
 
     boxButton: {
         flex: 1,
-        paddingVertical: '10%',
-        marginTop: '70%',
+        paddingVertical: '8%',
         justifyContent: 'space-between',
         paddingHorizontal: '10%',
         width: '100%',
         backgroundColor: colors.gray,
         alignItems: 'flex-end',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginTop: '25%'
     },
 
     buttonInicio: {
