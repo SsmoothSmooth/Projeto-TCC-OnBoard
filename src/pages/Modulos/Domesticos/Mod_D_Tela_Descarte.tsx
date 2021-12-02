@@ -1,40 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     SafeAreaView,
     StyleSheet,
     View,
     Image,
-    TouchableOpacity,
     Text,
-    TextInput,
 } from 'react-native';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
-import fonts from '../../styles/fonts';
+import { ModHeader } from '../../../components/ModHeader';
+import fonts from '../../../styles/fonts';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { Button } from '../../components/Button';
+import { Button } from '../../../components/Button';
 
-
-export function TelaPapelDomestico() {
+export function Mod_D_Tela_Descarte() {
     const navigation = useNavigation();
-
-
-    const [isFilled, setIsFilled] = useState(false);
-    const [name, setName] = useState<string>();
-    const [name2, setName2] = useState<string>();
-
-    function handleInputChange(value: string) {
-        setIsFilled(!!value);
-        setName(value);
-    }
-
-    function handleInputChange2(value2: string) {
-        setIsFilled(!!value2);
-        setName2(value2);
-
-    }
 
     function touchSalvar() {
         navigation.navigate('')
@@ -45,73 +26,44 @@ export function TelaPapelDomestico() {
     }
 
     return (
-
         <SafeAreaView style={styles.container}>
             <View style={styles.wrapper}>
 
                 <View style={styles.boxHeader}>
                     <ModHeader
-                        title="Papel"
+                        title="Descarte"
                     />
+
                 </View>
 
-                <View style={styles.DescarteImagem}>
-                    <Image source={require('../../assets/DescartePapel.png')} />
+                <View style={styles.backgroundColors}>
+                    <View style={styles.DescarteImagem}>
+                        <Image source={require('../../assets/DescartePapel.png')} />
+                    </View>
                 </View>
 
                 <View>
-                    <Text> Pequena (até 2Kg) </Text>
-                    <Text> Média (De 2Kg até 5Kg) </Text>
-                    <Text> Grande (De 5Kg até 10Kg) {'\n'} </Text>
-                </View>
-
-                <Text style={styles.title}> Gerenciamento de Valores </Text>
-
-                <View style={styles.boxInput}>
-
                     <Text style={styles.subtitle}>
-                        Peso: {'\n'}
-
+                        Papel {'\n'}
                     </Text>
 
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={handleInputChange}
-                    />
-
-                    <Text style={styles.subtitle}>
-                        Valor: {'\n'}
-
-                    </Text>
-
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={handleInputChange2}
-                    />
+                    <View style={styles.DescarteImagem}>
+                        <Image source={require('../../assets/Volume.png')} />
+                        <Text> Volume</Text>
+                        <Text> {'\n'}</Text>
+                        <Text> Pequena (até 2Kg) </Text>
+                        <Text> Média (De 2Kg até 5Kg) </Text>
+                        <Text> Grande (De 5Kg até 10Kg) {'\n'} </Text>
+                    </View>
 
                 </View>
 
                 <View style={styles.ButtonMenu}>
                     <Button
                         style={styles.Button1}
-                        title="Salvar"
+                        title="Confirmar"
                         onPress={touchSalvar}
                     />
-                </View>
-
-                <View style={styles.boxBackButton}>
-
-                    <TouchableOpacity
-                        style={styles.backButton}
-                        activeOpacity={0.5}
-                        onPress={touchBack}
-                    >
-                        <FontAwesome5
-                            name="chevron-left"
-                            style={styles.backButtonIcon}
-                        />
-                    </TouchableOpacity>
-
                 </View>
 
             </View>
@@ -142,6 +94,11 @@ const styles = StyleSheet.create({
         paddingVertical: '5%'
     },
 
+    backgroundColors: {
+        backgroundColor: colors.blue_linear,
+        width: '100%'
+    },
+
     DescarteImagem: {
         alignItems: 'center',
         textAlign: 'center',
@@ -150,10 +107,12 @@ const styles = StyleSheet.create({
         marginVertical: '5%',
     },
 
-    title: {
-        fontSize: 17,
-        textAlign: 'center',
-        fontFamily: fonts.heading
+    subtitle: {
+        textAlign: 'left',
+        fontSize: 20,
+        color: colors.heading,
+        fontFamily: fonts.heading,
+        paddingRight: '70%'
     },
 
     boxInput: {
@@ -164,12 +123,6 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap'
     },
 
-    subtitle: {
-        textAlign: 'left',
-        fontSize: 15,
-        color: colors.heading,
-        fontFamily: fonts.text
-    },
 
     input: {
         width: '100%',
@@ -229,4 +182,3 @@ const styles = StyleSheet.create({
     },
 
 })
-

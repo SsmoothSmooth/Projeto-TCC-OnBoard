@@ -9,15 +9,15 @@ import {
     TextInput
 } from 'react-native';
 
-import colors from '../../styles/colors';
+import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../components/ModHeader';
-import { NavBar } from '../../components/NavBar';
-import fonts from '../../styles/fonts';
+import { ModHeader } from '../../../components/ModHeader';
+import { NavBar } from '../../../components/NavBar';
+import fonts from '../../../styles/fonts';
 import { ScrollView } from 'react-native-gesture-handler';
 
 
-export function Tela_Contato_Cooperativa() {
+export function Mod_Coop_Tela_Contato() {
 
     const navigation = useNavigation();
 

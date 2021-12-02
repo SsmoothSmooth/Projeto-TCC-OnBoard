@@ -8,16 +8,15 @@ import {
 } from 'react-native';
 
 
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../components/Button';
+import { Button } from '../../../components/Button';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { ModHeader } from '../../components/ModHeader';
+import { ModHeader } from '../../../components/ModHeader';
 
 
-
-export function TelaTabelaPreçoCooperativa() {
+export function Mod_Coop_TabelaPreço() {
     const navigation = useNavigation();
 
     function touchInit() {

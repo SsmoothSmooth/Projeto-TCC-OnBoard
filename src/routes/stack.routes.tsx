@@ -66,11 +66,11 @@ import { Mod_D_Categoria } from '../pages/Modulos/Domesticos/Mod_D_Categoria';
 import { Mod_D_Sacola } from '../pages/Modulos/Domesticos/Mod_D_Sacola';
 import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Categoria';
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
-import { TelaTabelaPreçoCooperativa } from '../pages/Modulos/TelaTabelaPreçoCooperativa';
-import { Tela_Contato_Cooperativa } from '../pages/Modulos/Tela_Contato_Cooperativa';
-import { TelaPapelDomestico } from '../pages/Modulos/TelaPapelDomestico';
-import { TelaDescarteDomestico } from '../pages/Modulos/TelaDescarteDomestico';
-import { Tela_Resultados_Domestico } from '../pages/Modulos/Tela_Resultados_Domestico';
+import { Mod_Coop_TabelaPreço } from '../pages/Modulos/Cooperativas/Mod_Coop_TabelaPreço';
+import { Mod_Coop_Tela_Contato } from '../pages/Modulos/Cooperativas/Mod_Coop_Tela_Contato';
+import { Mod_D_Tela_Papel } from '../pages/Modulos/Domesticos/Mod_D_Tela_Papel';
+import { Mod_D_Tela_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Tela_Descarte';
+import { Mod_D_Tela_Resultados } from '../pages/Modulos/Domesticos/Mod_D_Tela_Resultados';
 
 
 
@@ -268,6 +268,19 @@ const AppRoutes: React.FC = () => (
             component={Mod_Coop_Tipo_Material}
         />
 
+        <stackRoutes.Screen
+            name="Mod_Coop_TabelaPreço"
+            component={Mod_Coop_TabelaPreço}
+
+        />
+
+
+        <stackRoutes.Screen
+            name="Mod_Coop_Tela_Contato"
+            component={Mod_Coop_Tela_Contato}
+
+        />
+
 
         {/* Módulos - Dómesticos */}
 
@@ -301,39 +314,26 @@ const AppRoutes: React.FC = () => (
             component={Mod_D_Manual_Guia}
         />
 
+        <stackRoutes.Screen
+            name="Mod_D_Tela_Papel"
+            component={Mod_D_Tela_Papel}
+
+        />
+
+
+        <stackRoutes.Screen
+            name="Mod_D_Tela_Descarte"
+            component={Mod_D_Tela_Descarte}
+
+        />
+
+        <stackRoutes.Screen
+            name="Mod_D_Tela_Resultados"
+            component={Mod_D_Tela_Resultados}
+
+        />
+
         {/*** End MÓDULO ***/}
-
-        <stackRoutes.Screen
-            name="TelaTabelaPreçoCooperativa"
-            component={TelaTabelaPreçoCooperativa}
-
-        />
-
-
-        <stackRoutes.Screen
-            name="Tela_Contato_Cooperativa"
-            component={Tela_Contato_Cooperativa}
-
-        />
-
-        <stackRoutes.Screen
-            name="TelaPapelDomestico"
-            component={TelaPapelDomestico}
-
-        />
-
-
-        <stackRoutes.Screen
-            name="TelaDescarteDomestico"
-            component={TelaDescarteDomestico}
-
-        />
-
-        <stackRoutes.Screen
-            name="Tela_Resultados_Domestico"
-            component={Tela_Resultados_Domestico}
-
-        />
 
     </stackRoutes.Navigator>
 )
