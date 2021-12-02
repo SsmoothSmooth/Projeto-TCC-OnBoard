@@ -21,9 +21,9 @@ export function Mod_C_Menu() {
         navigation.navigate('Mod_C_Mapa')
     }
 
-    // function touchResult() {
-    //     navigation.navigate('')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_C_TelaPerfil')
+    }
 
     function touchSell() {
         navigation.navigate('Mod_C_Ponto_Venda')
@@ -124,6 +124,8 @@ export function Mod_C_Menu() {
                     <NavBar
                         style={styles.button}
                         title="Perfil"
+                        onPress = {touchMenu}
+
                     />
 
                 </View>

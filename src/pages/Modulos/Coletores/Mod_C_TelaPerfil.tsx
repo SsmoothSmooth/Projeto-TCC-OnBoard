@@ -1,5 +1,5 @@
 import React from 'react';
-//import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/core';
 import {
     View, 
     Text, 
@@ -14,23 +14,37 @@ import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 
 export function Mod_C_TelaPerfil(){
-    // const navegation = useNavigation();
+    const navigation = useNavigation();
 
     // function touchAlteraSenha(){
-    //     navegation.navigate('AlterarSenha')
+    //     navigation.navigate('AlterarSenha')
     // }
 
     // function touchConfigurações(){
-    //     navegation.navigate('Configurações')
+    //     navigation.navigate('Configurações')
     // }
 
     // function touchAjuda(){
-    //     navegation.navigate('Ajuda')
+    //     navigation.navigate('Ajuda')
     // }
 
     // function touchSair(){
-    //     navegation.navigate('Login')
+    //     navigation.navigate('Login')
     // }
+
+    // Footer
+
+    function touchInicio() {
+        navigation.navigate('Mod_C_Feed')
+    }
+
+    function touchMenu() {
+        navigation.navigate('Mod_C_Menu')
+    }
+
+    function touchPerfil() {
+        navigation.navigate('Mod_C_TelaPerfil')
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -70,16 +84,21 @@ export function Mod_C_TelaPerfil(){
                     <NavBar
                         style={styles.dbar}
                         title="Inicio"
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.dbar}
                         title="Menu"
+                        onPress={touchMenu}
+
                     />
 
                     <NavBar
                         style={styles.dbar}
                         title="Perfil"
+                        onPress={touchPerfil}
+
                     />
                 </View>
 

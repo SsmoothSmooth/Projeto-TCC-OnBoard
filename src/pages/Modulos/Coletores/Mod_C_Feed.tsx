@@ -20,9 +20,9 @@ export function Mod_C_Feed(){
         navigation.navigate('Mod_C_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_C_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_C_TelaPerfil')
+    }
 
     return (
 
@@ -90,6 +90,8 @@ export function Mod_C_Feed(){
                     <NavBar
                         style={styles.button}
                         title="Perfil"
+                        onPress= {touchPerfil}
+
                     />
                 </View>
 
