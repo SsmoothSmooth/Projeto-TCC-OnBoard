@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Welcome } from '../pages/Begin/Welcome';
 import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
 import { ModalityOptions } from '../pages/Begin/ModalityOptions';
-import { Login } from '../pages/Begin/Login';
+import { Login } from '../pages/Begin/Login'; 
 
 //  Import dos formularios
 
