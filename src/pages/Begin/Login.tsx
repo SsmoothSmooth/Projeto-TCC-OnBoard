@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -7,6 +7,10 @@ import {
     TouchableOpacity,
     TextInput,
 } from 'react-native';
+
+// import Authentication
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../firebase/firebase_Login';
 
 import { Button } from '../../components/Button'
 import colors from '../../styles/colors';
@@ -19,12 +23,42 @@ import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 export function Login() {
     const navigation = useNavigation();
 
+    // Pegando email e senha para autenticar usuário
+
+    const [loginEmail, setLoginEmail] = useState ("");
+    const [loginPassword, setLoginPassword] = useState ("");
+
+
+
+    // navegando
+    function touchNext() {
+        navigation.navigate('ModalityOptions')
+    }
 
     function touchBack() {
         navigation.navigate('ConfirmAccess')
     }
 
-    return (
+    // Login
+
+    function login (){
+
+        signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+            .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            // ...
+            alert('Logado com sucesso ! ');
+            touchNext();
+        })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert("Email não existe")
+        });
+    }
+
+    return(
         <SafeAreaView style={styles.container}>
 
             <View style={styles.wrapper}>
@@ -36,24 +70,27 @@ export function Login() {
 
                 </View>
 
-                <View style={styles.boxInput}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="digite um usuário"
-                    />
+            <View style={styles.boxInput}>
+                <TextInput
+                    style={styles.input}
+                    placeholder="digite um usuário"
+                    onChangeText={email => setLoginEmail(email)}
+                        
+                />
 
-                    <TextInput
-                        style={styles.input}
-                        placeholder="digite uma senha"
-                        secureTextEntry
-                    />
-                </View>
+                <TextInput
+                    style={styles.input}
+                    placeholder="digite uma senha"
+                    secureTextEntry
+                    onChangeText={pwd => setLoginPassword(pwd)}
+                />
+            </View>
 
-                <View style={styles.boxButton}>
-                    <Button
-                        title="Confirmar"
-                    // onPress={touchLogin}
-                    />
+            <View style={styles.boxButton}>
+                <Button 
+                    title="Confirmar"
+                    onPress={login}
+                />
 
                 </View>
 
