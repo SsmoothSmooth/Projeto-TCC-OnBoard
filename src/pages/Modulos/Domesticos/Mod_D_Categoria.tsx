@@ -16,20 +16,20 @@ import { NavBar } from '../../../components/NavBar';
 export function Mod_D_Categoria() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('')
+    function touchPapel() {
+        navigation.navigate('Mod_D_Descarte')
     }
 
-    function touchInit2() {
-        navigation.navigate('')
+    function touchMetal() {
+        navigation.navigate('Mod_D_Descarte')
     }
 
-    function touchInit3() {
-        navigation.navigate('')
+    function touchVidro() {
+        navigation.navigate('Mod_D_Descarte')
     }
 
-    function touchInit4() {
-        navigation.navigate('')
+    function touchPlastico() {
+        navigation.navigate('Mod_D_Descarte')
     }
 
      // Footer
@@ -60,14 +60,20 @@ export function Mod_D_Categoria() {
 
                 <View style={styles.MenuButton}>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity 
+                        activeOpacity={0.5}
+                        onPress={touchPapel}
+                    >
                         <Image
                             source={require('../../../assets/PapelDomestico.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity 
+                        activeOpacity={0.5}
+                        onPress={touchMetal}
+                    >
 
                         <Image
                             source={require('../../../assets/MetalDomestico.png')}
@@ -76,7 +82,10 @@ export function Mod_D_Categoria() {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity 
+                        activeOpacity={0.5}
+                        onPress={touchVidro}
+                    >
                         <Image
                             source={require('../../../assets/VidroDomestico.png')}
                             style={styles.ImageIconStyle3}
@@ -87,7 +96,7 @@ export function Mod_D_Categoria() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchInit4}
+                        onPress={touchPlastico}
                     >
                         <Image
                             source={require('../../../assets/PlasticoDomestico.png')}

@@ -31,9 +31,9 @@ export function Mod_C_Tabela_Preco() {
         navigation.navigate('Mod_C_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_C_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_C_TelaPerfil')
+    }
 
     return (
 
@@ -99,6 +99,7 @@ export function Mod_C_Tabela_Preco() {
                     <NavBar
                         style={styles.buttonPerfil}
                         title="Perfil"
+                        onPress= {touchPerfil}
                     />
 
                 </View>
