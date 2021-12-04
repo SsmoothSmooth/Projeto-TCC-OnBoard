@@ -32,7 +32,7 @@ export function Login() {
 
     // navegando
     function touchNext() {
-        navigation.navigate('ModalityOptions')
+        navigation.navigate('Mod_C_Feed')
     }
 
     function touchBack() {

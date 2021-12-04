@@ -1,6 +1,6 @@
 import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
-//import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import {
     View, 
     Text, 
@@ -15,15 +15,15 @@ import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 
 export function Mod_D_AlterarSenha(){
-    // const navegation = useNavigation();
+     const navegation = useNavigation();
 
-    //  function touchAlteraSenha(){
-    //      navegation.navigate('AlterarSenha')
-    //  }
+    function touchConfirmar(){
+        navegation.navigate('Mod_D_TelaPerfil')
+    }
 
-    //  function touchConfigurações(){
-    //      navegation.navigate('Configurações')
-    //  }
+    function touchVoltar(){
+        navegation.navigate('Mod_D_TelaPerfil')
+    }
 
     return (
         <SafeAreaView style={styles.container}>

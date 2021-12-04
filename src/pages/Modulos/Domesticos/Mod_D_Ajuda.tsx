@@ -1,6 +1,6 @@
 import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
-//import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import {
     View, 
     Text, 
@@ -15,23 +15,12 @@ import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 
 export function Mod_D_Ajuda(){
-    // const navegation = useNavigation();
+     const navegation = useNavigation();
 
-    // function touchAlteraSenha(){
-    //     navegation.navigate('AlterarSenha')
-    // }
+    function touchVoltar(){
+        navegation.navigate('Mod_D_TelaPerfil')
+    }
 
-    // function touchConfigurações(){
-    //     navegation.navigate('Configurações')
-    // }
-
-    // function touchAjuda(){
-    //     navegation.navigate('Ajuda')
-    // }
-
-    // function touchSair(){
-    //     navegation.navigate('Login')
-    // }
 
     return (
         <SafeAreaView style={styles.container}>

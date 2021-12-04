@@ -16,21 +16,21 @@ import colors from '../../../styles/colors';
 export function Mod_C_TelaPerfil(){
     const navigation = useNavigation();
 
-    // function touchAlteraSenha(){
-    //     navigation.navigate('AlterarSenha')
-    // }
+    function touchAlteraSenha(){
+        navigation.navigate('Mod_C_AlterarSenha')
+    }
 
-    // function touchConfigurações(){
-    //     navigation.navigate('Configurações')
-    // }
+    function touchConfigurações(){
+        navigation.navigate('Mod_C_Configuracoes')
+    }
 
-    // function touchAjuda(){
-    //     navigation.navigate('Ajuda')
-    // }
+    function touchAjuda(){
+        navigation.navigate('Mod_C_Ajuda')
+    }
 
-    // function touchSair(){
-    //     navigation.navigate('Login')
-    // }
+    function touchSair(){
+        navigation.navigate('Login')
+    }
 
     // Footer
 
@@ -61,22 +61,26 @@ export function Mod_C_TelaPerfil(){
                     <Button
                         style={styles.button}
                         title="Alterar Senha" 
+                        onPress={touchAlteraSenha}
                     />
 
 
                     <Button
                         style={styles.button}
                         title="Configurações"
+                        onPress={touchConfigurações}
                     />
 
                     <Button
                         style={styles.button}
                         title="Ajuda"
+                        onPress={touchAjuda}
                     />
 
                     <Button
                         style={styles.button}
                         title="Sair"
+                        onPress={touchSair}
                     />
                 </View>
 
