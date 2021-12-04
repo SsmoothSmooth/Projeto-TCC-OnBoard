@@ -1,6 +1,6 @@
 import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
-//import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import {
     View, 
     Text, 
@@ -18,15 +18,15 @@ import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 
 export function Mod_Coop_Configuracoes(){
-    // const navegation = useNavigation();
+     const navegation = useNavigation();
 
-    //  function touchAlteraSenha(){
-    //      navegation.navigate('AlterarSenha')
-    //  }
+    function touchSalvar(){
+        navegation.navigate('Mod_Coop_Configuracoes')
+    }
 
-    //  function touchConfigurações(){
-    //      navegation.navigate('Configurações')
-    //  }
+    function touchVoltar(){
+        navegation.navigate('Mod_Coop_TelaPerfil')
+    }
 
     return (
         <SafeAreaView style={styles.container}>

@@ -1,5 +1,5 @@
 import React from 'react';
-//import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import {
     View, 
     Text, 
@@ -14,23 +14,31 @@ import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 
 export function Mod_Coop_TelaPerfil(){
-    // const navegation = useNavigation();
+    const navegation = useNavigation();
 
-    // function touchAlteraSenha(){
-    //     navegation.navigate('AlterarSenha')
-    // }
+    function touchAlteraSenha(){
+        navegation.navigate('Mod_Coop_AlterarSenha')
+    }
 
-    // function touchConfigurações(){
-    //     navegation.navigate('Configurações')
-    // }
+    function touchConfigurações(){
+        navegation.navigate('Mod_Coop_Configuracoes')
+    }
 
-    // function touchAjuda(){
-    //     navegation.navigate('Ajuda')
-    // }
+    function touchAjuda(){
+        navegation.navigate('Mod_Coop_Ajuda')
+    }
 
-    // function touchSair(){
-    //     navegation.navigate('Login')
-    // }
+    function touchSair(){
+        navegation.navigate('Login')
+    }
+
+    function touchInicio(){
+       navegation.navigate('Mod_Coop_Feed')
+   }
+
+   function touchMenu(){
+       navegation.navigate('Mod_Coop_Menu')
+   }
 
     return (
         <SafeAreaView style={styles.container}>

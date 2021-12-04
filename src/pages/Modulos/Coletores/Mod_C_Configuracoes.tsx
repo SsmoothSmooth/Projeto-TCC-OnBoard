@@ -1,13 +1,14 @@
-import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
-//import { useNavigation } from '@react-navigation/native';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import {
     View, 
     Text, 
     SafeAreaView, 
     StyleSheet,
     TouchableOpacity,
-    TextInput
+    TextInput,
+    Alert
 } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { color } from 'react-native-reanimated';
@@ -17,16 +18,19 @@ import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 
+
 export function Mod_C_Configuracoes(){
-    // const navegation = useNavigation();
+     const navegation = useNavigation();
 
-    //  function touchAlteraSenha(){
-    //      navegation.navigate('AlterarSenha')
-    //  }
+     // Navegação
+      function touchSalvar(){
+          navegation.navigate('Mod_C_Configuracoes')
+      }
 
-    //  function touchConfigurações(){
-    //      navegation.navigate('Configurações')
-    //  }
+      function touchVoltar(){
+          navegation.navigate('Mod_C_TelaPerfil')
+      }
+
 
     return (
         <SafeAreaView style={styles.container}>
@@ -41,8 +45,8 @@ export function Mod_C_Configuracoes(){
 
                 <View style={styles.boxInformation}>
                     <View style={styles.Information}>
-                        <Text >Apelido:</Text>
-                        <Text >Zezinho</Text>
+                        <Text >Apelido: </Text>
+                        <Text >TEst</Text>
                         <Button style={styles.edit}
                             title="Editar"
                         />
@@ -72,12 +76,15 @@ export function Mod_C_Configuracoes(){
                 <View style={styles.boxButton}>
                     <Button style={styles.button}
                         title="Salvar"
+                        onPress={touchSalvar}
+                        
                     />
                 </View>
 
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
+                    onPress={touchVoltar}
                 >
 
                     <FontAwesome5

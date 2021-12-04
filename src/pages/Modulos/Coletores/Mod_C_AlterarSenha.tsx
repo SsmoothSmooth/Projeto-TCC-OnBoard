@@ -1,6 +1,6 @@
 import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
-//import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import {
     View, 
     Text, 
@@ -15,15 +15,15 @@ import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 
 export function Mod_C_AlterarSenha(){
-    // const navegation = useNavigation();
+     const navegation = useNavigation();
 
-    //  function touchAlteraSenha(){
-    //      navegation.navigate('AlterarSenha')
-    //  }
+      function touchConfirmar(){
+          navegation.navigate('Mod_C_TelaPerfil')
+      }
 
-    //  function touchConfigurações(){
-    //      navegation.navigate('Configurações')
-    //  }
+      function touchVoltar(){
+          navegation.navigate('Mod_C_TelaPerfil')
+      }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -60,12 +60,14 @@ export function Mod_C_AlterarSenha(){
                 <View style={styles.boxButton}>
                     <Button 
                         title="Confirmar"
+                        onPress={touchConfirmar}
                     />
                 </View>
 
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
+                    onPress={touchVoltar}
                 >
 
                     <FontAwesome5
