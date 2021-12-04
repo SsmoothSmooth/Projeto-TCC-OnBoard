@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -8,8 +8,9 @@ import { useNavigation } from '@react-navigation/core';
 import { ModHeader } from '../../../components/ModHeader';
 import { ScrollView } from 'react-native-gesture-handler';
 import { NavBar } from '../../../components/NavBar';
+import { Login } from '../../Begin/Login';
 
-export function Mod_C_Feed(){
+export function Mod_C_Feed({route}){
     const navigation = useNavigation();
     
     function touchInicio() {
@@ -23,6 +24,7 @@ export function Mod_C_Feed(){
     function touchPerfil() {
         navigation.navigate('Mod_C_TelaPerfil')
     }
+
 
     return (
 
@@ -40,9 +42,11 @@ export function Mod_C_Feed(){
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus vehicula libero.
                     </Text>
                     <Text>
-                        Sed faucibus mi in tincidunt tincidunt.
-                        Donec ac lacus vitae velit luctus auctor sit amet volutpat lectus.
-
+                        login: {route.params?.login}
+                    </Text>
+                    
+                    <Text>
+                        Senha: {route.params?.senha}
                     </Text>
 
                     <Text style={styles.text}>

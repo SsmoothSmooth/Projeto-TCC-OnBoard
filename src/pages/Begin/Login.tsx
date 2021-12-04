@@ -8,10 +8,6 @@ import {
     TextInput,
 } from 'react-native';
 
-// import Authentication
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../../firebase/firebase_Login';
-
 import { Button } from '../../components/Button'
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
@@ -29,34 +25,16 @@ export function Login() {
     const [loginPassword, setLoginPassword] = useState ("");
 
 
-
     // navegando
     function touchNext() {
-        navigation.navigate('Mod_C_Feed')
+        // criar logica para acessar colerto, domestico e coop
+        navigation.navigate('Mod_C_Feed', {login: loginEmail, senha: loginPassword})
     }
 
     function touchBack() {
         navigation.navigate('ConfirmAccess')
     }
 
-    // Login
-
-    function login (){
-
-        signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-            .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            // ...
-            alert('Logado com sucesso ! ');
-            touchNext();
-        })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert("Email não existe")
-        });
-    }
 
     return(
         <SafeAreaView style={styles.container}>
@@ -89,7 +67,8 @@ export function Login() {
             <View style={styles.boxButton}>
                 <Button 
                     title="Confirmar"
-                    onPress={login}
+                    onPress={touchNext}
+                   
                 />
 
                 </View>
