@@ -48,6 +48,7 @@ export function Mod_D_Manual_Categoria() {
                         style={styles.Button}
                         title="Papel"
                         onPress={touchInit}
+                        source={require()}
                     />
 
                     <Button
