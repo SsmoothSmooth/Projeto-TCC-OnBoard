@@ -46,15 +46,6 @@ export function Mod_C_Tabela_Preco() {
                     />
                 </View>
 
-
-                <View>
-
-                    <Text style={styles.subtitle}>
-                        Cooperativa
-                    </Text>
-
-                </View>
-
                 <View style={styles.BoxButton}>
 
                     <Button

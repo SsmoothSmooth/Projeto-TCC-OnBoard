@@ -60,12 +60,14 @@ export function Mod_C_AlterarSenha(){
                 <View style={styles.boxButton}>
                     <Button 
                         title="Confirmar"
+                        onPress={touchConfirmar}
                     />
                 </View>
 
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
+                    onPress={touchVoltar}
                 >
 
                     <FontAwesome5

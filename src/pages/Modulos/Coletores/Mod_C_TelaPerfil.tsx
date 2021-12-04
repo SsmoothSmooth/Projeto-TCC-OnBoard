@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import { useNavigation } from '@react-navigation/native';
-=======
 import { useNavigation } from '@react-navigation/core';
->>>>>>> f4520998b59a1fc555a1ca01888d6e7179ab2a47
 import {
     View, 
     Text, 
@@ -18,51 +14,23 @@ import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 
 export function Mod_C_TelaPerfil(){
-<<<<<<< HEAD
-     const navegation = useNavigation();
-
-     function touchAlteraSenha(){
-         navegation.navigate('Mod_C_AlterarSenha')
-     }
-
-     function touchConfigurações(){
-         navegation.navigate('Mod_C_Configuracoes')
-     }
-
-     function touchAjuda(){
-         navegation.navigate('Mod_C_Ajuda')
-     }
-
-     function touchSair(){
-         navegation.navigate('Login')
-     }
-
-     function touchInicio(){
-        navegation.navigate('Mod_C_Feed')
-    }
-
-    function touchMenu(){
-        navegation.navigate('Mod_C_Menu')
-    }
-=======
     const navigation = useNavigation();
 
-    // function touchAlteraSenha(){
-    //     navigation.navigate('AlterarSenha')
-    // }
+    function touchAlteraSenha(){
+        navigation.navigate('Mod_C_AlterarSenha')
+    }
 
-    // function touchConfigurações(){
-    //     navigation.navigate('Configurações')
-    // }
+    function touchConfigurações(){
+        navigation.navigate('Mod_C_Configuracoes')
+    }
 
-    // function touchAjuda(){
-    //     navigation.navigate('Ajuda')
-    // }
+    function touchAjuda(){
+        navigation.navigate('Mod_C_Ajuda')
+    }
 
-    // function touchSair(){
-    //     navigation.navigate('Login')
-    // }
->>>>>>> f4520998b59a1fc555a1ca01888d6e7179ab2a47
+    function touchSair(){
+        navigation.navigate('Login')
+    }
 
     // Footer
 
@@ -93,22 +61,26 @@ export function Mod_C_TelaPerfil(){
                     <Button
                         style={styles.button}
                         title="Alterar Senha" 
+                        onPress={touchAlteraSenha}
                     />
 
 
                     <Button
                         style={styles.button}
                         title="Configurações"
+                        onPress={touchConfigurações}
                     />
 
                     <Button
                         style={styles.button}
                         title="Ajuda"
+                        onPress={touchAjuda}
                     />
 
                     <Button
                         style={styles.button}
                         title="Sair"
+                        onPress={touchSair}
                     />
                 </View>
 

@@ -13,7 +13,6 @@ import { ModHeader } from '../../../components/ModHeader';
 import { NavBar } from '../../../components/NavBar';
 
 
-
 export function Mod_C_Menu() {
     const navigation = useNavigation();
 
@@ -124,7 +123,7 @@ export function Mod_C_Menu() {
                     <NavBar
                         style={styles.button}
                         title="Perfil"
-                        onPress = {touchMenu}
+                        onPress = {touchPerfil}
 
                     />
 
