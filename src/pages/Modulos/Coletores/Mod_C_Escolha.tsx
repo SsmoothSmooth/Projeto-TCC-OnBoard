@@ -19,7 +19,7 @@ import fonts from '../../../styles/fonts';
 import { Button } from '../../../components/Button';
 
 
-export function Mod_C_Coleta() {
+export function Mod_C_Escolha() {
     const navigation = useNavigation();
 
     function touchBack() {
@@ -49,16 +49,28 @@ export function Mod_C_Coleta() {
                 <View style={styles.Information}>
                     <Text>Jardim dos Zés</Text>
                 </View>
+
+                <View style={styles.Information}>
+                    <Text style={styles.texto}>Material:</Text>
+                    <Text style={styles.texto}>Volume:</Text>
+                </View>
+                <View style={styles.Information}>
+                    <Text >Papel</Text>
+                    <Text >Pequena</Text>
+                </View>
     
             </View>
 
             <View style={styles.boxButton}>
                 <Button style={styles.button}
-                    title="Confirmar coleta"
+                    title="Iniciar rota da coleta"
                     
+                    onPressIn={touchBack}
                 />
             <Button style={styles.button}
-                    title="Excluir"
+                    title="Voltar"
+                    onPress={touchBack}
+
                     
                 />
                 
