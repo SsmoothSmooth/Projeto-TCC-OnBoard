@@ -41,7 +41,7 @@ export function Mod_D_TelaPerfil() {
     }
 
     function touchPerfil() {
-        navegation.navigate('Mod_D_Perfil')
+        navegation.navigate('Mod_D_TelaPerfil')
     }
 
 

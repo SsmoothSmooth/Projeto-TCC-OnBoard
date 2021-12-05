@@ -25,7 +25,7 @@ export function Mod_D_Menu() {
     }
 
     function touchResultado() {
-        navigation.navigate('Mod_D_Resultados')
+        navigation.navigate('Mod_D_Tela_Resultados')
     }
 
     function touchManual() {
@@ -43,7 +43,7 @@ export function Mod_D_Menu() {
     }
 
     function touchPerfil() {
-        navigation.navigate('Mod_D_Perfil')
+        navigation.navigate('Mod_D_TelaPerfil')
     }
 
 

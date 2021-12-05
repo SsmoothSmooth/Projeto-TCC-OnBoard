@@ -141,17 +141,6 @@ export function Mod_Coop_Criar_Evento() {
                             />
                         </TouchableOpacity>
 
-                        <TouchableOpacity
-                            style={styles.backButton}
-                            activeOpacity={0.5}
-                            onPress={touchBack}
-                        >
-                            <FontAwesome5
-                                name="chevron-left"
-                                style={styles.backButtonIcon}
-                            />
-                        </TouchableOpacity>
-
                     </View>
 
                 </View>

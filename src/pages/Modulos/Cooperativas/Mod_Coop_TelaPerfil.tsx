@@ -41,7 +41,7 @@ export function Mod_Coop_TelaPerfil() {
     }
 
     function touchPerfil() {
-        navegation.navigate('Mod_Coop_Perfil')
+        navegation.navigate('Mod_Coop_TelaPerfil')
     }
 
     return (
@@ -98,6 +98,7 @@ export function Mod_Coop_TelaPerfil() {
                     <NavBar
                         style={styles.dbar}
                         title="Perfil"
+                        onPress={touchPerfil}
                     />
                 </View>
 

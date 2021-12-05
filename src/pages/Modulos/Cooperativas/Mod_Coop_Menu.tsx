@@ -43,7 +43,7 @@ export function Mod_Coop_Menu() {
     }
 
     function touchPerfil() {
-        navigation.navigate('Mod_Coop_Perfil')
+        navigation.navigate('Mod_Coop_TelaPerfil')
     }
 
     return (
