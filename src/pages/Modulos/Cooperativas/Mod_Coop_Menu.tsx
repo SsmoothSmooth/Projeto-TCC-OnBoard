@@ -21,7 +21,7 @@ export function Mod_Coop_Menu() {
     }
 
     function touchPreco() {
-        navigation.navigate('')
+        navigation.navigate('Mod_Coop_TabelaPreço')
     }
 
     function touchCampanha() {
@@ -42,9 +42,9 @@ export function Mod_Coop_Menu() {
         navigation.navigate('Mod_Coop_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_Coop_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_Coop_Perfil')
+    }
 
     return (
 
@@ -124,6 +124,7 @@ export function Mod_Coop_Menu() {
                     <NavBar
                         style={styles.buttonPerfil}
                         title="Perfil"
+                        onPress={touchPerfil}
                     />
 
                 </View>

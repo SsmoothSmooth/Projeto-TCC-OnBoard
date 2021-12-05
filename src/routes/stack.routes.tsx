@@ -48,6 +48,14 @@ import { Mod_C_TelaPerfil } from '../pages/Modulos/Coletores/Mod_C_TelaPerfil';
 import { Mod_C_AlterarSenha } from '../pages/Modulos/Coletores/Mod_C_AlterarSenha';
 import { Mod_C_Configuracoes } from '../pages/Modulos/Coletores/Mod_C_Configuracoes';
 import { Mod_C_Ajuda } from '../pages/Modulos/Coletores/Mod_C_Ajuda';
+import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
+import { Mod_C_Coleta } from '../pages/Modulos/Coletores/Mod_C_Coleta';
+import Mod_C_Mapa from '../pages/Modulos/Coletores/Mod_C_Mapa';
+import Mod_C_Ponto_Venda from '../pages/Modulos/Coletores/Mod_C_Ponto_Venda';
+import { Mod_C_Escolha } from '../pages/Modulos/Coletores/Mod_C_Escolha';
+import { Mod_C_Tela_Resultados } from '../pages/Modulos/Coletores/Mod_C_Tela_Resultados';
+import { Mod_C_TabelaValores } from '../pages/Modulos/Coletores/Mod_C_TabelaValores';
+
 
 // { Cooperativa }
 
@@ -61,6 +69,9 @@ import { Mod_Coop_TelaPerfil } from '../pages/Modulos/Cooperativas/Mod_Coop_Tela
 import { Mod_Coop_AlterarSenha } from '../pages/Modulos/Cooperativas/Mod_Coop_AlterarSenha';
 import { Mod_Coop_Configuracoes } from '../pages/Modulos/Cooperativas/Mod_Coop_Configuracoes';
 import { Mod_Coop_Ajuda } from '../pages/Modulos/Cooperativas/Mod_Coop_Ajuda';
+import { Mod_Coop_TabelaPreço } from '../pages/Modulos/Cooperativas/Mod_Coop_TabelaPreço';
+import { Mod_Coop_Tela_Contato } from '../pages/Modulos/Cooperativas/Mod_Coop_Tela_Contato';
+import { Mod_D_Tela_Papel } from '../pages/Modulos/Domesticos/Mod_D_Tela_Papel';
 
 // { Domestico }
 
@@ -72,13 +83,8 @@ import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
 import { Mod_D_Manual_Papel } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Papel';
 import { Mod_D_Manual_Vidro } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Vidro';
-import { Mod_Coop_TabelaPreço } from '../pages/Modulos/Cooperativas/Mod_Coop_TabelaPreço';
-import { Mod_Coop_Tela_Contato } from '../pages/Modulos/Cooperativas/Mod_Coop_Tela_Contato';
-import { Mod_D_Tela_Papel } from '../pages/Modulos/Domesticos/Mod_D_Tela_Papel';
 import { Mod_D_Tela_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Tela_Descarte';
 import { Mod_D_Tela_Resultados } from '../pages/Modulos/Domesticos/Mod_D_Tela_Resultados';
-
-
 import { Mod_D_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Descarte';
 import { Mod_D_TelaPerfil } from '../pages/Modulos/Domesticos/Mod_D_TelaPerfil';
 import { Mod_D_AlterarSenha } from '../pages/Modulos/Domesticos/Mod_D_AlterarSenha';
@@ -86,13 +92,6 @@ import { Mod_D_Configuracoes } from '../pages/Modulos/Domesticos/Mod_D_Configura
 import { Mod_D_Ajuda } from '../pages/Modulos/Domesticos/Mod_D_Ajuda';
 
 // **********
-
-
-import { Mod_C_Menu } from '../pages/Modulos/Coletores/Mod_C_Menu';
-import Mod_C_Mapa from '../pages/Modulos/Coletores/Mod_C_Mapa';
-import { Mod_C_Coleta } from '../pages/Modulos/Coletores/Mod_C_Coleta';
-import Mod_C_Ponto_Venda from '../pages/Modulos/Coletores/Mod_C_Ponto_Venda';
-import { Mod_C_Escolha } from '../pages/Modulos/Coletores/Mod_C_Escolha';
 
 const stackRoutes = createStackNavigator();
 
@@ -293,6 +292,18 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="Mod_C_Escolha"
             component={Mod_C_Escolha}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_Tela_Resultados"
+            component={Mod_C_Tela_Resultados}
+
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_TabelaValores"
+            component={Mod_C_TabelaValores}
+
         />
 
 

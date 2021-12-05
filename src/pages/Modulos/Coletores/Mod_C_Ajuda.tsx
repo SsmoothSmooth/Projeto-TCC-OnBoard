@@ -2,9 +2,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
-    View, 
-    Text, 
-    SafeAreaView, 
+    View,
+    Text,
+    SafeAreaView,
     StyleSheet,
     TouchableOpacity,
     Dimensions
@@ -14,34 +14,34 @@ import { ModHeader } from '../../../components/ModHeader';
 import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 
-export function Mod_C_Ajuda(){
-     const navegation = useNavigation();
+export function Mod_C_Ajuda() {
+    const navegation = useNavigation();
 
-     function touchVoltar(){
-         navegation.navigate('Mod_C_TelaPerfil')
-     }
+    function touchVoltar() {
+        navegation.navigate('Mod_C_TelaPerfil')
+    }
 
 
     return (
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.wrapper}> 
+            <View style={styles.wrapper}>
 
                 <View style={styles.header}>
-                <ModHeader
-                    title="Ajuda"
-                 />
+                    <ModHeader
+                        title="Ajuda"
+                    />
                 </View>
 
                 <Text style={styles.boxinfortion}>
-                        Perguntas Frequentes
+                    Perguntas Frequentes
                 </Text>
 
                 <View style={styles.boxButton}>
 
                     <Button
                         style={styles.button}
-                        title="O que é reciclagem?" 
+                        title="O que é reciclagem?"
                     />
 
 
@@ -75,11 +75,12 @@ export function Mod_C_Ajuda(){
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
+                    onPress={touchVoltar}
                 >
 
                     <FontAwesome5
                         name="arrow-alt-circle-left"
-                        style={styles.buttonIcon}                       
+                        style={styles.buttonIcon}
                     />
 
                 </TouchableOpacity>
@@ -87,7 +88,7 @@ export function Mod_C_Ajuda(){
             </View>
 
         </SafeAreaView>
-)
+    )
 }
 
 
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-         
+
     },
 
     header: {
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
         fontSize: 26,
         alignItems: 'center'
     },
-    
+
     boxButton: {
         width: '100%',
         paddingHorizontal: '10%',
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '3%', 
+        marginVertical: '3%',
     },
 
     buttonIcon: {

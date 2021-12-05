@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
-    View, 
-    Text, 
-    SafeAreaView, 
+    View,
+    Text,
+    SafeAreaView,
     StyleSheet,
     TouchableOpacity,
     Dimensions
@@ -13,64 +13,72 @@ import { ModHeader } from '../../../components/ModHeader';
 import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 
-export function Mod_Coop_TelaPerfil(){
+export function Mod_Coop_TelaPerfil() {
     const navegation = useNavigation();
 
-    function touchAlteraSenha(){
+    function touchAlteraSenha() {
         navegation.navigate('Mod_Coop_AlterarSenha')
     }
 
-    function touchConfigurações(){
+    function touchConfigurações() {
         navegation.navigate('Mod_Coop_Configuracoes')
     }
 
-    function touchAjuda(){
+    function touchAjuda() {
         navegation.navigate('Mod_Coop_Ajuda')
     }
 
-    function touchSair(){
+    function touchSair() {
         navegation.navigate('Login')
     }
 
-    function touchInicio(){
-       navegation.navigate('Mod_Coop_Feed')
-   }
+    function touchInicio() {
+        navegation.navigate('Mod_Coop_Feed')
+    }
 
-   function touchMenu(){
-       navegation.navigate('Mod_Coop_Menu')
-   }
+    function touchMenu() {
+        navegation.navigate('Mod_Coop_Menu')
+    }
+
+    function touchPerfil() {
+        navegation.navigate('Mod_Coop_Perfil')
+    }
 
     return (
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.wrapper}> 
+            <View style={styles.wrapper}>
 
                 <View style={styles.header}>
-                <ModHeader
-                    title="Perfil"
-                 />
+                    <ModHeader
+                        title="Perfil"
+                    />
                 </View>
 
                 <View style={styles.boxButton}>
                     <Button
                         style={styles.button}
-                        title="Alterar Senha" 
+                        title="Alterar Senha"
+                        onPress={touchAlteraSenha}
                     />
 
 
                     <Button
                         style={styles.button}
                         title="Configurações"
+                        onPress={touchConfigurações}
                     />
 
                     <Button
                         style={styles.button}
                         title="Ajuda"
+                        onPress={touchAjuda}
                     />
 
                     <Button
                         style={styles.button}
                         title="Sair"
+                        onPress={touchSair}
                     />
                 </View>
 
@@ -78,11 +86,13 @@ export function Mod_Coop_TelaPerfil(){
                     <NavBar
                         style={styles.dbar}
                         title="Inicio"
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.dbar}
                         title="Menu"
+                        onPress={touchMenu}
                     />
 
                     <NavBar
@@ -94,7 +104,7 @@ export function Mod_Coop_TelaPerfil(){
             </View>
 
         </SafeAreaView>
-)
+    )
 }
 
 
@@ -109,7 +119,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-         
+
     },
 
     header: {
@@ -117,7 +127,7 @@ const styles = StyleSheet.create({
         paddingVertical: '2%',
         backgroundColor: colors.gray,
     },
-    
+
     boxButton: {
         width: '100%',
         paddingHorizontal: '20%',
@@ -129,12 +139,12 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '5%', 
+        marginVertical: '5%',
     },
 
     boxDownbar: {
         flexDirection: 'row',
-        justifyContent:'space-around',
+        justifyContent: 'space-around',
         width: '100%',
         backgroundColor: colors.gray,
     },
@@ -145,6 +155,6 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '5%', 
+        marginVertical: '5%',
     }
 })

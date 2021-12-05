@@ -16,15 +16,15 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { ModHeader } from '../../../components/ModHeader';
 
 
-export function Mod_Coop_TabelaPreço() {
+export function Mod_C_TabelaValores() {
     const navigation = useNavigation();
 
     function touchTipoMaterial() {
-        navigation.navigate('Mod_Coop_Tipo_Material')
+        navigation.navigate('')
     }
 
     function touchVoltar() {
-        navigation.navigate('Mod_Coop_Menu')
+        navigation.navigate('')
     }
 
     //function touchInit2() {
@@ -44,7 +44,7 @@ export function Mod_Coop_TabelaPreço() {
 
                 <View>
                     <Text style={styles.subtitle}>
-                        Reciclável{" "} Peso {" "} Valor
+                        {" "} Reciclável {" "}
                     </Text>
                 </View>
 
@@ -72,12 +72,6 @@ export function Mod_Coop_TabelaPreço() {
                     <Button
                         style={styles.ButtonPlastico}
                         title="Plástico   10KG  R$10.00"
-                    //onPress={touchInit2}
-                    />
-
-                    <Button
-                        style={styles.ButtonAdicionar}
-                        title="Adicionar"
                     //onPress={touchInit2}
                     />
 

@@ -42,9 +42,9 @@ export function Mod_D_Menu() {
         navigation.navigate('Mod_D_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_Coop_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_D_Perfil')
+    }
 
 
     return (
@@ -127,6 +127,7 @@ export function Mod_D_Menu() {
                     <NavBar
                         style={styles.buttonPerfil}
                         title="Perfil"
+                        onPress={touchPerfil}
                     />
 
                 </View>

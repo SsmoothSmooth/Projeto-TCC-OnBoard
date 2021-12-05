@@ -32,9 +32,9 @@ export function Mod_D_Categoria() {
         navigation.navigate('Mod_D_Descarte')
     }
 
-     // Footer
+    // Footer
 
-     function touchInicio() {
+    function touchInicio() {
         navigation.navigate('Mod_D_Feed')
     }
 
@@ -42,9 +42,9 @@ export function Mod_D_Categoria() {
         navigation.navigate('Mod_D_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_Coop_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_D_Perfil')
+    }
 
     return (
 
@@ -60,7 +60,7 @@ export function Mod_D_Categoria() {
 
                 <View style={styles.MenuButton}>
 
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         activeOpacity={0.5}
                         onPress={touchPapel}
                     >
@@ -70,7 +70,7 @@ export function Mod_D_Categoria() {
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         activeOpacity={0.5}
                         onPress={touchMetal}
                     >
@@ -82,7 +82,7 @@ export function Mod_D_Categoria() {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         activeOpacity={0.5}
                         onPress={touchVidro}
                     >
@@ -111,18 +111,19 @@ export function Mod_D_Categoria() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
-                        onPress = {touchInicio}
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
-                        onPress = {touchMenu}
+                        onPress={touchMenu}
                     />
 
                     <NavBar
                         style={styles.buttonPerfil}
                         title="Perfil"
+                        onPress={touchPerfil}
                     />
 
                 </View>

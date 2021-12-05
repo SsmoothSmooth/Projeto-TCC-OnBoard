@@ -51,7 +51,7 @@ export function Mod_Coop_Criar_Evento() {
     }
 
     function touchSalvar() {
-        navigation.navigate('')
+        navigation.navigate('Mod_Coop_Criar_Evento')
     }
 
     function touchBack() {

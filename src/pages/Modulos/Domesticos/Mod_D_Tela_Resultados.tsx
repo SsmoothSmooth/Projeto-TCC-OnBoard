@@ -12,20 +12,23 @@ import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
 import { ModHeader } from '../../../components/ModHeader';
 import fonts from '../../../styles/fonts';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Button } from '../../../components/Button';
 import { NavBar } from '../../../components/NavBar';
 
 export function Mod_D_Tela_Resultados() {
     const navigation = useNavigation();
 
-    function touchSalvar() {
-        navigation.navigate('')
+    function touchInicio() {
+        navigation.navigate('Mod_D_Feed')
     }
 
-    function touchBack() {
-        navigation.navigate('')
+    function touchMenu() {
+        navigation.navigate('Mod_D_Menu')
     }
+
+    function touchPerfil() {
+        navigation.navigate('Mod_Coop_Perfil')
+    }
+
 
     return (
         <SafeAreaView style={styles.container}>
@@ -74,17 +77,20 @@ export function Mod_D_Tela_Resultados() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
+                        onPress={touchMenu}
 
                     />
 
                     <NavBar
                         style={styles.buttonPerfil}
                         title="Perfil"
+                        onPress={touchPerfil}
                     />
 
                 </View>

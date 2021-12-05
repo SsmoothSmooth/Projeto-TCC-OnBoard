@@ -3,11 +3,6 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
-    Text,
-    Image,
-    TouchableOpacity,
-
-
 } from 'react-native';
 
 
@@ -21,7 +16,10 @@ import { NavBar } from '../../../components/NavBar';
 export function Mod_C_Tabela_Preco() {
     const navigation = useNavigation();
 
-    // Footer
+    function touchTabelaValores() {
+        navigation.navigate('Mod_C_TabelaValores')
+    }
+
 
     function touchInicio() {
         navigation.navigate('Mod_C_Feed')
@@ -51,25 +49,29 @@ export function Mod_C_Tabela_Preco() {
                     <Button
                         style={styles.Button}
                         title=" Coop.recicle "
-                        
+                        onPress={touchTabelaValores}
+
                     />
 
                     <Button
                         style={styles.Button}
                         title=" Coop.recicle 2 "
-                        
+                        onPress={touchTabelaValores}
+
                     />
 
                     <Button
                         style={styles.Button}
                         title=" Coop.recicle 3 "
-                        
+                        onPress={touchTabelaValores}
+
                     />
 
                     <Button
                         style={styles.Button}
                         title=" Coop.recicle 4 "
-                     
+                        onPress={touchTabelaValores}
+
                     />
 
                 </View>
@@ -78,19 +80,19 @@ export function Mod_C_Tabela_Preco() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
-                        onPress = {touchInicio}
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
-                        onPress = {touchMenu}
+                        onPress={touchMenu}
                     />
 
                     <NavBar
                         style={styles.buttonPerfil}
                         title="Perfil"
-                        onPress= {touchPerfil}
+                        onPress={touchPerfil}
                     />
 
                 </View>

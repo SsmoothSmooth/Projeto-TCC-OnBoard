@@ -37,11 +37,11 @@ export function Mod_D_Tela_Papel() {
     }
 
     function touchSalvar() {
-        navigation.navigate('')
+        navigation.navigate('Mod_D_Tela_Papel')
     }
 
     function touchBack() {
-        navigation.navigate('')
+        navigation.navigate('Mod_D_Categoria')
     }
 
     return (

@@ -9,14 +9,8 @@ import { ModHeader } from '../../../components/ModHeader';
 import { ScrollView } from 'react-native-gesture-handler';
 import { NavBar } from '../../../components/NavBar';
 
-export function Mod_D_Feed(){
+export function Mod_D_Feed() {
     const navigation = useNavigation();
-
-    function touchSacola(){
-        navigation.navigate('Sacola')
-    }
-
-    // Footer
 
     function touchInicio() {
         navigation.navigate('Mod_D_Feed')
@@ -26,27 +20,27 @@ export function Mod_D_Feed(){
         navigation.navigate('Mod_D_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_Coop_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_D_Perfil')
+    }
 
-    return(
-        
-        <SafeAreaView style={styles.container}> 
+    return (
+
+        <SafeAreaView style={styles.container}>
             <View style={styles.wrapper}>
 
                 <View style={styles.header}>
-                 <ModHeader
-                    title="News"
-                 />
+                    <ModHeader
+                        title="News"
+                    />
                 </View>
-                
+
                 <ScrollView style={styles.boxFeed}>
                     <Text style={styles.text}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus vehicula libero.
                     </Text>
                     <Text>
-                        Sed faucibus mi in tincidunt tincidunt. 
+                        Sed faucibus mi in tincidunt tincidunt.
                         Donec ac lacus vitae velit luctus auctor sit amet volutpat lectus.
 
                     </Text>
@@ -83,22 +77,23 @@ export function Mod_D_Feed(){
                     <NavBar
                         style={styles.button}
                         title="Inicio"
-                        onPress = {touchInicio}
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.button}
                         title="Menu"
-                        onPress = {touchMenu}
+                        onPress={touchMenu}
                     />
 
                     <NavBar
                         style={styles.button}
                         title="Perfil"
+                        onPress={touchPerfil}
                     />
                 </View>
-            
-            </View> 
+
+            </View>
         </SafeAreaView>
     )
 }
@@ -113,7 +108,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         backgroundColor: 'white',
-         
+
     },
 
     header: {
@@ -133,7 +128,7 @@ const styles = StyleSheet.create({
 
     boxButton: {
         flexDirection: 'row',
-        justifyContent:'space-around',
+        justifyContent: 'space-around',
         width: '100%',
         backgroundColor: colors.gray
     },
@@ -144,7 +139,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '5%', 
+        marginVertical: '5%',
     },
 
 });

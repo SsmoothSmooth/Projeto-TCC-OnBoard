@@ -2,9 +2,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
-    View, 
-    Text, 
-    SafeAreaView, 
+    View,
+    Text,
+    SafeAreaView,
     StyleSheet,
     TouchableOpacity,
     TextInput
@@ -17,26 +17,26 @@ import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 
-export function Mod_Coop_Configuracoes(){
-     const navegation = useNavigation();
+export function Mod_Coop_Configuracoes() {
+    const navegation = useNavigation();
 
-    function touchSalvar(){
+    function touchSalvar() {
         navegation.navigate('Mod_Coop_Configuracoes')
     }
 
-    function touchVoltar(){
+    function touchVoltar() {
         navegation.navigate('Mod_Coop_TelaPerfil')
     }
 
     return (
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.wrapper}> 
+            <View style={styles.wrapper}>
 
-            <View style={styles.header}>
-                <ModHeader
-                    title="Configurações"
-                 />
+                <View style={styles.header}>
+                    <ModHeader
+                        title="Configurações"
+                    />
                 </View>
 
                 <View style={styles.boxInformation}>
@@ -72,17 +72,19 @@ export function Mod_Coop_Configuracoes(){
                 <View style={styles.boxButton}>
                     <Button style={styles.button}
                         title="Salvar"
+                        onPress={touchSalvar}
                     />
                 </View>
 
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
+                    onPress={touchVoltar}
                 >
 
                     <FontAwesome5
                         name="arrow-alt-circle-left"
-                        style={styles.buttonIcon}                       
+                        style={styles.buttonIcon}
                     />
 
                 </TouchableOpacity>
@@ -90,7 +92,7 @@ export function Mod_Coop_Configuracoes(){
             </View>
 
         </SafeAreaView>
-)
+    )
 }
 
 const styles = StyleSheet.create({
@@ -104,7 +106,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-         
+
     },
 
     header: {
@@ -149,9 +151,9 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '5%', 
+        marginVertical: '5%',
     },
-    
+
     buttonIcon: {
         color: colors.black,
         fontSize: 35,

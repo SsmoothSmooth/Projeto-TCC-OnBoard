@@ -3,37 +3,32 @@ import {
     SafeAreaView,
     StyleSheet,
     View,
+    Image,
+    Text,
+    TouchableOpacity
 } from 'react-native';
 
 import colors from '../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../../components/Button';
 import { ModHeader } from '../../../components/ModHeader';
+import fonts from '../../../styles/fonts';
 import { NavBar } from '../../../components/NavBar';
 
-export function Mod_Coop_Notificacao() {
+export function Mod_C_Tela_Resultados() {
     const navigation = useNavigation();
 
-    function touchTipoMaterial() {
-        navigation.navigate('Mod_Coop_Tipo_Material')
-    }
-
-    function touchContato() {
-        navigation.navigate('Mod_Coop_Tela_Contato')
-    }
-
-
     function touchInicio() {
-        navigation.navigate('Mod_Coop_Feed')
+        navigation.navigate('Mod_C_Feed')
     }
 
     function touchMenu() {
-        navigation.navigate('Mod_Coop_Menu')
+        navigation.navigate('Mod_C_Menu')
     }
 
     function touchPerfil() {
-        navigation.navigate('Mod_Coop_Perfil')
+        navigation.navigate('Mod_C_Perfil')
     }
+
 
     return (
         <SafeAreaView style={styles.container}>
@@ -41,32 +36,44 @@ export function Mod_Coop_Notificacao() {
 
                 <View style={styles.boxHeader}>
                     <ModHeader
-                        title="Notificações"
+                        title="Resultados"
                     />
                 </View>
 
-                <View style={styles.ButtonMenu}>
-
-                    <View >
-                        <Button
-                            style={styles.Button1}
-                            title="Materiais para coleta"
-                            onPress={touchTipoMaterial}
-                        />
+                <View>
+                    <Text style={styles.subtitle}> Seus Resultados </Text>
+                    <View style={styles.DescarteImagem}>
+                        <Image source={require('../../../assets/Resultado.png')} />
                     </View>
+                    <Text style={styles.subtitle}> Seus últimos descartes </Text>
+                </View>
 
-                    <View>
-                        <Button
-                            style={styles.Button2}
-                            title="contatos"
-                            onPress={touchContato}
+                <View style={styles.MenuButton}>
+
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                    >
+                        <Image
+                            source={require('../../../assets/PapelResultados.png')}
+                            style={styles.ImageIconStyle1}
                         />
-                    </View>
+
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                    >
+
+                        <Image
+                            source={require('../../../assets/VidroResultados.png')}
+                            style={styles.ImageIconStyle2}
+                        />
+
+                    </TouchableOpacity>
 
                 </View>
 
                 <View style={styles.boxButton}>
-
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
@@ -77,6 +84,7 @@ export function Mod_Coop_Notificacao() {
                         style={styles.buttonMenu}
                         title="Menu"
                         onPress={touchMenu}
+
                     />
 
                     <NavBar
@@ -86,12 +94,13 @@ export function Mod_Coop_Notificacao() {
                     />
 
                 </View>
+
             </View>
 
         </SafeAreaView>
+
     )
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -100,13 +109,10 @@ const styles = StyleSheet.create({
 
     wrapper: {
         flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 2,
-        marginHorizontal: 2,
-        marginTop: '-5%'
+        backgroundColor: 'white',
+        flexWrap: 'wrap',
     },
 
     boxHeader: {
@@ -114,54 +120,71 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         paddingTop: '5%',
-        paddingVertical: '10%',
+        paddingVertical: '5%'
+    },
+
+    backgroundColors: {
+        backgroundColor: colors.blue_linear,
+        width: '100%'
+    },
+
+    DescarteImagem: {
+        alignItems: 'center',
+        textAlign: 'center',
+        flexDirection: 'column',
         marginTop: '5%',
+        marginVertical: '5%',
     },
 
-    ButtonMenu: {
+    subtitle: {
+        textAlign: 'center',
+        fontSize: 15,
+        color: colors.heading,
+        fontFamily: fonts.heading,
+        paddingRight: '50%',
+
+    },
+
+    MenuButton: {
         flex: 1,
-        height: '45%',
-        width: '100%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20,
-        marginHorizontal: 10,
-        padding: 20
+        margin: 20,
+        marginHorizontal: 40,
+        paddingBottom: 40
     },
 
-    Button1: {
-        backgroundColor: '#D9FCAC',
-        height: 60,
-        width: '120%',
-        borderRadius: 60,
-        paddingHorizontal: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
+    ImageIconStyle1: {
+        padding: 20,
+        paddingHorizontal: 20,
         marginVertical: 20,
+        margin: 5,
+        height: 100,
+        width: 100,
+        resizeMode: 'stretch',
     },
 
-    Button2: {
-        backgroundColor: '#D9FCAC',
-        height: 60,
-        width: '120%',
-        borderRadius: 60,
-        paddingHorizontal: 100,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: 20,
+    ImageIconStyle2: {
+        padding: 20,
+        marginHorizontal: 30,
+        margin: 5,
+        height: 100,
+        width: 100,
+        resizeMode: 'stretch',
     },
 
     boxButton: {
         flex: 1,
-        paddingVertical: '10%',
-        paddingHorizontal: '100%',
-        marginTop: '50%',
-        justifyContent: 'center',
-        marginHorizontal: '30%',
+        paddingVertical: '8%',
+        justifyContent: 'space-between',
+        paddingHorizontal: '10%',
         width: '100%',
         backgroundColor: colors.gray,
-        alignItems: 'center',
-        flexDirection: 'row'
+        alignItems: 'flex-end',
+        flexDirection: 'row',
+        marginTop: '25%'
     },
 
     buttonInicio: {
@@ -170,7 +193,6 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 50,
         paddingHorizontal: 20,
-        marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
     },
@@ -181,7 +203,6 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 50,
         paddingHorizontal: 20,
-        marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
     },
@@ -192,11 +213,8 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 50,
         paddingHorizontal: 20,
-        marginHorizontal: 10,
         textAlign: 'center',
         justifyContent: 'center',
     },
+
 })
-
-
-

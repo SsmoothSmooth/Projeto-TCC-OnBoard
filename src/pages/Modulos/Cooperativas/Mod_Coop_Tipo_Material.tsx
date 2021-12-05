@@ -16,11 +16,9 @@ import { NavBar } from '../../../components/NavBar';
 export function Mod_Coop_Tipo_Material() {
     const navigation = useNavigation();
 
-    function touchInit() {
-        navigation.navigate('')
+    function touchTelaPapel() {
+        navigation.navigate('Mod_D_Tela_Papel')
     }
-
-    // Footer
 
     function touchInicio() {
         navigation.navigate('Mod_Coop_Feed')
@@ -30,9 +28,9 @@ export function Mod_Coop_Tipo_Material() {
         navigation.navigate('Mod_Coop_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_Coop_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_Coop_Perfil')
+    }
 
     return (
 
@@ -48,10 +46,15 @@ export function Mod_Coop_Tipo_Material() {
 
                 <View style={styles.MenuButton}>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                        onPress={touchTelaPapel}
+                    >
+
                         <Image
                             source={require('../../../assets/papel.png')}
                             style={styles.ImageIconStyle1}
+
                         />
                     </TouchableOpacity>
 
@@ -89,18 +92,19 @@ export function Mod_Coop_Tipo_Material() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
-                        onPress = {touchInicio}
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
-                        onPress = {touchMenu}
+                        onPress={touchMenu}
                     />
 
                     <NavBar
                         style={styles.buttonPerfil}
                         title="Perfil"
+                        onPress={touchPerfil}
                     />
 
                 </View>

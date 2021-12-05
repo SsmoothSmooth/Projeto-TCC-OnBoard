@@ -2,9 +2,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
-    View, 
-    Text, 
-    SafeAreaView, 
+    View,
+    Text,
+    SafeAreaView,
     StyleSheet,
     TouchableOpacity,
     TextInput
@@ -14,21 +14,21 @@ import { Button } from '../../../components/Button';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 
-export function Mod_D_AlterarSenha(){
-     const navegation = useNavigation();
+export function Mod_D_AlterarSenha() {
+    const navegation = useNavigation();
 
-    function touchConfirmar(){
+    function touchConfirmar() {
         navegation.navigate('Mod_D_TelaPerfil')
     }
 
-    function touchVoltar(){
+    function touchVoltar() {
         navegation.navigate('Mod_D_TelaPerfil')
     }
 
     return (
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.wrapper}> 
+            <View style={styles.wrapper}>
 
                 <View style={styles.header}>
                     <Text style={styles.title}>
@@ -48,7 +48,7 @@ export function Mod_D_AlterarSenha(){
                         placeholder="Digite a nova senha"
                         secureTextEntry
                     />
-                    
+
                     <TextInput
                         style={styles.input}
                         placeholder="Confirme a nova senha"
@@ -58,19 +58,21 @@ export function Mod_D_AlterarSenha(){
                 </View>
 
                 <View style={styles.boxButton}>
-                    <Button 
+                    <Button
                         title="Confirmar"
+                        onPress={touchConfirmar}
                     />
                 </View>
 
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
+                    onPress={touchVoltar}
                 >
 
                     <FontAwesome5
                         name="arrow-alt-circle-left"
-                        style={styles.buttonIcon}                       
+                        style={styles.buttonIcon}
                     />
 
                 </TouchableOpacity>
@@ -78,7 +80,7 @@ export function Mod_D_AlterarSenha(){
             </View>
 
         </SafeAreaView>
-)
+    )
 }
 
 const styles = StyleSheet.create({
@@ -92,13 +94,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-         
+
     },
 
     header: {
         width: '100%',
         alignItems: 'center',
-        paddingBottom: 8 
+        paddingBottom: 8
     },
 
     title: {
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         lineHeight: 32,
     },
-    
+
     boxButton: {
         width: '100%',
         paddingHorizontal: '20%',
@@ -138,9 +140,9 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '5%', 
+        marginVertical: '5%',
     },
-    
+
     buttonIcon: {
         color: colors.green_cyan,
         fontSize: 35,

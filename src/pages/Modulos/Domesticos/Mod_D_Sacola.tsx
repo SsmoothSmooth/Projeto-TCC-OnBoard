@@ -14,9 +14,9 @@ export function Mod_D_Sacola() {
     const navigation = useNavigation();
 
 
-     // Footer
+    // Footer
 
-     function touchInicio() {
+    function touchInicio() {
         navigation.navigate('Mod_D_Feed')
     }
 
@@ -24,17 +24,17 @@ export function Mod_D_Sacola() {
         navigation.navigate('Mod_D_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_Coop_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_D_Perfil')
+    }
 
 
 
-    return(
+    return (
         <SafeAreaView style={styles.container}>
             <View style={styles.wrapper}>
-                
-            <View style={styles.boxHeader}>
+
+                <View style={styles.boxHeader}>
                     <ModHeader
                         title="Sacola"
                     />
@@ -59,35 +59,36 @@ export function Mod_D_Sacola() {
                     <Text>Papel</Text>
                     <Text>Pequeno</Text>
                     <Button style={styles.boxInfo}
-                    title = 'Editar'
+                        title='Editar'
                     />
                 </View>
 
                 <Button
                     style={styles.confirmarButton}
-                    title = 'Confirmar'
+                    title='Confirmar'
                 />
 
                 <View style={styles.boxButton}>
                     <NavBar
                         style={styles.button}
                         title="Inicio"
-                        onPress = {touchInicio}
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.button}
                         title="Menu"
-                        onPress = {touchMenu}
+                        onPress={touchMenu}
                     />
 
                     <NavBar
                         style={styles.button}
                         title="Perfil"
+                        onPress={touchPerfil}
                     />
                 </View>
 
-            </View> 
+            </View>
         </SafeAreaView>
     )
 }
@@ -126,16 +127,16 @@ const styles = StyleSheet.create({
     },
 
     confirmarButton: {
-            backgroundColor: colors.green_cyan,
-            height: 50,
-            borderRadius: 16,
-            justifyContent: 'center',
-            alignItems: 'center',
+        backgroundColor: colors.green_cyan,
+        height: 50,
+        borderRadius: 16,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     boxButton: {
         flexDirection: 'row',
-        justifyContent:'space-around',
+        justifyContent: 'space-around',
         width: '100%',
         backgroundColor: colors.gray
     },
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: '5%', 
+        marginVertical: '5%',
     },
 
 

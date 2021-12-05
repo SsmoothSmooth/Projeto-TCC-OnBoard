@@ -20,8 +20,8 @@ export function Mod_C_Menu() {
         navigation.navigate('Mod_C_Mapa')
     }
 
-    function touchPerfil() {
-        navigation.navigate('Mod_C_TelaPerfil')
+    function touchResultado() {
+        navigation.navigate('Mod_C_Tela_Resultados')
     }
 
     function touchSell() {
@@ -32,8 +32,6 @@ export function Mod_C_Menu() {
         navigation.navigate('Mod_C_Tabela_Preco')
     }
 
-    // Footer
-
     function touchInicio() {
         navigation.navigate('Mod_C_Feed')
     }
@@ -42,9 +40,9 @@ export function Mod_C_Menu() {
         navigation.navigate('Mod_C_Menu')
     }
 
-    // function touchPerfil() {
-    //     navigation.navigate('Mod_C_Perfil')
-    // }
+    function touchPerfil() {
+        navigation.navigate('Mod_C_TelaPerfil')
+    }
 
     return (
 
@@ -62,7 +60,7 @@ export function Mod_C_Menu() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress = {touchMap}
+                        onPress={touchMap}
                     >
 
                         <Image
@@ -72,7 +70,9 @@ export function Mod_C_Menu() {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        activeOpacity={0.5}>
+                        activeOpacity={0.5}
+                        onPress={touchResultado}
+                    >
 
                         <Image
                             source={require('../../../assets/meusresultados.png')}
@@ -83,7 +83,7 @@ export function Mod_C_Menu() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress = {touchSell}
+                        onPress={touchSell}
                     >
 
                         <Image
@@ -111,19 +111,19 @@ export function Mod_C_Menu() {
                     <NavBar
                         style={styles.button}
                         title="Inicio"
-                        onPress = {touchInicio}
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.button}
                         title="Menu"
-                        onPress = {touchMenu}
+                        onPress={touchMenu}
                     />
 
                     <NavBar
                         style={styles.button}
                         title="Perfil"
-                        onPress = {touchPerfil}
+                        onPress={touchPerfil}
 
                     />
 
