@@ -10,7 +10,7 @@ import {
 
 // import Authentication
 import { signInWithEmailAndPassword } from "firebase/auth"; /******************************** */
-import { auth } from '../../firebase/firebase_config';
+import { auth } from '../../firebase/firebase_Login';
 
 import { Button } from '../../components/Button'
 import colors from '../../styles/colors';
@@ -34,7 +34,7 @@ export function Login() {
  
     function touchNext() {
          // criar logica para acessar colerto, domestico e coop  
-        navigation.navigate('Mod_C_Feed', {login: loginEmail, senha: loginPassword}) 
+            navigation.navigate('Mod_C_Feed', {login: loginEmail, senha: loginPassword}) 
     }
 
     function touchBack() {
@@ -92,7 +92,7 @@ export function Login() {
             <View style={styles.boxButton}>
                 <Button 
                     title="Confirmar"
-                    onPress={login}
+                    onPress={touchNext}
                 />
 
             </View>
