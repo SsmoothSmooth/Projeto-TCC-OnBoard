@@ -1,12 +1,12 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack'; 
+import { createStackNavigator } from '@react-navigation/stack';
 
 // Import das paginas inicias { Begin }
 
 import { Welcome } from '../pages/Begin/Welcome';
 import { ConfirmAccess } from '../pages/Begin/ConfirmAccess';
 import { ModalityOptions } from '../pages/Begin/ModalityOptions';
-import { Login } from '../pages/Begin/Login'; 
+import { Login } from '../pages/Begin/Login';
 
 //  Import dos formularios
 
@@ -47,7 +47,7 @@ import { Mod_C_Tabela_Preco } from '../pages/Modulos/Coletores/Mod_C_Tabela_Prec
 import { Mod_C_TelaPerfil } from '../pages/Modulos/Coletores/Mod_C_TelaPerfil';
 import { Mod_C_AlterarSenha } from '../pages/Modulos/Coletores/Mod_C_AlterarSenha';
 import { Mod_C_Configuracoes } from '../pages/Modulos/Coletores/Mod_C_Configuracoes';
-import { Mod_C_Ajuda} from '../pages/Modulos/Coletores/Mod_C_Ajuda';
+import { Mod_C_Ajuda } from '../pages/Modulos/Coletores/Mod_C_Ajuda';
 
 // { Cooperativa }
 
@@ -60,7 +60,7 @@ import { Mod_Coop_Tipo_Material } from '../pages/Modulos/Cooperativas/Mod_Coop_T
 import { Mod_Coop_TelaPerfil } from '../pages/Modulos/Cooperativas/Mod_Coop_TelaPerfil';
 import { Mod_Coop_AlterarSenha } from '../pages/Modulos/Cooperativas/Mod_Coop_AlterarSenha';
 import { Mod_Coop_Configuracoes } from '../pages/Modulos/Cooperativas/Mod_Coop_Configuracoes';
-import { Mod_Coop_Ajuda} from '../pages/Modulos/Cooperativas/Mod_Coop_Ajuda';
+import { Mod_Coop_Ajuda } from '../pages/Modulos/Cooperativas/Mod_Coop_Ajuda';
 
 // { Domestico }
 
@@ -70,6 +70,8 @@ import { Mod_D_Categoria } from '../pages/Modulos/Domesticos/Mod_D_Categoria';
 import { Mod_D_Sacola } from '../pages/Modulos/Domesticos/Mod_D_Sacola';
 import { Mod_D_Manual_Categoria } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Categoria';
 import { Mod_D_Manual_Guia } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Guia';
+import { Mod_D_Manual_Papel } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Papel';
+import { Mod_D_Manual_Vidro } from '../pages/Modulos/Domesticos/Manual/Mod_D_Manual_Vidro';
 import { Mod_Coop_TabelaPreço } from '../pages/Modulos/Cooperativas/Mod_Coop_TabelaPreço';
 import { Mod_Coop_Tela_Contato } from '../pages/Modulos/Cooperativas/Mod_Coop_Tela_Contato';
 import { Mod_D_Tela_Papel } from '../pages/Modulos/Domesticos/Mod_D_Tela_Papel';
@@ -81,7 +83,7 @@ import { Mod_D_Descarte } from '../pages/Modulos/Domesticos/Mod_D_Descarte';
 import { Mod_D_TelaPerfil } from '../pages/Modulos/Domesticos/Mod_D_TelaPerfil';
 import { Mod_D_AlterarSenha } from '../pages/Modulos/Domesticos/Mod_D_AlterarSenha';
 import { Mod_D_Configuracoes } from '../pages/Modulos/Domesticos/Mod_D_Configuracoes';
-import { Mod_D_Ajuda} from '../pages/Modulos/Domesticos/Mod_D_Ajuda';
+import { Mod_D_Ajuda } from '../pages/Modulos/Domesticos/Mod_D_Ajuda';
 
 // **********
 
@@ -243,17 +245,17 @@ const AppRoutes: React.FC = () => (
             component={Mod_C_Menu}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_C_Mapa"
             component={Mod_C_Mapa}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_C_Ponto_Venda"
             component={Mod_C_Ponto_Venda}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_C_Categoria"
             component={Mod_C_Categoria}
         />
@@ -263,22 +265,22 @@ const AppRoutes: React.FC = () => (
             component={Mod_C_Tabela_Preco}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_C_TelaPerfil"
             component={Mod_C_TelaPerfil}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_C_AlterarSenha"
             component={Mod_C_AlterarSenha}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_C_Configuracoes"
             component={Mod_C_Configuracoes}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_C_Ajuda"
             component={Mod_C_Ajuda}
         />
@@ -337,23 +339,23 @@ const AppRoutes: React.FC = () => (
             name="Mod_Coop_Tela_Contato"
             component={Mod_Coop_Tela_Contato}
         />
-        
-        <stackRoutes.Screen 
+
+        <stackRoutes.Screen
             name="Mod_Coop_TelaPerfil"
             component={Mod_Coop_TelaPerfil}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_Coop_AlterarSenha"
             component={Mod_Coop_AlterarSenha}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_Coop_Configuracoes"
             component={Mod_Coop_Configuracoes}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_Coop_Ajuda"
             component={Mod_Coop_Ajuda}
         />
@@ -376,12 +378,12 @@ const AppRoutes: React.FC = () => (
             component={Mod_D_Categoria}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_D_Descarte"
             component={Mod_D_Descarte}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_D_Sacola"
             component={Mod_D_Sacola}
         />
@@ -396,22 +398,33 @@ const AppRoutes: React.FC = () => (
             component={Mod_D_Manual_Guia}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
+            name="Mod_D_Manual_Papel"
+            component={Mod_D_Manual_Papel}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_D_Manual_Vidro"
+            component={Mod_D_Manual_Vidro}
+        />
+
+
+        <stackRoutes.Screen
             name="Mod_D_TelaPerfil"
             component={Mod_D_TelaPerfil}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_D_AlterarSenha"
             component={Mod_D_AlterarSenha}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_D_Configuracoes"
             component={Mod_D_Configuracoes}
         />
 
-        <stackRoutes.Screen 
+        <stackRoutes.Screen
             name="Mod_D_Ajuda"
             component={Mod_D_Ajuda}
         />

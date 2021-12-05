@@ -25,7 +25,7 @@ export function Mod_D_Menu() {
     }
 
     function touchResultado() {
-        navigation.navigate('')
+        navigation.navigate('Mod_D_Resultados')
     }
 
     function touchManual() {
@@ -61,20 +61,20 @@ export function Mod_D_Menu() {
 
                 <View style={styles.MenuButton}>
 
-                    <TouchableOpacity 
-                    activeOpacity={0.5}
-                    onPress = {touchDescarte}
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                        onPress={touchDescarte}
                     >
-                        
+
                         <Image
                             source={require('../../../assets/Descarte.png')}
                             style={styles.ImageIconStyle1}
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress={touchSacola}    
+                        onPress={touchSacola}
                     >
 
                         <Image
@@ -84,7 +84,11 @@ export function Mod_D_Menu() {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.5}>
+                    <TouchableOpacity
+                        activeOpacity={0.5}
+                        onPress={touchResultado}
+                    >
+
                         <Image
                             source={require('../../../assets/MeusResultados2.png')}
                             style={styles.ImageIconStyle3}
@@ -95,7 +99,7 @@ export function Mod_D_Menu() {
 
                     <TouchableOpacity
                         activeOpacity={0.5}
-                        onPress = {touchManual}
+                        onPress={touchManual}
                     >
                         <Image
                             source={require('../../../assets/Manual.png')}
@@ -111,13 +115,13 @@ export function Mod_D_Menu() {
                     <NavBar
                         style={styles.buttonInicio}
                         title="Inicio"
-                        onPress = {touchInicio}
+                        onPress={touchInicio}
                     />
 
                     <NavBar
                         style={styles.buttonMenu}
                         title="Menu"
-                        onPress = {touchMenu}
+                        onPress={touchMenu}
                     />
 
                     <NavBar

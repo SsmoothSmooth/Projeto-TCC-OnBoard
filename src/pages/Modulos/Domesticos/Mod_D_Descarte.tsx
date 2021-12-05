@@ -22,34 +22,34 @@ export function Mod_D_Descarte() {
     return (
 
         <SafeAreaView style={styles.container}>
-            <View  style={styles.wrapper}> 
-               
-               <View style={styles.boxHeader}>
+            <View style={styles.wrapper}>
 
-                    <ModHeader 
-                        title = 'Descarte'
+                <View style={styles.boxHeader}>
+
+                    <ModHeader
+                        title='Descarte'
                     />
 
-               </View>
+                </View>
 
                 <View style={styles.boxImageDescarte}>
-                <Image
-                    source={require('../../../assets/FolhaDescarte.png')}
-                    style={styles.image}
-                    resizeMode="contain"
-                />
+                    <Image
+                        source={require('../../../assets/FolhaDescarte.png')}
+                        style={styles.image}
+                        resizeMode="contain"
+                    />
 
                 </View>
 
                 <View style={styles.boxImageVolume}>
 
-                    <Text style={styles.subtitle}> 
+                    <Text style={styles.subtitle}>
                         Papel
                     </Text>
                     <Image
-                    source={require('../../../assets/FolhaVolume.png')}
-                    style={styles.image}
-                    resizeMode="contain"
+                        source={require('../../../assets/FolhaVolume.png')}
+                        style={styles.image}
+                        resizeMode="contain"
                     />
 
                     <Text style={styles.subtitle}>
@@ -60,11 +60,11 @@ export function Mod_D_Descarte() {
 
                 <View>
                     <Text style={styles.text}>
-                        O - Pequena ( Até 2Kg ) 
+                        O - Pequena ( Até 2Kg )
                     </Text>
 
                     <Text style={styles.text}>
-                        O - Média (De 2 Kg até 5Kg ) 
+                        O - Média (De 2 Kg até 5Kg )
                     </Text>
 
                     <Text style={styles.text}>
@@ -73,10 +73,10 @@ export function Mod_D_Descarte() {
                 </View>
 
                 <View style={styles.boxButton}>
-                        <Button
-                            title="Confirmar"
+                    <Button
+                        title="Confirmar"
 
-                        />
+                    />
                 </View>
 
             </View>
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     },
 
     subtitle: {
-        textAlign: 'left',        
+        textAlign: 'left',
         fontSize: 20,
         paddingTop: '2%',
         paddingLeft: '2%',
@@ -137,5 +137,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: '20%',
     },
 
-  
+
 })

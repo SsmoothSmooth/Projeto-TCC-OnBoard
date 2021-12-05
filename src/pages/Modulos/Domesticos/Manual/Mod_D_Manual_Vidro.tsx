@@ -11,28 +11,12 @@ import {
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../../../components/Button';
 import { ModHeader } from '../../../../components/ModHeader';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { ScrollView } from 'react-native-gesture-handler';
 
-export function Mod_D_Manual_Categoria() {
+export function Mod_D_Manual_Vidro() {
     const navigation = useNavigation();
-
-    function touchPapel() {
-        navigation.navigate('Mod_D_Manual_Papel')
-    }
-
-    function touchMetal() {
-        navigation.navigate('')
-    }
-
-    function touchPlastico() {
-        navigation.navigate('')
-    }
-
-    function touchVidro() {
-        navigation.navigate('Mod_D_Manual_Vidro')
-    }
 
     function touchBack() {
         navigation.navigate('Mod_D_Manual_Guia')
@@ -51,36 +35,30 @@ export function Mod_D_Manual_Categoria() {
                 </View>
 
                 <View>
-                    <Text style={styles.BoxSubtitle}> Tipos de Reciclagem </Text>
+                    <Text style={styles.BoxSubtitle}> Guia de Reciclagem: Vidro </Text>
                 </View>
 
-                <View style={styles.BoxButton}>
+                <ScrollView style={styles.scrollview}>
 
-                    <Button
-                        style={styles.Button}
-                        title="Papel"
-                        onPress={touchPapel}
-                    />
+                    <Text style={styles.text}>
+                        Garrafas de bebidas ( alcóolicas e não alcóolicas), frascos de perfume e potes de alimentos,
+                        são exemplos de materiais que podem ser reciclados.{'\n'}
+                    </Text>
 
-                    <Button
-                        style={styles.Button}
-                        title="Metal"
-                        onPress={touchMetal}
-                    />
+                    <Text>
+                        Ao descartar esses materiais, é importante estar bem embalado , para evitar ferimentos
+                        na hora da recolha.{'\n'}
+                    </Text>
 
-                    <Button
-                        style={styles.Button}
-                        title="Plastico"
-                        onPress={touchPlastico}
-                    />
+                    <Text>
+                        O vidro é um material 100% reciclavél, portanto ao reciclar esse material, economiza recursos
+                        como energia e água na sua fabricação. {'\n'}
+                    </Text>
 
-                    <Button
-                        style={styles.Button}
-                        title="Vidro"
-                        onPress={touchVidro}
-                    />
 
-                </View>
+                </ScrollView>
+
+
 
                 <View style={styles.boxBackButton}>
 
@@ -130,37 +108,20 @@ const styles = StyleSheet.create({
     BoxSubtitle: {
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 25,
+        fontSize: 20,
         color: colors.heading,
-        paddingHorizontal: 30,
-        paddingVertical: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 5,
         fontFamily: fonts.text,
-        marginBottom: 30
+        marginBottom: 5
     },
 
-    BoxButton: {
-        flex: 1,
-        height: '50%',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 35,
-        marginHorizontal: 20,
-        padding: 25,
-
-
+    scrollview: {
+        paddingHorizontal: '15%',
     },
 
-    Button: {
-        backgroundColor: colors.lightgrey,
-        height: 50,
-        width: '100%',
-        borderRadius: 50,
-        paddingHorizontal: 70,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: 12,
-        paddingTop: 10,
+    text: {
+        paddingTop: '10%'
     },
 
     boxBackButton: {
@@ -188,5 +149,3 @@ const styles = StyleSheet.create({
     }
 
 })
-
-
