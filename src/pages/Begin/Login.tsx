@@ -8,6 +8,10 @@ import {
     TextInput,
 } from 'react-native';
 
+// import Authentication
+import { signInWithEmailAndPassword } from "firebase/auth"; /******************************** */
+import { auth } from '../../firebase/firebase_config';
+
 import { Button } from '../../components/Button'
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
@@ -25,28 +29,48 @@ export function Login() {
     const [loginPassword, setLoginPassword] = useState ("");
 
 
+
     // navegando
+ 
     function touchNext() {
-        // criar logica para acessar colerto, domestico e coop
-        navigation.navigate('Mod_C_Feed', {login: loginEmail, senha: loginPassword})
+         // criar logica para acessar colerto, domestico e coop  
+        navigation.navigate('Mod_C_Feed', {login: loginEmail, senha: loginPassword}) 
     }
 
     function touchBack() {
         navigation.navigate('ConfirmAccess')
     }
 
+    // Login
+
+    function login (){
+
+        signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+            .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            // ...
+            alert('Logado com sucesso ! ');
+            touchNext();
+        })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert("Email não existe")
+        });
+    }
 
     return(
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.wrapper}>
+        <View style={styles.wrapper}>
 
-                <View style={styles.header}>
-                    <Header
-                        title={"Login"}
-                    />
+            <View style={styles.header}>
+                <Header 
+                    title={"Login"}
+                />
 
-                </View>
+            </View>
 
             <View style={styles.boxInput}>
                 <TextInput
@@ -64,93 +88,93 @@ export function Login() {
                 />
             </View>
 
+
             <View style={styles.boxButton}>
                 <Button 
                     title="Confirmar"
-                    onPress={touchNext}
-                   
+                    onPress={login}
                 />
 
-                </View>
-
-                <TouchableOpacity
-                    style={styles.backButton}
-                    activeOpacity={0.5}
-                    onPress={touchBack}
-
-                >
-                    <FontAwesome5
-                        name="arrow-alt-circle-left"
-                        style={styles.backButtonIcon}
-
-                    />
-
-                </TouchableOpacity>
-
             </View>
-        </SafeAreaView>
+
+            <TouchableOpacity
+                style={styles.backButton}
+                activeOpacity={0.5}
+                onPress={touchBack}
+
+            >
+                <FontAwesome5
+                    name="arrow-alt-circle-left"
+                    style={styles.backButtonIcon}
+                    
+                />
+
+            </TouchableOpacity>
+
+        </View>
+    </SafeAreaView>
 
     )
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: getStatusBarHeight(),
-    },
-
-    wrapper: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: 'white',
-        paddingBottom: '16%'
-    },
-
-    header: {
-        width: '100%',
-        backgroundColor: colors.green_cyan,
-        padding: '10%'
-    },
-
-    boxInput: {
-        width: '100%',
-        alignItems: 'center',
-        paddingHorizontal: '15%',
-        paddingVertical: 30
-
-    },
-
-    input: {
-        borderBottomWidth: 1,
-        borderColor: '#52665A',
-        color: colors.heading,
-        width: '100%',
-        fontSize: 24,
-        textAlign: 'center',
-        marginVertical: '10%'
-    },
-
-    boxButton: {
-        width: '100%',
-        paddingHorizontal: '20%'
-
-    },
-
-    backButton: {
-        backgroundColor: colors.green,
-        height: 60,
-        width: 60,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 20,
-
-    },
-
-    backButtonIcon: {
-        color: colors.green_cyan,
-        fontSize: 35,
     }
 
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            marginTop: getStatusBarHeight(),
+        },
+    
+        wrapper: {
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            backgroundColor: 'white',
+            paddingBottom: '16%'
+        },
 
-})
+        header: {
+            width: '100%',
+            backgroundColor: colors.green_cyan,
+            padding: '10%'
+        },
+    
+        boxInput:{
+            width: '100%',
+            alignItems: 'center',
+            paddingHorizontal: '15%',
+            paddingVertical: 30
+
+        },
+    
+        input: {
+            borderBottomWidth: 1,
+            borderColor: '#52665A',
+            color: colors.heading,
+            width: '100%',
+            fontSize: 24,
+            textAlign: 'center',
+            marginVertical: '10%'
+        },
+
+        boxButton: {
+            width: '100%',
+            paddingHorizontal: '20%'
+    
+        },
+    
+        backButton: {
+            backgroundColor: colors.green,
+            height: 60,
+            width: 60,
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: 20,
+    
+        },
+    
+        backButtonIcon: {
+            color: colors.green_cyan,
+            fontSize: 35,
+        }
+
+
+    })
