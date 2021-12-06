@@ -10,7 +10,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { NavBar } from '../../../components/NavBar';
 import { Login } from '../../Begin/Login';
 
-export function Mod_C_Feed({route}){
+export function Mod_C_Feed(){
     const navigation = useNavigation();
     
     function touchInicio() {
@@ -39,15 +39,9 @@ export function Mod_C_Feed({route}){
 
                 <ScrollView style={styles.boxFeed}>
                     <Text style={styles.text}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus vehicula libero.
+                        Atualização do Aplicado V1.1.1
                     </Text>
-                    <Text>
-                        login: {route.params?.login}
-                    </Text>
-                    
-                    <Text>
-                        Senha: {route.params?.senha}
-                    </Text>
+            
 
                     <Text style={styles.text}>
                         neque ac purus rhoncus tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra,

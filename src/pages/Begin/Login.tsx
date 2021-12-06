@@ -20,6 +20,8 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Header } from '../../components/Header';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export function Login() {
     const navigation = useNavigation();
 
@@ -28,13 +30,20 @@ export function Login() {
     const [loginEmail, setLoginEmail] = useState ("");
     const [loginPassword, setLoginPassword] = useState ("");
 
+    // Store
+
+    const storeData = async (value: string) => {  
+        try {    await AsyncStorage.setItem('@user', value)  
+        }catch (e) {    // saving error  
+            console.log(e);
+        }}
 
 
     // navegando
  
     function touchNext() {
-         // criar logica para acessar colerto, domestico e coop  
-            navigation.navigate('Mod_C_Feed', {login: loginEmail, senha: loginPassword}) 
+         // criar logica para acessar colerto, domestico e coop 
+            navigation.navigate('Mod_C_Feed') 
     }
 
     function touchBack() {
@@ -49,8 +58,10 @@ export function Login() {
             .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
+            console.log(userCredential);
             // ...
             alert('Logado com sucesso ! ');
+            storeData(user.uid);
             touchNext();
         })
             .catch((error) => {
@@ -92,7 +103,7 @@ export function Login() {
             <View style={styles.boxButton}>
                 <Button 
                     title="Confirmar"
-                    onPress={touchNext}
+                    onPress={login}
                 />
 
             </View>

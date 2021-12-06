@@ -19,13 +19,8 @@ import fonts from '../../../styles/fonts';
 import { Button } from '../../../components/Button';
 
 
-export function Mod_C_Coleta() {
+export function Mod_C_ColetaVazio() {
     const navigation = useNavigation();
-
-    function touchConfirmar() {
-        alert('Coleta realizada')
-        navigation.navigate('Mod_C_Menu')
-    }
 
     function touchBack() {
         navigation.navigate('Mod_C_Mapa')
@@ -46,27 +41,15 @@ export function Mod_C_Coleta() {
 
             <View style={styles.boxInformation}>
                 <View style={styles.Information}>
-                    <Text >Local do descaste  </Text>           
+                    <Text > </Text>           
                 </View>
                 <View style={styles.Information}>
-                    <Text style={styles.texto}>Rua José Alvaro de Carvalho</Text>
+                    <Text style={styles.texto}>Você Não Tem coleta para realizar </Text>
                 </View>
                 <View style={styles.Information}>
-                    <Text>Jardim dos Zés</Text>
+                    <Text></Text>
                 </View>
     
-            </View>
-
-            <View style={styles.boxButton}>
-                <Button style={styles.button}
-                    title="Confirmar coleta"
-                    onPress={touchConfirmar}
-                />
-            <Button style={styles.button}
-                    title="Excluir"
-                    
-                />
-                
             </View>
 
             
@@ -134,7 +117,7 @@ Information: {
 
 texto: {
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 20,
     lineHeight: 32,
     justifyContent: 'space-between',
 },

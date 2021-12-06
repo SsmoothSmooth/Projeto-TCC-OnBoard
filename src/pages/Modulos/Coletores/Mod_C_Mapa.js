@@ -33,13 +33,13 @@ export default function Mod_C_Mapa() {
     const navigation = useNavigation();
 
     
-    function touchEscolha() {
-      navigation.navigate('Mod_C_Escolha')
+  function touchEscolha() {
+    navigation.navigate('Mod_C_Escolha')
   }
 
   function touchColeta() {
-    navigation.navigate('Mod_C_Coleta')
-}
+    navigation.navigate('Mod_C_ColetaVazio')
+  }
 
     const [ coordenadas,  setCoordenadas] = useState() 
 
@@ -129,7 +129,7 @@ const mapRef = useRef(null)
              >
                
             </Marker>
-          <View style={styles.rota}>
+          {/* <View style={styles.rota}>
             <MapViewDirections
                 lineDashPattern={[0]}
                 origin={coordenadas}
@@ -138,7 +138,7 @@ const mapRef = useRef(null)
                 strokeWidth={3}
                 strokeColor="hotpink"
               />
-          </View>
+          </View> */}
           
              
           {/* {console.log(coordenadas.coords)} */}

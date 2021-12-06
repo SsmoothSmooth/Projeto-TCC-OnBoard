@@ -46,29 +46,29 @@ export function Mod_C_Tabela_Preco() {
                     />
                 </View>
 
-                <View style={styles.BoxButton}>
+                <View style={styles.boxItemButton}>
 
                     <Button
-                        style={styles.Button}
-                        title=" Coop.recicle "
+                        style={styles.itemButton}
+                        title=" Coop. recicle"
                         
                     />
 
                     <Button
-                        style={styles.Button}
-                        title=" Coop.recicle 2 "
+                        style={styles.itemButton}
+                        title=" Coop.recicle 2"
                         
                     />
 
                     <Button
-                        style={styles.Button}
-                        title=" Coop.recicle 3 "
+                        style={styles.itemButton}
+                        title=" Coop.recicle 3"
                         
                     />
 
                     <Button
-                        style={styles.Button}
-                        title=" Coop.recicle 4 "
+                        style={styles.itemButton}
+                        title=" Coop.recicle 4"
                      
                     />
 
@@ -76,23 +76,24 @@ export function Mod_C_Tabela_Preco() {
 
                 <View style={styles.boxButton}>
                     <NavBar
-                        style={styles.buttonInicio}
+                        style={styles.button}
                         title="Inicio"
                         onPress = {touchInicio}
+
                     />
 
                     <NavBar
-                        style={styles.buttonMenu}
+                        style={styles.button}
                         title="Menu"
-                        onPress = {touchMenu}
+                        onPress= {touchMenu}
                     />
 
                     <NavBar
-                        style={styles.buttonPerfil}
+                        style={styles.button}
                         title="Perfil"
                         onPress= {touchPerfil}
-                    />
 
+                    />
                 </View>
 
             </View>
@@ -110,11 +111,8 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        margin: 10,
-        marginHorizontal: 2,
-
-
+        justifyContent: 'space-around',
+        backgroundColor: 'white',
     },
 
     boxHeader: {
@@ -127,81 +125,36 @@ const styles = StyleSheet.create({
         margin: '10%'
     },
 
-    subtitle: {
-        textAlign: 'center',
-        fontWeight: 'bold',
-        fontSize: 20,
-        color: colors.heading,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        fontFamily: fonts.text
-    },
 
-    BoxButton: {
-        flex: 1,
-        height: '55%',
+    boxItemButton: {
         width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 40,
-        marginHorizontal: 20,
-        padding: 30,
-
+        paddingHorizontal: '20%',
     },
 
-    Button: {
+    itemButton: {
         backgroundColor: colors.gray,
-        height: 50,
-        width: '100%',
-        borderRadius: 50,
-        paddingHorizontal: 70,
+        height: 60,
+        borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 10,
-        paddingTop: 10,
+        marginVertical: '5%', 
     },
 
     boxButton: {
-        flex: 1,
-        paddingVertical: '20%',
-        paddingHorizontal: '100%',
-        marginTop: '60%',
-        justifyContent: 'center',
-        marginHorizontal: '30%',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
         width: '100%',
-        backgroundColor: colors.gray,
+        backgroundColor: colors.gray
+    },
+
+    button: {
+        backgroundColor: colors.green_cyan,
+        height: 56,
+        borderRadius: 16,
+        justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row'
+        marginVertical: '5%',
     },
-
-    buttonInicio: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        marginHorizontal: 10,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
-
-    buttonMenu: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
-
-    buttonPerfil: {
-        backgroundColor: colors.green_cyan,
-        width: 90,
-        height: 40,
-        borderRadius: 50,
-        marginHorizontal: 10,
-        textAlign: 'center',
-        justifyContent: 'center',
-    },
-
+   
 })
 

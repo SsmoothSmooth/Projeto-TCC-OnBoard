@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import {
@@ -18,9 +18,26 @@ import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 
+import { useFocusEffect } from '@react-navigation/native';
+
+import {db} from '../../../firebase/firebase_db'
+import { collection, query, where, getDocs } from "firebase/firestore";
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
+
+interface UserDb {
+    Apelido: string;
+    Telefone: number;
+    email:  string;
+  }
 
 export function Mod_C_Configuracoes(){
      const navegation = useNavigation();
+
+     const [ user,  setUser] = useState<UserDb>({} as UserDb);
+
 
      // Navegação
       function touchSalvar(){
@@ -30,6 +47,92 @@ export function Mod_C_Configuracoes(){
       function touchVoltar(){
           navegation.navigate('Mod_C_TelaPerfil')
       }
+
+      // Alterar Edit
+
+      function touchApelido(){
+        navegation.navigate('Mod_C_AlterarApelido')
+    }
+
+    function touchTelefone(){
+        navegation.navigate('Mod_C_AlterarTelefone')
+    }
+
+    function touchEmail(){
+        navegation.navigate('Mod_C_AlterarEmail')
+    }
+
+
+      //**
+
+      useFocusEffect(
+        React.useCallback(() => {
+    
+          dados();
+          
+            return () => {
+                null
+            }
+    
+        }, [])
+    );
+ 
+    async function dados(){
+        try {
+            const uid = await getData();
+
+            const q = query(collection(db, "Cadastro"), where("UID Login", "==", uid));
+            const querySnapshot = await getDocs(q);
+            const valor = querySnapshot.docs[0].data();
+            setUser({
+                        Apelido: valor.Apelido,
+                        Telefone: valor.Telefone,
+                        email:  valor.Email
+                    });
+            console.log(valor);
+
+
+            // querySnapshot.forEach((doc) => {
+            //     // doc.data() is never undefined for query doc snapshots
+            //     console.log(doc.id, " => ", doc.data());
+            //   });
+
+            // const docRef = doc(db, "Cadastro", "Uc9tK8027YZ5Pq2q3JGP");
+            // const docSnap = await getDocFromServer(docRef);
+
+            // if (docSnap.exists()) {
+            //     const docUser = docSnap.data()
+            //     // console.log("Document: ", JSON.parse(JSON.stringify(apelido)).Cidade);
+            //     // console.log("Document: ", docUser.Apelido); 
+            //     setUser({
+            //         Apelido: docUser.Apelido,
+            //         Telefone: docUser.Telefone,
+            //         email:  docUser.Email
+            //     });
+
+            // } else { 
+            // // doc.data() will be undefined in this case
+            // console.log("No such document!");
+            // }
+            
+        } catch (error) {
+            console.log(error);
+        }
+        
+    }
+
+    
+const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@user')
+      if(value !== null) {
+        return value;
+      }
+    } catch(e) {
+        console.log(e)
+
+    }
+  }
 
 
     return (
@@ -46,29 +149,27 @@ export function Mod_C_Configuracoes(){
                 <View style={styles.boxInformation}>
                     <View style={styles.Information}>
                         <Text >Apelido: </Text>
-                        <Text >TEst</Text>
+                        <Text >{user.Apelido}</Text>
                         <Button style={styles.edit}
                             title="Editar"
+                            onPress={touchApelido}
                         />
                     </View>
-                    <View style={styles.Information}>
-                        <Text>Foto:</Text>
-                        <Button style={styles.edit}
-                            title="Editar"
-                        />
-                    </View>
+                    
                     <View style={styles.Information}>
                         <Text >Telefone:</Text>
-                        <Text >(xx)xxxxx-xxxx</Text>
+                        <Text >{user.Telefone}</Text>
                         <Button style={styles.edit}
                             title="Editar"
+                            onPress={touchTelefone}
                         />
                     </View>
                     <View style={styles.Information}>
                         <Text >E-mail:</Text>
-                        <Text >zezinho@gmail.com</Text>
-                        <Button style={styles.edit}
+                        <Text >{user.email}</Text>
+                        <Button style={styles.edit} 
                             title="Editar"
+                            onPress={touchEmail}
                         />
                     </View>
                 </View>
@@ -138,11 +239,11 @@ const styles = StyleSheet.create({
     Information: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        padding: '2%'
     },
 
     edit: {
-        color: 'red',
-        paddingLeft: '25%',
+        paddingLeft: '20%',
     },
 
     boxButton: {

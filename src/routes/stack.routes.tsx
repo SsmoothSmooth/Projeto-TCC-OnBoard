@@ -91,6 +91,12 @@ import Mod_C_Mapa from '../pages/Modulos/Coletores/Mod_C_Mapa';
 import { Mod_C_Coleta } from '../pages/Modulos/Coletores/Mod_C_Coleta';
 import Mod_C_Ponto_Venda from '../pages/Modulos/Coletores/Mod_C_Ponto_Venda';
 import { Mod_C_Escolha } from '../pages/Modulos/Coletores/Mod_C_Escolha';
+import { Mod_C_AlterarApelido } from '../pages/Modulos/Coletores/Alteracao/Mod_C_AlterarApelido';
+import { Mod_C_AlterarTelefone } from '../pages/Modulos/Coletores/Alteracao/Mod_C_AlterarTelefone';
+import { Mod_C_AlterarEmail } from '../pages/Modulos/Coletores/Alteracao/Mod_C_AlterarEmail';
+import Mod_C_MapaRota from '../pages/Modulos/Coletores/Mod_C_MapaRota';
+import { Mod_C_ColetaVazio } from '../pages/Modulos/Coletores/Mod_C_ColetaVazio';
+import { Mod_C_EscolhaVenda } from '../pages/Modulos/Coletores/PontoVenda/Mod_C_EscolhaVenda';
 
 const stackRoutes = createStackNavigator();
 
@@ -291,6 +297,36 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="Mod_C_Escolha"
             component={Mod_C_Escolha}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_AlterarApelido"
+            component={Mod_C_AlterarApelido}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_AlterarTelefone"
+            component={Mod_C_AlterarTelefone}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_AlterarEmail"
+            component={Mod_C_AlterarEmail}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_MapaRota"
+            component={Mod_C_MapaRota}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_ColetaVazio"
+            component={Mod_C_ColetaVazio}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_EscolhaVenda"
+            component={Mod_C_EscolhaVenda}
         />
 
 

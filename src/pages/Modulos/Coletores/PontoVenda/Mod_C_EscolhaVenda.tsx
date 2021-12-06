@@ -9,26 +9,25 @@ import {
     Text
 } from 'react-native';
 
-import colors from '../../../styles/colors';
+import colors from '../../../../styles/colors';
 import { useNavigation } from '@react-navigation/core';
-import { ModHeader } from '../../../components/ModHeader';
+import { ModHeader } from '../../../../components/ModHeader';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { NavBar } from '../../../components/NavBar';
+import { NavBar } from '../../../../components/NavBar';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
-import fonts from '../../../styles/fonts';
-import { Button } from '../../../components/Button';
+import fonts from '../../../../styles/fonts';
+import { Button } from '../../../../components/Button';
 
 
-export function Mod_C_Coleta() {
+export function Mod_C_EscolhaVenda() {
     const navigation = useNavigation();
 
-    function touchConfirmar() {
-        alert('Coleta realizada')
-        navigation.navigate('Mod_C_Menu')
+    function touchRota() {
+        navigation.navigate('Mod_C_Rota_Venda')
     }
 
     function touchBack() {
-        navigation.navigate('Mod_C_Mapa')
+        navigation.navigate('Mod_C_Ponto_Venda')
     }
 
     return (
@@ -38,33 +37,37 @@ export function Mod_C_Coleta() {
 
         <View style={styles.header}>
             <ModHeader
-                title="Minhas coletas"
+                title="Ponto de venda"
              />
             </View>
 
 
-
             <View style={styles.boxInformation}>
                 <View style={styles.Information}>
-                    <Text >Local do descaste  </Text>           
+                    <Text >Coop. recicle X  </Text>           
                 </View>
                 <View style={styles.Information}>
-                    <Text style={styles.texto}>Rua José Alvaro de Carvalho</Text>
+                    <Text style={styles.texto}>Rua coperativa</Text>
                 </View>
                 <View style={styles.Information}>
-                    <Text>Jardim dos Zés</Text>
+                    <Text>Bairro: Jardim dos Zés</Text>
                 </View>
     
             </View>
 
             <View style={styles.boxButton}>
                 <Button style={styles.button}
-                    title="Confirmar coleta"
-                    onPress={touchConfirmar}
-                />
-            <Button style={styles.button}
-                    title="Excluir"
+                    title="Iniciar rota para vender"
                     
+                    onPressIn={touchRota}
+                />
+                <Button style={styles.button}
+                    title="Tabela de preço"
+                    onPress={touchBack}
+                />
+                <Button style={styles.button}
+                    title="Voltar"
+                    onPress={touchBack}
                 />
                 
             </View>
@@ -155,7 +158,7 @@ button: {
     borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: '5%', 
+    marginVertical: '3%', 
 },
 
 buttonIcon: {

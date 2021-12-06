@@ -10,20 +10,22 @@ import {
     TextInput
 } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
-import { Button } from '../../../components/Button';
-import colors from '../../../styles/colors';
-import fonts from '../../../styles/fonts';
+import { Button } from '../../../../components/Button';
+import colors from '../../../../styles/colors';
+import fonts from '../../../../styles/fonts';
 
-export function Mod_C_AlterarSenha(){
+export function Mod_C_AlterarEmail(){
      const navegation = useNavigation();
 
       function touchConfirmar(){
-          navegation.navigate('Mod_C_TelaPerfil')
+          navegation.navigate('Mod_C_Configuracoes')
       }
 
       function touchVoltar(){
-          navegation.navigate('Mod_C_TelaPerfil')
+          navegation.navigate('Mod_C_Configuracoes')
       }
+
+      //Alteração
 
     return (
         <SafeAreaView style={styles.container}>
@@ -32,27 +34,15 @@ export function Mod_C_AlterarSenha(){
 
                 <View style={styles.header}>
                     <Text style={styles.title}>
-                        Alterar Senha
+                        Alterar Email
                     </Text>
                 </View>
 
                 <View style={styles.boxInput}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Digite a senha antiga"
-                        secureTextEntry
-                    />
-
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Digite a nova senha"
-                        secureTextEntry
-                    />
                     
                     <TextInput
                         style={styles.input}
-                        placeholder="Confirme a nova senha"
-                        secureTextEntry
+                        placeholder="Confirme o novo Email"
                     />
 
                 </View>

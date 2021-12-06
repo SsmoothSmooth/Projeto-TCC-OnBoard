@@ -71,7 +71,7 @@ export function Mod_C_Menu() {
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         activeOpacity={0.5}>
 
                         <Image
@@ -79,7 +79,7 @@ export function Mod_C_Menu() {
                             style={styles.ImageIconStyle2}
                         />
 
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
                     <TouchableOpacity
                         activeOpacity={0.5}
@@ -188,6 +188,7 @@ const styles = StyleSheet.create({
     ImageIconStyle3: {
         padding: 20,
         paddingHorizontal: 20,
+        marginVertical: 20,
         margin: 5,
         height: 100,
         width: 100,

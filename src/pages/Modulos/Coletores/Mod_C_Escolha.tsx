@@ -22,6 +22,10 @@ import { Button } from '../../../components/Button';
 export function Mod_C_Escolha() {
     const navigation = useNavigation();
 
+    function touchColeta() {
+        navigation.navigate('Mod_C_MapaRota')
+    }
+
     function touchBack() {
         navigation.navigate('Mod_C_Mapa')
     }
@@ -65,7 +69,7 @@ export function Mod_C_Escolha() {
                 <Button style={styles.button}
                     title="Iniciar rota da coleta"
                     
-                    onPressIn={touchBack}
+                    onPressIn={touchColeta}
                 />
             <Button style={styles.button}
                     title="Voltar"

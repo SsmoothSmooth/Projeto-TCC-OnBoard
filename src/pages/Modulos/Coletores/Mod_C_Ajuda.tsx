@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import { Button } from '../../../components/Button';
 import { ModHeader } from '../../../components/ModHeader';
-import { NavBar } from '../../../components/NavBar';
 import colors from '../../../styles/colors';
 
 export function Mod_C_Ajuda(){
@@ -44,12 +43,6 @@ export function Mod_C_Ajuda(){
                         title="O que é reciclagem?" 
                     />
 
-
-                    <Button
-                        style={styles.button}
-                        title="Quais materias são reciclágens?"
-                    />
-
                     <Button
                         style={styles.button}
                         title="Como excluir minha conta?"
@@ -62,11 +55,6 @@ export function Mod_C_Ajuda(){
 
                     <Button
                         style={styles.button}
-                        title="Quero trabalhar no Coletores OnBoard"
-                    />
-
-                    <Button
-                        style={styles.button}
                         title="Sobre os Coletores OnBoard"
                     />
 
@@ -75,6 +63,7 @@ export function Mod_C_Ajuda(){
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.5}
+                    onPress={touchVoltar}
                 >
 
                     <FontAwesome5
