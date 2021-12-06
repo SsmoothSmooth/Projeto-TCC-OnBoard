@@ -97,6 +97,11 @@ import { Mod_C_AlterarEmail } from '../pages/Modulos/Coletores/Alteracao/Mod_C_A
 import Mod_C_MapaRota from '../pages/Modulos/Coletores/Mod_C_MapaRota';
 import { Mod_C_ColetaVazio } from '../pages/Modulos/Coletores/Mod_C_ColetaVazio';
 import { Mod_C_EscolhaVenda } from '../pages/Modulos/Coletores/PontoVenda/Mod_C_EscolhaVenda';
+import Mod_C_RotaVenda from '../pages/Modulos/Coletores/Mod_C_RotaVenda';
+import Mod_C_RotaVenda2 from '../pages/Modulos/Coletores/Mod_C_RotaVenda2';
+import { Mod_C_EscolhaVenda2 } from '../pages/Modulos/Coletores/PontoVenda/Mod_C_EscolhaVenda2';
+import { Mod_C_Tabela } from '../pages/Modulos/Coletores/Mod_C_Tabela';
+import { Mod_C_Tabela3 } from '../pages/Modulos/Coletores/Mod_C_Tabela3';
 
 const stackRoutes = createStackNavigator();
 
@@ -327,6 +332,31 @@ const AppRoutes: React.FC = () => (
         <stackRoutes.Screen
             name="Mod_C_EscolhaVenda"
             component={Mod_C_EscolhaVenda}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_EscolhaVenda2"
+            component={Mod_C_EscolhaVenda2}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_RotaVenda"
+            component={Mod_C_RotaVenda}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_RotaVenda2"
+            component={Mod_C_RotaVenda2}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_Tabela"
+            component={Mod_C_Tabela}
+        />
+
+        <stackRoutes.Screen
+            name="Mod_C_Tabela3"
+            component={Mod_C_Tabela3}
         />
 
 

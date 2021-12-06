@@ -23,7 +23,7 @@ export function Mod_C_EscolhaVenda() {
     const navigation = useNavigation();
 
     function touchRota() {
-        navigation.navigate('Mod_C_Rota_Venda')
+        navigation.navigate('Mod_C_RotaVenda')
     }
 
     function touchBack() {
@@ -44,13 +44,13 @@ export function Mod_C_EscolhaVenda() {
 
             <View style={styles.boxInformation}>
                 <View style={styles.Information}>
-                    <Text >Coop. recicle X  </Text>           
-                </View>
-                <View style={styles.Information}>
-                    <Text style={styles.texto}>Rua coperativa</Text>
+                    <Text >Coop. recicle </Text>           
                 </View>
                 <View style={styles.Information}>
                     <Text>Bairro: Jardim dos Zés</Text>
+                </View>
+                <View style={styles.Information}>
+                    <Text style={styles.texto}>Rua coperativa</Text>
                 </View>
     
             </View>
@@ -58,15 +58,10 @@ export function Mod_C_EscolhaVenda() {
             <View style={styles.boxButton}>
                 <Button style={styles.button}
                     title="Iniciar rota para vender"
-                    
                     onPressIn={touchRota}
                 />
                 <Button style={styles.button}
                     title="Tabela de preço"
-                    onPress={touchBack}
-                />
-                <Button style={styles.button}
-                    title="Voltar"
                     onPress={touchBack}
                 />
                 

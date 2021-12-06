@@ -21,6 +21,14 @@ import { NavBar } from '../../../components/NavBar';
 export function Mod_C_Tabela_Preco() {
     const navigation = useNavigation();
 
+    function touchpreco() {
+        navigation.navigate('Mod_C_Tabela')
+    }
+    
+    function touchpreco3() {
+        navigation.navigate('Mod_C_Tabela3')
+    }
+
     // Footer
 
     function touchInicio() {
@@ -51,6 +59,7 @@ export function Mod_C_Tabela_Preco() {
                     <Button
                         style={styles.itemButton}
                         title=" Coop. recicle"
+                        onPress={touchpreco}
                         
                     />
 
@@ -63,7 +72,7 @@ export function Mod_C_Tabela_Preco() {
                     <Button
                         style={styles.itemButton}
                         title=" Coop.recicle 3"
-                        
+                        onPress={touchpreco3}
                     />
 
                     <Button

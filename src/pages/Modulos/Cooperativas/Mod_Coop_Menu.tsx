@@ -21,7 +21,7 @@ export function Mod_Coop_Menu() {
     }
 
     function touchPreco() {
-        navigation.navigate('')
+        navigation.navigate('Mod_Coop_TabelaPreço')
     }
 
     function touchCampanha() {
@@ -82,7 +82,7 @@ export function Mod_Coop_Menu() {
                     </TouchableOpacity>
 
 
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         activeOpacity={0.5}
                         onPress={touchCampanha}
                     >
@@ -92,7 +92,7 @@ export function Mod_Coop_Menu() {
                             style={styles.ImageIconStyle3}
                         />
 
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
 
                     <TouchableOpacity
